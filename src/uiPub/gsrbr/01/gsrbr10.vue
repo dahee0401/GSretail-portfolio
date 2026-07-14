@@ -25,11 +25,10 @@
                         <li>
                             <div class="btn_group">
                                 <a :href="t.HopageLink" class="btn_website" target="_blank">{{ t.HopageText }}</a>
-                                <a href="https://www.youtube.com/watch?v=YeVhN9bCeP4&feature=youtu.be" class="btn_sns btn_sns_yt" target="_blank"></a><!-- 26.06.10 Add 이종환 -->
+                                <a href="https://www.youtube.com/watch?v=YeVhN9bCeP4&feature=youtu.be" class="btn_sns btn_sns_yt" target="_blank"></a>
                             </div>
                         </li>
                     </ul>
-                    <!-- 26.06.08 add 정다희 : bi_box 추가-->
                     <div class="bi_box">
                         <div class="bi_section">
                             <h4>{{ t.Bi.txt }}</h4>
@@ -39,12 +38,9 @@
                 </div>
             </div>
             <div class="cont_inner">
-
-                <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
                 <div class="bottom_btns">
                     <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
                 </div>
-                <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             </div>
         </section>
     </div>
@@ -61,7 +57,7 @@ export default {
             isMobile: false,
             langData: {
                 ko: {
-                    Visual: { // 대문자 유지
+                    Visual: { 
                         img: require("@/assets/images/dummy/gsrbr10.png"),
                         imgMo: require("@/assets/images/dummy/gsrbr10_mo.png"),
                         alt: "GS THE FRESH 메인 비주얼",
@@ -75,7 +71,6 @@ export default {
                     HopageLink: `http://woodel.co.kr/#page1`,
                     HopageText: `홈페이지`,
                     ListBack:`목록으로 돌아가기`,
-                    // 26.06.08 add 정다희 : bi_box 추가-->
                     Bi: {
                         txt: `BI 로고`,
                         img: require("@/assets/images/dummy/gsrbr10_bi.png"),
@@ -84,7 +79,7 @@ export default {
                     },
                 },
                 en: {
-                    Visual: { // 대문자 유지
+                    Visual: { 
                         img: require("@/assets/images/dummy/gsrbr10.png"),
                         imgMo: require("@/assets/images/dummy/gsrbr10_mo.png"),
                         alt: "GS THE FRESH Main Visual"/* 260604 번역 */,
@@ -133,16 +128,13 @@ export default {
 .gsrbr10 { width: 100%; position: relative; display: block; }
 :deep(.cont_inner) h3 br {display:none;}
 
-/* Visual Section */
 .visual_section { width:100%; position: relative; overflow: hidden; }
-/* visual_img css수정 */
 .visual_img { width: 100%; height: auto; position: relative;}
 .visual_img::after{content:"";width: 100%;height: 100%;background:rgba(0,0,0,0.3);position: absolute;top: 0;left: 0;z-index: 1;}
 .visual_img img { width: 100%; display: block; }
 .visual_content { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; z-index: 2; }
 .text_box span { color:#fff; font-size:72px; font-weight:700; display: block; position: relative;z-index: 2; }
 
-/* body_wrap Section */
 .body_wrap .cont_area {padding:10.41%; background:#F8F8F8;}
 .body_wrap .cont_area .cont_inner h3 {margin-bottom:16px; color:#161616; font-size:48px; font-weight:700;}
 .body_wrap .cont_area .cont_inner ul {margin-bottom:64px; display:flex; justify-content:space-between; align-items:flex-end;}
@@ -151,7 +143,6 @@ export default {
 
 .btn_group {display:flex; align-items:center; gap:24px;}
 
-/* 26.06.08 add 정다희 : bi_box 추가*/
 .body_wrap .cont_area .cont_inner .bi_box { padding: 56px 64px; background: #fff; border-radius: 12px; }
 .bi_box > .bi_section{width: 100%;}
 .bi_box > .bi_section > h4 { margin-bottom: 40px; font-size: 3.2rem; font-weight: 700; }

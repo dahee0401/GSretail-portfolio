@@ -7,7 +7,6 @@
                     <div class="visual_inner">
                         <div class="txt_area">
                             <p ref="textParaRef">
-                                <!-- 26.06.16 edit 정다희 : v-html 적용 — lines 내 <br class="m_br"/> 모바일 줄바꿈 렌더링 -->
                                 <span v-for="(line, index) in t.visual.lines" :key="index" v-html="line"></span>
                             </p>
                             <div ref="logoWrapRef" class="logo_wrap">
@@ -28,28 +27,19 @@
         </section>
         <section class="sec_brand_str">
             <div class="str_inner">
-                <!-- 26.06.22 add 정다희 :기존 div> h2+p삭제, h2 headerTitle적용  -->
-                <!-- <div>
-                    <h2>{{ t.str.title }}</h2>
-                    <p v-html="t.str.desc"></p>
-                </div> -->
                 <header class="str_header">
                     <h2 v-html="t.str.headerTitle"></h2>
-                    <!-- //26.06.22 add 정다희 :div삭제 -->
                     <div class="str_actions">
                         <a
                             href="https://www.gsshop.com/index.gs?utm_source=google.adwords&utm_campaign=SA_GS_Brand_Term&utm_medium=paid_search&opps=gsshop&_emk_keyword=gsshop&no_key_encode=1&media=LLs&gad_source=1&gad_campaignid=22373782952&gbraid=0AAAAACg8DCHe7RxcksZXWK6j5Z-rcJodl&gclid=Cj0KCQiA7-rMBhCFARIsAKnLKtBjgmSBvjeDxKecu1j6gkkxhNWAr0Xo165HEdCyKMpbJxi9AJ5BsKMaAi-5EALw_wcB&fromWith=Y"
                             class="btn_website"
-                         target="_blank">{{ t.str.websiteLabel }}</a><!-- 26.05.11 Edit 이종환 : class 수정 -->
+                            target="_blank">{{ t.str.websiteLabel }}</a>
                         <div class="sns_wrap">
-                            <!-- 26.06.22 add 정다희 : 인스타그램, 유튜브 링크 주소 순서 변경(링크가 바뀌어져있음.) -->
                             <a href="https://www.instagram.com/gsshop_story/" class="btn_sns btn_sns_insta" :aria-label="t.str.snsInstaAria" target="_blank"></a>
                             <a href="https://www.youtube.com/channel/UCFR22SdPEC3XmU7nIygGjXw" class="btn_sns btn_sns_yt" :aria-label="t.str.snsYtAria" target="_blank"></a>
-                            <!-- //26.06.22 add 정다희 : 인스타그램, 유튜브 링크주소 순서 변경(링크가 바뀌어져있음.) -->
                         </div>
                     </div>
                 </header>
-                <!-- 26.06.16 del 정다희 : str_bi(브랜드 아이덴티티·BI 로고/색상) 영역 제거 -->
             </div>
         </section>
         <section class="sec_brand_competency str_inner">
@@ -57,7 +47,6 @@
                 <h2>{{ t.competency.title }}</h2>
             </header>
             <figure class="sec_brand_competency_fig">
-                <!-- 26.06.23 add 정다희 : 핵심역량 이미지 — ko/en · PC/MO 분기 -->
                 <img :src="competencyImgSrc" :alt="t.competency.imageAlt" />
             </figure>
         </section>
@@ -125,7 +114,6 @@
                     v-for="card in programCardList"
                     :key="card.key"
                 >
-                    <!-- 26.06.08 Edit 이종환 : 모바일 이미지 분리 -->
                     <CardItem
                         :thumb-src="isMobileView && card.image_mo ? card.image_mo : card.image"
                         :thumb-alt="card.imgAlt || ''"
@@ -133,16 +121,11 @@
                         <template v-if="card.title" #title>{{ card.title }}</template>
                         <p v-if="card.desc" v-html="card.desc"></p>
                     </CardItem>
-                    <!-- //26.06.08 Edit 이종환 : 모바일 이미지 분리 -->
                 </li>
             </ul>
-
-            <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             <div class="bottom_btns">
                 <button class="btn_back" @click="handleBack">{{ t.backLabel }}</button>
             </div>
-            <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
-
         </section>
     </div>
 
@@ -157,11 +140,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeatureCards from "@/components/FeatureCards.vue";
 import CardItem from "@/components/CardItem.vue";
 import imgLogo from "@/assets/images/dummy/brand_gsshop_logo.png";
-/* 26.06.16 edit 정다희 : str_bi 제거 — BI 이미지(imgBi01~08) 삭제, 핵심역량(imgBi09)만 유지 */
 import imgBi09 from "@/assets/images/dummy/gsrbr0301_09.png";
 import imgBi09Mo from "@/assets/images/dummy/mo/gsrbr0301_09_mo.png";
-import imgBi09En from "@/assets/images/dummy/gsrbr0301_09_en.png"; /* 26.06.23 add 정다희 : 영문 이미지 추가 */ 
-import imgBi09EnMo from "@/assets/images/dummy/mo/gsrbr0301_09_en_mo.png"; /* 26.06.23 add 정다희 : 영문 이미지 추가 */ 
+import imgBi09En from "@/assets/images/dummy/gsrbr0301_09_en.png"; 
+import imgBi09EnMo from "@/assets/images/dummy/mo/gsrbr0301_09_en_mo.png"; 
 
 
 import imgCert01 from "@/assets/images/dummy/cert_logo_01.png";
@@ -202,7 +184,7 @@ const props = defineProps({
 const langData = {
     ko: {
         visual: {
-            lines: ["고객의 라이프스타일을 <br class=\"m_br\"/>가치 있게"], /*26.06.23 edit 정다희 : 띄어쓰기*/ 
+            lines: ["고객의 라이프스타일을 <br class=\"m_br\"/>가치 있게"], 
             logoAlt: "GS SHOP",
         },
         about: [
@@ -218,15 +200,11 @@ const langData = {
             ],
         ],
         str: {
-            // 26.06.22 del 정다희 : title, desc 미사용 (div 삭제)
-            // title: "브랜드 소개",
-            // desc: "GS SHOP은 TV쇼핑과 모바일/인터넷쇼핑몰 등에 개별적으로 사용되던 브랜드를 <br class=\"p_br\"/>고객의 더 나은 쇼핑을 돕기 위해 하나로 통합한 브랜드입니다.",
-            headerTitle: "고객의 더 나은 쇼핑 경험을 위해<br />TV쇼핑·모바일·인터넷 쇼핑을 하나로 통합한 브랜드입니다.", /*26.06.26 edit 정다희 : 텍스트 수정*/ 
+            headerTitle: "고객의 더 나은 쇼핑 경험을 위해<br />TV쇼핑·모바일·인터넷 쇼핑을 하나로 통합한 브랜드입니다.",  
             websiteLabel: "홈페이지",
             snsInstaAria: "인스타그램",
             snsYtAria: "유튜브",
         },
-        /* 26.06.16 del 정다희 : bi(브랜드 아이덴티티) langData 제거 */
         competency: {
             title: "GS SHOP의 비즈니스 핵심역량",
             imageAlt: "GS SHOP의 비즈니스 핵심역량",
@@ -285,7 +263,7 @@ const langData = {
                     imgAlt: "TV 홈쇼핑",
                     em: "01",
                     title: "TV 홈쇼핑",
-                    desc: "국내 최초로 홈쇼핑 방송을 선보인 GS SHOP은 최초 홈쇼핑 채널만의 콘텐츠 제작 역량을 바탕으로 생동감 있는 Live 방송을 통해 고객에게 차별화된 쇼핑 경험을 제공하고 있습니다.", /*26.06.26 edit 정다희 : 텍스트 수정*/ 
+                    desc: "국내 최초로 홈쇼핑 방송을 선보인 GS SHOP은 최초 홈쇼핑 채널만의 콘텐츠 제작 역량을 바탕으로 생동감 있는 Live 방송을 통해 고객에게 차별화된 쇼핑 경험을 제공하고 있습니다.",
                 },
                 {
                     key: "ch-online",
@@ -387,15 +365,11 @@ const langData = {
             ],
         ],
         str: {
-            // 26.06.22 del 정다희 : title, desc 미사용 (div 삭제)
-            // title: "About the Brand",
-            // desc: "GS SHOP is a unified brand that brings together what were previously separate brands for TV shopping and mobile and internet shopping, to provide customers with a better shopping experience.",
-            headerTitle: "It is a brand that integrates TV shopping, mobile, and internet shopping into one for a better customer shopping experience.", /*26.06.26 edit 정다희 : 텍스트 수정*/
+            headerTitle: "It is a brand that integrates TV shopping, mobile, and internet shopping into one for a better customer shopping experience.", 
             websiteLabel: "Homepage",
             snsInstaAria: "Instagram"/* 260604 번역 */,
             snsYtAria: "YouTube"/* 260604 번역 */,
         },
-        /* 26.06.16 del 정다희 : bi(브랜드 아이덴티티) langData 제거 */
         competency: {
             title: "GS SHOP's Core Business Competencies"/* 260604 번역 */,
             imageAlt: "GS SHOP's Core Business Competencies"/* 260604 번역 */,
@@ -454,7 +428,7 @@ const langData = {
                     imgAlt: "TV Home Shopping",
                     em: "01",
                     title: "TV Home Shopping",
-                    desc: "GS SHOP, the first to introduce home shopping broadcasting in Korea, leverages its unique content production capabilities as the pioneering home shopping channel to deliver a differentiated shopping experience to customers through vibrant live broadcasts.", /*26.06.26 edit 정다희 : 텍스트 수정*/
+                    desc: "GS SHOP, the first to introduce home shopping broadcasting in Korea, leverages its unique content production capabilities as the pioneering home shopping channel to deliver a differentiated shopping experience to customers through vibrant live broadcasts.",
                 },
                 {
                     key: "ch-online",
@@ -553,14 +527,12 @@ const textParaRef = ref(null);
 const logoWrapRef = ref(null);
 const aboutSectionRef = ref(null);
 
-/* 26.06.16 edit 정다희 : isBiColorMobile → isBiCompetencyMobile (str_bi 제거 후 핵심역량 이미지 PC/모바일 전환용) */
 const isBiCompetencyMobile = ref(false);
 let biCompetencyMql = null;
 function onBiCompetencyMqlChange(e) {
     isBiCompetencyMobile.value = e.matches;
 }
 
-// 26.06.23 add 정다희 : 핵심역량 이미지 — ko/en · PC/MO 분기
 const competencyImgSrc = computed(() => {
     const isEn = props.lang === "en";
     if (isBiCompetencyMobile.value) {
@@ -580,10 +552,9 @@ const channelCardList = computed(() => t.value.channel.cards);
 const programCardList = computed(() => t.value.program.cards);
 
 let gsapCtx = null;
-let resizeTimer = null; // 26.06.02 Edit 정다희
+let resizeTimer = null; 
 let syncVisualClip = null;
 
-// 26.06.02 Edit 정다희
 function onBrandResize() {
     isMobileView.value = _getIsMobile();
     const syncClip = () => {
@@ -610,7 +581,6 @@ function initBrandGsap() {
     if (!sectionRef.value || !bgWrapRef.value || !textParaRef.value || !logoWrapRef.value || !aboutSectionRef.value) {
         return;
     }
-    // 26.06.02 Edit 정다희
     gsapCtx = gsap.context(() => {
         const spans = textParaRef.value.querySelectorAll("span");
         const PHASE1_PX = 400;
@@ -656,7 +626,6 @@ function initBrandGsap() {
             applyBgClip(visualSt.progress);
         };
         applyBgClip(visualSt.progress);
-        // 26.06.02 Edit 정다희
         gsap.set([...spans, logoWrapRef.value], { opacity: 0, y: 40 });
 
         const textTl = gsap.timeline({ paused: true });
@@ -709,11 +678,9 @@ function initBrandGsap() {
 
 onMounted(() => {
     isMobileView.value = _getIsMobile();
-    /* 26.06.16 edit 정다희 : 핵심역량(sec_brand_competency) 이미지 모바일 분기 */
     biCompetencyMql = window.matchMedia("(max-width: 768px)");
     isBiCompetencyMobile.value = biCompetencyMql.matches;
     biCompetencyMql.addEventListener("change", onBiCompetencyMqlChange);
-    // 26.06.02 Edit 정다희
     window.addEventListener("resize", onBrandResize);
     nextTick(() => {
         initBrandGsap();
@@ -721,13 +688,11 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    /* 26.06.16 edit 정다희 : 핵심역량 이미지 matchMedia 해제 */
     if (biCompetencyMql) {
         biCompetencyMql.removeEventListener("change", onBiCompetencyMqlChange);
         biCompetencyMql = null;
     }
     window.removeEventListener("resize", onBrandResize);
-    // 26.06.02 Edit 정다희
     syncVisualClip = null;
     if (resizeTimer) {
         clearTimeout(resizeTimer);
@@ -747,10 +712,8 @@ img { width: 100%; object-fit: cover; display: block; }
 p { font-size: 2.4rem; line-height: 1.35; letter-spacing: -0.01em; }
 .brand { max-width: 100%; overflow-x: clip; }
 .sec_brand_visual { position: relative; height: calc(100vh + 800px); max-width: 100%; }
-/* 100vw는 스크롤바 폭까지 포함해 가로 오버플로를 자주 냄 → 부모와 동일한 100% 사용 */
 .sticky { --base-ratio: 0.75; --base-size: 1536; --base-percent: 100%; width: 100%; max-width: 100%; height: calc(100vh + max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent)))); position: -webkit-sticky; position: sticky; top: max(calc(1 / var(--base-size) * var(--base-percent) * -1)); left: 0; overflow: hidden }
 .bg_wrap { width: 100%; height: 100%; position: relative; z-index: 1; overflow: hidden; clip-path: inset(0% round 0px); -webkit-clip-path: inset(0% round 0px) }
-/* 26.06.02 Edit 정다희 */
 
 .bg_wrap > .bg { width: 100%; height: 100%; background-image: url(@/assets/images/sub/gsrbr03/gs_shop_bg.png); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; z-index: -1; transform: scale(1.0); transition: transform 0.7s ease-out }
 .bg_wrap.active > .bg { transform: scale(0.8) }
@@ -775,7 +738,6 @@ p { font-size: 2.4rem; line-height: 1.35; letter-spacing: -0.01em; }
 .sec_brand_about > .about_inner > .about_txt > p > span { color: #161616; font-size: 3.6rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; will-change: transform, opacity; display: block }
 .str_inner { width: 1460px; max-width: 100%; margin: 0 auto; padding: 200px 20px 0; box-sizing: border-box; }
 .sec_brand_str .str_inner { padding:200px 20px; }
-/* .sec_brand_str .str_inner {padding: 0 20px;} */
 .sec_brand_str .str_header {flex-wrap:wrap; margin:0;}
 
 section.sec_brand_biz.str_inner .str_header { margin-bottom: 24px; display: block; }
@@ -783,7 +745,6 @@ section.sec_brand_biz.str_inner .str_header { margin-bottom: 24px; display: bloc
 .str_header h2 { font-size: 4.8rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;text-align: left; }
 .str_header p {margin-top: 16px;}
 .str_header .str_actions { margin-left:auto; display: flex; align-items: center; gap: 24px }
-/* 26.06.16 del 정다희 : .str_bi, .str_color_core, .str_color_sup 스타일 제거 */
 .sns_wrap { display: flex; align-items: center; gap: 6px }
 .str_biz_fig { padding:32px; background-color: #F8F8F8; border-radius: 12px; }
 .str_biz_fig_inner{display: flex; align-items: center; justify-content: space-between;}
@@ -829,8 +790,6 @@ section.sec_brand_biz.str_inner .str_header { margin-bottom: 24px; display: bloc
     :deep(.p_br) { display: none; }
     :deep(.m_br) { display: block; }
     p { font-size: 1.6rem; line-height: 1.5; letter-spacing: -0.01em; }
-    /* 26.06.02 Edit 정다희 */
-    /* .sec_brand_visual { height: 100vh } */
     .sticky { height: 100vh; top: 0 }
     .bg_wrap > .bg {  background-position: 10% 17px }
     .bg_wrap > .visual_inner {transform: translate(-50%, calc(-50% - 10px));  }

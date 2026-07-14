@@ -24,7 +24,7 @@
                 <ul v-if="!isMobileView" class="value_list">
                     <li v-for="item in t.valueItems" :key="item.title">
                         <div class="item">
-                            <span class="thumb"><em><img :src="item.img" :alt="item.title" /></em></span>   <!-- 260616 add 정다희 : 웹접근성 alt 추가 -->
+                            <span class="thumb"><em><img :src="item.img" :alt="item.title" /></em></span>  
                             <p>
                                 <strong>{{ item.title }}</strong>
                                 <span>{{ item.desc }}</span>
@@ -94,7 +94,7 @@ onUnmounted(() => {
 // 다국어 데이터셋 객체로 완전 통합
 const langData = {
     ko: {
-        MainTitle: "경영이념 및 가치체계", /* 260624 edit 이소라 */
+        MainTitle: "경영이념 및 가치체계", 
         SubTitle:'Our Vision',
         VisionSub: "고객의 모든 경험을 연결하고, 데이터로 공감하며, 상품과 서비스로 신뢰받는 플랫폼",
         VisionAlt: "연결, 공감, 신뢰를 표현한 GS리테일 비전 다이어그램",
@@ -116,7 +116,7 @@ const langData = {
         ],
     },
     en: {
-        MainTitle: "Management Philosophy and Value System", /* 260624 edit 이소라 */
+        MainTitle: "Management Philosophy and Value System", 
         SubTitle:'Our Vision',
         VisionSub: "A platform that connects all customer experiences, understands customers through data, and is trusted for its products and services",
         VisionAlt: "GS Retail vision diagram expressing connection, empathy, and trust"/* 260604 번역 */,
@@ -150,24 +150,12 @@ img { width: 100%; height: auto; object-fit: cover; display: block;  }
 .title_wrap > h2 { color: #fff; font-weight: 700; font-size: 7.2rem; line-height: 1.24; letter-spacing: -0.02em; position: relative; z-index: 2; }
 section { padding-top: 200px; }
 section > header{margin-bottom:100px;}
-/* section+section{padding:200px 0 0; } */
 .header { text-align: center;}
 .header h3 { margin: 0; font-weight: 700; font-size: 4.8rem; line-height: 1.3; letter-spacing: -0.01em; }
 .header p { margin: 16px 0 0; font-weight: 700; font-size: 2.4rem; line-height: 1.35; letter-spacing: -0.01em; }
-/* .sec_vision .img_wrap { margin-top: 100px;  } */
 
 .sec_vision .img_wrap picture { width: 100%; position: relative; display: block; }
 .sec_vision .img_wrap picture img { margin: 0 auto; object-fit: contain; }
-/* .sec_value {display: flex; flex-wrap: wrap; gap:20px; align-items: flex-start; justify-content: space-between; } */
-/* .sec_value > .header { width: 320px; max-width: 100%; flex-shrink: 0; } */
-/* .sec_value > .value_list { width: 1100px; max-width: 100%; flex: 1 1 700px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.sec_value > .value_list > li { margin: 0; padding: 56px; min-height: 500px; border-radius: 12px; background-color: #f5f5f5; background-repeat: no-repeat; background-position: center; background-size: cover; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;  }
-.sec_value > .value_list > li > strong { margin: 0; font-size: 4rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
-.sec_value > .value_list > li > p { margin: 12px 0 0; font-size: 2rem; font-weight: 400; line-height: 1.35; letter-spacing: -0.01em; white-space: pre-line; }
-.sec_value > .value_list > li:nth-child(1) { background-image: url("@/assets/images/dummy/gsrab02_03.png"); }
-.sec_value > .value_list > li:nth-child(2) { background-image: url("@/assets/images/dummy/gsrab02_04.png"); }
-.sec_value > .value_list > li:nth-child(3) { background-image: url("@/assets/images/dummy/gsrab02_05.png"); }
-.sec_value > .value_list > li:nth-child(4) { background-image: url("@/assets/images/dummy/gsrab02_06.png"); } */
 
 .sec_value .value_list {max-width:1100px; margin:0 auto;}
 .sec_value .value_list li + li {margin-top:20px;}
@@ -193,21 +181,11 @@ section > header{margin-bottom:100px;}
     .header {margin-bottom:24px;}
     .header h3 { font-size: 2.4rem; }
     .header p { margin-top: 12px; font-weight: 400; font-size: 1.6rem; line-height: 1.5; letter-spacing: -0.01em; }
-    .sec_vision {padding-top: 120px; } /* 26.06.26 edit 이소라 */
+    .sec_vision {padding-top: 120px; }
     .sec_vision .img_wrap picture img{max-width: 335px;}
     .swiper{width: calc(100% + 40px); margin: 0 -20px;padding: 0 20px;}
     .sec_value :deep(.value_swiper .swiper-slide) { width: 84.53vw; }
     .sec_vision header{text-align:left;}
-    /* .sec_vision .img_wrap { margin-top: 60px; } */
-    /* .sec_value { flex-direction: column; gap: 24px; }
-    .sec_value > .header { width: 100%; }
-    .sec_value > .value_swiper { width: calc(100% + 40px); margin: 0 -20px; padding: 0 20px; overflow: hidden; }
-    .sec_value :deep(.value_swiper .swiper-slide) { width: 84.53vw; }
-    .sec_value :deep(.value_swiper .swiper-wrapper) { align-items: stretch; }
-    .sec_value .value_slide { width: 100%; display: flex; flex-direction: column; gap: 8px; }
-    .sec_value .value_slide > strong { font-size: 2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }
-    .sec_value .value_slide > p { margin: 0; font-size: 1.6rem; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; white-space: pre-line; }
-    .sec_value .value_thumb { width: 100%;aspect-ratio: 317 / 210; border-radius: 12px; background-repeat: no-repeat; background-position: center; background-size: cover; } */
     .sec_value .value_swiper .item .thumb img { aspect-ratio: 317 / 210; border-radius: 12px; }
     .sec_value .value_swiper .item p { margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
     .sec_value .value_swiper .item p strong { font-size: 2rem; letter-spacing: -0.01em; line-height: 135%; }

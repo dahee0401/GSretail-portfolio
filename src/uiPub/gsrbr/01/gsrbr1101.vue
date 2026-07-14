@@ -13,7 +13,6 @@
         </section>
 
         <div class="body_wrap">
-            <!-- 26.06.08 add 정다희 : cont_area 삭제 -->
             <div class="cont_inner">
                 <div class="category_tabs">
                     <Tabs 
@@ -38,7 +37,6 @@
                     <section v-if="CTabIdx === 0 && t?.SubwayData" class="tab_content subway_content">
                         <div class="inner_cont">
                             <div class="info_section">
-                                <!-- 26.06.08 add 정다희 : content_title 태그 수정 -->
                                 <h2 class="content_title" v-html="t.SubwayData.title"></h2> 
                                 <div class="contact_left pc">
                                     <div class="info_item">
@@ -96,7 +94,7 @@
                             </div>
 
                             <div class="tell_area mo">
-                                <h3 class="main_title">{{ t.SubwayData.contact.연락처 }}</h3> <!-- 26.06.08 add 정다희 : 클래스 수정 -->
+                                <h3 class="main_title">{{ t.SubwayData.contact.연락처 }}</h3> 
                                 <ul>
                                     <li>
                                         <strong>{{ t.SubwayData.contact.전화 }}</strong>
@@ -112,12 +110,9 @@
                             </div>
 
                             <div class="lease_condition_section">
-                                <h3 class="main_title">{{ t.Labels.conditionInfo }}</h3> <!-- 26.06.08 add 정다희 : 클래스 수정 -->
+                                <h3 class="main_title">{{ t.Labels.conditionInfo }}</h3> 
                                 <div class="condition_grid">
                                     <div v-for="(cond, cIdx) in t.SubwayData.conditions" :key="cIdx" class="condition_item">
-                                        <!-- <div class="visual_img_small">
-                                            <img :src="cond.img" :alt="cond.name" />
-                                        </div> -->
                                         <h4 class="sub_title">{{ cond.name }}</h4>
                                         <div class="policy_wrap">
                                             <table>
@@ -137,12 +132,9 @@
                     <section v-if="CTabIdx === 1 && t?.MallData" class="tab_content mall_content" :class="'mall-type-' + SUBTabIdx">
                         <template v-for="(mall, mIdx) in t.MallData" :key="mIdx">
                             <div v-if="SUBTabIdx === mIdx" class="inner_cont">
-                                <!-- 26.06.30 edit 정다희 : 쇼핑몰 2depth 탭 콘텐츠 visual_img — MallData mainImg/mainImgMo, isMobile 분기, no_img 삭제 -->
                                 <div class="visual_img">
                                     <img :src="isMobile ? mall.mainImgMo : mall.mainImg" :alt="mall.name" />
                                 </div>
-                                <!-- //26.06.30 edit 정다희 : 쇼핑몰 2depth 탭 콘텐츠 visual_img -->
-
                                 <div class="info_section">
                                     <h3 class="content_title">
                                         {{ mall.contentTitle }}
@@ -188,12 +180,12 @@
                                 <div class="map_section">
                                     <div class="contact_info_wrap">
                                         <div class="contact_left">
-                                            <strong class="main_title">{{ t.mall_txt }}</strong> <!-- 26.06.08 add 정다희 : 클래스 추가 -->
+                                            <strong class="main_title">{{ t.mall_txt }}</strong> 
                                             <div class="info_item">
                                                 <span>{{ mall.contact.snsLabel || t.Labels.sns }}</span>
                                                 <span class="val">{{ mall.contact.instatxt }}</span>
                                                 <a v-if="mall.contact.insta" :href="mall.contact.insta" target="_blank" class="btn_sns small ico_insta"> 
-                                                </a> <!-- 26.07.06 Edit 이종환 : 원복, 26.06.10 Del 이종환  -->
+                                                </a> 
                                             </div>
                                             <div v-if="mall.contact.blog" class="info_item">
                                                 <span>{{ t.Labels.blog }}</span>
@@ -201,12 +193,10 @@
                                                     {{ mall.contact.blog }}
                                                 </a>
                                             </div>
-                                            <div v-if="mall.contact.phone || mall.contact.phone1" class="info_item"> <!-- 26.06.29 edit 정다희 :  v-if문 수정 -->
+                                            <div v-if="mall.contact.phone || mall.contact.phone1" class="info_item"> 
                                                 <span>{{ t.Labels.phoneNum }}</span>
-                                                <!-- 26.06.29 edit 정다희 : span에 v-if문 추가 -->
                                                 <span v-if="mall.contact.phone" class="val">{{ mall.contact.phone }}</span>
                                                 <span v-if="mall.contact.phone1" class="val">{{ mall.contact.phone1 }}</span>
-                                                <!-- //26.06.29 edit 정다희 : span에 v-if문 추가 -->
                                             </div>
                                             <div v-if="mall.contact.email1 || mall.contact.email2 || mall.contact.email3" class="info_item">
                                                 <span>{{ t.Labels.email }}</span>
@@ -224,7 +214,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- 26.06.17 edit 정다희 : 웹접근성 대응 iframe title 적용 -->
                                     <div class="map_area">
                                         <iframe :title="mall.mapTitle" :src="mall.mapUrl" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
@@ -235,7 +224,7 @@
                 </div>
 
                 <div class="lease_section">
-                    <h3 class="main_title">{{ t.lease_subtitle }}</h3> <!-- 26.06.08 add 정다희 : 클래스 수정정 -->
+                    <h3 class="main_title">{{ t.lease_subtitle }}</h3>
                     <div class="principles_card_container">
                         <component 
                             :is="isMobile ? 'swiper' : 'div'"
@@ -254,12 +243,6 @@
                                     <span class="card_num">0{{ pIdx + 1 }}</span>
                                     <strong class="card_title">{{ p.subTitle }}</strong>
                                 </div>
-                                
-                                <!-- 26.06.29 del 정다희 : card_body_sub 삭제 -->
-                                <!-- <div v-if="p.subtxt" class="card_body_sub">
-                                    <p class="desc_sub_text">{{ p.subtxt }}</p>
-                                </div> -->
-                                <!-- //26.06.29 del 정다희 : card_body_sub 삭제 -->
                             </component>
                         </component>
                     </div>
@@ -271,8 +254,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 26.06.24 edit 정다희 : help_desk_area — 지하철 탭만, 공통 lease_section 하단 -->
                 <div v-if="CTabIdx === 0" class="help_desk_area">
                     <div class="guide_header">
                         <h4 class="text-wrapper mb12">{{ t.HelpDeskTitle }}</h4>
@@ -291,8 +272,6 @@
                         </li>
                     </ul>
                 </div>
-                <!-- //26.06.24 edit 정다희 : help_desk_area -->
-
                 <div class="bottom_btns">
                     <button class="btn_back" @click="handleBack">{{ t.backLabel }}</button>
                 </div>
@@ -305,7 +284,6 @@
 import Tabs from "@/components/Tabs.vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
-/* 26.06.30 add 정다희 : 쇼핑몰 2depth 탭 visual_img 이미지 import (gsrbr1101_01~04 PC / mo 01~04_mo) */
 import imgGsrbr1101Mall01 from "@/assets/images/dummy/gsrbr1101_01.png";
 import imgGsrbr1101Mall02 from "@/assets/images/dummy/gsrbr1101_02.png";
 import imgGsrbr1101Mall03 from "@/assets/images/dummy/gsrbr1101_03.png";
@@ -315,7 +293,6 @@ import imgGsrbr1101Mall02Mo from "@/assets/images/dummy/mo/gsrbr1101_02_mo.png";
 import imgGsrbr1101Mall03Mo from "@/assets/images/dummy/mo/gsrbr1101_03_mo.png";
 import imgGsrbr1101Mall04Mo from "@/assets/images/dummy/mo/gsrbr1101_04_mo.png";
 
-/* 26.06.30 add 정다희 : SUBTabIdx별 visual 매핑 — 0:안녕인사동(01), 1:구로(02), 2:판교(03), 3:동부산(04) */
 const mallVisualList = [
     { mainImg: imgGsrbr1101Mall01, mainImgMo: imgGsrbr1101Mall01Mo },
     { mainImg: imgGsrbr1101Mall02, mainImgMo: imgGsrbr1101Mall02Mo },
@@ -363,7 +340,7 @@ export default {
                         title: `신분당선 1, 2단계 임대상가 모집`,
                         principles: [
                             { subTitle: `최단시간 강남접근`, desc: [`강남역 ~ 정자역 16분대 운행 (기존 분당선 대비 약 30분 단축)`, `광역버스 및 자가용 이용 통근자의 교통 체증 난(難) 해소`] },
-                            { subTitle: `풍부한 유동성`, desc: [`총 6개역 중 4개 역사가 환승역사 <br />강남(2호선), 양재(3호선), 판교, 정자(분당선)`, `강남 최고의 오피스/상업 밀집지인 강남역 연결`]}, // <!-- 26.06.08 add 정다희 : 텍스트 수정 -->
+                            { subTitle: `풍부한 유동성`, desc: [`총 6개역 중 4개 역사가 환승역사 <br />강남(2호선), 양재(3호선), 판교, 정자(분당선)`, `강남 최고의 오피스/상업 밀집지인 강남역 연결`]},
                             { subTitle: `최적화된 역사 환경`, desc: [`현대적 감각의 인테리어 구현 및 높은 층고(3.6M)로 개방감 확보`] }
                         ],
                         routeMapImg: require("@/assets/images/dummy/gsrbr1101_subway.png"),
@@ -378,10 +355,8 @@ export default {
                         conditions: [
                             {
                                 name: `임대상가`, img: require("@/assets/images/dummy/subway_shop.png"),
-                                // table 26.06.29 edit 정다희 : 테이블 내용 수정 
                                 table: [
                                     { th: `월 임대료`, td: `계약 기간 전체 선납` },
-                                    // { th: `임대 보증금`, td: `월 임대료 * 12개월` },  // table 26.06.29 del 정다희 : th 삭제 
                                     { th: `계약기간`, td: `3개월 이상 ~ 12개월 이하` },
                                     { th: `면적`, td: `각 역사별 상이` },
                                     { th: `추천업종`, td: `의류, 편의서비스, 생활잡화, 디저트 등` }
@@ -389,10 +364,9 @@ export default {
                             },
                             {
                                 name: `키오스크`, img: require("@/assets/images/dummy/subway_kiosk.png"),
-                                // table 26.06.29 edit 정다희 : 테이블 내용 수정 
                                 table: [
-                                    { th: `월 집기 사용료`, td: `업체 제안 방식` }, // <!-- 26.06.08 add 정다희 : th 텍스트 수정 -->
-                                    { th: `사용료 납입`, td: `6개월 선납 방식` },  // <!-- 26.06.08 add 정다희 : th 텍스트 수정 -->
+                                    { th: `월 집기 사용료`, td: `업체 제안 방식` }, 
+                                    { th: `사용료 납입`, td: `6개월 선납 방식` },  
                                     { th: `계약기간`, td: `6개월 단위` },
                                     { th: `예치보증금`, td: `사용료 3개월 분` },
                                     { th: `추천업종`, td: `악세사리, 잡화 등` }
@@ -406,14 +380,13 @@ export default {
                     lease_subtitle_desc:{
                         principles: [
                             { subTitle: `보증금/고정 월세`},
-                            { subTitle: '보증금/변동 월세 (수수료 방식)'} /* 26.06.29 edit 정다희 : subtxt 삭제 */
+                            { subTitle: '보증금/변동 월세 (수수료 방식)'} 
                         ],
                     },
 
                     fee_tip_title: `수수료방식이란?`, 
                     fee_tip_desc_1: `월 순매출의 일정 비율을 임대인에게 임대로로 지급하는 방식. 예) 월 순매출금액 x 수수료율 (VAT별도)`,    
-                    
-                    // 26.06.29 add 정다희 : help_desk_area 추가 
+                
                     HelpDeskTitle: "GS25, GS THE FRESH 창업 문의",
                     HelpDeskDesc: "GS25, GS THE FRESH 창업 문의는 창업안내의 상담 및 신청 메뉴에서 진행하실 수 있습니다.",
                     HelpDeskItems: [
@@ -421,7 +394,6 @@ export default {
                         { brand: "GS THE FRESH (GS수퍼마켓)", tel: "1833-9779", note: "GS THE FRESH 가맹상담 문의", link: "/gsrst01010101" }
                     ],
                     BtnGoDetail: "바로가기",
-                    // //26.06.29 add 정다희 : help_desk_area 추가 
 
                     mall_txt:'연락처',
                     MallData: [
@@ -431,30 +403,28 @@ export default {
                             intro: [
                                 {title:`인사동 랜드마크`,desc:`인사동 쌈지길 맞은편에 위치한 복합문화상업시설로 2019년 10월 그랜드 오픈 후 인사동의 랜드마크로 자리매김함`},
                                 {title:`상시밀집 지역`,desc:`직장인/외국인/가족나들이/관광객 등이 상시 밀집하며, 인사동-익선동으로 이어지는 우수한 도보 접근성 및 신비로운 건물 가시성`},
-                                {title:`고객 경험에 특화된 MD 구성`,desc:`갤러리, 카페, 식음, 소품 등 다양한 매장이 거리를 형성하고, 전통 문화 지역 특성을 준수하여 고객 경험에 특화된 MD 구성`}, /*26.06.29 edit 정다희 : title 오타 수정 */
+                                {title:`고객 경험에 특화된 MD 구성`,desc:`갤러리, 카페, 식음, 소품 등 다양한 매장이 거리를 형성하고, 전통 문화 지역 특성을 준수하여 고객 경험에 특화된 MD 구성`}, 
                                 {title:`차별화된 시설`,desc:`상권 내 차별화된 시설(나인트리 호텔 숙박 연계 및 주차 공간 제공) 등 국내외 방문객의 장시간 체류 가능 (호캉스+몰캉스)`}
                             ], 
-                            mainImg: mallVisualList[0].mainImg, mainImgMo: mallVisualList[0].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 안녕인사동 gsrbr1101_01 */
+                            mainImg: mallVisualList[0].mainImg, mainImgMo: mallVisualList[0].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.1734625641543!2d126.98088067587412!3d37.574532872036556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3ef4127fbcd%3A0xdff366a8dbc227d6!2z7JWI64WV7J247IKs64-Z!5e0!3m2!1sko!2skr!4v1775627958896!5m2!1sko!2skr`,
-                            mapTitle: "안녕인사동 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : 웹접근성 iframe title */
+                            mapTitle: "안녕인사동 위치 지도 영역(퍼블용 이미지)",
                             contact: { phone: `02-6954-2991`, email1: `anyounginsadong@gsretail.com`, instatxt:`anyounginsadong`, blog:``, insta: `https://www.instagram.com/anyounginsadong/`, homepage: `` },
                             type:`card_type`
                         },
                         { 
                             홈페이지:'홈페이지',
                             name: `구로 지밸리몰`, contentTitle: `구로 지밸리 비즈플라자 지밸리몰`,
-                            // 26.06.29 edit 정다희: intro - title 내용수정, desc 추가 
                             intro: [
                                 {title:`구로디지털단지 최대 규모의<br/>복합 라이프스타일몰`, desc:"업무·의료·뷰티·식음·휴식까지 한곳에서 누리는 생활 복합 공간"},
                                 {title:`다양한 전문 의료시설이 모인<br/>메디컬 특화 공간`, desc:"산부인과·피부과·안과·한의원·마취통증의학과 등 일상 가까이에서 누리는 건강 케어"},
                                 {title:`뷰티·운동·교육이 어우러진<br />라이프스타일 공간`, desc:"네일샵·헬스장·PT샵·발레학원 등 취향과 자기관리를 위한 다양한 선택"},
                                 {title:`카페와 식당가가 함께하는<br />편안한 만남과 휴식 공간`, desc:"커피숍과 다양한 식음 매장으로 일상 속 여유와 즐거움을 더하는 공간"},
                             ], 
-                            // //26.06.29 edit 정다희: intro - title 내용수정, desc 추가 
 
-                            mainImg: mallVisualList[1].mainImg, mainImgMo: mallVisualList[1].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 구로 지밸리몰 gsrbr1101_02 */
+                            mainImg: mallVisualList[1].mainImg, mainImgMo: mallVisualList[1].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.9672616045955!2d126.89372737714335!3d37.485098928791544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e24b5094a57%3A0x548819319c910b57!2z6rWs66Gc7KeA67C466as66qw!5e0!3m2!1sko!2skr!4v1775628029310!5m2!1sko!2skr`,
-                            mapTitle: "구로 지밸리몰 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : 웹접근성 iframe title */
+                            mapTitle: "구로 지밸리몰 위치 지도 영역(퍼블용 이미지)",
                             contact: { phone: `02-2006-3199`, email1: `sigar11@gsretail.com`, snsLabel: `SNS(인스타그램)`, instatxt:`g_valley`, blog:``, insta: `https://www.instagram.com/g_valley/`, homepage: `` },
                             type:`card_type`
                         },
@@ -467,22 +437,22 @@ export default {
                                 파미어스몰은 연면적 약 7만 7천평 규모의 복합시설로 315실의 '나인트리 호텔', 785세대의 '오피스텔', 5개기업의 오피스로 사용되고,<br/> 약 8,653평의 저층부에는 극장, 메디컬, 키즈, 쇼핑, 카페, 레스토랑 등 지역 주민들의 풍요로운 하루를 완성할 수 있는 다양한 상업 및 문화시설이 자리잡았습니다.
                                 '`,
                             ], 
-                            mainImg: mallVisualList[2].mainImg, mainImgMo: mallVisualList[2].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 판교 파미어스몰 gsrbr1101_03 */
+                            mainImg: mallVisualList[2].mainImg, mainImgMo: mallVisualList[2].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.017687225739!2d127.09543847714181!3d37.41305683291176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7d57f7c5fdb%3A0x3205f726fd596acf!2z7YyM66-47Ja07Iqk66qw!5e0!3m2!1sko!2skr!4v1775628062277!5m2!1sko!2skr`,
-                            mapTitle: "판교 파미어스몰 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : 웹접근성 iframe title */ 
-                            contact: { phone1: `031-759-0429`, email1: `jhpyo@gsretail.com`, email2: `pameus@gsretail.com`, snsLabel: `SNS(인스타그램)`, instatxt:`pameusmall`, blog:``, insta: `https://www.instagram.com/pameusmall/`, homepage: `http://www.pameusmall.com/pameus/main/main.php` } /* 26.06.29 del 정다희 : phone 삭제 */ 
+                            mapTitle: "판교 파미어스몰 위치 지도 영역(퍼블용 이미지)",
+                            contact: { phone1: `031-759-0429`, email1: `jhpyo@gsretail.com`, email2: `pameus@gsretail.com`, snsLabel: `SNS(인스타그램)`, instatxt:`pameusmall`, blog:``, insta: `https://www.instagram.com/pameusmall/`, homepage: `http://www.pameusmall.com/pameus/main/main.php` } 
                         },
                         { 
                             홈페이지:'홈페이지',
                             name: `동부산 미식일상`, contentTitle: `동부산 미식일상`,
                             intro: [
-                                `<b>미식일상은 오시리아 관광단지 중심부에 위치한 약 3,000평 규모의 복합문화시설로,<br />2021년 6월 오픈 이후 F&B와 다채로운 체험 콘텐츠가 결합된 독보적인 '문화복합시설'로의 재도약을 준비중입니다.</b>`, /*26.06.29 edit 정다희 : 텍스트 수정 */ 
-                                `오시리아 관광단지는 연간 약 4천만명이 방문하는 지역으로 일회성 방문지가 아닌 높은 재방문율과 지속적인 소비력을 갖춘 '안정적인 배후 수요의 상권' 입니다.<br />특히, 미식일상은 롯데아울렛/롯데월드/스카이라인루지/바운스유니버스의 중심부에 위치하여 주변시설을 연결하는 집객력과 확장성을 보유하고 있는 시설입니다.` /*26.06.29 edit 정다희 : 텍스트 수정 */ 
+                                `<b>미식일상은 오시리아 관광단지 중심부에 위치한 약 3,000평 규모의 복합문화시설로,<br />2021년 6월 오픈 이후 F&B와 다채로운 체험 콘텐츠가 결합된 독보적인 '문화복합시설'로의 재도약을 준비중입니다.</b>`, 
+                                `오시리아 관광단지는 연간 약 4천만명이 방문하는 지역으로 일회성 방문지가 아닌 높은 재방문율과 지속적인 소비력을 갖춘 '안정적인 배후 수요의 상권' 입니다.<br />특히, 미식일상은 롯데아울렛/롯데월드/스카이라인루지/바운스유니버스의 중심부에 위치하여 주변시설을 연결하는 집객력과 확장성을 보유하고 있는 시설입니다.` 
                             ], 
-                            mainImg: mallVisualList[3].mainImg, mainImgMo: mallVisualList[3].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 동부산 미식일상 gsrbr1101_04 */
+                            mainImg: mallVisualList[3].mainImg, mainImgMo: mallVisualList[3].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.5041907160903!2d129.2118041770898!3d35.19390825658788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35688d0870d1aba7%3A0x236d755155fb1b70!2z66-47Iud7J287IOBIO2RuOuTnO2ZgA!5e0!3m2!1sko!2skr!4v1775628088485!5m2!1sko!2skr`,
-                            mapTitle: "동부산 미식일상 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : 웹접근성 iframe title */
-                            contact: { phone: `051-722-8155`, email1: `wlssoddl@gsretail.com`, email2: `kjk5774@gsretail.com`,email3: `foodhallbusan@gsretail.com`, snsLabel: `SNS(인스타그램)`, instatxt:`busan_foodhall`, blog:`https://blog.naver.com/busanfoodhall`, insta: `https://www.instagram.com/busan_foodhall/`, homepage: `https://blog.naver.com/busanfoodhall` } /*26.06.29 add 정다희 : email3 추가*/ 
+                            mapTitle: "동부산 미식일상 위치 지도 영역(퍼블용 이미지)",
+                            contact: { phone: `051-722-8155`, email1: `wlssoddl@gsretail.com`, email2: `kjk5774@gsretail.com`,email3: `foodhallbusan@gsretail.com`, snsLabel: `SNS(인스타그램)`, instatxt:`busan_foodhall`, blog:`https://blog.naver.com/busanfoodhall`, insta: `https://www.instagram.com/busan_foodhall/`, homepage: `https://blog.naver.com/busanfoodhall` }
                         }
                     ],
                     backLabel : '목록으로 돌아가기'
@@ -556,12 +526,11 @@ export default {
                     lease_subtitle_desc:{
                         principles: [
                             { subTitle: `- Security deposit / Fixed monthly rent`},
-                            { subTitle: '- Security deposit / Variable monthly rent (commission-based)' } /* 26.06.29 edit 정다희 : subtxt 삭제 */
+                            { subTitle: '- Security deposit / Variable monthly rent (commission-based)' }
                         ],
                     },
                     fee_tip_title: `What is the Commission-Based Lease?`, 
                     fee_tip_desc_1: `A method of paying the landlord rent as a set percentage of monthly net sales. e.g., monthly net sales x commission rate (VAT excluded)`/* 260604 번역 */,
-                    // 26.06.29 add 정다희 : help_desk_area 추가
                     HelpDeskTitle: "GS25, GS THE FRESH Franchise Inquiries",
                     HelpDeskDesc: "For GS25 and GS THE FRESH franchise inquiries, please use the Consultation and Application menu in the Franchise Guide section.",
                     HelpDeskItems: [
@@ -569,7 +538,6 @@ export default {
                         { brand: "GS THE FRESH (GS Supermarket)", tel: "1833-9779", note: "GS THE FRESH Franchise Consultation", link: "/gsrst01010101" }
                     ],
                     BtnGoDetail: "Go",
-                    // //26.06.29 add 정다희 : help_desk_area 추가
                     mall_txt:'Contact',
                     MallData: [
                         { 
@@ -581,26 +549,24 @@ export default {
                                 {title:`MD lineup specialized for the customer experience`/* 260604 번역 */,desc:`03. A diverse mix of galleries, cafes, dining, and specialty stores creates a vibrant streetscape, with tenant mix curated to reflect the area's traditional cultural character and enhance customer experience.`},
                                 {title:`Differentiated facilities`/* 260604 번역 */,desc:`04. Distinctive facilities including a Nine Tree Hotel stay package and parking, enabling extended visits by domestic and international guests (staycation + mallcation)`}
                             ], 
-                            mainImg: mallVisualList[0].mainImg, mainImgMo: mallVisualList[0].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 안녕인사동 gsrbr1101_01 */
+                            mainImg: mallVisualList[0].mainImg, mainImgMo: mallVisualList[0].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.1734625641543!2d126.98088067587412!3d37.574532872036556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3ef4127fbcd%3A0xdff366a8dbc227d6!2z7JWI64WV7J247IKs64-Z!5e0!3m2!1sko!2skr!4v1775627958896!5m2!1sko!2skr`,
-                            mapTitle: "Anyoung Insadong location map area (publishing image)",/* 260604 번역, 26.06.17 edit 정다희 : 웹접근성 iframe title */
+                            mapTitle: "Anyoung Insadong location map area (publishing image)",/* 260604 번역 */
                             contact: { phone: `02-6954-2991`, email1: `anyounginsadong@gsretail.com`, instatxt:`anyounginsadong`, blog:``, insta: `#`, homepage: `` },
                             type:`card_type`
                         },
                         { 
                             홈페이지:'Homepage',
                             name: `Guro G-Valley Mall`, contentTitle: `Guro G-Valley Biz Plaza — G-Valley Mall`,
-                            // 26.06.29 edit 정다희: intro title 내용수정, desc 추가
                             intro: [
                                 {title:`The largest mixed-use lifestyle mall<br/>in Guro Digital Complex`, desc:"A comprehensive living complex where work, medical care, beauty, dining, and relaxation come together in one place"},
                                 {title:`A medical-specialized space<br/>with diverse professional healthcare facilities`, desc:"Everyday health care close at hand — obstetrics & gynecology, dermatology, ophthalmology, Korean medicine, pain medicine, and more"},
                                 {title:`A lifestyle space where beauty,<br />fitness, and education come together`, desc:"A wide range of choices for your taste and self-care — nail salons, gyms, PT studios, ballet academies, and more"},
                                 {title:`A comfortable space for gatherings<br />and relaxation with cafes and dining`, desc:"Coffee shops and various dining options that add ease and enjoyment to everyday life"},
                             ],
-                            // //26.06.29 edit 정다희: intro title 내용수정, desc 추가
-                            mainImg: mallVisualList[1].mainImg, mainImgMo: mallVisualList[1].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 구로 지밸리몰 gsrbr1101_02 */
+                            mainImg: mallVisualList[1].mainImg, mainImgMo: mallVisualList[1].mainImgMo,
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.9672616045955!2d126.89372737714335!3d37.485098928791544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e24b5094a57%3A0x548819319c910b57!2z6rWs66Gc7KeA67C466as66qw!5e0!3m2!1sko!2skr!4v1775628029310!5m2!1sko!2skr`,
-                            mapTitle: "Guro G-Valley Mall location map area (publishing image)",/* 260604 번역, 26.06.17 edit 정다희 : 웹접근성 iframe title */
+                            mapTitle: "Guro G-Valley Mall location map area (publishing image)",
                             contact: { phone: `02-2006-3199`, email1: `sigar11@gsretail.com`, snsLabel: `SNS`, instatxt:`g_valley`, blog:``, insta: `https://www.instagram.com/g_valley/ `, homepage: `` },
                             type:`card_type`
                         },
@@ -611,22 +577,22 @@ export default {
                                 `With your children, with friends, with your partner — <br />we invite you to Pameus Mall in Pangyo, where you can enjoy it your own way or all together.`,
                                 `South Korea's premier self-sufficient new town of Pangyo is home to 'PAMEUS MALL' — a mixed-use cultural and commercial space where diverse lifestyles harmoniously converge. PAMEUS MALL is part of a complex spanning approximately 254,545㎡ of total floor area, encompassing a 315-room Nine Tree Hotel, 785 serviced apartments, and offices for five companies. The lower floors, spanning approximately 28,596㎡, house a rich variety of commercial and cultural facilities including a cinema, medical center, kids' zone, shopping, cafes, and restaurants — offering everything local residents need for a fulfilling day.`,
                             ], 
-                            mainImg: mallVisualList[2].mainImg, mainImgMo: mallVisualList[2].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 판교 파미어스몰 gsrbr1101_03 */
+                            mainImg: mallVisualList[2].mainImg, mainImgMo: mallVisualList[2].mainImgMo,
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.017687225739!2d127.09543847714181!3d37.41305683291176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7d57f7c5fdb%3A0x3205f726fd596acf!2z7YyM66-47Ja07Iqk66qw!5e0!3m2!1sko!2skr!4v1775628062277!5m2!1sko!2skr`,
-                            mapTitle: "Pangyo Pameus Mall location map area (publishing image)",/* 260604 번역, 26.06.17 edit 정다희 : 웹접근성 iframe title */
-                            contact: { phone1: `031-759-0429`, email1: `jhpyo@gsretail.com`, email2: `pameus@gsretail.com`, snsLabel: `SNS`, instatxt:`pameusmall`, blog:``, insta: `https://www.instagram.com/pameusmall/`, homepage: `http://www.pameusmall.com/pameus/main/main.php` } /*26.06.29 del 정다희 : phone 삭제*/
+                            mapTitle: "Pangyo Pameus Mall location map area (publishing image)",
+                            contact: { phone1: `031-759-0429`, email1: `jhpyo@gsretail.com`, email2: `pameus@gsretail.com`, snsLabel: `SNS`, instatxt:`pameusmall`, blog:``, insta: `https://www.instagram.com/pameusmall/`, homepage: `http://www.pameusmall.com/pameus/main/main.php` } 
                         },
                         { 
                             홈페이지:'Homepage',
                             name: `East Busan Misik Ilsang`, contentTitle: `East Busan Misik Ilsang`,
                             intro: [
-                                `<b>Misik Ilsang is a cultural complex of approximately 3,000 pyeong located at the center of the Osiria Tourism Complex,<br />and since opening in June 2021, it has been preparing to take a new leap forward as an unrivaled 'cultural complex' that combines F&B with diverse experiential content.</b>`/* 260604 번역 */, /*26.06.29 edit 정다희 : 오픈 이후 텍스트 수정*/
-                                `Osiria Tourism Complex is an area visited by approximately 40 million people annually — not a one-time destination, but a stable commercial district with a captive demand base, characterized by high return visit rates and sustained spending power.<br />In particular, Misik Ilsang is located at the heart of Lotte Outlet / Lotte World / Skyline Luge / Bounce Universe, making it a facility with strong customer-drawing power and scalability that connects the surrounding attractions.`/* 260604 번역 */ /* 26.06.29 edit 정다희 : 텍스트 수정 */
-                            ], 
-                            mainImg: mallVisualList[3].mainImg, mainImgMo: mallVisualList[3].mainImgMo, /* 26.06.30 add 정다희 : visual_img — 동부산 미식일상 gsrbr1101_04 */
+                                `<b>Misik Ilsang is a cultural complex of approximately 3,000 pyeong located at the center of the Osiria Tourism Complex,<br />and since opening in June 2021, it has been preparing to take a new leap forward as an unrivaled 'cultural complex' that combines F&B with diverse experiential content.</b>`/* 260604 번역 */
+                                `Osiria Tourism Complex is an area visited by approximately 40 million people annually — not a one-time destination, but a stable commercial district with a captive demand base, characterized by high return visit rates and sustained spending power.<br />In particular, Misik Ilsang is located at the heart of Lotte Outlet / Lotte World / Skyline Luge / Bounce Universe, making it a facility with strong customer-drawing power and scalability that connects the surrounding attractions.`/* 260604 번역 */
+                            ],
+                            mainImg: mallVisualList[3].mainImg, mainImgMo: mallVisualList[3].mainImgMo, 
                             mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.5041907160903!2d129.2118041770898!3d35.19390825658788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35688d0870d1aba7%3A0x236d755155fb1b70!2z66-47Iud7J287IOBIO2RuOuTnO2ZgA!5e0!3m2!1sko!2skr!4v1775628088485!5m2!1sko!2skr`,
-                            mapTitle: "East Busan Misik Ilsang location map area (publishing image)",/* 260604 번역, 26.06.17 edit 정다희 : 웹접근성 iframe title */
-                            contact: { phone: `051-722-8155`, email1: `wlssoddl@gsretail.com`, email2: `kjk5774@gsretail.com`,email3: `foodhallbusan@gsretail.com`, snsLabel: `SNS`, instatxt:`busan_foodhall`, blog:`https://blog.naver.com/busanfoodhall`, insta: `https://www.instagram.com/busan_foodhall/`, homepage: `https://blog.naver.com/busanfoodhall` } /*26.06.29 add 정다희 : email3 추가*/ 
+                            mapTitle: "East Busan Misik Ilsang location map area (publishing image)",
+                            contact: { phone: `051-722-8155`, email1: `wlssoddl@gsretail.com`, email2: `kjk5774@gsretail.com`,email3: `foodhallbusan@gsretail.com`, snsLabel: `SNS`, instatxt:`busan_foodhall`, blog:`https://blog.naver.com/busanfoodhall`, insta: `https://www.instagram.com/busan_foodhall/`, homepage: `https://blog.naver.com/busanfoodhall` } 
                         }
                     ],
                     backLabel : 'Back to Brand List'
@@ -688,7 +654,6 @@ export default {
 .visual_section { width:100%; position: relative; overflow: hidden; }
 .visual_content {width: 100%; position: absolute; top: 50%; left: 0; transform: translateY(-50%); z-index: 2; }
 .text_box span {margin-bottom:10px; color:#fff; font-size:72px; font-weight:700; display: block;  }
-/* cont_area 삭제 26.06.08 정다희  */
 
 .sub_tabs { margin-top: 24px; }
 .policy_wrap * {word-break: break-word;}
@@ -730,8 +695,7 @@ export default {
 .mall_content .contact_left strong {margin-bottom:24px; }
 .mall_content .contact_left .info_item {width:100%; padding-top:16px; padding-bottom:16px; border-bottom:1px solid #E5E5E9; position:relative; display: flex; flex-direction:column; align-items:flex-start; gap:4px;}
 
-.btn_sns.ico_insta {width:24px; height:24px; background:url('@/assets/images/common/icon_set_24.png') -832px -15px no-repeat; position:absolute; top:50%; right:0; display:inline-flex; transform:translateY(-50%);}/* 26.07.06 Edit 이종환 원복, 26.06.10 Del 이종환*/
-.mall_content .contact_left .info_item span {color:#161616; font-size:18px; font-weight:700;}
+.btn_sns.ico_insta {width:24px; height:24px; background:url('@/assets/images/common/icon_set_24.png') -832px -15px no-repeat; position:absolute; top:50%; right:0; display:inline-flex; transform:translateY(-50%);}
 .mall_content .contact_left .info_item .val {color:#67676F; font-size:18px; font-weight:400; line-height:1.4; display:flex; flex-direction:column; gap:4px;}
 .mall_content .contact_left .info_item a {color:#67676F; font-size:18px; font-weight:400; line-height:1.4;}
 .info_item { display: flex; align-items: center; gap: 8px; }
@@ -753,13 +717,11 @@ export default {
 .fee_tip_box strong::before {content:''; width:24px; height:24px; background:url('@/assets/images/common/icon_set_24.png') -496px -56px no-repeat; display:inline-flex; position:absolute; left:0; top:50%; transform:translateY(-50%);}
 .fee_tip_box p {color:#67676F; font-size:16px; font-weight:400; line-height:1.5;}
 .lease_section .principles_card_container .principle_card_item {width:340px; flex:none;}
-/* 26.06.29 add 정다희 : help_desk_area 추가 */
 .help_desk_area { width: 100%; }
 .help_desk_area ul { margin-top:40px; padding: 0; display: flex; gap:20px; list-style: none; }
 .help_desk_area ul li {width:calc(100% / 2 - 10px ); padding: 32px; background-color: #f8f8f8; border-radius: 10px; position: relative; }
 .text-wrapper { font-size: 2.8rem; font-weight: 700; color: #161616; }
 .div_desc { font-size: 2rem; line-height: 1.4; color: #161616; }
-/* li::before를 이용한 브랜드 로고 처리 */
 .help_desk_area ul li::before { content: ''; width: 160px; height: 160px; margin-right:40px; background-repeat: no-repeat; background-position: center; background-size: contain; display:inline-block; flex-shrink: 0; }
 .help_desk_area ul li:nth-child(1)::before { background-image: url('@/assets/images/dummy/gsrst01_gs25.png'); }
 .help_desk_area ul li:nth-child(2)::before { background-image: url('@/assets/images/dummy/gsrst01_fresh.png'); }
@@ -802,11 +764,9 @@ export default {
     .fee_tip_box {flex-direction: column; align-items: flex-start; gap: 16px; }
     .val_txt { font-size: 16px; word-break: keep-all; }
     .btn_list_back span { height: 50px; justify-content: center; }
-    /* .principles_swiper_wrapper { flex-direction: column; gap: 16px; } */
     .principle_card_item {height:auto; padding: 32px; display:block; flex:none;}
     .principles_swiper_wrapper, .mall-type-1 .principles_swiper_wrapper {display: grid; grid-template-columns: repeat(2, 1fr);}
     
-    /* 26.06.29 add 정다희 : help_desk_area */
     .help_desk_area ul { flex-direction: column; grid-template-columns: 1fr; }
     .help_desk_area ul li { width:100%; padding:20px; flex-direction:column;}
     .help_desk_area .info .brand { font-size: 1.4rem;}
@@ -847,7 +807,6 @@ export default {
     .lease_section{margin-top:80px;}
     .lease_section .principles_card_container .principle_card_item {width:100%;}
     .contact_left .info_item:first-of-type{border-top:1px solid #E5E5E9;}
-    /* .mall-type-1 .principles_swiper_wrapper {display:block;} */
     .policy_wrap{margin-top:8px;}
     .policy_wrap table th{padding:22px 20px;font-size: 1.6rem;line-height: 1.24;letter-spacing: 0%;}
     .policy_wrap table td{padding:20px;font-size: 1.6rem;line-height: 1.5;letter-spacing: -0.01em;}
@@ -855,7 +814,6 @@ export default {
     .fee_tip_box{margin-top:24px;}
     .fee_tip_box strong{font-size: 1.6rem;line-height: 1.24;letter-spacing: 0%;}
     .fee_tip_box p{font-size: 1.4rem;line-height: 1.4;letter-spacing: -0.01em;}
-    /* 26.06.29 add 정다희 : help_desk_area */
     .help_desk_area ul {margin-top:24px;}
     .help_desk_area ul li { width:100%; padding:20px; display:flex; flex-direction:row; gap:20px; align-items:center;}
     .help_desk_area ul li::before {width:100px; margin-right:0;}

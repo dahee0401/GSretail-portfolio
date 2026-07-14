@@ -20,7 +20,6 @@
                     <div>
                         <p>{{ t.SubContent_1 }}</p>
                         <p>{{ t.SubContent_2 }}</p>
-                        <!-- 26.06.08 add 정다희 : 홈페이지 삭제  -->
                     </div>
                     <ul>
                         <li class="bi_section">
@@ -75,11 +74,9 @@
                 </div>
             </div>
 
-            <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             <div class="bottom_btns cont_inner">
                 <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
             </div>
-            <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
 
         </section>
     </div>
@@ -96,7 +93,7 @@ export default {
             isMobile: false,
             langData: {
                 ko: {
-                    Visual: { // 대문자 유지
+                    Visual: { 
                         img: require("@/assets/images/dummy/gsrbr08.png"),
                         imgMo: require("@/assets/images/dummy/gsrbr08_mo.png"),
                         alt: "고객의 일상을 더욱 특별하고 재미있게 유어스",
@@ -105,7 +102,6 @@ export default {
                         subContent_3: "유어스",
                     },
                     HopageLink: `https://www.gsrbr.com/`,
-                    // 26.06.08 add 정다희 : 홈페이지 삭제 
                     SubTitle: `브랜드 소개`,
                     SubContent_1: `유어스는 우수한 품질의 상품을 기반으로 일상 속 작은 즐거움과 새로운 라이프스타일을`,
                     SubContent_2: `제안하는 GS리테일만의 라이프스타일 PB 브랜드입니다.`,
@@ -147,7 +143,7 @@ export default {
                     ListBack:`목록으로 돌아가기`
                 },
                 en: {
-                    Visual: { // 대문자 유지
+                    Visual: {
                         img: require("@/assets/images/dummy/gsrbr08.png"),
                         imgMo: require("@/assets/images/dummy/gsrbr08_mo.png"),
                         alt: "YOUUS, making customers' everyday lives more special and fun"/* 260604 번역 */,
@@ -156,7 +152,6 @@ export default {
                         subContent_3: "YOUUS",
                     },
                     HopageLink: `https://www.gsrbr.com/`,
-                    // 26.06.08 add 정다희 : 홈페이지 삭제 
                     SubTitle: `About the Brand`,
                     SubContent_1: `Based on high-quality products, YOUUS offers small everyday joys and a new lifestyle`/* 260604 번역 */,
                     SubContent_2: `It is GS Retail's own lifestyle private brand.`/* 260604 번역 */,
@@ -202,7 +197,6 @@ export default {
     },
     computed: {
         t() {
-            // 안전하게 데이터 반환
             return this.langData[this.lang] || this.langData.ko;
         }
     },

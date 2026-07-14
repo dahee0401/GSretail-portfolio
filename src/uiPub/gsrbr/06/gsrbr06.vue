@@ -153,7 +153,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="btnSection ac"><!-- 26.05.12 Edit 이종환 : class 수정 -->
+                        <div class="btnSection ac">
                             <Buttons 
                                 btn-class="btn_big primary"
                                 @click="openModal" 
@@ -164,7 +164,6 @@
                         </div>
                     </div>
 
-                    <!-- 26.05.12 Edit 이종환 : 공통화 작업으로 소스 수정 -->
                     <div class="notice_section mt100">
                         <div class="policy_wrap">
                             <strong class="tit">{{ t.Notice.title }}</strong>
@@ -199,14 +198,10 @@
                             >{{ t.CommonLabels.nonMemberBtn }}</Buttons>
                         </div>
                     </div>
-                    <!-- //26.05.12 Edit 이종환 : 공통화 작업으로 소스 수정 -->
 
-                    <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
                     <div class="bottom_btns">
                         <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
                     </div>
-                    <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
-
                 </div>
             </div>
         </section>
@@ -525,19 +520,6 @@ h4 {color:#161616; font-size:32px; font-weight:700;}
 :deep(.bullet_01) li span {color:#67676F; font-size:18px;}
 /* List 스타일 */
 
-
-/* Buttons */
-/* ui.css로 이동
-.notice_section { padding: 32px; background-color: #f8f8f8; border-radius: 12px; }
-.notice_section .bullet_01 {margin-top:24px;}
-.notice_section .bullet_01 li {color:#67676F; font-size:18px;}
-.notice_section .tit {padding-left:34px; color: #161616; font-size: 24px; font-weight:700; position:relative; }
-h5::before {content:''; width:24px; height:24px; background:red; display:inline-flex; position:absolute; top:50%; left:0; transform: translateY(-50%);}
-h5 + dl {margin-top:24px;}
-.brand_name {color:#161616; font-size:20px !important; font-weight:700;}
-.notice_section .policy_wrap {padding-bottom:40px; border-bottom:1px solid #D7D7DF;}
-*/
-
 /* Bottom Buttons */
 .btn_mid.border {display:none;}
 .bottom_btns + .btn_big.border {display:none;}
@@ -563,7 +545,6 @@ h5 + dl {margin-top:24px;}
     h5 {font-size:20px;}
     .group_desc, .brand_name {font-size:16px;}
     .notice_section .bullet_01 {margin-top:16px;}
-    /* .notice_section {padding:32px;} */
     .note_box .note_title {font-size:18px;}
     .note_box .note_desc {font-size:16px; line-height:1.5;}
     .note_box .note_img {max-width:100%;}

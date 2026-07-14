@@ -194,15 +194,6 @@ const selectedVersion = ref("20260422");
 
 const t = computed(() => langData[props.lang] || langData.ko);
 
-// function onQuickBtnClick(event, btn) {
-//     if (btn.popId) {
-//         modal.open(btn.popId, btn.type || "default", { dataset: { cont: btn.cont } });
-//         return;
-//     }
-//     if (btn.link && btn.link !== "#none") {
-//         window.open(btn.link, "_blank");
-//     }
-// }
 
 function onQuickBtnClick(event, btn) {
     const el = event.currentTarget;

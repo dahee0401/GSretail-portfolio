@@ -2,14 +2,12 @@
     <div class="main-container">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.10 Del 이종환 <p class="visual-sub">{{ t.MainsubTitle }}</p> -->
         </div>
 
         <section class="section-investor">
             <div class="cont_inner">
                 <Tabs v-model="CTabIdx" :tab-items="t.Tabs1" tab-class="type_01" :tab-slide="true" @change="onTabChange1" />
                 
-                <!--  -->
                 <div class="tab_content_wrap">
                     <section class="tab_content gsrin0201" v-if="CTabIdx === 0" :aria-label="t.Tabs1[0].item">
                         <div class="performance_charts">
@@ -21,7 +19,7 @@
                                     </div>
                                     <div class="chart_img">
                                         <picture>
-                                            <source :srcset="require(`@/assets/images/dummy/${chart.imgName}_mo.png`)" media="(max-width: 768px)" /><!-- 26.06.18 edit 정다희 : 접근성오류 source 닫는태그 수정 -->
+                                            <source :srcset="require(`@/assets/images/dummy/${chart.imgName}_mo.png`)" media="(max-width: 768px)" />
                                             <img :src="require(`@/assets/images/dummy/${chart.imgName}.png`)" :alt="chart.title">
                                         </picture>
                                     </div>
@@ -159,7 +157,6 @@
                         </div>
                     </section>
 
-                    <!-- gsrin0202: 배당 정보 -->
                     <section class="tab_content gsrin0202" v-if="CTabIdx === 1" :aria-label="t.Tabs1[1].item">
                         <p :class="['title-sub-text', { 'is_dividend': CTabIdx === 1 }]" v-html="t.MainDesc[CTabIdx]"></p>
                         <p class="policy_desc" v-html="t.DividendPolicyDesc"></p>
@@ -215,7 +212,6 @@
                         </div>
                     </section>
 
-                    <!-- gsrin0203: 실적자료 등 -->
                     <section class="tab_content gsrin0203" v-if="CTabIdx === 2" :aria-label="t.Tabs1[2].item">
 
                         <div class="search_filter_area">
@@ -413,7 +409,6 @@ export default {
                     TableTitle2: "Summary Consolidated Income Statement"/* 260604 번역 */,
                     TableTitle3: "These are the transparent business results of GS Retail."/* 260604 번역 */,
                     
-                    // 추출된 텍스트 라벨들
                     Labels: {
                         Common: {
                             Category: "Category"
@@ -609,8 +604,8 @@ tr.bold td, tr.bold th { font-weight: 700 !important; }
     .gsrin0203 .policy_wrap thead {display:none;}
     .policy_desc{font-size: 1.8rem;line-height: 1.4;}
     .table_section {margin-top:80px;}
-    .cont_inner > .tab_wrap.tabSlide {margin-top: 84px;}  /* 26.06.26 add 이소라 */
-    .tab_content_wrap{padding-top:36px;} /* 26.06.26 add 이소라 */
+    .cont_inner > .tab_wrap.tabSlide {margin-top: 84px;}  
+    .tab_content_wrap{padding-top:36px;} 
     .search_filter_area + .table_container .base_table{margin:0;} 
 }
 </style>

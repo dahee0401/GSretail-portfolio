@@ -36,12 +36,9 @@
                         <div class="btn_group">
                             <div class="links">
                                 <button type="button" class="btn_link ico_location" @click="openModal" data-popid="gsrbr0204" data-type="lg" data-cont="gsrbr0204">{{ t.Buttons.proposal }}</button>
-                                <button type="button" class="btn_link btn_store_find" @click="openModal" data-popid="pop_store_find" data-type="lg" data-cont="gsrbr0603">{{ t.Buttons.findStore }}</button><!-- 26.05.11 Edit 이종환 : class --><!-- 26.06.08 Edit 이종환 : 호출팝업명 수정 -->
-
-                                <!-- 26.05.11 Edit 이종환 : sns 버튼 통일 -->
-                                <a href="https://www.instagram.com/gsthefresh_official/" class="btn_sns btn_sns_insta" :aria-label="t.Sns.insta" target="_blank"></a> <!-- 26.06.22 add 정다희 : 인스타그램 링크 수정 -->
+                                <button type="button" class="btn_link btn_store_find" @click="openModal" data-popid="pop_store_find" data-type="lg" data-cont="gsrbr0603">{{ t.Buttons.findStore }}</button>
+                                <a href="https://www.instagram.com/gsthefresh_official/" class="btn_sns btn_sns_insta" :aria-label="t.Sns.insta" target="_blank"></a> 
                                 <a href="https://www.youtube.com/gsthefresh" class="btn_sns btn_sns_yt" :aria-label="t.Sns.facebook" target="_blank"></a>
-                                <!-- //26.05.11 Edit 이종환 : sns 버튼 통일 -->
                             </div>
                         </div>
                     </div>
@@ -293,7 +290,7 @@
                     </div>
                 </div>
 
-                <DiffQrRow v-if="t.qr" :title="t.qr.title" :desc="t.qr.desc" /><!-- 26.07.07 add 이소라 -->
+                <DiffQrRow v-if="t.qr" :title="t.qr.title" :desc="t.qr.desc" />
                 <div class="bottom_btns">
                     <button type="button" class="btn_back" @click="handleBack">{{ t.Buttons.backToList }}</button>
                 </div>
@@ -323,7 +320,7 @@
 <script>
 import Tabs from "@/components/Tabs.vue";
 import modal from "@/assets/js/modal";
-import DiffQrRow from "@/components/DiffQrRow.vue"; /* 26.07.07 add 이소라 */
+import DiffQrRow from "@/components/DiffQrRow.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -333,7 +330,7 @@ import imgLogo from "@/assets/images/dummy/brand_fresh_logo.png";
 // GSAP 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
 
-let resizeTimer = null; // 26.06.02 Edit 정다희
+let resizeTimer = null; 
 let syncVisualClip = null;
 
 export default {
@@ -356,18 +353,18 @@ export default {
             currentCat: 0,
             currentTasteCat: 0,
             gsapCtx: null,
-            originScrollRaf: null, // 26.06.23 add 정다희 : origin_lnb 스크롤 스파이 requestAnimationFrame id
+            originScrollRaf: null,
             imgLogo,
             langData: {
                 ko: {
                     brand: {
                         visual: {
                             lines: [
-                                "신선한 행복을 채우다", /*텍스트 수정 26.06.15*/ 
+                                "신선한 행복을 채우다", 
                             ],
                             logoAlt:  "GS THE FRESH 메인 비주얼",
                         },
-                        about: [/* 2026.07.06 edit 이소라 */
+                        about: [
                             [
                                 '1974년 럭키수퍼체인(주)로 출범한 LG수퍼마켓은',
                                 "GS그룹의 출범에 따라 GS수퍼마켓으로 변경되고,",
@@ -375,19 +372,15 @@ export default {
                                 '"GS THE FRESH"로 새롭게 태어나게 되었습니다.',
                             ],
                             [
-                                '새롭게 태어난 GS THE FRESH는 Friendly, Fresh, Fun 가치와 함께', // 26.06.22 add 정다희 : 오타수정
+                                '새롭게 태어난 GS THE FRESH는 Friendly, Fresh, Fun 가치와 함께', 
                                 '고객의 생활에 늘 가까이 있는 점포로서 신선하고 다양한 상품을 제공함과',
                                 '동시에 더욱 친근한 서비스를 바탕으로 고객과 함께하는',
                                 '친근하고, 신속하며, 편리하고 즐거운 쇼핑문화를 지향합니다.'
                             ],
-                            /*[
-                                '새로운 이름으로 고객님과 다시 만나는 GS THE FRESH는', // 26.06.22 add 정다희 : 오타수정
-                                '신선한 행복을 주는 쇼핑문화의 장을 펼칠 것이며,',
-                                '고객님께 더 큰 만족을 드릴 것을 약속합니다.'
-                            ] */
+
                         ],
                     },
-                    ValueTitle:"가족과 함께하는 행복<br/>쇼핑 산지의 신선함을 그대로 고객님께 전해드립니다.", /*26.06.26 edit 정다희 : 텍스트 수정*/
+                    ValueTitle:"가족과 함께하는 행복<br/>쇼핑 산지의 신선함을 그대로 고객님께 전해드립니다.", 
                     Buttons: {  
                         proposal: "입지 제안",
                         findStore: "매장 찾기",
@@ -397,7 +390,7 @@ export default {
                         insta: "인스타그램",
                         facebook: "페이스북"
                     },
-                    AccordionList: [/* 2026.07.06 edit 이소라 */
+                    AccordionList: [
                         {
                             title: "신선, 맛, 서비스<br/> 대한민국 NO.1을 향한 약속",
                             desc: "전국의 우수 산지에서 가장 신선하고 맛있는 상품만을 선별하고, <br/>GS THE FRESH만의 엄격한 추가 검품 과정을 통해 최고의 상품 서비스를 제공하고 있습니다.<br/><br/>또한 고객 중심의 차별화된 서비스로 한국서비스품질지수(KS-SQI) 10년 연속 1위를 수상하는 등 고객을 위한 매장을 만들어가고 있습니다.", /**26.07.09 edit 정다희 : <br/> 제거 */
@@ -562,7 +555,7 @@ export default {
                             }
                         ]
                     },
-                    qr: { /* 26.07.07 add 이소라 */
+                    qr: { 
                         title: "우리동네GS 앱 다운로드",
                         desc: "우리동네GS 앱을 다운로드하고, GS25의 다양한 이벤트와 차별화 상품을 만나보세요.<br />QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.",
                     },
@@ -771,7 +764,7 @@ export default {
                             }
                         ]
                     },
-                    qr: { /* 26.07.07 add 이소라 */
+                    qr: {
                         title: "Download the Our Neighborhood GS app"/* 260604 번역 */,
                         desc: "Download the Our Neighborhood GS app and discover GS25's various events and exclusive products.<br />Scanning the QR code takes you to the app download page."/* 260604 번역 */,
                     },
@@ -785,7 +778,6 @@ export default {
         }
     },
     mounted() {
-        // 26.06.02 Edit 정다희
         window.addEventListener("resize", this._onResize);
         this.$nextTick(() => {
             setTimeout(() => {
@@ -799,7 +791,6 @@ export default {
         window.removeEventListener("resize", this._onResize);
         // 26.06.23 add 정다희 : origin_lnb 스크롤 스파이 리스너 해제
         this.teardownOriginSpy();
-        // 26.06.02 Edit 정다희
         syncVisualClip = null;
         if (this.gsapCtx) {
             this.gsapCtx.revert();
@@ -952,7 +943,6 @@ export default {
 
             if (!section || !bgWrap || !textPara || !logoWrap || !aboutSection) return;
 
-            // 26.06.02 Edit 정다희
             this.gsapCtx = gsap.context(() => {
                 const spans = textPara.querySelectorAll("span");
                 const PHASE1_PX = 400;
@@ -997,7 +987,7 @@ export default {
                     applyBgClip(visualSt.progress);
                 };
                 applyBgClip(visualSt.progress);
-                // 26.06.02 Edit 정다희
+           
                 gsap.set([...spans, logoWrap], { opacity: 0, y: 40 });
 
                 const textTl = gsap.timeline({ paused: true });
@@ -1046,7 +1036,7 @@ export default {
                 });
             }, this.$el);
         },
-        // 26.06.02 Edit 정다희
+      
         _onResize() {
             const syncClip = () => {
                 if (typeof syncVisualClip === "function") syncVisualClip();
@@ -1065,11 +1055,10 @@ export default {
 
 
 <style scoped>
-/* 1.넓이 2.외부여백 3.내부여백 4.폰트 5.배경 6.테두리 7.정렬 8.위치 9.블록 10.변형 */
+
 
 .gsrbr020101 { width: 100%; position: relative; display: block; overflow-x: clip; }
 
-/* sec_brand_visual */
 :deep(.p_br) { display: block }
 :deep(.m_br) { display: none }
 .sec_brand_visual { position: relative; height: calc(100vh + 800px); max-width: 100%; }
@@ -1113,9 +1102,7 @@ export default {
 .btn_group {padding:0; display: flex; align-items: center; gap: 10px; }
 .links { display: flex; align-items: center; gap: 16px; }
 
-/* common.css로 이동
-.btn_sns { width: 56px; height: 56px; background-color: #f8f8f8; border: 1px solid #e5e5e9; border-radius: 99px; display: flex; align-items: center; justify-content: center; }
-*/
+
 
 .brand_acc { margin: 0; padding: 0; background-color: #f8f8f8; border-radius: 12px; list-style: none; overflow: hidden; }
 .acc_item { border-bottom: 1px solid #e5e5e9; }
@@ -1139,7 +1126,7 @@ export default {
 .empty_cont { padding: 100px 0; text-align: center; color: #67676f; font-size: 2rem; background-color: #f8f8f8; border-radius: 12px; }
 
 /* 지자체 컨텐츠 디자인 */
-.production_bg { background-image: url('@/assets/images/sub/gsrbr02/gsrbr020101_6.png'); background-size: cover; }/* 26.06.08 Edit 이종환 : [확정] 경로 수정 */
+.production_bg { background-image: url('@/assets/images/sub/gsrbr02/gsrbr020101_6.png'); background-size: cover; }
 .partnership_bg { background-image: url('@/assets/images/dummy/gsrbr020101_5.png'); background-size: cover; }
 .sub_title { margin-bottom: 40px; color: #161616; font-size: 2.8rem; font-weight: 700; }
 .mou_grid { display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 40px; column-gap: 20px; }
@@ -1185,10 +1172,6 @@ export default {
 .item_thumb img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
 .item_name { width: 100%; margin-top: 16px; color: #67676f; font-size: 1.8rem; text-align: center; }
 
-/* common.css로 이동
-.btn_back { padding-left: 28px; color: #161616; font-size: 2rem; background: none; border: 0; cursor: pointer; position: relative; }
-.btn_back::before { width: 16px; height: 16px; background-color: red; content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
-*/
 
 .blind { width: 1px; height: 1px; clip: rect(0,0,0,0); overflow: hidden; position: absolute; }
 
@@ -1239,7 +1222,7 @@ export default {
 .tm-lnb-side { width: 200px; padding-right: 20px; position:sticky; top:100px;}
 .tm-lnb-item { height: 64px; display: flex; align-items: center; }
 .tm-lnb-item button { font-size: 2rem; font-weight: 700; color: #4C4C53; background: none; border: 0; cursor: pointer; text-align: left; width: 100%; }
-.tm-lnb-item.is-active button { color: #11935D; }/* 260625 edit 이소라 */
+.tm-lnb-item.is-active button { color: #11935D; }
 
 .tm-product-main { flex: 1; padding-top: 16px; }
 .tm-group-title { font-size: 24px; font-weight: 700; color: #161616; margin-bottom: 24px; }

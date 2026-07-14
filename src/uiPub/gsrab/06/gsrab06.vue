@@ -1,6 +1,6 @@
 <template>
     <div class="main-container">
-        <div class="title_wrap top_visual"><!-- 26.06.10 Edit 이종환 : top_visual 클래스 추가 -->
+        <div class="title_wrap top_visual">
             <h2 class="page_title">{{ t.MainTitle }}</h2>
         </div>
         <div class="cont_inner">
@@ -80,7 +80,7 @@ const langData = {
             { item: "2005 - 2003" },
             { item: "2002 - 2000" },
         ],
-        // 26.06.08 add 정다희 : 수상내역 하이라이트 
+
         awardHighlights: [
             { img: imgAward01, desc: "한국의경영대상<br />명예의전당 헌액" },
             { img: imgAward02, desc: "한국서비스대상 종합유통부문<br />최초 명예의 전당 헌정" },
@@ -561,7 +561,7 @@ img { width: 100%; height: auto; object-fit: cover; display: block; }
 .award_highlight_card { width: 274px; height: 200px; padding: 24px; background-color: #f8f8f8; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .award_highlight_card > figure { width: 100%; height: 60px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .award_highlight_card > figure > img { width: auto; max-width: 100%; height: auto; max-height: 60px; object-fit: contain; }
-.award_highlight_card > p { width: 100%; margin-top: 17.2px; color: #161616; font-size: 1.6rem; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; text-align: center; } /* 260624 edit 이소라 */
+.award_highlight_card > p { width: 100%; margin-top: 17.2px; color: #161616; font-size: 1.6rem; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; text-align: center; } 
 
 .sec_history { padding: 100px 0; display: grid; grid-template-columns: clamp(280px, 30.67vw, 460px) minmax(0, 1fr); gap: 32px; align-items: start; }
 .sec_history:last-child{padding-bottom:0;}
@@ -595,7 +595,7 @@ img { width: 100%; height: auto; object-fit: cover; display: block; }
     .title_wrap { display: none; }
     .sec_award_highlight { margin: 60px -20px 0; padding: 0 20px; }
     .award_highlight_scroll { width: calc(100% + 20px); padding-right: 20px; }
-    .award_highlight_card { height: 174px;} /* 260624 edit 이소라 */
+    .award_highlight_card { height: 174px;} 
     .sec_history { padding: 60px 0; grid-template-columns: minmax(0, 1fr); gap: 60px; }
     .history_intro > header { min-height: 0; }
     .history_intro > header > p { display: none; }

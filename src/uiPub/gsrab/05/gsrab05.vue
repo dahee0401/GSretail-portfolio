@@ -1,6 +1,5 @@
 <template>
     <div class="main-container">
-        <!-- 26.06.15 add 정다희 : top_visual 클래스 추가 -->
         <header class="title_wrap ac top_visual">
             <h2 class="page_title">{{ t.pageTitle }}</h2>
         </header>
@@ -25,7 +24,6 @@
                             <p><span class="bus_tag_reg">{{ t.location.busExpressLabel }}</span> {{ t.location.busExpressRoutes }}</p>
                         </div>
                     </div>
-                    <!-- 26.06.17 edit 정다희 : 웹접근성 대응 iframe title 적용 -->
                     <div class="map_area">
                         <iframe :title="t.location.mapTitle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2584135599163!2d127.03451977629449!3d37.50182292783558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fee398641d%3A0x237e08643e54191d!2zR1Mg7YOA7JuM!5e0!3m2!1sko!2skr!4v1779151657505!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -68,7 +66,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- 26.06.17 edit 정다희 : 웹접근성 대응 iframe title 적용 -->
                     <div class="map_stack">
                         <div class="map_area">
                             <iframe :title="t.location2.mapTitle1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101262.58408041636!2d126.73666359726565!3d37.52075259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e8cae0efbf5%3A0xa6a88cc52747434a!2zR1PqsJXshJztg4Dsm4w!5e0!3m2!1sko!2skr!4v1779151880978!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -107,7 +104,7 @@ const langData = {
             busMainRoutes: "146, 147, 341, 360, 740, 41",
             busExpressLabel: "직행/급행",
             busExpressRoutes: "1100, 1700, 2000, 7007, 8001",
-            mapTitle: "GS타워 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : mapAriaLabel -> mapTitle 키 변경 */
+            mapTitle: "GS타워 위치 지도 영역(퍼블용 이미지)",
         },
         location2: {
             title: "GS강서타워/GS강서N타워",
@@ -133,12 +130,12 @@ const langData = {
                 { route: "올림픽대로", desc: "양화대교 남단에서 문래동 사거리 방향으로 직진, 약 10분 소요" },
                 { route: "강변북로", desc: "영등포 시장에서 오목교 방향으로 직진, 양남사거리에서 좌회전 후 50m 직진" },
             ],
-            mapTitle1: "GS강서타워 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : mapAriaLabel1 -> mapTitle1 키 변경 */
-            mapTitle2: "GS강서N타워 위치 지도 영역(퍼블용 이미지)",/* 26.06.17 edit 정다희 : mapAriaLabel2 -> mapTitle2 키 변경 */
+            mapTitle1: "GS강서타워 위치 지도 영역(퍼블용 이미지)",
+            mapTitle2: "GS강서N타워 위치 지도 영역(퍼블용 이미지)",
         },
     },
     en: {
-        pageTitle: "Location"/* 2026.07.06 edit 이소라 */,
+        pageTitle: "Location",
         location: {
             title: "GS Tower",
             addressLabel: "Address",
@@ -150,7 +147,7 @@ const langData = {
             busMainRoutes: "146, 147, 341, 360, 740, 41",
             busExpressLabel: "Direct / Express"/* 260604 번역 */,
             busExpressRoutes: "1100, 1700, 2000, 7007, 8001",
-            mapTitle: "GS Tower location map area (publishing image)"/* 260604 번역, 26.06.17 edit 정다희 : mapAriaLabel -> mapTitle 키 변경 */,
+            mapTitle: "GS Tower location map area (publishing image)"/* 260604 번역 */,
         },
         location2: {
             title: "GS Gangseo Tower / GS Gangseo N Tower",
@@ -176,8 +173,8 @@ const langData = {
                 { route: "Olympic Expressway", desc: "Go straight from the south end of Yanghwa Bridge toward Munrae-dong Intersection, approximately a 10-minute drive" },
                 { route: "Gangbyeon Expressway", desc: "Go straight from Yeongdeungpo Market toward Omokgyo Station; turn left at Yangnam Intersection and continue straight for 50m" },
             ],
-            mapTitle1: "GS Gangseo Tower location map area (publishing image)"/* 260604 번역, 26.06.17 edit 정다희 : mapAriaLabel1 -> mapTitle1 키 변경 */,
-            mapTitle2: "GS Gangseo N Tower location map area (publishing image)"/* 260604 번역, 26.06.17 edit 정다희 : mapAriaLabel2 -> mapTitle2 키 변경 */,
+            mapTitle1: "GS Gangseo Tower location map area (publishing image)"/* 260604 번역 */,
+            mapTitle2: "GS Gangseo N Tower location map area (publishing image)"/* 260604 번역 */,
         },
     }
 };
@@ -224,7 +221,7 @@ const t = computed(() => langData[props.lang] || langData.ko);
         section + section { padding: 60px 0 0; }
         .header h3 { font-size: 2.4rem; line-height: 1.35; text-align: left; }
         .sec_location { gap: 30px; }
-        .sec_location:nth-of-type(1) { padding-top: 120px; } /* 26.06.26 edit 이소라 */
+        .sec_location:nth-of-type(1) { padding-top: 120px; } 
         .sec_location > .location_panel { padding: 30px 0 36px; flex-direction: column; flex-wrap: nowrap; gap: 0; align-items: stretch; border-top: 1px solid #e5e5e9; }
         .sec_location .location_info { order: 2; flex: none; padding-top: 30px; gap: 36px; }
         .sec_location .location_panel > .map_area, .sec_location .location_panel > .map_stack { order: 1; max-width: 100%;}

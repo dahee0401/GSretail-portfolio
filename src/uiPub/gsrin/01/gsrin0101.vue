@@ -2,19 +2,13 @@
     <div class="main-container">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.08 delete: visual-sub 삭제  -->
         </div>
 
         <section class="section-investor">
             <div class="cont_inner">
                 <Tabs v-model="CTabIdx" :tab-items="t.Tabs1" tab-class="type_01" :tab-slide="true" @change="onTabChange1" />
-                <!-- 26.06.08 : title-sub-text if문으로 수정 add 정다희희  -->
-                <!-- 26.06.19 add 정다희 : 탭 두번째부터 렌더링 v-html="t.MainDesc[CTabIdx - 1]" 수정 -->
-                <p v-if="CTabIdx !== 0" class="title-sub-text" v-html="t.MainDesc[CTabIdx - 1]"></p> <!-- 26.06.26 edit 이소라 -->
-                <!-- //26.06.08 : title-sub-text if문으로 수정 add 정다희희  -->
+                <p v-if="CTabIdx !== 0" class="title-sub-text" v-html="t.MainDesc[CTabIdx - 1]"></p> 
                 <div class="tab_content_wrap">
-                    <!-- //26.06.08 add 정다희 -->
-                    <!-- pageid:gsrin0101 -->
                     <section class="tab_content gsrin0101" v-if="CTabIdx === 1" :aria-label="t.Tabs1[1].item">
                         <div class="subtit_wrap ac">
                             <h3 class="section-sub-title">{{ t.CharterTitle }}</h3>
@@ -41,7 +35,6 @@
                         </div>
                     </section>
                     
-                    <!-- pageid:gsrin0102 -->
                     <section class="tab_content gsrin0102" v-if="CTabIdx === 2" :aria-label="t.Tabs1[2].item">
                         <!-- 1. 이사회 구성 현황 -->
                         <div class="view-2">
@@ -97,7 +90,6 @@
                         <!-- 2. 사외이사 및 위원회 구성 -->
                         <div class="view-2">
                             <div class="view-3 res-swiper-container" v-if="t">
-                                <!-- 26.06.19 add 정다희 : class 수정  -->
                                 <component 
                                     :is="isMobile ? 'swiper' : 'div'"
                                     :slides-per-view="'auto'"
@@ -148,42 +140,7 @@
                         <div class="view-2">
                             <div class="sub-title">
                                 <h3 class="text-wrapper-3">{{ t.BoardSectionTitle2 }}</h3>
-                            </div>
-                            <!-- 26.07.02 Del 이종환 <div class="div-4">
-                                <div class="view-6 res-swiper-container">
-                                    !-- 모바일일 때만 swiper, PC/태블릿은 div로 렌더링 --
-                                    <component 
-                                        :is="isMobile ? 'swiper' : 'div'"
-                                        :slides-per-view="'auto'"
-                                        :space-between="16"
-                                        class="skill-swiper-wrapper"
-                                    >
-                                        <component 
-                                            :is="isMobile ? 'swiper-slide' : 'div'"
-                                            v-for="(skill, idx) in t.SkillsList" 
-                                            :key="'skill-' + idx" 
-                                            class="frame-5 res-slide-item"
-                                        >
-                                            <div class="frame-6">
-                                                <div class="div-6">
-                                                    <div class="text-wrapper-10">{{ skill.type }}</div>
-                                                    <div class="text-wrapper-11">{{ skill.name }}</div>
-                                                </div>
-                                                <div class="text-wrapper-12">{{ skill.appointDate }}</div>
-                                            </div>
-                                            <div class="frame-9">
-                                                <div v-for="(tag, tIdx) in skill.tags" :key="'tag-'+tIdx" :class="['TAG', tag.class]">
-                                                    <div class="text-wrapper-13" :class="{'text-wrapper-14': tag.class === 'TAG-2', 'text-wrapper-15': tag.class === 'TAG-3', 'text-wrapper-18': tag.class === 'TAG-4'}">
-                                                        {{ tag.text }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </component>
-                                    </component>
-                                </div>
-                            </div> -->
-                            
-                            <!-- 26.07.02 Add 이종환 : table로 변경 -->
+                            </div>                            
                             <div class="table_wrap type_open">
                                 <div class="inner">
                                     <table class="ac" style="min-width:800px;">
@@ -229,14 +186,12 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- //26.07.02 Add 이종환 : table로 변경 -->
 
                         </div>
 
                         <div class="view-2">
                             <div class="sub-title"><div class="text-wrapper-3">{{ t.BoardSectionTitle3 }}</div>
-                        </div>
-                            <!-- 26.06.19 add 정다희 : table 구조로 수정 -->
+                            </div>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -262,7 +217,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <!-- //26.06.19 add 정다희 : table 구조로 수정 -->
                             <div class="button-group">
                                 <button v-for="(btn, bIdx) in t.BoardDownloadBtns" :key="'btn-'+bIdx" class="btn_mid btn_icon_file after" @click="handleDownload(btn.link)">
                                     <div class="view-9">
@@ -274,7 +228,6 @@
 
                     </section>
 
-                    <!-- pageid:gsrin0103 이사회평가 -->
                     <section class="tab_content gsrin0103" v-if="CTabIdx === 3" :aria-label="t.Tabs1[3].item">
                         <div class="eval_item_group">
                             <div class="eval_title_box ac">
@@ -317,7 +270,6 @@
                                 </table>
                             </div>
                         </div>
-                        <!-- pageid:gsrin0103 이사회평가 활용 영역 -->
                         <div class="eval_item_group">
                             <div class="sub-title">
                                 <h3 class="text-wrapper-3" style="width:100%;">{{ t.EvalUsageTitle }}</h3>
@@ -350,7 +302,6 @@
                         </div>
                     </section>
 
-                    <!-- gsrin0104 -->
                     <section class="tab_content gsrin0104" v-if="CTabIdx === 4" :aria-label="t.Tabs1[4].item">
                         <div class="diff_table_wrap ">
                             <div class="policy_wrap">
@@ -409,7 +360,7 @@ export default {
                         "GS리테일은<br/> 이사회 운영 개선 및 지배구조 신뢰성 제고를 위하여<br/>2021년 12월 개최된 정기이사회에서<br/> 이사회 평가제도를 도입하였습니다.",
                         "GS리테일은<br/> 지속가능한 경영을 위해,<br/> 지배구조건전성을 <br/>지속 개선해 나아가겠습니다."
                     ],
-                    Tabs1: [{ item: "이사회 의장 인사말" }, { item: "지배구조헌장" }, { item: "이사회 및 위원회 구성" }, { item: "이사회 평가" }, { item: "지배구조 모범규준과의 차이" }], //26. 06.08 add: 정다희희
+                    Tabs1: [{ item: "이사회 의장 인사말" }, { item: "지배구조헌장" }, { item: "이사회 및 위원회 구성" }, { item: "이사회 평가" }, { item: "지배구조 모범규준과의 차이" }], 
                     tab1Url: "gsrin0100",
 
                     // [Tab 1] 지배구조헌장 전체 데이터 (KO)
@@ -496,7 +447,6 @@ export default {
                                 ]}
                             ]
                         },
-                        /* 26.06.29 edit 이소라 */
                         {
                             title: "IV. 이해관계자",
                             content: [
@@ -518,11 +468,10 @@ export default {
                                 { subTitle: "", list: ["제 1 조(시행일) 이 헌장은 2021년 2월 8일부터 시행한다."] }
                             ]
                         }
-                        /* //26.06.29 edit 이소라 */
+                        
                     ],
-                    // [Tab 2] 이사회 구성 현황 데이터 (KO)
                     BoardSectionTitle1: `이사회 구성 현황`,
-                    BoardSectionDesc1: `사내이사, 사외이사, 기타 비상무이사로 구성된 이사회 현황입니다.<br />독립성과 전문성을 갖춘 사외이사를 통해 투명성과 견제 기능을 강화하고 있습니다.`, /* 26.06.29 edit 이소라 */
+                    BoardSectionDesc1: `사내이사, 사외이사, 기타 비상무이사로 구성된 이사회 현황입니다.<br />독립성과 전문성을 갖춘 사외이사를 통해 투명성과 견제 기능을 강화하고 있습니다.`,
                     BoardSectionTitleSub: `사외이사 및 위원회 구성`,
                     BoardSectionDescSub: `독립성과 전문성을 갖춘 사외이사를 통해 경영 투명성과 견제 기능을 강화하고 있습니다.`, 
                     BoardMemberList: [
@@ -551,7 +500,7 @@ export default {
                         {
                             pos: "기타 비상무이사", name: "홍순기", 
                             img: require("@/assets/images/dummy/gsrin0102_3.png"),
-                            term: "2024.03.21~2027.03.20", firstDate: "2021.07.01 최초선임", /* 26.06.29 edit 이소라 */
+                            term: "2024.03.21~2027.03.20", firstDate: "2021.07.01 최초선임", 
                             careers: [
                                 { text: "연세대", class: "" },
                                 { text: "2017년 (주)GS 재무팀장", class: "" },
@@ -563,7 +512,7 @@ export default {
                         {
                             pos: "사외이사 / 이사회의장", name: "이성락", 
                             img: require("@/assets/images/dummy/gsrin0102_4.png"),
-                            term: "2022.03.25~2028.03.19", firstDate: "2022.03.25 최초선임", /* 26.06.29 edit 이소라 */
+                            term: "2022.03.25~2028.03.19", firstDate: "2022.03.25 최초선임", 
                             careers: [
                                 { text: "건국대", class: "" },
                                 { text: "2009년 (주)신한은행 부행장", class: "" },
@@ -574,7 +523,7 @@ export default {
                         {
                             pos: "사외이사", name: "이상규", 
                             img: require("@/assets/images/dummy/gsrin0102_6.png"),
-                            term: "2026.03.19~2029.03.18", firstDate: "2023.03.23 최초선임", /* 26.06.29 edit 이소라 */
+                            term: "2026.03.19~2029.03.18", firstDate: "2023.03.23 최초선임",
                             careers: [
                                 { text: "美 워싱턴대", class: "" },
                                 { text: "2012년 LG전자(주) 한국B2C 그룹장", class: "" },
@@ -597,12 +546,12 @@ export default {
                         {
                             pos: "사외이사", name: "안동현", 
                             img: require("@/assets/images/dummy/gsrin0102_5.png"),
-                            term: "2026.03.19~2029.03.18", firstDate: "2026.03.19 최초선임", /* 26.06.29 edit 이소라 */
+                            term: "2026.03.19~2029.03.18", firstDate: "2026.03.19 최초선임",
                             careers: [
                                 { text: "美 뉴욕대", class: "" },
                                 { text: "2015년 공적자금관리 위원회<br />매각위원장", class: "" },
                                 { text: "2016년 자본시장연구원 원장", class: "" },
-                                { text: "2022년 금융발전 심의회 위원장", class: "" }, /* 26.06.29 edit 이소라 */
+                                { text: "2022년 금융발전 심의회 위원장", class: "" },
                                 { text: "現) 서울대학교 경제학부 교수", class: "point" }
                             ]
                         },
@@ -622,158 +571,156 @@ export default {
                     BoardSectionTitle3: "이사회 내 위원회 현황",
                     ChairLabel: "위원장", MemberLabel: "위원",
 
-                    /* 26.07.02 Add 이종환 : 이사회 역량 구성표 테이블 데이터 */
                     MatrixTable: {
                         title: "구분",
                         columns: [
                             {
-                            type: "사내이사",
-                            list: [
-                                { title: "허서홍" },
-                                { title: "오진석" }
-                            ]
+                                type: "사내이사",
+                                list: [
+                                    { title: "허서홍" },
+                                    { title: "오진석" }
+                                ]
                             },
                             {
-                            type: "기타 비상무이사",
-                            list: [
-                                { title: "홍순기" }
-                            ]
+                                type: "기타 비상무이사",
+                                list: [
+                                    { title: "홍순기" }
+                                ]
                             },
                             {
-                            type: "사외이사",
-                            list: [
-                                { title: "이성락" },
-                                { title: "이상규" },
-                                { title: "윤윤진" },
-                                { title: "안동현" }
-                            ]
+                                type: "사외이사",
+                                list: [
+                                    { title: "이성락" },
+                                    { title: "이상규" },
+                                    { title: "윤윤진" },
+                                    { title: "안동현" }
+                                ]
                             }
                         ],
 
                         rows: [
                             {
-                            title: "경영·리더십",
-                            list: [
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "" },
-                                { name: "" }
-                            ]
+                                title: "경영·리더십",
+                                list: [
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "" }
+                                ]
                             },
                             {
-                            title: "유통·관련산업",
-                            list: [
-                                { name: "O" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "O" },
-                                { name: "" },
-                                { name: "" }
-                            ]
+                                title: "유통·관련산업",
+                                list: [
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "" }
+                                ]
                             },
                             {
-                            title: "재무·회계",
-                            list: [
-                                { name: "" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "" },
-                                { name: "" }
-                            ]
+                                title: "재무·회계",
+                                list: [
+                                    { name: "" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "" }
+                                ]
                             },
                             {
-                            title: "금융",
-                            list: [
-                                { name: "" },
-                                { name: "O" },
-                                { name: "" },
-                                { name: "O" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "O" }
-                            ]
+                                title: "금융",
+                                list: [
+                                    { name: "" },
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "O" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "O" }
+                                ]
                             },
                             {
-                            title: "IT",
-                            list: [
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "O" }
-                            ]
+                                title: "IT",
+                                list: [
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "O" }
+                                ]
                             },
                             {
-                            title: "리스크관리·ESG",
-                            list: [
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" }
-                            ]
+                                title: "리스크관리·ESG",
+                                list: [
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" }
+                                ]
                             },
                             {
-                            title: "독립성",
-                            list: [
-                                { name: "" },
-                                { name: "" },
-                                { name: "" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" },
-                                { name: "O" }
-                            ]
+                                title: "독립성",
+                                list: [
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" },
+                                    { name: "O" }
+                                ]
                             },
                             {
-                            title: "최초 선임일",
-                            list: [
-                                { name: "2025.03" },
-                                { name: "2024.03" },
-                                { name: "2021.07" },
-                                { name: "2022.03" },
-                                { name: "2023.03" },
-                                { name: "2025.03" },
-                                { name: "2026.03" }
-                            ]
+                                title: "최초 선임일",
+                                list: [
+                                    { name: "2025.03" },
+                                    { name: "2024.03" },
+                                    { name: "2021.07" },
+                                    { name: "2022.03" },
+                                    { name: "2023.03" },
+                                    { name: "2025.03" },
+                                    { name: "2026.03" }
+                                ]
                             },
                             {
-                            title: "소속 위원회",
-                            list: [
-                                { name: "-" },
-                                { name: "보상위" },
-                                { name: "ESG위" },
-                                { name: "내부위<br/> 사추위<br/> 감사위" },
-                                { name: "내부위<br/> 사추위<br/> ESG위" },
-                                { name: "내부위<br/> 감사위<br/> ESG위<br/> 보상위" },
-                                { name: "사추위<br/> 감사위<br/> ESG위<br/> 보상위" }
-                            ]
+                                title: "소속 위원회",
+                                list: [
+                                    { name: "-" },
+                                    { name: "보상위" },
+                                    { name: "ESG위" },
+                                    { name: "내부위<br/> 사추위<br/> 감사위" },
+                                    { name: "내부위<br/> 사추위<br/> ESG위" },
+                                    { name: "내부위<br/> 감사위<br/> ESG위<br/> 보상위" },
+                                    { name: "사추위<br/> 감사위<br/> ESG위<br/> 보상위" }
+                                ]
                             },
                             {
-                            title: "성별",
-                            list: [
-                                { name: "남" },
-                                { name: "남" },
-                                { name: "남" },
-                                { name: "남" },
-                                { name: "남" },
-                                { name: "여" },
-                                { name: "남" }
-                            ]
+                                title: "성별",
+                                list: [
+                                    { name: "남" },
+                                    { name: "남" },
+                                    { name: "남" },
+                                    { name: "남" },
+                                    { name: "남" },
+                                    { name: "여" },
+                                    { name: "남" }
+                                ]
                             }
                         ]
                     },
-                    /* //26.07.02 Add 이종환 : 이사회 역량 구성표 테이블 데이터 */
 
                     CommitteeTable: [
                         { title: "내부거래위원회", chair: "이상규", members: "이성락, 윤윤진" },
@@ -868,7 +815,6 @@ export default {
                         "To improve board operations and enhance governance credibility, GS Retail introduced a board evaluation system at the regular board meeting held in December 2021.",
                         "GS Retail is committed to continuously strengthening its corporate governance in pursuit of sustainable management."
                     ],
-                    // 26.06.08 add 정다희
                     Tabs1: [{ item: "Message from the Chairman of the Board of Directors"/* 260708 번역 */ }, { item: "Corporate Governance Charter" }, { item: "Board and Committee Composition" }, { item: "Board Evaluation" }, { item: "Differences from Governance Best Practice Guidelines" }],
                     tab1Url: "gsrin0100",
                     
@@ -1210,7 +1156,6 @@ export default {
 </script>
 
 <style scoped>
-/*::::::::::::::::::::::::::::::: PC Style (정제됨) :::::::::::::::::::::::::::::::*/
 /* gsrin0101 전용 스타일 */
 :deep(.m_br) { display: none; }
 .main-container {width: 100%; position: relative; display: block;}
@@ -1342,12 +1287,6 @@ export default {
 
 /*:::::::::::::::::::::::::::::::Responsive Style :::::::::::::::::::::::::::::::*/
 
-
-/* @media screen and (min-width:1025px) {
-    .div-2 {width: 21.97% !important;}
-} */
-
-
 @media screen and (max-width:1024px) {
     .title-sub-text {padding: 60px 0; font-size: 36px;}
     .view-3 {display:block;}
@@ -1375,16 +1314,15 @@ export default {
     .visual-sub {font-size: 20px;}
     .title-sub-text {padding: 60px 0 80px; font-size: 2.8rem; line-height: 1.3; text-align:left;}
     .gsrin0101 .chairman_content > h3 + p {margin-top:8px;}
-    /* .gsrin0102 > * {margin-top: 80px;} */
     .view-2 + .view-2{margin-top:100px;}
     :deep(.title-sub-text br) {display:block !important;}
     .view-3 {flex-direction: column; align-items: center; gap: 40px;}
-    .div-2 {max-width:312px; width:100%;} /* 1열 배치 및 최대너비 제한 */
+    .div-2 {max-width:312px; width:100%;} 
     .view-6 {flex-direction: column; gap: 12px;}
     .view-6:last-of-type {width:100%;}
-    .frame-5, .card_item.res-slide-item {width:90%;} /* 역량 구성표 1열 */
-    .img {height: auto; aspect-ratio: 16 / 9;} /* 이미지 비율 유지 */
-    .divider {display:none;} /* 구분선 가로로 변경 */
+    .frame-5, .card_item.res-slide-item {width:90%;} 
+    .img {height: auto; aspect-ratio: 16 / 9;} 
+    .divider {display:none;} 
     .policy_wrap {padding: 30px 20px;}
     .policy_wrap dt {margin-top: 40px; font-size: 20px;}
     .policy_wrap dd {font-size: 16px;}
@@ -1398,7 +1336,7 @@ export default {
     .p {font-size:18px;}
     .frame-6 {flex-direction:column; align-items:flex-start;}
     .gsrin0101 .section-sub-title {font-size:28px;}
-    /* 이사회 의장 인사말 탭 관련 css 추가 26.06.08 add 정다희 */
+
     .gsrin0101 .sec_chairman { padding-top:60px; }
     .gsrin0101 .chairman_intro > figure.chairman_visual { height: auto;min-height: 400px; background-position: 57% center;  }
     .gsrin0101 .chairman_intro > figcaption.chairman_profile { position: static; margin-top: 60px; padding: 0; }
@@ -1407,7 +1345,7 @@ export default {
     .gsrin0101 .chairman_content { margin-top: 40px; }
     .gsrin0101 .chairman_content > h3 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -0.01em; }
     .gsrin0101 .chairman_content > p { margin-top: 10px; font-size: 1.8rem; line-height: 1.4; letter-spacing: 0; }
-    /* //이사회 의장 인사말 탭 관련 css 추가 26.06.08 add 정다희 */
+
     .gsrin0101 .policy_wrap {padding:30px 0;}
     .gsrin0102 .view-2:first-of-type {margin-top:0;}
     .gsrin0103 .section-sub-title {font-size:24px; text-align:left;}
@@ -1434,20 +1372,15 @@ export default {
 @media screen and (max-width: 767px) {
     .res-slide-item {
         margin-right: 0;
-        /* padding-right: 20px; 카드 간 간격 */
         box-sizing: border-box;
     }
     :deep(.view-6.res-swiper-container) .swiper-wrapper {display: flex !important; gap:0px;}
-    .pc-only { display: none; } /* 모바일에서 세로선 제거 */
-
-    /* .swiper-slide.div-2 {margin-right:0; margin-left:0}
-    .swiper-slide.div-2::after {display:none} */
+    .pc-only { display: none; } 
 
     .eval-usage-swiper {overflow:hidden !important;}
     /* 슬라이딩을 위해 flex-wrap 해제 및 초기 위치 설정 */
     :deep(.eval-usage-swiper .swiper-wrapper) {display:flex !important; flex-wrap:nowrap;}
     .eval-usage-swiper .card_item.res-slide-item {height: auto !important; flex-shrink: 0 !important; }
-    /* .card_item.res-slide-item {height:auto !important; margin-right:16px !important; padding:24px; flex-shrink:0;} */
     .gsrin0103 .element {font-size:18px;}
     .gsrin0103 .sub-title {margin-bottom:32px;}
     .gsrin0103 colgroup col:first-of-type {width:80px}

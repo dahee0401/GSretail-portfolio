@@ -2,7 +2,6 @@
     <div class="main-container">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.08 delete: visual-sub 삭제  -->
         </div>
 
         <section class="section-investor">
@@ -37,7 +36,6 @@ export default {
             selectedFilter: "",
             isMobile: false,
             langData: {
-                /* 26.06.29 edit 이소라 */
                 ko: {
                     MainTitle: "이사회 의장 인사말",
                     ChairmanRole: "㈜GS리테일 이사회 의장",
@@ -98,7 +96,6 @@ export default {
 .title-sub-text {width: 100%; padding: 100px 0; color: #161616; font-size: 48px; font-weight: 700; text-align: center; line-height: 1.4;}
 :deep(.title-sub-text br:not(:nth-of-type(2))) {display: none;}
 .subtit_wrap {width: 100%; padding: 60px 40px; background: #F2F2F4; border-radius: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center;}
-/* 이사회 의장 인사말 탭 관련 css 추가 26.06.08 add 정다희 */
 .sec_chairman { padding-top:200px; }
 .chairman_intro { width: 100%; position: relative; }
 .chairman_intro > figure.chairman_visual { width: 100%; height: 658px; background: url('@/assets/images/dummy/gsrin0101_01.png') no-repeat center top / cover; }
@@ -127,16 +124,15 @@ export default {
     .visual-sub {font-size: 20px;}
     .title-sub-text {padding: 60px 0 80px; font-size: 2.8rem; line-height: 1.3; text-align:left;}
     .chairman_content > h3 + p {margin-top:8px;}
-    /* .gsrin0102 > * {margin-top: 80px;} */
     .view-2 + .view-2{margin-top:100px;}
     :deep(.title-sub-text br) {display:block !important;}
     .view-3 {flex-direction: column; align-items: center; gap: 40px;}
-    .div-2 {max-width:312px; width:100%;} /* 1열 배치 및 최대너비 제한 */
+    .div-2 {max-width:312px; width:100%;} 
     .view-6 {flex-direction: column; gap: 12px;}
     .view-6:last-of-type {width:100%;}
-    .frame-5, .card_item.res-slide-item {width:90%;} /* 역량 구성표 1열 */
-    .img {height: auto; aspect-ratio: 16 / 9;} /* 이미지 비율 유지 */
-    .divider {display:none;} /* 구분선 가로로 변경 */
+    .frame-5, .card_item.res-slide-item {width:90%;} 
+    .img {height: auto; aspect-ratio: 16 / 9;}
+    .divider {display:none;}
     .policy_wrap {padding: 30px 20px;}
     .policy_wrap dt {margin-top: 40px; font-size: 20px;}
     .policy_wrap dd {font-size: 16px;}
@@ -150,7 +146,6 @@ export default {
     .p {font-size:18px;}
     .frame-6 {flex-direction:column; align-items:flex-start;}
     .section-sub-title {font-size:28px;}
-    /* 이사회 의장 인사말 탭 관련 css 추가 26.06.08 add 정다희 */
     .sec_chairman { padding-top:60px; }
     .chairman_intro > figure.chairman_visual { height: auto;min-height: 400px; background-position: 57% center;  }
     .chairman_intro > figcaption.chairman_profile { position: static; margin-top: 60px; padding: 0; }

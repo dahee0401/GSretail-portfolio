@@ -76,21 +76,18 @@
 
                     <div class="btn-group">
                         <a :href="btn.link"
-                            v-for="(btn, bIdx) in t.AppButtons" 
-                            :key="bIdx"
-                            class="btn_big primary"
-                            target="_blank"
+                           v-for="(btn, bIdx) in t.AppButtons" 
+                           :key="bIdx"
+                           class="btn_big primary"
+                           target="_blank"
                         >
                             {{ btn.txt }}
                         </a>
                     </div>
                 </section>
-
-                <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
                 <div class="bottom_btns">
                     <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
                 </div>
-                <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             </div>
         </section>
     </div>
@@ -128,7 +125,6 @@ export default {
                         imgMo: require("@/assets/images/dummy/gsrbr05_bi_mo.png"),
                         alt: "GS Pay BI 로고"
                     },
-                    // SubContent_2: "QR코드 스캔 한 번으로 빠르고 안전하게 결제한 수 있습니다. 결제할 때마다 포인트가 적립되어 더욱 알뜰한 소비가 가능합니다.",
                     BenefitTitle: "쉽고 간편한 GS Pay",
                     BenefitRows: [
                         [
@@ -193,7 +189,6 @@ export default {
                         imgMo: require("@/assets/images/dummy/gsrbr05_bi_mo.png"),
                         alt: "GS Pay BI Logo"/* 260604 번역 */
                     },
-                    // SubContent_2: "QR코드 스캔 한 번으로 빠르고 안전하게 결제한 수 있습니다. 결제할 때마다 포인트가 적립되어 더욱 알뜰한 소비가 가능합니다.",
                     BenefitTitle: "Easy and simple GS Pay"/* 260604 번역 */,
                     BenefitRows: [
                         [
@@ -292,7 +287,6 @@ h4 { font-size: 3.2rem; font-weight: 700; color: #161616; margin-bottom: 40px;}
 .benefit_row + .benefit_row { border-bottom: 0; padding-bottom: 0; margin-top: 64px; }
 .benefit_item { flex: 1; display: flex; gap: 24px; align-items: flex-start; }
 .info {padding-left:104px; position:relative;}
-/* 26.05.12 Edit 이종환 */
 .info::before {content:''; width:80px; height:80px; background:#F2F2F4; border-radius:50%; position:absolute; top:0; left:0; display:block;}
 .info::after {width:40px; height:40px; background-image:url('@/assets/images/sub/icon_cont_40.png'); background-repeat:no-repeat; background-size:auto 415px; content:''; position:absolute; top:20px; left:20px; display:block;}
 
@@ -300,7 +294,6 @@ h4 { font-size: 3.2rem; font-weight: 700; color: #161616; margin-bottom: 40px;}
 .benefit_row .benefit_item:nth-child(2) .info:after {background-position:-420px -346px;}
 .benefit_row + .benefit_row .benefit_item:nth-child(1) .info:after {background-position:-500px -346px;}
 .benefit_row + .benefit_row .benefit_item:nth-child(2) .info:after {background-position:-20px -346px;}
-/* //26.05.12 Edit 이종환 */
 .info .point_color { color: #107af2; font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 4px; }
 .info .tit { font-size: 2.8rem; font-weight: 700; color: #161616; display: block; margin-bottom: 16px; }
 .info .desc { font-size: 2rem; font-weight: 700; color: #67676b; line-height: 1.35; margin-bottom: 16px; }
@@ -316,7 +309,6 @@ h4 { font-size: 3.2rem; font-weight: 700; color: #161616; margin-bottom: 40px;}
 
 /* Steps */
 .how_to_section > h3{margin-top:64px;}
-/* .step_group{margin-top:64px;} */
 .step_group + .step_group {margin-top:80px;}
 .step_box { display: flex; gap: 20px; padding: 56px 64px; background: #f8f8f8; border-radius: 12px;}
 .step_unit { flex: 1; display: flex; flex-direction: column; gap: 24px; }

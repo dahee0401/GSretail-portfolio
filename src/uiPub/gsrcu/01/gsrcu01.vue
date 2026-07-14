@@ -36,9 +36,6 @@
                                         btn-class="btn_base border btn_icon_arrow after">
                                         {{ btn.label }}
                                     </Buttons>
-                                    <!-- 26.07.03 Del 이종환 <Buttons v-else @click="handleLink(btn.target)" btn-class="btn_base border btn_icon_arrow after">
-                                        {{ btn.label }}
-                                    </Buttons> -->
                                 </template>
                             </div>
                         </li>
@@ -48,32 +45,6 @@
                 <div class="btnSection bottom">
                     <Buttons btn-class="btn_xl border btn_icon_arrow after">{{ t.OtherInquiry }}</Buttons>
                 </div>
-
-                <!-- 26.07.03 Del 이종환 <ul class="service-link-list">
-                    <li v-for="(link, idx) in t.BottomLinks" :key="idx">
-                        <div>
-                            <h5>{{ link.title }}</h5>
-                            <p v-html="link.desc"></p>
-                            <Buttons 
-                                v-if="link.type === 'popup'" 
-                                @click="openModal" 
-                                :data-popid="link.popId" 
-                                :data-cont="link.cont" 
-                                data-type="lg" 
-                                btn-class="btn_mid gray btn_icon_arrow after"
-                            >
-                                {{ link.btnLabel }}
-                            </Buttons>
-                            <Buttons 
-                                v-else 
-                                @click.stop.prevent="handleLink(link.target)" 
-                                class="btn_mid gray btn_icon_arrow after"
-                            >
-                                {{ link.btnLabel }}
-                            </Buttons>
-                        </div>
-                    </li>
-                </ul> -->
             </div>
         </section>
 
@@ -127,8 +98,7 @@ export default {
                     BottomLinks: [
                         { title: "정도경영목소리", btnLabel: "문의하기", desc: "언제나 고객님의 입장이 되어 <br/>작은 소리에도 귀를 기울이겠습니다.", type: "link", target:"/gsrsu040101" },
                         { title: "입점상담", btnLabel: "문의하기", desc: "GS리테일과 파트너사의 첫 만남,<br/>입점을 환영합니다", type: "link", target: "/gsrse01" },
-                        // 260623 delete 이소라 { title: "채용문의", btnLabel: "채용문의", desc: "GS리테일과 함께,<br/>더 좋은 내일을 만들어갈 당신을 기다립니다.", type: "link", target: "https://gsretail.recruiter.co.kr/career/home" },
-                        { title: "기타문의", btnLabel: "문의하기", desc: "언제나 고객님의 입장이 되어 <br/>작은 소리에도 귀를 기울이겠습니다.", type: "popup", popId: "gsrcu0101", cont: "gsrcu0101" } //26.06.09 Edit 이종환
+                        { title: "기타문의", btnLabel: "문의하기", desc: "언제나 고객님의 입장이 되어 <br/>작은 소리에도 귀를 기울이겠습니다.", type: "popup", popId: "gsrcu0101", cont: "gsrcu0101" } 
                     ],
                     전화번호:'전화번호',
                     운영시간:'운영시간'
@@ -162,7 +132,6 @@ export default {
                     BottomLinks: [
                         { title: "Ethics Hotline", btnLabel: "Inquiry", desc: "We will always put ourselves in our customers' shoes and listen even to the smallest voice.", type: "link", target:"/gsrsu040101" },
                         { title: "Business Inquiry", btnLabel: "Inquiry", desc: "The first meeting between GS Retail and its partners,<br/>Welcome aboard"/* 260604 번역 */, type: "link", target: "/gsrse01" },
-                        // 260623 delete 이소라 { title: "Recruitment Inquiry >", btnLabel: "Inquiry >", desc: "Together with GS Retail,<br/>We look forward to you, who will build a better tomorrow."/* 260604 번역 */, type: "link", target: "https://gsretail.recruiter.co.kr/career/home" },
                         { title: "Etc Inquiry", btnLabel: "Inquiry", desc: "We will always put ourselves in our customers' shoes and listen even to the smallest voice.", type: "link", target: "https://with.gsshop.com/cust/custCent/main.gs?lseq=380732-1&dseq=0&gsid=gnb-AU380732-AU380732-1" }
                     ],
                     전화번호:'Phone Number',
@@ -185,9 +154,9 @@ export default {
         openModal(event) {
             const el = event.currentTarget;
             const popId = el.dataset.popid;
-            const type = el.dataset.type || "default"; // data-type 속성 읽기
-            const cont = el.dataset.cont; // data-cont 속성 읽기
-            modal.open(popId, type, el, cont); // 4개 인자 모두 전달
+            const type = el.dataset.type || "default";
+            const cont = el.dataset.cont;
+            modal.open(popId, type, el, cont); 
         },
 
         handleLink(url) {
@@ -239,7 +208,7 @@ h4 {margin-bottom:24px; color:#161616; font-size:20px; font-weight:700; line-hei
 .service-link-list li > div::before {content:''; width:40px; height:40px; background-image:url('@/assets/images/sub/icon_cont_40.png'); background-repeat:no-repeat; position:absolute; top:0; left:0; display:block;}
 .service-link-list li:nth-of-type(1) > div::before {background-position:-580px -342.86px;}
 .service-link-list li:nth-of-type(2) > div::before {background-position:-20px -20px;}
-.service-link-list li:nth-of-type(3) > div::before {background-position:-900px -186px;} /* 260625 edit 이소라 */
+.service-link-list li:nth-of-type(3) > div::before {background-position:-900px -186px;} 
 
 h5 {color:#161616; font-size:18px; font-weight:700; line-height:1.5;}
 .service-link-list p {min-height:3em; color:#161616; font-size:16px; font-weight:400; line-height:1.5; letter-spacing:-0.16px;}
@@ -256,14 +225,13 @@ h5 {color:#161616; font-size:18px; font-weight:700; line-height:1.5;}
 }
 @media screen and (max-width: 1200px) {
     .cont_inner article {padding:60px 40px; flex-direction:column;}
-    /* .brand-btn-group, .brand-card-group {flex-direction:column;} */
     .intro-summary {width:100%;}
 }
 @media screen and (max-width: 768px) {
     h3 {font-size:28px;}
     h4 {font-size:18px;}
     .tel-number {font-size:24px;}
-    .cont_inner article {padding:100px 0px 0px; background:transparent; display:flex; flex-direction:column; gap:40px;} /* 260625 edit 이소라 */
+    .cont_inner article {padding:100px 0px 0px; background:transparent; display:flex; flex-direction:column; gap:40px;}
     .intro-summary {width:100%;}
     .brand-card-group {width:100%; padding:30px 24px; background-color: #f8f8f8; border-radius:8px; display:flex; flex-direction:column; gap:20px;}
     .service-link-list {padding:40px 20px 0; display:flex; flex-direction:column; gap:48px;}

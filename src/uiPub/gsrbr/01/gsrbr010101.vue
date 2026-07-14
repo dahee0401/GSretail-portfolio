@@ -113,59 +113,11 @@
             :tab-slide="true"
         />
 
-        <!-- 26.06.23 del 정다희 : 차별화상품 탭 삭제 -->
-        <!--
-        <div v-show="depth1ActiveIdx === 0 && activeTab === 0" class="brand_panel">
-            <figure v-if="tab0.hero" class="brand_panel_bg">
-                <img :src="tab0.hero" :alt="tab0.heroAlt || ''" width="1420" height="340" />
-            </figure>
-            <header v-if="tab0.title" class="brand_panel_title">
-                <h2 v-html="tab0.title"></h2>
-                <p v-if="tab0.subtitle" v-html="tab0.subtitle" />
-            </header>
-
-            <ul v-if="tab0.cards && tab0.cards.length && !isMobileView" class="diff_card_grid" role="list">
-                <li v-for="(card, c) in tab0.cards" :key="c">
-                    <article class="diff_card">
-                        <figure>
-                            <img :src="card.image" :alt="card.alt || ''" width="460" height="320" />
-                        </figure>
-                        <div>
-                            <h3>{{ card.title }}</h3>
-                            <p>{{ card.desc }}</p>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-            <Swiper
-                v-if="tab0.cards && tab0.cards.length && isMobileView"
-                class="diff_card_swiper"
-                :space-between="8"
-                slides-per-view="auto"
-            >
-                <SwiperSlide v-for="(card, c) in tab0.cards" :key="c">
-                    <article class="diff_card">
-                        <figure>
-                            <img :src="card.image" :alt="card.alt || ''" width="460" height="320" />
-                        </figure>
-                        <div>
-                            <h3>{{ card.title }}</h3>
-                            <p>{{ card.desc }}</p>
-                        </div>
-                    </article>
-                </SwiperSlide>
-            </Swiper>
-
-            <DiffQrRow v-if="tab0.qr" :title="tab0.qr.title" :desc="tab0.qr.desc" />
-        </div>
-        -->
 
         <!-- 탭 0: CAFE25 -->
         <div v-show="depth1ActiveIdx === 0 && activeTab === 0" class="brand_panel cafe_panel">
-            <figure v-if="tab1.hero" class="brand_panel_bg" :style="{ backgroundColor: '#fff' }">
-                <!-- 26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 (brand_bg_02_mo.png) -->
+            <figure v-if="tab1.hero" class="brand_panel_bg" :style="{ backgroundColor: '#fff' }">   
                 <img :src="isMobileView && tab1.heroMo ? tab1.heroMo : tab1.hero" :alt="tab1.heroAlt || ''" width="1420" height="340" />
-                <!-- //26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 -->
             </figure>
             <header v-if="tab1.title" class="brand_panel_title">
                 <h2 v-html="tab1.title"></h2>
@@ -218,7 +170,6 @@
                         <table class="cafe25_table">
                             <thead>
                                 <tr>
-                                    <!-- 26.06.26 Add 정다희 : :style 수정 width 스타일삭제 -->
                                     <th
                                         v-for="(col, ci) in sec.columns"
                                         :key="ci"
@@ -286,16 +237,14 @@
                 </div>
             </section>
 
-            <DiffQrRow v-if="tab2.qr" :title="tab2.qr.title" :desc="tab2.qr.desc" /><!-- 26.07.07 add 이소라 -->
+            <DiffQrRow v-if="tab2.qr" :title="tab2.qr.title" :desc="tab2.qr.desc" />
         </div>
 
         <!-- 탭 2: CHICKEN25 -->
         <!-- 탭 1: 치킨25 -->
         <div v-show="depth1ActiveIdx === 0 && activeTab === 1" class="brand_panel chicken_panel">
             <figure v-if="tab2.hero" class="brand_panel_bg">
-                <!-- 26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 (differentiated_bg_03_mo.png) -->
                 <img :src="isMobileView && tab2.heroMo ? tab2.heroMo : tab2.hero" :alt="tab2.heroAlt || ''" width="1420" height="340" />
-                <!-- //26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 -->
             </figure>
             <header v-if="tab2.title" class="brand_panel_title">
                 <h2 v-html="tab2.title"></h2>
@@ -341,9 +290,7 @@
         <!-- 탭 2: GOPIZZA -->
         <div v-show="depth1ActiveIdx === 0 && activeTab === 2" class="brand_panel gopizza_panel">
             <figure v-if="tab3.hero" class="brand_panel_bg">
-                <!-- 26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 (differentiated_bg_04_mo.png) -->
                 <img :src="isMobileView && tab3.heroMo ? tab3.heroMo : tab3.hero" :alt="tab3.heroAlt || ''" width="1420" height="340" />
-                <!-- //26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 -->
             </figure>
             <header v-if="tab3.title" class="brand_panel_title">
                 <h2 v-html="tab3.title"></h2>
@@ -455,11 +402,9 @@
                 </ul>
 
                 <!-- 배달·픽업 앱 (2열) -->
-                <!-- 26.07.08 edit 정다희 : isMobileView 삭제 -->
                 <ul v-else-if="sec.type === 'phone_grid'" class="img_grid" role="list">
                     <li v-for="(item, ii) in sec.items" :key="ii">
                         <img v-if="item.image" :src="item.image" :alt="item.alt || ''" />
-                        <!-- 26.07.08 add 정다희 : li 마지막 요소로 DiffQrRow 배치 (0: 앱, 1: gopizza) -->
                         <DiffQrRow
                             v-if="ii === 0 && tab3.qr"
                             :title="tab3.qr.title"
@@ -475,7 +420,6 @@
                         />
                     </li>
                 </ul>
-                <!-- 26.07.08 edit 정다희 : 모바일 swiper 제거 -->
             </section>
     
            
@@ -483,12 +427,9 @@
 
         <!-- depth1 = 1: 신선강화점 -->
         <div v-if="depth1ActiveIdx === 1" class="brand_panel sinsen_panel">
-            <!-- 26.06.09 Edit 이종환 -->
             <figure class="brand_panel_bg" role="img" :aria-label="sinsen.heroAlt">
-                <!-- 26.06.15 add 정다희 : heroMo 이미지 추가 -->
                 <img :src="isMobileView && sinsen.heroMo ? sinsen.heroMo : sinsen.hero" :alt="sinsen.heroAlt">
             </figure>
-            <!-- //26.06.09 Edit 이종환 -->
             <header v-if="sinsen.title" class="brand_panel_title">
                 <h2 v-html="sinsen.title"></h2>
                 <p v-if="sinsen.subtitle" v-html="sinsen.subtitle" />
@@ -509,23 +450,17 @@
                 <FeatureCards v-if="sec.features" :items="sec.features" type="icon" no-pagination class="sinsen_feature" />
 
                 <!-- 배송 흐름도 -->
-                <!-- 26.05.27 Edit 이종환 : 타사 신선 배송 방식 추가 -->
                 <div v-if="sec.flow" class="info_card_flow">
                     <div class="info_card" v-for="item in sec.flow_cont" :key="item">
                         <strong v-if="item.flowTitle">{{ item.flowTitle }}</strong>
                         <p v-if="item.flowNote" v-html="item.flowNote"></p>
-                        <!-- 26.06.29 add 정다희 : num_list 추가-->
                         <ol v-if="item.flowList && item.flowList.length" class="num_list">
                             <li v-for="(line, li) in item.flowList" :key="li"><p v-html="line"></p></li>
                         </ol>
-                        <!-- //26.06.29 add 정다희 : num_list 추가-->
                         <img :src="isMobileView ? item.mo_img : item.img" alt="" class="sinsen_flow_img" />
-                        <!--<p v-if="item.flowNote2">{{ item.flowNote2 }}</p> 26.07.07 del 이소라 -->
                     </div>
                 </div>
-                <!-- //26.05.27 Edit 이종환 : 타사 신선 배송 방식 추가 -->
 
-                <!-- 26.06.08 add 정다희 : 운영 장점 카드 컨텐츠 수정정-->
                 <ul v-if="sec.advantageCards" class="sinsen_advantage_grid">
                     <li v-for="(card, ci) in sec.advantageCards" :key="ci" class="sinsen_advantage_card">
                         <header>
@@ -549,24 +484,18 @@
                             <li v-for="(item, ii) in card.items" :key="ii">
                                 <p v-if="item.desc" v-html="item.desc"></p>
                                 <figure>
-                                    <img :src="isMobileView && item.imgMo ? item.imgMo : item.img" alt="" />   <!-- 26.06.08 add 정다희 : 운영 장점 카드 이미지 모바일 추가 -->
+                                    <img :src="isMobileView && item.imgMo ? item.imgMo : item.img" alt="" />  
                                     <figcaption v-if="item.caption">{{ item.caption }}</figcaption>
                                 </figure>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                <!-- //26.06.08 add 정다희 : 운영 장점 카드 컨텐츠 수정-->
             </section>
 
-            <DiffQrRow v-if="tab2.qr" :title="tab2.qr.title" :desc="tab2.qr.desc" /><!-- 26.07.07 add 이소라 -->
+            <DiffQrRow v-if="tab2.qr" :title="tab2.qr.title" :desc="tab2.qr.desc" />
         </div>
 
-        <!-- depth1 = 2: 매장/서비스 -->
-        <!-- 26.06.23 del 정다희 : 매장/서비스 > 우리동네GS 탭 삭제 -->
-        <!--
-        <div v-show="depth1ActiveIdx === 2 && storeActiveTab === 0" class="brand_panel pop_panel"></div>
-        -->
 
         <!-- 생활 서비스 -->
         <div v-show="depth1ActiveIdx === 2 && storeActiveTab === 0" class="brand_panel pop_panel">
@@ -598,12 +527,9 @@
                 v-show="serviceActiveTab === i"
                 class="service_panel">
 
-                <!-- 26.05.15 Edit 이종환 : 그 외 패널: 기본 구조를 각 패널로 다시 분리 -->
                 <template v-if="i === 0">
-                    <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
+                    <figure v-if="tab.hero" class="brand_panel_bg">        
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -626,9 +552,7 @@
 
                 <template v-else-if="i === 1">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -693,7 +617,7 @@
                                                 <strong class="pop_card_name">{{ card.name }}</strong>
                                                 <figure class="pop_card_thumb">
                                                     <picture>
-                                                        <source v-if="card.imgMo" media="(max-width: 1024px)" :srcset="card.imgMo" /> <!-- 26.06.26 edit 정다희 : 태블릿 MO 이미지 적용 -->
+                                                        <source v-if="card.imgMo" media="(max-width: 1024px)" :srcset="card.imgMo" /> 
                                                         <img :src="card.img" :alt="card.name" />
                                                     </picture>
                                                 </figure>
@@ -844,9 +768,7 @@
                 <!-- 기프트카드 패널 -->
                 <template v-else-if="i === 3">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -873,7 +795,6 @@
                             <button type="button" class="gift_brand_nav gift_brand_prev" :aria-label="t.common.prevAria">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </button>
-                             <!-- 26.06.11 edit 정다희 : gift_brand_slider Swiper space-between 20px -->
                             <Swiper
                                 :modules="[Pagination, Navigation]"
                                 :slides-per-view="3"
@@ -904,11 +825,7 @@
                     </section>
                     <section>
                         <header class="sec_header">
-
                             <h3 v-html="tab.purchaseTitle"></h3>
-
-                            <!-- 26.07.06 Del 이종환 <p v-if="tab.purchaseNote" class="sec_header_desc" v-html="tab.purchaseNote" /> -->
-
                         </header>
                         <div class="gift_purchase_wrap">
                             <figure class="gift_purchase_img">
@@ -949,9 +866,7 @@
                 <!-- GS25 유심 요금제 패널 -->
                 <template v-else-if="i === 4">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -1058,9 +973,7 @@
                 <!-- 하이패스 카드/단말기 패널 -->
                 <template v-else-if="i === 5">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -1104,9 +1017,7 @@
                 <!-- 고속도로 미납 통행료 납부 패널 -->
                 <template v-else-if="i === 6">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -1132,12 +1043,10 @@
                     </section>
                 </template>
 
-                <!-- 온라인몰 편의점 결제 패널 (Figma 97:16410, 97:16422) -->
+                <!-- 온라인몰 편의점 결제 패널  -->
                 <template v-else-if="i === 7">
                     <figure v-if="tab.hero" class="brand_panel_bg">
-                        <!-- 26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                        <!-- //26.06.26 edit 정다희 : 생활 서비스 serviceTabs — 모바일 heroMo 이미지 분기 -->
                     </figure>
                     <header v-if="tab.title" class="brand_panel_title">
                         <h2 v-html="tab.title"></h2>
@@ -1197,8 +1106,7 @@
                 </template>
             </div>
             
-            <!-- 26.07.08 edit 정다희 : 생활서비스 3depth 중 현금인출기(serviceActiveTab===0)에서만 노출 -->
-            <DiffQrRow v-if="tab2.qr && serviceActiveTab === 0" :title="tab2.qr.title" :desc="tab2.qr.desc" /><!-- 26.07.07 add 이소라 -->
+            <DiffQrRow v-if="tab2.qr && serviceActiveTab === 0" :title="tab2.qr.title" :desc="tab2.qr.desc" />
         </div>
 
         <!-- 택배&픽업 -->
@@ -1226,9 +1134,7 @@
                 <template v-for="(tab, i) in store.tabs[1].serviceTabs" :key="i">
                     <div v-show="deliveryActiveTab === i" :class="['service_panel', `delivery_panel_${i+1}`]">
                         <figure v-if="tab.hero" class="brand_panel_bg">
-                            <!-- 26.06.26 edit 정다희 : 택배&픽업 serviceTabs — 모바일 heroMo 이미지 분기 -->
                             <img :src="isMobileView && tab.heroMo ? tab.heroMo : tab.hero" :alt="tab.heroAlt || ''" width="1420" height="340" />
-                            <!-- //26.06.26 edit 정다희 : 택배&픽업 serviceTabs — 모바일 heroMo 이미지 분기 -->
                         </figure>
                         <header v-if="tab.title" class="brand_panel_title">
                             <h2 v-html="tab.title"></h2>
@@ -1300,9 +1206,7 @@
                         </section>
                         <section v-if="tab.priceItems && tab.priceItems.length" class="sec_delivery_price">
                             <header class="sec_header">
-
                                 <h3 v-html="tab.priceTitle"></h3>
-
                             </header>
                             <div class="info_card">
                                 <ul class="info_list">
@@ -1378,25 +1282,11 @@
                         <div v-if="tab.partnerBtnText" class="link_wrap">
                             <a :href="tab.partnerBtnText_link" target="_blank" class="btn_big primary btn_icon_arrow after">{{ tab.partnerBtnText }}</a>
                         </div>
-                        <!-- 택배&픽업 --> <!-- 택배&픽업 --> <!-- 택배&픽업 --> <!-- 택배&픽업 -->     
-                        <!-- <section v-if="tab.shoppingItems && tab.shoppingItems.length" class="sec_delivery_shopping">
-                            <header class="sec_header">
-
-                                <h3 v-html="tab.shoppingTitle"></h3>
-
-                            </header>
-                            <ul class="list_dotted">
-                                <li v-for="(item, ii) in tab.shoppingItems" :key="ii">
-                                    <p v-html="item.text"></p>
-                                </li>
-                            </ul> 
-                        </section> -->
                     </div>
                 </template>
             </div>
 
-            <!-- 26.07.08 edit 정다희 : 택배&픽업 3depth 중 국내택배(deliveryActiveTab===0)에서만 노출 -->
-            <DiffQrRow v-if="tab2.qr && deliveryActiveTab === 0" :title="tab2.qr.title" :desc="tab2.qr.desc" /><!-- 26.07.07 add 이소라 -->
+            <DiffQrRow v-if="tab2.qr && deliveryActiveTab === 0" :title="tab2.qr.title" :desc="tab2.qr.desc" />
         </div>
 
         <!-- 공공요금수납 -->
@@ -1436,61 +1326,6 @@
             </section>
         </div>
 
-        <!-- 26.06.29 del 정다희 : 상품권 판매 탭 삭제 -->
-        <!--
-        <div v-show="depth1ActiveIdx === 2 && storeActiveTab === 3" class="brand_panel">
-            <figure v-if="store.tabs[3].hero" class="brand_panel_bg">
-                <img :src="store.tabs[3].hero" :alt="store.tabs[3].heroAlt || ''" width="1420" height="340" />
-            </figure>
-            <header v-if="store.tabs[3].subtitle" class="brand_panel_title">
-                <h2 v-html="store.tabs[3].subtitle"></h2>
-                <p v-if="store.tabs[3].desc" v-html="store.tabs[3].desc" />
-            </header>
-            <section v-if="store.tabs[3].voucherItems && store.tabs[3].voucherItems.length" class="sec_voucher">
-                <header class="sec_header">
-
-                    <h3 v-html="store.tabs[3].voucherTitle"></h3>
-
-                </header>
-                <ul v-if="!isMobileView" class="voucher_list">
-                    <li v-for="(item, vi) in store.tabs[3].voucherItems" :key="vi" class="voucher_item">
-                        <div class="voucher_img">
-                            <img :src="item.img" :alt="item.name" />
-                        </div>
-                        <div class="voucher_info">
-                            <strong class="voucher_name">{{ item.name }}</strong>
-                            <div class="voucher_tags">
-                                <span v-for="(tag, ti) in item.tags" :key="ti" class="voucher_tag" :class="`tag_${tag.type}`">{{ tag.text }}</span>
-                            </div>
-                            <p class="voucher_desc">{{ item.desc }}</p>
-                        </div>
-                    </li>
-                </ul>
-                <Swiper
-                    v-else
-                    class="voucher_swiper"
-                    slides-per-view="auto"
-                    :space-between="20"
-                >
-                    <SwiperSlide v-for="(item, vi) in store.tabs[3].voucherItems" :key="vi">
-                        <div class="voucher_item">
-                            <div class="voucher_img">
-                                <img :src="item.img" :alt="item.name" />
-                            </div>
-                            <div class="voucher_info">
-                                <strong class="voucher_name">{{ item.name }}</strong>
-                                <div class="voucher_tags">
-                                    <span v-for="(tag, ti) in item.tags" :key="ti" class="voucher_tag" :class="`tag_${tag.type}`">{{ tag.text }}</span>
-                                </div>
-                                <p class="voucher_desc">{{ item.desc }}</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-            </section>
-        </div>
-        -->
-        <!-- //26.06.29 del 정다희 : 상품권 판매 탭 삭제 -->
         <!-- 상생협력: 운영지원제도 -->
         <div v-show="depth1ActiveIdx === 3 && winwinActiveTab === 0" class="brand_panel winwin_panel">
             <!-- 3depth 탭 네비 -->
@@ -1536,9 +1371,7 @@
         <!-- 상생협력: 참여제도 -->
         <div v-show="depth1ActiveIdx === 3 && winwinActiveTab === 1" class="brand_panel">
             <figure v-if="winwin.tabs[1].hero" class="brand_panel_bg">
-                <!-- 26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 (brand_bg_12_mo.png) -->
                 <img :src="isMobileView && winwin.tabs[1].heroMo ? winwin.tabs[1].heroMo : winwin.tabs[1].hero" :alt="winwin.tabs[1].heroAlt || ''" width="1420" height="340" />
-                <!-- //26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 -->
             </figure>
             <header v-if="winwin.tabs[1].title" class="brand_panel_title">
                 <h2 v-html="winwin.tabs[1].title"></h2>
@@ -1552,9 +1385,7 @@
         <!-- depth1 = 4: 밀박스/스낵바 -->
         <div v-if="depth1ActiveIdx === 4" class="brand_panel milbox_panel">
             <figure v-if="milbox.hero" class="brand_panel_bg">
-                <!-- 26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 (brand_bg_13_mo.png) -->
                 <img :src="isMobileView && milbox.heroMo ? milbox.heroMo : milbox.hero" :alt="milbox.heroAlt || ''" width="1420" height="340" />
-                <!-- //26.06.26 edit 정다희 : 모바일 heroMo 이미지 분기 -->
             </figure>
             <header v-if="milbox.title" class="brand_panel_title">
                 <h2 v-html="milbox.title"></h2>
@@ -1568,7 +1399,6 @@
                 <FeatureCards v-if="sec.type === 'feature' && sec.items && sec.items.length" :items="sec.items" type="icon" class="milbox_feature" />
                 <ul v-if="sec.type === 'imgcard' && sec.items && sec.items.length" class="imgcard_list">
                     <li v-for="(item, ii) in sec.items" :key="ii" class="imgcard_item">
-                        <!-- 26.06.10 add 정다희 : 밀박스25/스낵바 카드별 이미지 분기 (item.img) -->
                         <figure class="imgcard_img">
                             <img v-if="item.img" :src="item.img" :alt="item.name" />
                         </figure>
@@ -1579,7 +1409,6 @@
                             </h4>
                             <p v-if="item.desc" class="imgcard_desc" v-html="item.desc"></p>
                         </div>
-                        <!-- 26.06.08 add 정다희 : 밀박스25/스낵바 카드별 info_card 분기 (item.advantages) -->
                         <div v-if="item.advantages" class="info_card">
                             <strong v-if="item.advantages.title" class="info_card_title">{{ item.advantages.title }}</strong>
                             <ul class="info_list">
@@ -1591,17 +1420,14 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- //26.06.08 add 정다희 : 밀박스25/스낵바 카드별 info_card 분기 (item.advantages) -->
                     </li>
                 </ul>
             </section>
         </div>
 
-        <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
         <div class="bottom_btns">
             <button class="btn_back" @click="handleBack">{{ t.backLabel }}</button>
         </div>
-        <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
     </div>
 
     <div id="pop_store_find" class="modal_wrap">
@@ -1613,16 +1439,13 @@
 import { ref, computed, defineProps, nextTick, watch, onMounted, onBeforeUnmount } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-/* 26.06.26 add 정다희 : useRouter — 탭 라우팅 · useRoute — query(depth1) 탭 초기화 */
 import { useRouter, useRoute } from "vue-router";
-/* //26.06.26 add 정다희 : useRouter · useRoute */
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import Tabs from "@/components/Tabs.vue";
 import Buttons from "@/components/Buttons.vue";
 import DiffQrRow from "@/components/DiffQrRow.vue";
-/* 26.07.08 del 정다희 : QR 이미지 import 제거 → DiffQrRow 컴포넌트 내부에서 관리 */
 
 import Steps from "@/components/Steps.vue";
 import FeatureCards from "@/components/FeatureCards.vue";
@@ -1637,15 +1460,9 @@ import imgAcc01 from "@/assets/images/dummy/brand_accordion_01.png";
 import imgAcc02 from "@/assets/images/dummy/brand_accordion_02.png";
 import imgAcc03 from "@/assets/images/sub/gsrbr010101/brand_accordion_03.png";
 
-/* 탭 0 이미지 */
-// 26.06.23 del 정다희 : 차별화상품 탭 삭제
-// import imgHero0 from "@/assets/images/sub/gsrbr010101/img_01-01-01.png"; //26.05.15 Edit 이종환
-// import imgCard1 from "@/assets/images/sub/gsrbr010101/img_01-01-02.png";
-// import imgCard2 from "@/assets/images/sub/gsrbr010101/img_01-01-03.png";
-
 /* 탭 1 이미지 */
 import imgHero1 from "@/assets/images/dummy/brand_bg_02.png";
-import imgHero1Mo from "@/assets/images/dummy/mo/brand_bg_02_mo.png"; /* 26.06.26 add 정다희 : CAFE25 모바일 히어로 */
+import imgHero1Mo from "@/assets/images/dummy/mo/brand_bg_02_mo.png"; 
 import imgCoffeeMachine01 from "@/assets/images/dummy/coffee_machine_01.png";
 import imgCoffeeMachine02 from "@/assets/images/dummy/coffee_machine_02.png";
 import imgCoffeeMachine03 from "@/assets/images/dummy/coffee_machine_03.png";
@@ -1660,13 +1477,13 @@ import imgCafeMenuMo from "@/assets/images/sub/gsrbr010101/cafe25_menu_mo.png";
 
 /* 탭 2 이미지 */
 import imgHero2 from "@/assets/images/dummy/differentiated_bg_03.png";
-import imgHero2Mo from "@/assets/images/dummy/mo/differentiated_bg_03_mo.png"; /* 26.06.26 add 정다희 : CHICKEN25 모바일 히어로 */
+import imgHero2Mo from "@/assets/images/dummy/mo/differentiated_bg_03_mo.png"; 
 import imgChickenLeft from "@/assets/images/dummy/chicken25_card_01.png";
 import imgChickenRight from "@/assets/images/dummy/chicken25_card_02.png";
 
 /* 탭 3 이미지 */
 import imgHero3 from "@/assets/images/dummy/differentiated_bg_04.png";
-import imgHero3Mo from "@/assets/images/dummy/mo/differentiated_bg_04_mo.png"; /* 26.06.26 add 정다희 : GOPIZZA 모바일 히어로 */
+import imgHero3Mo from "@/assets/images/dummy/mo/differentiated_bg_04_mo.png"; 
 import imgGoben1 from "@/assets/images/dummy/gopizza_goben_01.png";
 import imgGoben2 from "@/assets/images/dummy/gopizza_goben_02.png";
 import imgDough from "@/assets/images/dummy/gopizza_dough.png";
@@ -1676,11 +1493,8 @@ import imgPhone1 from "@/assets/images/dummy/gopizza_phone_01.png";
 import imgPhone2 from "@/assets/images/dummy/gopizza_phone_02.png";
 
 /* 신선강화점 이미지 */
-// 26.06.08 add정다희 이미지 imgSinsen01 ~ imgSinsen06 추가, imgFlow삭제
-// import imgFlow from "@/assets/images/dummy/sinsen_flow.png";
-// import imgFlowMo from "@/assets/images/dummy/mo/sinsen_flow_mo.png";
 import imgSinsen00 from "@/assets/images/sub/gsrbr010101/brand_bg_05.png";
-import imgSinsen00Mo from "@/assets/images/sub/gsrbr010101/brand_bg_05_mo.png"; //26.06.15 add 정다희 : heroMo 이미지 추가
+import imgSinsen00Mo from "@/assets/images/sub/gsrbr010101/brand_bg_05_mo.png"; 
 import imgSinsen01 from "@/assets/images/sub/gsrbr010101/sinsen_01.png";
 import imgSinsen02 from "@/assets/images/sub/gsrbr010101/sinsen_02.png";
 import imgSinsen03 from "@/assets/images/sub/gsrbr010101/sinsen_03.png";
@@ -1696,28 +1510,26 @@ import imgSinsen06Mo from "@/assets/images/sub/gsrbr010101/sinsen_06_mo.png";
 
 /* 매장/서비스 이미지 */
 import imgHero5 from "@/assets/images/sub/gsrbr010101/brand_bg_06.png";
-import imgHero5Mo from "@/assets/images/dummy/mo/brand_bg_06_mo.png"; /* 26.06.26 edit 정다희 : dummy/mo 경로 변경 */
+import imgHero5Mo from "@/assets/images/dummy/mo/brand_bg_06_mo.png";
 import imgHero6 from "@/assets/images/dummy/brand_bg_07.png";
-import imgHero6Mo from "@/assets/images/dummy/mo/brand_bg_07_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 */
+import imgHero6Mo from "@/assets/images/dummy/mo/brand_bg_07_mo.png"; 
 import imgHero7 from "@/assets/images/dummy/brand_bg_08.png";
-import imgHero7Mo from "@/assets/images/dummy/mo/brand_bg_08_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 */
+import imgHero7Mo from "@/assets/images/dummy/mo/brand_bg_08_mo.png"; 
 import imgHero8 from "@/assets/images/sub/gsrbr010101/brand_bg_09.png";
-import imgHero8Mo from "@/assets/images/dummy/mo/brand_bg_09_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 */
+import imgHero8Mo from "@/assets/images/dummy/mo/brand_bg_09_mo.png"; 
 import imgHero9 from "@/assets/images/sub/gsrbr010101/brand_bg_10.png";
-import imgHero9Mo from "@/assets/images/dummy/mo/brand_bg_10_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 */
+import imgHero9Mo from "@/assets/images/dummy/mo/brand_bg_10_mo.png"; 
 import imgHero10 from "@/assets/images/sub/gsrbr010101/brand_bg_11.png";
-import imgHero10Mo from "@/assets/images/dummy/mo/brand_bg_11_mo.png"; /* 26.06.26 edit 정다희 : dummy/mo 경로 변경 */
+import imgHero10Mo from "@/assets/images/dummy/mo/brand_bg_11_mo.png"; 
 import imgHero11 from "@/assets/images/sub/gsrbr010101/brand_bg_11-1.png";
-import imgHero11Mo from "@/assets/images/sub/gsrbr010101/brand_bg_11-1_mo.png"; /* 26.06.26 add 정다희 : 쇼핑몰거래 모바일 히어로 */
+import imgHero11Mo from "@/assets/images/sub/gsrbr010101/brand_bg_11-1_mo.png"; 
 import imgHero11_1 from "@/assets/images/sub/gsrbr010101/brand_bg_11-2.png";
-import imgHero11_1Mo from "@/assets/images/dummy/mo/brand_bg_12_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 (brand_bg_11-2) */
+import imgHero11_1Mo from "@/assets/images/dummy/mo/brand_bg_12_mo.png"; 
 import imgHero12 from "@/assets/images/sub/gsrbr010101/brand_bg_13.png";
-import imgHero12Mo from "@/assets/images/dummy/mo/brand_bg_13_mo.png"; /* 26.06.26 add 정다희 : 모바일 히어로 */
-/* 26.06.10 add 정다희 : 밀박스25/스낵바 카드 이미지 */
+import imgHero12Mo from "@/assets/images/dummy/mo/brand_bg_13_mo.png"; 
 import imgMilbox01 from "@/assets/images/sub/gsrbr010101/milbox_01.png";
 import imgMilbox02 from "@/assets/images/sub/gsrbr010101/milbox_02.png";
 import imgPopCard1 from "@/assets/images/dummy/pop_card_01.png";
-/* 26.06.10 edit 정다희 : pop_card_02 PC/MO 이미지 경로 변경 (sub/gsrbr010101) */
 import imgPopCard2 from "@/assets/images/sub/gsrbr010101/pop_card_02.png";
 import imgPopCard3 from "@/assets/images/dummy/pop_card_03.png";
 import imgPopCard1Mo from "@/assets/images/dummy/mo/pop_card_01_mo.png";
@@ -1764,15 +1576,12 @@ import imgServiceDesc03    from "@/assets/images/dummy/service_desc_03.png";
 import imgServiceDesc04    from "@/assets/images/dummy/service_desc_04.png";
 import imgServiceDesc05    from "@/assets/images/dummy/service_desc_05.png";
 import imgServiceDesc06    from "@/assets/images/dummy/service_desc_06.png";
-// 26.06.29 del 정다희 : 상품권 판매 탭 삭제
-// import imgGiftCerti01 from "@/assets/images/dummy/gift_certi_01.png";
-// import imgGiftCerti02 from "@/assets/images/dummy/gift_certi_02.png";
-// import imgGiftCerti03 from "@/assets/images/dummy/gift_certi_03.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-const router = useRouter(); /* 26.06.26 add 정다희 : 1depth 탭 변경 시 라우트 이동 */
-const route = useRoute(); /* 26.06.26 add 정다희 : URL query(depth1/tab)로 탭 초기화 */
+const router = useRouter();
+const route = useRoute(); 
 
 function openModal(event) {
     const el = event.currentTarget;
@@ -1799,23 +1608,17 @@ const langData = {
                 { item: "신선강화점" },
                 { item: "매장/서비스" },
                 { item: "상생협력" },
-                { item: "밀박스/스낵바\n (기업 정기 서비스)" }, //26.05.15 Edit 이종환
+                { item: "밀박스/스낵바\n (기업 정기 서비스)" }, 
             ],
             depth2: [
-                // 26.06.23 del 정다희 : 차별화상품 탭 삭제
-                // { item: "차별화 상품" },
                 { item: "CAFE25" },
                 { item: "치킨25" },
                 { item: "고피자" },
             ],
             depth2Store: [
-                // 26.06.23 del 정다희 : 매장/서비스 > 우리동네GS 탭 삭제
-                // { item: "우리동네GS" }, //26.05.27 Add 이종환
                 { item: "생활 서비스" },
                 { item: "택배&픽업" },
                 { item: "공공요금수납" },
-                // 26.06.29 del 정다희 : 상품권 판매 탭 삭제
-                // { item: "상품권 판매" },
             ],
             depth2Winwin: [
                 { item: "운영지원제도" },
@@ -1823,34 +1626,9 @@ const langData = {
             ],
         },
         tabs: [
-            // 26.06.23 del 정다희 : 차별화상품 탭 삭제
-            // {
-            //     hero: imgHero0,
-            //     heroAlt: "",
-            //     title: "차별화 상품",
-            //     subtitle: "합리적인 가격, 믿을 수 있는 품질, 삶의 가치를 높이는 새로운 상품까지 생활 속 기쁨을 누릴 수 있도록 늘 함께 합니다.",
-            //     cards: [
-            //         {
-            //             image: imgCard1,
-            //             alt: "",
-            //             title: "김혜자 도시락",
-            //             desc: "정성 가득한 한끼를 위한 프리미엄 도시락 라인으로, 높은 고객 만족도를 자랑하는 GS25 대표 차별화 상품입니다.",
-            //         },
-            //         {
-            //             image: imgCard2,
-            //             alt: "",
-            //             title: "유어스",
-            //             desc: "유어스는 좋은 품질과 합리적인 가치를 기본으로 하며, 오직 GS리테일에서만 만날 수 있는 재미와 즐거움을 제공합니다.",
-            //         },
-            //     ],
-            //     qr: {
-            //         title: "우리동네GS 앱 다운로드",
-            //         desc: "우리동네GS 앱을 다운로드하고, GS25의 다양한 이벤트와 차별화 상품을 만나보세요. QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.",
-            //     },
-            // },
             {
                 hero: imgHero1,
-                heroMo: imgHero1Mo, /* 26.06.26 add 정다희 : CAFE25 모바일 히어로 */
+                heroMo: imgHero1Mo,
                 heroAlt: "",
                 title: "CAFE25",
                 subtitle: "최고급 커피머신과 스페셜티 블렌딩 원두를 사용하여 최상의 커피를 합리적인 가격으로 제공하는 GS25의 차별화 원두커피 전문 존입니다.",
@@ -1920,7 +1698,7 @@ const langData = {
             },
             {
                 hero: imgHero2,
-                heroMo: imgHero2Mo, /* 26.06.26 add 정다희 : CHICKEN25 모바일 히어로 */
+                heroMo: imgHero2Mo, 
                 heroAlt: "",
                 title: "CHICKEN25",
                 subtitle: "최고의 원재료를 사용하여 즉석에서 조리한 튀김을 합리적인 가격으로 제공하는 GS25만의 차별화 먹거리입니다. <br class=\"p_br\" />편의점에서도 치킨25와 함께 전문점 수준의 치킨을 즐길 수 있습니다.",
@@ -1956,7 +1734,7 @@ const langData = {
             },
             {
                 hero: imgHero3,
-                heroMo: imgHero3Mo, /* 26.06.26 add 정다희 : GOPIZZA 모바일 히어로 */
+                heroMo: imgHero3Mo, 
                 heroAlt: "",
                 title: "GOPIZZA",
                 subtitle: "한 판의 즐거움! 한 손의 간편함! 고피자는 1인 피자의 선두 브랜드로, 빠르고 맛있는 피자를 제공합니다.<br />이제 가까운 GS25에서도 고피자의 대표 메뉴를 만나볼 수 있습니다.",
@@ -1985,7 +1763,6 @@ const langData = {
                                 image: imgMenu1,
                                 size: "REGULAR (27cm)",
                                 tags: ["식사대용", "일반피자 4조각 분량"],
-                                 // 26.06.23 del 정다희 : price 키삭제
                                 columns: [
                                     { key: "name",  label: "메뉴명",       align: "left"  },
                                     { key: "kcal",  label: "칼로리(kcal)", align: "right" },
@@ -2001,7 +1778,6 @@ const langData = {
                                 image: imgMenu2,
                                 size: "GRAB (20cm)",
                                 tags: ["간식용", "일반피자 2조각 분량"],
-                                 // 26.06.23 del 정다희 : price 키삭제
                                 columns: [
                                     { key: "name",  label: "메뉴명",       align: "left"  },
                                     { key: "kcal",  label: "칼로리(kcal)", align: "right" },
@@ -2026,12 +1802,12 @@ const langData = {
                 ],
                 qr: {
                     title: "우리동네GS 앱 다운로드",
-                    desc: "우리동네GS 앱을 다운로드하고, 다양한 이벤트와 차별화 상품을 만나보세요.<br />QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.",  /**26.07.08 edit 정다희 : desc 문구 수정 */
+                    desc: "우리동네GS 앱을 다운로드하고, 다양한 이벤트와 차별화 상품을 만나보세요.<br />QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.",  
                     descMo: "GS25의 다양한 이벤트와 차별화 상품",
                 },
                 link: {
                     title: "GOPIZZA 홈페이지 바로가기",
-                    desc: "우리동네GS 앱을 다운로드하고, 다양한 이벤트와 차별화 상품을 만나보세요.<br />QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.", /**26.07.08 edit 정다희 : desc 문구 수정 */
+                    desc: "우리동네GS 앱을 다운로드하고, 다양한 이벤트와 차별화 상품을 만나보세요.<br />QR코드를 스캔하면 앱 다운로드 페이지로 이동합니다.", 
                     descMo: "합리적인 가격과 차별화된 맛 GOPIZZA",
                     url: "https://gopizza.kr",
                 },
@@ -2039,17 +1815,17 @@ const langData = {
         ],
         sinsen: {
             hero: imgSinsen00,
-            heroMo: imgSinsen00Mo, // 26.06.15 add 정다희 : heroMo 이미지 추가 
+            heroMo: imgSinsen00Mo, 
             heroAlt: "신선강화점",
             title: "신선강화점",
             subtitle: "신선강화점은 1~2인 가구 및 근거리/소용량 쇼핑 증가 트렌드에 맞춰, 24시간 365일 한번에 장보기를 구현한 신선강화형 편의점입니다.<br /><br class=\"m_br\" />편의점의 간편함과 수퍼마켓의 신선함을 결합한 차별화 컨셉 모델로 매일매일 신선한 신선상품(과일, 채소, 정육, 수산)을 제공합니다.",
             sections: [
                 {
-                    title: "신선강화점 특징", /*26.06.29 edit 정다희 : 타이틀 텍스트 수정*/ 
-                    desc: "GS THE FRESH와 통합 구매를 통해 상품 경쟁력을 확보하여<br /> 타 편의점 대비 다양한 신선상품을 운영합니다.", /* 2026.07.06 edit 이소라 */
+                    title: "신선강화점 특징",
+                    desc: "GS THE FRESH와 통합 구매를 통해 상품 경쟁력을 확보하여<br /> 타 편의점 대비 다양한 신선상품을 운영합니다.", 
                     features: [
-                        { title: "신선한 상품",   desc: "물류부터 진열 판매까지 전 과정<br /> 콜드체인 시스템 적용으로 신선도 유지" }, /* 2026.07.06 edit 이소라 */
-                        { title: "합리적인 가격", desc: "GS 더프레시와의 통합 구매를 통해<br /> 합리적인 가격에 판매" }, /* 2026.07.06 edit 이소라 */
+                        { title: "신선한 상품",   desc: "물류부터 진열 판매까지 전 과정<br /> 콜드체인 시스템 적용으로 신선도 유지" }, 
+                        { title: "합리적인 가격", desc: "GS 더프레시와의 통합 구매를 통해<br /> 합리적인 가격에 판매" },
                         { title: "소용량 소포장", desc: "1인가구 및 2~3인 가구에 적합한<br/> 소용량·소포장 상품 구성" },
                         { title: "전용 상품 브랜드", desc: "신선식품 전문 브랜드<br/> 신선특별시 운영" },
                     ],
@@ -2059,13 +1835,12 @@ const langData = {
                     desc: "업계 유일의 신선식품 전용 물류센터를 운영중이며,<br/> 파트너사에서 점포까지 전 구간 선도관리를 통해 신선상품의 신선도를 유지합니다.",
                     flow: true,
                     flow_cont:[
-                        {flowTitle: "GS25 신선 배송 방식", flowNote: "신선센터를 거쳐 각 저온센터로 배송하는 구조.", flowList: ["파트너사 → 단일 센터 입고로 물류비 절감 → 가격 경쟁력 ↑", "신선 센터 입고 시 신선상품 검품을 통해 1차 선도관리 진행"], flowNote2:"파트너사 → 단일 센터 입고로 물류비 절감 → 원가 경쟁력↑. 신선 단일센터 검품 관리로 점포 입고 전 1차 선도관리 진행", img:require("@/assets/images/sub/gsrbr010101/sinsen_flow.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow_mo.png"), alt:""}, /*26.06.29 add 정다희 : flowList 추가, flowNote 텍스트 수정*/ 
-                        {flowTitle: "타사 신선 배송 방식", flowNote: "신선센터를 거치지 않고 각 저온센터로 배송하는 구조", flowList: ["파트너사 → 각 저온센터 입고로 물류비 증가 → 가격 경쟁력 ↓", "각 저온센터 입고 시 신선상품 검품 및 선도관리 제약"], img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2_mo.png"), alt:""} /*26.06.29 add 정다희 : flowList 추가, flowNote 텍스트 수정*/ 
+                        {flowTitle: "GS25 신선 배송 방식", flowNote: "신선센터를 거쳐 각 저온센터로 배송하는 구조.", flowList: ["파트너사 → 단일 센터 입고로 물류비 절감 → 가격 경쟁력 ↑", "신선 센터 입고 시 신선상품 검품을 통해 1차 선도관리 진행"], flowNote2:"파트너사 → 단일 센터 입고로 물류비 절감 → 원가 경쟁력↑. 신선 단일센터 검품 관리로 점포 입고 전 1차 선도관리 진행", img:require("@/assets/images/sub/gsrbr010101/sinsen_flow.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow_mo.png"), alt:""}, 
+                        {flowTitle: "타사 신선 배송 방식", flowNote: "신선센터를 거치지 않고 각 저온센터로 배송하는 구조", flowList: ["파트너사 → 각 저온센터 입고로 물류비 증가 → 가격 경쟁력 ↓", "각 저온센터 입고 시 신선상품 검품 및 선도관리 제약"], img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2_mo.png"), alt:""} 
                     ],
                 },
                 {
                     title: "신선강화점 운영의 장점",
-                    // 26.06.08 add 정다희 : advantageCards 컨텐츠 수정
                     advantageCards: [
                         {
                             title: "일반 편의점 대비 다양한 상품 구색",
@@ -2100,7 +1875,7 @@ const langData = {
                         },
                         {
                             title: "신선강화점 전용 행사 운영",
-                            desc: "정기행사에 외 주 단위 신선강화점 전용 행사<br />추가 운영(신선상품 &amp; 공산품)",  /*26.06.29 edit 정다희: 텍스트 수정 */ 
+                            desc: "정기행사에 외 주 단위 신선강화점 전용 행사<br />추가 운영(신선상품 &amp; 공산품)",  
                             items: [
                                 { img: imgSinsen05, imgMo: imgSinsen05Mo, caption: "[신선 전단 행사]" },
                                 { img: imgSinsen06, imgMo: imgSinsen06Mo, caption: "[공산 전단 행사]" },
@@ -2122,10 +1897,10 @@ const langData = {
                         {
                             label:   "현금인출기\n서비스",
                             hero:    imgHero5,
-                            heroMo: imgHero5Mo, /* 26.06.26 add 정다희 : brand_bg_06_mo */
+                            heroMo: imgHero5Mo,
                             heroAlt: "",
                             title:   "현금인출기 서비스",
-                            desc:    "현금인출, 계좌이체 등 금융 서비스 외에도 프로스포츠(야구, 축구, 배구, 농구) 정규리그 입장권(즉시 입장), 에버랜드 자유이용권의 발권도 가능합니다.<br />그 밖에 하이패스 충전(신용카드 결제), 알뜰폰 판매 등 다양한 생활편의 서비스를 제공하고 있습니다.", /* 2026.07.06 edit 이소라 */
+                            desc:    "현금인출, 계좌이체 등 금융 서비스 외에도 프로스포츠(야구, 축구, 배구, 농구) 정규리그 입장권(즉시 입장), 에버랜드 자유이용권의 발권도 가능합니다.<br />그 밖에 하이패스 충전(신용카드 결제), 알뜰폰 판매 등 다양한 생활편의 서비스를 제공하고 있습니다.", 
                             sub_item: {
                                 title: "현금인출 수수료 0원 서비스",
                                 explain: "신한은행 / KB국민은행 / 우리은행 / Kakaobank / K bank / 토스뱅크 / SC제일은행 / 광주은행 / SB저축은행 / 삼성증권 / NH투자증권 계좌에서 현금인출시 수수료 0원!",
@@ -2150,9 +1925,9 @@ const langData = {
                             hero:    null,
                             heroAlt: "",
                             title:   "편의점 캐시 구입/충전 서비스",
-                            desc:    "편의점캐시는 온라인 콘텐츠, 쇼핑몰, 게임캐시, 국제전화카드를 편의점에서 구입/충전할 수 있는 서비스입니다.", /* 2026.07.06 edit 이소라 */
+                            desc:    "편의점캐시는 온라인 콘텐츠, 쇼핑몰, 게임캐시, 국제전화카드를 편의점에서 구입/충전할 수 있는 서비스입니다.", 
                             table: {
-                                rows: [ /* 2026.07.06 edit 이소라 */
+                                rows: [ 
                                     { head: "게임 · 상품권 · 통신", text: "(알뜰폰/국제전화/모바일 데이터) 등 다양한 서비스를 편의점에서 실시간으로 구입, 충전할 수 있는 서비스 영수증형 PIN 구입과 국제전화카드 충전 이외에 스마트폰 APP를 통한 실시간 잔액 충전 가능" },
                                     { head: "게임캐시",         text: "N코인(엔씨소프트), 넥슨, 월드 오브 워크레프트, 리그 오브 레전드, 틴캐시, 한게임, 퍼니카드, 한빛소프트 등" },
                                     { head: "상품권",           text: "문화상품권, 스마트문화상품권, 해피머니상품권, 도서문화상품권 등" },
@@ -2273,7 +2048,7 @@ const langData = {
                                 etc:           { title: "기타",        bullets: ["고속도로 휴게소 : 진영휴게소, 영천휴게소", "개그스토리 마트 (일부점)","문구점 색연필 (일부점)", "비디오 대여점 영화마을 (일부점)"] },
                             },
                             pageTitle: "교통카드 충전서비스(팝티머니,마이비,캐시비(EZL),한페이)",
-                            pageDesc:  "GS25는 대중교통을 이용하는 고객님을 위해 교통카드 충전 서비스를 실행하고 있습니다.<br />또한, GS25에서 상품을 구매할 수 있어 결제 수단의 편의성을 제공하고있는 유익한 서비스입니다. (복권, 로또, 토토, 택배 등 일부 상품 제외)", /* 2026.07.06 edit 이소라 */
+                            pageDesc:  "GS25는 대중교통을 이용하는 고객님을 위해 교통카드 충전 서비스를 실행하고 있습니다.<br />또한, GS25에서 상품을 구매할 수 있어 결제 수단의 편의성을 제공하고있는 유익한 서비스입니다. (복권, 로또, 토토, 택배 등 일부 상품 제외)", 
                             popTitle:   "팝카드란?",
                             popDesc:    "이제 팝 하세요! <br />다양한 결제 수단과 결합하여 혜택은 더 크게, 소비는 더 합리적으로, 사용은 더 편리하게 할 수 있도록 팝카드만의 차별화된 서비스를 제공합니다.",
                             popExclude: "팝카드 사용 제외 매장 : 디몰점, 영풍종로점, 부천세이브존점, 동대문현대시티아울렛점, 서면NC점, 현대시티몰가든파이브점, 모란NC점, 대구이월드점, 동아쇼핑NC점, 이천NC점, 동수원NC점, 야탑NC점",
@@ -2293,7 +2068,7 @@ const langData = {
                                     img:   imgPopCard1,
                                     imgMo: imgPopCard1Mo,
                                     name:  "팝티머니",
-                                    desc:  "하나의 카드로 관리 가능한 멀티멤버십의 혜택까지!\n팝티머니는 T-money와 팝카드의 기능을 동시에\n사용할 수 있는 차별화된 서비스입니다.",  /* 2026.07.06 edit 이소라 */
+                                    desc:  "하나의 카드로 관리 가능한 멀티멤버십의 혜택까지!\n팝티머니는 T-money와 팝카드의 기능을 동시에\n사용할 수 있는 차별화된 서비스입니다.",  
                                     logos: [
                                         { src: imgPoint1, w: 28, h: 36 },
                                         { src: imgPoint2, w: 44, h: 24 },
@@ -2302,11 +2077,10 @@ const langData = {
                                     ],
                                 },
                                 {
-                                    // 26.06.10 edit 정다희 : pop_card_02 이미지 경로 변경 적용
                                     img:      imgPopCard2,
                                     imgMo:    imgPopCard2Mo,
                                     name:     "멤버십 팝카드",
-                                    desc:     "멤버십팝카드는 GS ALL 포인트와 팝카드가 결합되어 GS25, GS THE FRESH에서 결제와 동시에 포인트가 적립되고, 600여 온라인 쇼핑, 게임 등에서 결제가 가능한 혜택이 많은 선불카드입니다.",  /* 2026.07.06 edit 이소라 */
+                                    desc:     "멤버십팝카드는 GS ALL 포인트와 팝카드가 결합되어 GS25, GS THE FRESH에서 결제와 동시에 포인트가 적립되고, 600여 온라인 쇼핑, 게임 등에서 결제가 가능한 혜택이 많은 선불카드입니다.",  
                                     note:     "*교통기능 없음",
                                     noteWarn: true,
                                     logos:    [{ src: imgPoint2, w: 44, h: 24 }],
@@ -2323,7 +2097,7 @@ const langData = {
                         {
                             label:          "기프트\n카드",
                             hero:           imgHero6,
-                            heroMo: imgHero6Mo, /* 26.06.26 add 정다희 : brand_bg_07_mo */
+                            heroMo: imgHero6Mo, 
                             heroAlt:        "",
                             title:          "기프트카드",
                             desc:           "GS25는 기프트카드를 운영하고 있으며, 전국 어디에서나 충전 및 사용이 가능합니다.<br />다양한 기프트카드를 소중한 친구, 가족, 지인들에게 선물할 수 있습니다. (단,일부 매장에서는 충전 및 사용이 불가합니다.)",
@@ -2349,12 +2123,11 @@ const langData = {
                                 { img: imgGiftCard6, name: "올레WiFi" },
                             ],
                             purchaseTitle: "POSA 기프트카드 구매 방법",
-                            purchaseNote:  "기프트카드별로 사용 방법이 다르므로 카드와 카드 캐리어 뒷면에 기재된 사용 방법을 참고하시고, 자세한 사항은 카드에 기재된 고객센터로 문의하시기 바랍니다.", /* 2026.07.06 edit 이소라 */
-                            purchaseImg:   imgGiftPurchase,
+                            purchaseNote:  "기프트카드별로 사용 방법이 다르므로 카드와 카드 캐리어 뒷면에 기재된 사용 방법을 참고하시고, 자세한 사항은 카드에 기재된 고객센터로 문의하시기 바랍니다.", 
                             purchaseSteps: [
                                 { num: "01", title: "판매처 방문",    desc: "가까운 GS25 편의점에 방문하세요." },
                                 { num: "02", title: "기프트카드 선택", desc: "원하는 브랜드의 기프트카드를 선택하세요." },
-                                { num: "03", title: "사용 설명 확인",   desc: "구매하신 카드 뒷면 사용설명을<br class=\"m_br\" />잘 확인하시고 사용하세요." }, /* 2026.07.06 edit 이소라 */
+                                { num: "03", title: "사용 설명 확인",   desc: "구매하신 카드 뒷면 사용설명을<br class=\"m_br\" />잘 확인하시고 사용하세요." }, 
                                 { num: "04", title: "계산",           desc: "계산대에서 계산을 완료하시면 활성화되어 사용 가능한 상태가 됩니다." },
                             ],
                             usageTitle:   "POSA 기프트카드 사용방법",
@@ -2376,7 +2149,7 @@ const langData = {
                                 { step: "Step 4", title: "결제완료" },
                             ],
                             advantageTitle: "POSA 기프트카드 장점",
-                            advantages: [/* 2026.07.06 edit 이소라 */
+                            advantages: [
                                 {
                                     num:   "01",
                                     title: "신용카드와 함께\n지갑 속에 쏙!",
@@ -2404,7 +2177,7 @@ const langData = {
                             hero:           null,
                             heroAlt:        "",
                             title:          "유심 요금제",
-                            desc:           "U+ 알뜰모바일과 GS25가 만나 획기적으로 낮춘 휴대폰 요금제로 GS25 편의점 및 GS25 온라인 사이트에서 유심칩 구매 가능합니다.", /* 2026.07.06 edit 이소라 */
+                            desc:           "U+ 알뜰모바일과 GS25가 만나 획기적으로 낮춘 휴대폰 요금제로 GS25 편의점 및 GS25 온라인 사이트에서 유심칩 구매 가능합니다.", 
                             advantageTitle: "GS25 요금제 장점",
                             advantages: [
                                 { num: "01", title: "간편하게 가입하는 요금제", desc: "가까운 GS25에서 구매 가능 전용 사이트에서<br /> 간편하게 가입하는 요금제" },
@@ -2512,13 +2285,13 @@ const langData = {
                                     step:    "Step 1",
                                     title:   "셀프형 자동충전카드 구매",
                                     bullets: [
-                                        "가까운 GS25에서 하이패스카드 구매", /* 2026.07.06 edit 이소라 */
+                                        "가까운 GS25에서 하이패스카드 구매", 
                                         "카드 구입비: 5,000원",
                                     ],
                                 },
                                 {
                                     step:    "Step 2",
-                                    title:   "카드 등록 및 결제 정보 등록", /* 2026.07.06 edit 이소라 */
+                                    title:   "카드 등록 및 결제 정보 등록", 
                                     bullets: [
                                         "홈페이지에서 카드번호 및 결제정보등록<br />(계좌 or 신용카드)",
                                         "<span style=\"color: #fb6432\">카드등록 후 24시간 이후 사용 가능</span>",
@@ -2526,7 +2299,7 @@ const langData = {
                                 },
                                 {
                                     step:    "Step 3",
-                                    title:   "하이패스카드 이용", /* 2026.07.06 edit 이소라 */
+                                    title:   "하이패스카드 이용", 
                                     bullets: [
                                         "하이패스 단말기에 삽입하여 사용",
                                         "등록된 결제방식을 통해 자동 충전됨",
@@ -2535,7 +2308,7 @@ const langData = {
                                 
                             ],
                             hipassChargeTitle: "하이패스 카드 충전",
-                            hipassChargeDesc: "하이플러스카드에서 출시한 모든 카드 충전 가능 ('도로공사', 'EX' 기재된 카드 충전 불가)", /* 2026.07.06 edit 이소라 */
+                            hipassChargeDesc: "하이플러스카드에서 출시한 모든 카드 충전 가능 ('도로공사', 'EX' 기재된 카드 충전 불가)", 
                             hipassTerminalTitle: "하이패스단말기 판매",
                             hipassTerminalDesc: "한국도로공사가 인증하고 2년 연속 한국품질만족도 1위 'GPASS' 단말기 판매",
                             hipassTerminalImg:    imgHipassTerminal,
@@ -2567,14 +2340,14 @@ const langData = {
                             ],
                             unpaidTitle: "고속도로 미납통행료 납부 방법",
                             unpaidSteps: [
-                                { step: "Step 1", title: "GS25 편의점에게<br />납부 요청", /* 2026.07.06 edit 이소라 */
-                                    bullets: [ /* 26.07.08 add 정다희 : bullets 추가 */
+                                { step: "Step 1", title: "GS25 편의점에게<br />납부 요청",
+                                    bullets: [ 
                                         "가까운 GS25에서 하이패스 카드 구매",
                                         "카드 구입비: 5,000 원",
                                     ],
                                 },
                                 { step: "Step 2", title: "차량번호 입력" },
-                                { step: "Step 3", title: "개인정보 제공 동의" }, /* 2026.07.06 edit 이소라 */
+                                { step: "Step 3", title: "개인정보 제공 동의" }, 
                                 { step: "Step 4", title: "생년월일 입력" },
                                 { step: "Step 5", title: "결제(현금/신용카드)" },
                             ],
@@ -2584,13 +2357,13 @@ const langData = {
                             hero:    null,
                             heroAlt: "",
                             title:   "온라인몰 편의점 결제",
-                            desc:    "온라인몰(쇼핑, 게임, 항공사, 기타)에서 구매할 때 '편의점 결제'를 선택하고 문자로 수납번호나 바코드를 받아 GS25에서 현금 결제할 수 있는 서비스입니다.", /* 2026.07.06 edit 이소라 */
+                            desc:    "온라인몰(쇼핑, 게임, 항공사, 기타)에서 구매할 때 '편의점 결제'를 선택하고 문자로 수납번호나 바코드를 받아 GS25에서 현금 결제할 수 있는 서비스입니다.",
                             serviceTitle: "편의점 결제의 장점",
                             serviceAdvantages: [
                                 {
                                     num:   "01",
                                     title: "보편성",
-                                    desc:  "은행보다 많고 가까운 집 근처 편의점에서 24시간 결제 가능<br /><span class=\"txt_point\">전국 모든 GS25 점포에서 수납 대행</span><br />(실시간 입금 확인, 대면 거래)", /* 2026.07.06 edit 이소라 */
+                                    desc:  "은행보다 많고 가까운 집 근처 편의점에서 24시간 결제 가능<br /><span class=\"txt_point\">전국 모든 GS25 점포에서 수납 대행</span><br />(실시간 입금 확인, 대면 거래)",
                                 },
                                 {
                                     num:   "02",
@@ -2611,10 +2384,10 @@ const langData = {
                             mallPaymentTitle: "편의점 결제 이용 방법",
                             mallPaymentSteps: [
                                 { step: "Step 1", title: "온라인몰에서<br />상품/서비스 구매",
-                                bullets: [ /* 26.07.08 add 정다희 : bullets 추가 */
-                                    "가까운 GS25에서 하이패스 카드 구매",
-                                    "카드 구입비: 5,000 원",
-                                ],
+                                  bullets: [ 
+                                      "가까운 GS25에서 하이패스 카드 구매",
+                                      "카드 구입비: 5,000 원",
+                                  ],
                                 },
                                 { step: "Step 2", title: "'편의점결제' 선택" },
                                 { step: "Step 3", title: "가까운 GS25에서<br />24시간 결제" },
@@ -2643,7 +2416,7 @@ const langData = {
                         {
                             label:   "국내택배",
                             hero:  imgHero7,
-                            heroMo: imgHero7Mo, /* 26.06.26 add 정다희 : brand_bg_08_mo */
+                            heroMo: imgHero7Mo, 
                             heroAlt: "",
                             title:   "국내택배 서비스",
                             desc:    "365일 24시간 가까운 GS25에서 택배 접수가 가능합니다.",
@@ -2669,21 +2442,18 @@ const langData = {
                             cautionTitle: "국내택배 유의사항",
                             cautionItems: [
                                 {
-                                    // icon: imgCautionSize,
                                     icon:    null,
                                     iconAlt: "사이즈 아이콘",
                                     title:   "사이즈",
                                     desc:    "가로 세로 높이의 합 160cm 이내<br />한변의 길이가 1m 이내",
                                 },
-                                {
-                                    // icon: imgCautionWeight,
+                                {   
                                     icon:    null,
                                     iconAlt: "중량 아이콘",
                                     title:   "중량",
                                     desc:    "20kg 이하",
                                 },
                                 {
-                                    // icon: imgCautionPrice,
                                     icon:    null,
                                     iconAlt: "물품가액 아이콘",
                                     title:   "물품가액",
@@ -2713,7 +2483,7 @@ const langData = {
                         {
                             label: "반값택배",
                             hero: imgHero8,
-                            heroMo: imgHero8Mo, /* 26.06.26 add 정다희 : brand_bg_09_mo */
+                            heroMo: imgHero8Mo,
                             heroAlt: "",
                             title: "반값택배 서비스",
                             desc: "편의점 최초! 국내유일 공휴일 배송! 최저가택배 GS25에서 보내고 GS25에서 받아보세요.",
@@ -2786,7 +2556,7 @@ const langData = {
                         {
                             label: "국제택배",
                             hero:    imgHero9,
-                            heroMo: imgHero9Mo, /* 26.06.26 add 정다희 : brand_bg_10_mo */
+                            heroMo: imgHero9Mo,
                             heroAlt: "",
                             title: "국제택배 서비스",
                             desc: "365일 24시간 가까운 GS25에서 국제택배 접수가 가능 합니다. (SFExpress, 우체국EMS, DHL)",
@@ -2824,7 +2594,7 @@ const langData = {
                         {
                             label: "배달 픽업",
                             hero: imgHero10,
-                            heroMo: imgHero10Mo, /* 26.06.26 edit 정다희 : brand_bg_11_mo (dummy/mo) */
+                            heroMo: imgHero10Mo,
                             heroAlt: "",
                             title: "픽업 서비스",
                             desc: "쇼핑몰에서 상품주문 후, 가까운 GS25에서 물건을 찾아가세요.",
@@ -2843,14 +2613,14 @@ const langData = {
                                 { step: "Step 3", title: "물건 도착 SMS를 받고<br />편의점 방문 수령"},
                             ],
                             shoppingTitle: "픽업서비스 제휴쇼핑몰",
-                            shoppingItems: [ { text: "제휴 쇼핑몰은 <a href=\"https://www.cvsnet.co.kr/post-service/pick-up/use/contentsid/222/index.do\" target=\"_blank\" rel=\"noopener noreferrer\">www.cvsnet.co.kr</a>에서 확인" } ],/*26.06.22 edit 정다희 : 링크 주소 수정*/
+                            shoppingItems: [ { text: "제휴 쇼핑몰은 <a href=\"https://www.cvsnet.co.kr/post-service/pick-up/use/contentsid/222/index.do\" target=\"_blank\" rel=\"noopener noreferrer\">www.cvsnet.co.kr</a>에서 확인" } ],
                             partnerBtnText: "픽업 제휴쇼핑몰 확인하기",
-                            partnerBtnText_link: "https://www.cvsnet.co.kr/post-service/pick-up/use/contentsid/222/index.do" /*26.06.22 edit 정다희 : 링크 주소 수정*/
+                            partnerBtnText_link: "https://www.cvsnet.co.kr/post-service/pick-up/use/contentsid/222/index.do" 
                         },
                         {
                             label:   "쇼핑몰거래",
                             hero:    imgHero11,
-                            heroMo: imgHero11Mo, /* 26.06.26 add 정다희 : brand_bg_11-1_mo — 쇼핑몰거래 */
+                            heroMo: imgHero11Mo, 
                             heroAlt: "",
                             title:   "쇼핑몰 거래 서비스",
                             desc:    "홈쇼핑 반품, 오픈마켓, 온라인 쇼핑몰 등 편리하게 이용하실 수 있는 서비스입니다.",
@@ -2864,9 +2634,9 @@ const langData = {
                                 { step: "Step 3", title: "운송장 출력 후<br />접수" },
                             ],
                             shoppingTitle: "이용가능 제휴처",
-                            shoppingItems: [ { text: "제휴 쇼핑몰은 <a href=\"https://www.cvsnet.co.kr/post-service/shopping-mall/use/contentsid/225/index.do\" target=\"_blank\" rel=\"noopener noreferrer\">www.cvsnet.co.kr</a>에서 확인" } ],/*26.06.22 edit 정다희 : 링크 주소 수정*/ 
+                            shoppingItems: [ { text: "제휴 쇼핑몰은 <a href=\"https://www.cvsnet.co.kr/post-service/shopping-mall/use/contentsid/225/index.do\" target=\"_blank\" rel=\"noopener noreferrer\">www.cvsnet.co.kr</a>에서 확인" } ],
                             partnerBtnText: "이용가능 제휴처 확인하기",
-                            partnerBtnText_link: "https://www.cvsnet.co.kr/post-service/shopping-mall/use/contentsid/225/index.do"/*26.06.22 edit 정다희 : 링크 주소 수정*/ 
+                            partnerBtnText_link: "https://www.cvsnet.co.kr/post-service/shopping-mall/use/contentsid/225/index.do"
                         },
                     ],
                 },
@@ -2877,7 +2647,7 @@ const langData = {
                     desc: "지로고지서에 편의점 수납용 바코드가 있다면 GS25 편의점에서 24시간 365일 세금, 4대보험료 및 공과금의 편리한 납부가 가능한 서비스입니다.",
                     sections: [],
                     panelExtra: {
-                        desc: "지로고지서에 편의점 수납용 바코드가 있다면 GS25 편의점에서 24시간 365일 세금, 4대 보험료 및 공과금의 편리한 납부가 가능한 서비스입니다.<br /> 기존지로 납부 외 휴대폰을 통한 모바일 수납도 가능하며,납부 공과금에 따라 현금과 계좌이체 및 신용카드까지 다양한 수단으로 납부 가능합니다.", /* 2026.07.06 edit 이소라 */
+                        desc: "지로고지서에 편의점 수납용 바코드가 있다면 GS25 편의점에서 24시간 365일 세금, 4대 보험료 및 공과금의 편리한 납부가 가능한 서비스입니다.<br /> 기존지로 납부 외 휴대폰을 통한 모바일 수납도 가능하며,납부 공과금에 따라 현금과 계좌이체 및 신용카드까지 다양한 수단으로 납부 가능합니다.", 
                     },
                     taxTitle: "납부가능 세금 및 공과금",
                     taxGroups: [
@@ -2904,46 +2674,6 @@ const langData = {
                         },
                     ],
                 },
-                // 26.06.29 del 정다희 : 상품권 판매 탭 삭제
-                // {
-                //     hero: null,
-                //     heroAlt: "",
-                //     title: "상품권 판매",
-                //     subtitle: "상품권 판매 서비스",
-                //     desc: "문화상품권, 금강제화, GS칼텍스 상품권 등을 판매하고 있습니다.",
-                //     sections: [],
-                //     voucherTitle: "상품권 종류",
-                //     voucherItems: [
-                //         {
-                //             img: imgGiftCerti01,
-                //             name: "문화상품권",
-                //             tags: [
-                //                 { text: "5천원권", type: "blue" },
-                //                 { text: "1만원권", type: "green" },
-                //             ],
-                //             desc: "도서음반, 영화티켓구입, 외식(일부), 인터넷(게임, 포털)에서 사용 가능한 상품권",
-                //         },
-                //         {
-                //             img: imgGiftCerti02,
-                //             name: "금강제화상품권",
-                //             tags: [
-                //                 { text: "5만원권", type: "orange" },
-                //                 { text: "10만원권", type: "orange" },
-                //             ],
-                //             desc: "전국 1300여개 도시 4000여 매장 (~5만원권, 10만원권)/(금강, 버팔로, PGA, LPGA, 금강핸드백 등) 어디서나 사용 가능한 실속 있는 상품권",
-                //         },
-                //         {
-                //             img: imgGiftCerti03,
-                //             name: "GS칼텍스상품권",
-                //             tags: [
-                //                 { text: "1만원권", type: "green" },
-                //                 { text: "5만원권", type: "orange" },
-                //                 { text: "10만원권", type: "orange" },
-                //             ],
-                //             desc: "주유소,백화점,외식,마트,호텔,여행사 등에서 사용 가능한 상품권",
-                //         },
-                //     ],
-                // },
             ],
         },
         winwin: {
@@ -3002,7 +2732,7 @@ const langData = {
                             ],
                         },
                         {
-                            label: "점포\n소통 지원", //26.05.27 Edit 이종환
+                            label: "점포\n소통 지원",
                             title: "점포 소통 지원",
                             notes: [
                                 { text: "※ 해당 혜택 및 제도는 상황에 따라 변경/폐지/추가 될 수 있습니다." },
@@ -3025,7 +2755,7 @@ const langData = {
                                 { num: "03", title: "경영주 열린아카데미", desc: "경영주 역량 강화", bullets: ["월 2회 실시간 라이브 교육 운영", "다시보기 영상 제공","점포 운영에 필요한 실무 중심 콘텐츠 교육\n (노무, 세무, 가맹정산, 판촉노하우 등)"] , link: "https://gs25.getsmart.co.kr/members/login?returnUrl=http%3A%2F%2Fgs25.getsmart.co.kr%2F"},
                                 { num: "04", title: "GS클래스", desc: "언제든 학습 가능한 경영주 전용 교육 사이트", bullets: ["점포 운영에 필요한 양질의 교육 콘텐츠\n (매뉴얼, 운영 노하우, 강의 다시보기 등)","온라인 라이브 교육","우수점 연구소(우수경영주, 성공사례, 팁)"] },
                                 { num: "05", title: "신규 경영주 입문교육", desc: null, bullets: ["운영 교육(POS, 점포경영, 시스템","서비스 교육","온라인 교육과정(GS클래스)"] , link: "https://gs25.getsmart.co.kr/members/login?returnUrl=http%3A%2F%2Fgs25.getsmart.co.kr%2F" },
-                                { num: "06", title: "스토어매니저 클래스", desc: "스토어매니저 교육 지원", bullets: ["POS 교육","청결 교육","접객서비스 교육"] , link: "http://hpimg.gsretail.com/images/gs25/winwin/web/store_manager_map.html" }, /*26.06.29 edit 정다희 : 텍스트 수정*/ 
+                                { num: "06", title: "스토어매니저 클래스", desc: "스토어매니저 교육 지원", bullets: ["POS 교육","청결 교육","접객서비스 교육"] , link: "http://hpimg.gsretail.com/images/gs25/winwin/web/store_manager_map.html" }, 
                                 { num: "07", title: "벤치마킹 교육", desc: "경영주 역량 강화", bullets: ["우수 가맹점 현장 방문 교육","우수 가맹점별 특화된 교육 콘텐츠","우수 경영주 노하우 공유"] },
                             ],
                         },
@@ -3037,8 +2767,7 @@ const langData = {
                             ],
                             items: [
                                 { num: "01", title: "상생나눔 플랫폼 운영", desc: "사회적 약자를 위한 사회공헌형 점포 운영", bullets: ["사회취약계층 자활을 위한 내일스토어", "노인 계층 일자리를 위한 시니어스토어", "장애인의 취업과 자활을 지원하는 늘봄스토어"] },
-                                // 26.05.27 Del 이종환 { num: "02", title: "자연재해 피해 위로금", desc: "자연재해 피해를 입은 점포에 위로금 지급", bullets: ["자연재해","화재","가옥/전/답 피해"] },
-                                { num: "02", title: "GS 히어로상", desc: "사회적으로 귀감이 되는 경영주, 스토어매니저에게 지원", bullets: ["모범상","귀감상","나눔상"] }, /*26.06.29 edit 정다희 : 텍스트 수정*/ 
+                                { num: "02", title: "GS 히어로상", desc: "사회적으로 귀감이 되는 경영주, 스토어매니저에게 지원", bullets: ["모범상","귀감상","나눔상"] }, 
                                 { num: "03", title: "화재예방 소화기 공유", desc: "점포 인근 화재발생 시 소화기 공유를 통한 화재예방", bullets: ["점포인근 화재발생 시 점포 소화기 공유", "사용 후 교환 지원"] },
                             ],
                         },
@@ -3061,7 +2790,7 @@ const langData = {
                 },
                 {
                     hero: imgHero11_1,
-                    heroMo: imgHero11_1Mo, /* 26.06.26 add 정다희 : brand_bg_12_mo */
+                    heroMo: imgHero11_1Mo, 
                     heroAlt: "",
                     title: "참여제도",
                     desc: "GS25에서는 다양한 의견 수렴, 제안 검토 및 반영하는 등 경영주님께서 참여할 수 있는 제도가 마련되어 있습니다.",
@@ -3076,11 +2805,6 @@ const langData = {
                             title: "자율분쟁조정위원회",
                             desc: "가맹본부와 경영주 간의 분쟁이 발생 시, 위원장(외부 전문가), 경영주/본부 대표가 자율적 해결/조정안 마련",
                         },
-                        // 26.05.27 Del 이종환 {
-                        //     num: "03",
-                        //     title: "24시간 통합 콜센터 운영",
-                        //     desc: "점포 운영의 불편사항에 대한 접수<br />및 상담 창구 운영(24시간 운영)",
-                        // },
                         {
                             num: "03",
                             title: "경영주 열린제안",
@@ -3092,7 +2816,7 @@ const langData = {
         },
         milbox: {
             hero: imgHero12,
-            heroMo: imgHero12Mo, /* 26.06.26 add 정다희 : brand_bg_13_mo */
+            heroMo: imgHero12Mo, 
             heroAlt: "",
             title: "밀박스/스낵바 (기업 정기 서비스) <a href='https://www.mealbox25.com/' target='_blank'>홈페이지</a>",
             sections: [
@@ -3103,7 +2827,7 @@ const langData = {
                     items: [
                         { title: "트렌디한 상품" },
                         { title: "합리적인 가격" },
-                        { title: "누계 이용 고객사 1,200개" },/*26.06.29 edit 정다희 : 텍스트 수정 */
+                        { title: "누계 이용 고객사 1,200개" },
                     ],
                 },
                 {
@@ -3111,34 +2835,27 @@ const langData = {
                     title: "서비스 소개",
                     items: [
                         {
-                            // 26.06.10 add 정다희 : bgColor삭제, 이미지 추가
                             img: imgMilbox01,
                             name: "밀박스25",
                             desc: "GS25에서 제공하는 기업/단체 대상 간편식 정기 제공 서비스 입니다.<br class=\"p_br\" />주식부터 디저트, 음료까지 매일 새로운 구성으로 운영 됩니다.<br class=\"p_br\" />HACCP 인증, 개별 포장으로 위생적이고 맛있는 한끼를 제공합니다.",
                             link: "https://www.mealbox25.com/mealbox25-introduce",
-                            // 26.06.08 add 정다희 : 밀박스25 info_card 추천 문구
                             advantages: {
                                 title: "이런 분들에게 추천 드립니다.",
                                 items: [
-                                    // 26.06.029 edit 정다희 : text 수정 
-                                    { text: "직원 조식/간식을 정기적으로 운영하고 싶을 때" }, /*26.06.30 edit 정다희 : 텍스트 수정*/ 
+                                    { text: "직원 조식/간식을 정기적으로 운영하고 싶을 때" }, 
                                     { text: "합리적인 비용으로 직원 만족도를 높이고 싶을 때" },
                                     { text: "사내 급식 인프라가 없어 간편식 공급이 필요 할 때" },
                                 ],
                             },
                         },
                         {
-                             // 26.06.10 add 정다희 : bgColor삭제, 이미지 추가
                             img: imgMilbox02,
                             name: "스낵바",
-                            desc: "GS25에서 운영하는 트렌디한 상품을 정기적으로 기업/단체에 제공하는 간식 큐레이팅 서비스입니다.<br />사내 복지 향상을 위해 GS25의 상품을 이제는 회사에서 즐기세요.", /*26.06.29 edit 정다희: br추가 */ 
-                            // 26.06.08 add 정다희 : 스낵바 info_card 추천 문구 분기
-                            // 26.06.22 add 정다희 : 링크 추가
+                            desc: "GS25에서 운영하는 트렌디한 상품을 정기적으로 기업/단체에 제공하는 간식 큐레이팅 서비스입니다.<br />사내 복지 향상을 위해 GS25의 상품을 이제는 회사에서 즐기세요.", 
                             link: "https://www.mealbox25.com/Snackbar-introduce",
                             advantages: {
                                 title: "이런 분들에게 추천 드립니다.",
                                 items: [
-                                    // 26.06.029 edit 정다희 : text 수정 
                                     { text: "직원 복지 향상을 위한 간식 서비스가 필요할 때" },
                                     { text: "사내 휴게공간의 만족도를 높이고 싶을 때" },
                                     { text: "언제든 편리하게 이용 가능한 간식 복지를 운영하고 싶을 때" },
@@ -3153,7 +2870,7 @@ const langData = {
             visual: {
                 lines: [
                     "일상생활의 중심",
-                    '하루의 시작 GS25', /*26.06.16 텍스트 수정 */  /**26.07.02 edit 정다희 : 텍스트 GS25 추가 */
+                    '하루의 시작 GS25', 
                 ],
                 logoAlt: "GS25",
             },
@@ -3161,27 +2878,22 @@ const langData = {
                 [
                     '대한민국 토종 브랜드의 <br class="m_br" />자존심을 지키고 있는 GS25는',
                     "'수익을 낼 수 있는 가맹점을 늘린다'는 <br class=\"m_br\" />프랜차이즈 사업의 대원칙을",
-                    '변함없이 지켜온 결과, <br class="m_br" />개별점 수익성이 가장 높은<br class="p_br" /> 국내 최고의<br class="m_br" /> 편의점 브랜드로 자리매김하였습니다.', //26.06.23 edit 정다희 : 오타 수정
+                    '변함없이 지켜온 결과, <br class="m_br" />개별점 수익성이 가장 높은<br class="p_br" /> 국내 최고의<br class="m_br" /> 편의점 브랜드로 자리매김하였습니다.', 
                 ],
-                /*[
-                    "'한국에서 가장 존경받는 기업' 16년 연속 1위,",
-                    '한국서비스 품질지수(KS-SQI) 1위 <br class="m_br" />총 22회 수상 등 공신력 있는 대외 기관의',//26.06.23 edit 정다희 : 오타 수정
-                    "평가 결과로 이어지고 있습니다.",
-                ], 2026.07.06 del 이소라 */
             ],
             str: {
                 title: "당신 곁에는 언제나<br />GS25가 있습니다.",
                 storeFind: "매장 찾기",
                 snsInstaAria: "인스타그램",
                 snsYtAria: "유튜브",
-                items: [ /* 2026.07.06 edit 이소라 */
+                items: [ 
                     {
                         title: "업계 최고<br />점포당 매출액 달성",
                         desc: '점포 경쟁력을 강화하고<br class="m_br" /> 고객 중심의 상품·서비스 제공을 통해<br />편의점 업계 최고의 매출액을 달성하고 있습니다.',
                     },
                     {
                         title: 'GS25만의 차별화된<br class="p_br" /> 상품과<br class="m_br" /> 서비스 제공',
-                        desc: '안전하고 맛있는 후레쉬푸드 상품 등 고품질의 먹거리 상품 개발과<br class="p_br" /> 좋은 품질, 합리적 가격의 PB 브랜드 \'유어스\',<br class="p_br" /> GS리테일의 전용 어플리케이션 우리동네GS 등<br class="p_br" /> 차별화된 상품과 서비스를 통해 고객에게 새로운 가치를 제공하고 있습니다.',/*26.06.22 edit 정다희 : 유어스 텍스트 국문으로 수정*/
+                        desc: '안전하고 맛있는 후레쉬푸드 상품 등 고품질의 먹거리 상품 개발과<br class="p_br" /> 좋은 품질, 합리적 가격의 PB 브랜드 \'유어스\',<br class="p_br" /> GS리테일의 전용 어플리케이션 우리동네GS 등<br class="p_br" /> 차별화된 상품과 서비스를 통해 고객에게 새로운 가치를 제공하고 있습니다.',
                     },
                     {
                         title: '경영주와의 끊임없는 소통과<br /> 협력을 통한 단단한 파트너십',
@@ -3214,23 +2926,17 @@ const langData = {
                 { item: "Fresh Concept Store" },
                 { item: "Stores/Services" },
                 { item: "Win-Win Partnership" },
-                { item: "Meal Box/Snack Bar\n (Corporate Subscription Service)"/* 260604 번역 */ }, //26.05.15 Edit 이종환
+                { item: "Meal Box/Snack Bar\n (Corporate Subscription Service)"/* 260604 번역 */ }, 
             ],
             depth2: [
-                // 26.06.23 del 정다희 : 차별화상품 탭 삭제
-                // { item: "Differentiated Products" },
                 { item: "CAFE25" },
                 { item: "Chicken25" },
                 { item: "GoPizza" },
             ],
             depth2Store: [
-                // 26.06.23 del 정다희 : 매장/서비스 > 우리동네GS 탭 삭제
-                // { item: "Our Neighborhood GS" }, //26.05.27 Add 이종환
                 { item: "Everyday Services" },
                 { item: "Delivery & Pickup" },
                 { item: "Bill and Tax Payment" },
-                // 26.06.29 del 정다희 : 상품권 판매 탭 삭제
-                // { item: "Gift Voucher Sales" },
             ],
             depth2Winwin: [
                 { item: "Operations Support Programs" },
@@ -3238,34 +2944,9 @@ const langData = {
             ],
         },
         tabs: [
-            // 26.06.23 del 정다희 : 차별화상품 탭 삭제
-            // {
-            //     hero: imgHero0,
-            //     heroAlt: "",
-            //     title: "Differentiated Products",
-            //     subtitle: "From reasonable prices and reliable quality to new products that enhance the value of life, we are always with you so you can enjoy the joys of everyday living."/* 260604 번역 */,
-            //     cards: [
-            //         {
-            //             image: imgCard1,
-            //             alt: "",
-            //             title: "Kim Hye-ja Lunch Box",
-            //             desc: "A premium lunch box line crafted for a heartfelt, wholesome meal, the Kim Hye-ja Lunch Box is GS25's signature exclusive product, beloved for its consistently high customer satisfaction.",
-            //         },
-            //         {
-            //             image: imgCard2,
-            //             alt: "",
-            //             title: "YOUUS",
-            //             desc: "YOUUS is built on great quality and honest value, offering the kind of fun and delight you can only find at GS Retail.",
-            //         },
-            //     ],
-            //     qr: {
-            //         title: "Download the Our Neighborhood GS app"/* 260604 번역 */,
-            //         desc: "Download the Our Neighborhood GS app and discover GS25's various events and exclusive products. Scan the QR code to go to the app download page."/* 260604 번역 */,
-            //     },
-            // },
             {
                 hero: imgHero1,
-                heroMo: imgHero1Mo, /* 26.06.26 add 정다희 : CAFE25 모바일 히어로 */
+                heroMo: imgHero1Mo, 
                 heroAlt: "",
                 title: "CAFE25",
                 subtitle: "It is GS25's distinctive specialty coffee zone, using top-of-the-line coffee machines and specialty blended beans to offer the finest coffee at a reasonable price."/* 260604 번역 */,
@@ -3331,7 +3012,7 @@ const langData = {
             },
             {
                 hero: imgHero2,
-                heroMo: imgHero2Mo, /* 26.06.26 add 정다희 : CHICKEN25 모바일 히어로 */
+                heroMo: imgHero2Mo, 
                 heroAlt: "",
                 title: "CHICKEN25",
                 subtitle: `It is GS25's distinctive food offering, serving freshly fried foods made with the finest ingredients at a reasonable price. <br class=\"p_br\" />Now you can enjoy specialty-shop-quality chicken with CHICKEN25 at convenience stores, too.`/* 260604 번역 */,
@@ -3367,7 +3048,7 @@ const langData = {
             },
             {
                 hero: imgHero3,
-                heroMo: imgHero3Mo, /* 26.06.26 add 정다희 : GOPIZZA 모바일 히어로 */
+                heroMo: imgHero3Mo, 
                 heroAlt: "", 
                 title: "GOPIZZA",
                 subtitle: "The joy of a whole pizza! The convenience of one hand! GOPIZZA, the leading brand in single-serve pizza, serves fast and delicious pizza.<br />Now you can enjoy GOPIZZA's signature menu at your nearby GS25, too."/* 260604 번역 */,
@@ -3394,7 +3075,6 @@ const langData = {
                         panels: [
                             {
                                 image: imgMenu1,
-                                // 26.06.23 del 정다희 : gopizza_menu_info 삭제
                                 size: "REGULAR (27cm)",
                                 tags: ["Meal replacement"/* 260604 번역 */, "Equivalent to 4 slices of a regular pizza"/* 260604 번역 */],
                                 columns: [
@@ -3411,7 +3091,6 @@ const langData = {
                             },
                             {
                                 image: imgMenu2,
-                                // 26.06.23 del 정다희 : gopizza_menu_info 삭제
                                 size: "GRAB (20cm)",
                                 tags: ["For snacks"/* 260604 번역 */, "Equivalent to 2 slices of a regular pizza"/* 260604 번역 */],
                                 columns: [
@@ -3452,11 +3131,12 @@ const langData = {
         ],
         sinsen: {
             hero: imgSinsen00,
-            heroMo: imgSinsen00Mo, // 26.06.15 add 정다희 : heroMo 이미지 추가 
+            heroMo: imgSinsen00Mo, 
             heroAlt: "Fresh Concept Store",
             title: "Fresh Concept Store",
             subtitle: "Fresh Concept Stores are designed for the growing trend of single- and two-person households and convenient, small-quantity shopping, offering one-stop grocery shopping 24 hours a day, 365 days a year. Combining the convenience of a convenience store with the freshness of a supermarket, this distinctive concept delivers fresh products (fruits, vegetables, meat, and seafood) every single day.",
             sections: [
+                
                 {
                     title: "GS25 Fresh Product Features"/* 260604 번역 */,
                     desc: "Through integrated purchasing with GS THE FRESH, we secure product competitiveness and offer a wider variety of fresh products than other convenience stores."/* 260604 번역 */,
@@ -3472,8 +3152,8 @@ const langData = {
                     desc: "We operate the industry's only dedicated fresh product logistics center, maintaining freshness through end-to-end temperature management across the entire supply chain from suppliers to stores.",
                     flow: true,
                     flow_cont:[
-                        {flowTitle: "GS25 Fresh Delivery System", flowNote: "A delivery structure that goes through the fresh center to each cold-chain center."/* 260604 번역 */, flowList: ["Partner companies → reduced logistics costs through single-center receiving → higher price competitiveness ↑", "Initial freshness management is carried out through quality inspection of fresh products upon arrival at the fresh center"]/* 260604 번역 */, flowNote2:"Partner companies → reduced logistics costs through single-center receiving → higher cost competitiveness. Initial freshness management is carried out before in-store delivery through quality inspection at the single fresh-food center."/* 260604 번역 */, img:require("@/assets/images/sub/gsrbr010101/sinsen_flow.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow_mo.png"), alt:""}, /*26.06.29 add 정다희 : flowList 추가, flownote 텍스트 수정*/
-                        {flowTitle: "Other companies' fresh-delivery method"/* 260604 번역 */, flowNote: "A delivery structure that goes to each cold-chain center without going through the fresh center"/* 260604 번역 */, flowList: ["Partner companies → increased logistics costs through receiving at each cold-chain center → lower price competitiveness ↓", "Constraints on quality inspection and freshness management of fresh products upon receiving at each cold-chain center"]/* 260604 번역 */, img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2_mo.png"), alt:""}, /*26.06.29 add 정다희 : flowList 추가, flownote 텍스트 수정*/
+                        {flowTitle: "GS25 Fresh Delivery System", flowNote: "A delivery structure that goes through the fresh center to each cold-chain center."/* 260604 번역 */, flowList: ["Partner companies → reduced logistics costs through single-center receiving → higher price competitiveness ↑", "Initial freshness management is carried out through quality inspection of fresh products upon arrival at the fresh center"]/* 260604 번역 */, flowNote2:"Partner companies → reduced logistics costs through single-center receiving → higher cost competitiveness. Initial freshness management is carried out before in-store delivery through quality inspection at the single fresh-food center."/* 260604 번역 */, img:require("@/assets/images/sub/gsrbr010101/sinsen_flow.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow_mo.png"), alt:""}, 
+                        {flowTitle: "Other companies' fresh-delivery method"/* 260604 번역 */, flowNote: "A delivery structure that goes to each cold-chain center without going through the fresh center"/* 260604 번역 */, flowList: ["Partner companies → increased logistics costs through receiving at each cold-chain center → lower price competitiveness ↓", "Constraints on quality inspection and freshness management of fresh products upon receiving at each cold-chain center"]/* 260604 번역 */, img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2.png"), mo_img:require("@/assets/images/sub/gsrbr010101/sinsen_flow2_mo.png"), alt:""}, 
                     ],
                 },
                 {
@@ -3534,7 +3214,7 @@ const langData = {
                         {
                             label:   "ATM Services",
                             hero:    imgHero5,
-                            heroMo: imgHero5Mo, /* 26.06.26 add 정다희 : brand_bg_06_mo */
+                            heroMo: imgHero5Mo, 
                             heroAlt: "",
                             title:   "ATM Services",
                             desc:    "In addition to financial services such as cash withdrawals and account transfers, you can also issue regular-season tickets for professional sports (baseball, soccer, volleyball, basketball) for immediate entry, as well as Everland day passes.<br />In addition, we provide various everyday convenience services such as Hi-Pass recharge (credit card payment) and budget mobile (MVNO) sales."/* 260604 번역 */,
@@ -3714,7 +3394,6 @@ const langData = {
                                     ],
                                 },
                                 {
-                                    // 26.06.10 edit 정다희 : pop_card_02 이미지 경로 변경 적용
                                     img:      imgPopCard2,
                                     imgMo:    imgPopCard2Mo,
                                     name:     "Membership POP Card",
@@ -3735,7 +3414,7 @@ const langData = {
                         {
                             label:          "Gift\nCard"/* 260604 번역 */,
                             hero:           imgHero6,
-                            heroMo: imgHero6Mo, /* 26.06.26 add 정다희 : brand_bg_07_mo */
+                            heroMo: imgHero6Mo, 
                             heroAlt:        "",
                             title:          "Gift Cards",
                             desc:           "GS25 offers gift cards that can be reloaded and used at any location nationwide. Choose from a wide variety of gift cards for the cherished friends, family, and loved ones in your life. (Note: reloading and use may not be available at select stores.)",
@@ -4047,7 +3726,7 @@ const langData = {
                         {
                             label:   "Domestic Delivery",
                             hero:  imgHero7,
-                            heroMo: imgHero7Mo, /* 26.06.26 add 정다희 : brand_bg_08_mo */
+                            heroMo: imgHero7Mo,
                             heroAlt: "",
                             title:   "Domestic Delivery Service",
                             desc:    "Delivery services are available 365 days a year, 24 hours a day at your nearest GS25.",
@@ -4117,7 +3796,7 @@ const langData = {
                         {
                             label: "Half-Price Delivery",
                             hero: imgHero8,
-                            heroMo: imgHero8Mo, /* 26.06.26 add 정다희 : brand_bg_09_mo */
+                            heroMo: imgHero8Mo,
                             heroAlt: "",
                             title: "Half-Price Delivery Service",
                             desc: "First in the convenience store industry! Korea's only public holiday delivery service! Send from GS25, receive at GS25 — at the lowest price.",
@@ -4190,7 +3869,7 @@ const langData = {
                         {
                             label: "International Delivery",
                             hero:    imgHero9,
-                            heroMo: imgHero9Mo, /* 26.06.26 add 정다희 : brand_bg_10_mo */
+                            heroMo: imgHero9Mo, 
                             heroAlt: "",
                             title: "International Delivery Service",
                             desc: "Drop off your international deliveries at your nearest GS25, 24 hours a day, 365 days a year. (SF Express, EMS, DHL)",
@@ -4226,9 +3905,9 @@ const langData = {
                             ],
                         },
                         {
-                            label: "Delivery & Pickup", //26.05.27 Edit 이종환
+                            label: "Delivery & Pickup", 
                             hero: imgHero10,
-                            heroMo: imgHero10Mo, /* 26.06.26 edit 정다희 : brand_bg_11_mo (dummy/mo) */
+                            heroMo: imgHero10Mo,
                             heroAlt: "",
                             title: "Pick-up Service",
                             desc: "After ordering products from an online shopping mall, pick them up at your nearest GS25.",
@@ -4254,7 +3933,7 @@ const langData = {
                         {
                             label:   "Online Shopping Payment",
                             hero:    imgHero11,
-                            heroMo: imgHero11Mo, /* 26.06.26 add 정다희 : brand_bg_11-1_mo — 쇼핑몰거래 */ //26.06.02 Edit 정다희
+                            heroMo: imgHero11Mo,
                             heroAlt: "",
                             title:   "Online Shopping Service",
                             desc:    "A convenient service for home shopping returns, open marketplace purchases, and online shopping mall transactions.",
@@ -4308,46 +3987,7 @@ const langData = {
                         },
                     ],
                 },
-                // 26.06.29 del 정다희 : 상품권 판매 탭 삭제
-                // {
-                //     hero: null,
-                //     heroAlt: "",
-                //     title: "Gift Voucher Sales",
-                //     subtitle: "Gift Card Sales",
-                //     desc: "Culture Gift Cards, Kumkang Shoe gift cards, GS Caltex gift cards, and more are available.",
-                //     sections: [],
-                //     voucherTitle: "Gift certificate types"/* 260604 번역 */,
-                //     voucherItems: [
-                //         {
-                //             img: imgGiftCerti01,
-                //             name: "Culture Gift Voucher"/* 260604 번역 */,
-                //             tags: [
-                //                 { text: "5,000 KRW voucher"/* 260604 번역 */, type: "blue" },
-                //                 { text: "10,000 KRW voucher"/* 260604 번역 */, type: "green" },
-                //             ],
-                //             desc: "Redeemable for books and music, movie tickets, dining (select locations), and online services (gaming and portals)",
-                //         },
-                //         {
-                //             img: imgGiftCerti02,
-                //             name: "Kumkang Shoes Gift Voucher"/* 260604 번역 */,
-                //             tags: [
-                //                 { text: "50,000 KRW voucher"/* 260604 번역 */, type: "orange" },
-                //                 { text: "100,000 KRW voucher"/* 260604 번역 */, type: "orange" },
-                //             ],
-                //             desc: "A great-value gift card accepted at over 4,000 stores across 1,300+ cities nationwide (KRW 50,000 and KRW 100,000 denominations), redeemable at Kumkang, Buffalo, PGA, LPGA, Kumkang Handbag, and more",
-                //         },
-                //         {
-                //             img: imgGiftCerti03,
-                //             name: "GS Caltex Gift Voucher"/* 260604 번역 */,
-                //             tags: [
-                //                 { text: "10,000 KRW voucher"/* 260604 번역 */, type: "green" },
-                //                 { text: "50,000 KRW voucher"/* 260604 번역 */, type: "orange" },
-                //                 { text: "100,000 KRW voucher"/* 260604 번역 */, type: "orange" },
-                //             ],
-                //             desc: "Redeemable at gas stations, department stores, restaurants, supermarkets, hotels, travel agencies, and more",
-                //         },
-                //     ],
-                // },
+              
             ],
         },
         winwin: {
@@ -4406,7 +4046,7 @@ const langData = {
                             ],
                         },
                         {
-                            label: "Store\ncommunication support"/* 260604 번역 */, //26.05.27 Edit 이종환
+                            label: "Store\ncommunication support"/* 260604 번역 */, 
                             title: "Store communication support"/* 260604 번역 */,
                             notes: [
                                 { text: "※ The above benefits and programs are subject to change, discontinuation, or addition without prior notice." },
@@ -4429,7 +4069,7 @@ const langData = {
                                 { num: "03", title: "Owners' Open Academy"/* 260604 번역 */, desc: "Store Owner Professional Development", bullets: ["Hosting real-time live training twice a month"/* 260604 번역 */, "Replay videos provided"/* 260604 번역 */,"Practical, hands-on training content needed for store operations\n (labor, taxation, franchise settlement, promotion know-how, etc.)"/* 260604 번역 */] , link: "https://gs25.getsmart.co.kr/members/login?returnUrl=http%3A%2F%2Fgs25.getsmart.co.kr%2F"},
                                 { num: "04", title: "GS Class"/* 260604 번역 */, desc: "A dedicated training site for store owners, available to learn anytime"/* 260604 번역 */, bullets: ["High-quality training content needed for store operations\n (manuals, operational know-how, lecture replays, etc.)"/* 260604 번역 */,"Online live training"/* 260604 번역 */,"Outstanding Store Lab"] },
                                 { num: "05", title: "Onboarding Training for New Store Owners", desc: null, bullets: ["- Operations Training (POS, Store Management, Systems)","- Service Training","- Online courses (GS Class)"] , link: "https://gs25.getsmart.co.kr/members/login?returnUrl=http%3A%2F%2Fgs25.getsmart.co.kr%2F" },
-                                { num: "06", title: "Store Manager Class", desc: "Store Manager Training Support", bullets: ["POS Training","Cleanliness Training","Customer Service Training"] , link: "http://hpimg.gsretail.com/images/gs25/winwin/web/store_manager_map.html" }, /*26.06.29 edit 정다희 : 타이틀 텍스트 수정*/ 
+                                { num: "06", title: "Store Manager Class", desc: "Store Manager Training Support", bullets: ["POS Training","Cleanliness Training","Customer Service Training"] , link: "http://hpimg.gsretail.com/images/gs25/winwin/web/store_manager_map.html" }, 
                                 { num: "07", title: "Benchmarking Training"/* 260604 번역 */, desc: "Store Owner Professional Development", bullets: ["On-site visit training for outstanding franchise stores"/* 260604 번역 */,"Specialized training content tailored to each outstanding franchise store"/* 260604 번역 */,"Sharing the know-how of outstanding store owners"/* 260604 번역 */] },
                             ],
                         },
@@ -4441,8 +4081,7 @@ const langData = {
                             ],
                             items: [
                                 { num: "01", title: "Mutual Growth & Sharing Platform Operations", desc: "Community-serving stores <br />for the socially vulnerable", bullets: ["Naeil Store, supporting the self-reliance of socially vulnerable groups"/* 260604 번역 */, "Senior Stores providing jobs for the elderly"/* 260604 번역 */, "Neulbom Store, supporting the employment and self-reliance of people with disabilities"/* 260604 번역 */] },
-                                // 26.05.27 Del 이종환 { num: "02", title: "자연재해 피해 위로금", desc: "자연재해 피해를 입은 점포에 위로금 지급", bullets: ["자연재해","화재","가옥/전/답 피해"] },
-                                { num: "02", title: "GS Hero Award", desc: "Recognition and support for store owners and managers <br />who serve as community role models", bullets: ["Exemplary Award","Role Model Award","Community Spirit Award"] }, /*26.06.29 edit 정다희 : desc 텍스트 수정*/ 
+                                { num: "02", title: "GS Hero Award", desc: "Recognition and support for store owners and managers <br />who serve as community role models", bullets: ["Exemplary Award","Role Model Award","Community Spirit Award"] }, 
                                 { num: "03", title: "Fire Prevention: Fire Extinguisher Sharing", desc: "Fire prevention through fire extinguisher sharing <br />when fires break out near the store", bullets: ["Fire extinguisher sharing when a fire breaks out near the store", "Replacement support after use"] },
                             ],
                         },
@@ -4465,7 +4104,7 @@ const langData = {
                 },
                 {
                     hero: imgHero11_1,
-                    heroMo: imgHero11_1Mo, /* 26.06.26 add 정다희 : brand_bg_12_mo */
+                    heroMo: imgHero11_1Mo, 
                     heroAlt: "",
                     title: "Partner Programs",
                     desc: "GS25 has systems in place that allow owners to participate, such as gathering diverse opinions and reviewing and reflecting suggestions."/* 260604 번역 */,
@@ -4480,11 +4119,6 @@ const langData = {
                             title: "Independent Dispute Resolution Committee",
                             desc: "- In the event of a dispute between the franchisor and store owners, the chairperson (an external expert) and representatives from both parties work together to reach an independent resolution or mediation",
                         },
-                        // 26.05.27 Del 이종환 {
-                        //     num: "03",
-                        //     title: "24시간 통합 콜센터 운영",
-                        //     desc: "점포 운영의 불편사항에 대한 접수<br />및 상담 창구 운영(24시간 운영)",
-                        // },
                         {
                             num: "03",
                             title: "Store Owner Open Suggestion",
@@ -4496,7 +4130,7 @@ const langData = {
         },
         milbox: {
             hero: imgHero12,
-            heroMo: imgHero12Mo, /* 26.06.26 add 정다희 : brand_bg_13_mo */
+            heroMo: imgHero12Mo,
             heroAlt: "",
             title: "Meal Box/Snack Bar (Corporate Subscription Service) <a href='https://www.mealbox25.com/' target='_blank'>Website</a>"/* 260604 번역 */,
             sections: [
@@ -4507,7 +4141,7 @@ const langData = {
                     items: [
                         { title: "Trendy products"/* 260604 번역 */ },
                         { title: "Affordable Prices" },
-                        { title: "Cumulative client companies: 1,200"/* 260604 번역 */ }, /*26.06.29 edit 정다희 : 텍스트 수정 */ 
+                        { title: "Cumulative client companies: 1,200"/* 260604 번역 */ },
                     ],
                 },
                 {
@@ -4515,30 +4149,24 @@ const langData = {
                     title: "About the service"/* 260604 번역 */,
                     items: [
                         {
-                            // 26.06.10 add 정다희 : 이미지적용 
                             img: imgMilbox01,
                             name: "Meal Box 25",
                             desc: "A regular meal delivery service for corporations and groups, provided by GS25. Featuring a fresh new lineup every day, from staple dishes to desserts and beverages. With HACCP certification and individual packaging, every meal is hygienic and delicious.",
                             link: "https://www.mealbox25.com/mealbox25-introduce",
-                            // 26.06.08 add 정다희 : 밀박스25 info_card 추천 문구
                             advantages: {
                                 title: "Recommended for:",
                                 items: [
-                                    // 26.06.29 edit 정다희 : text 수정
-                                    { text: "When you want to regularly provide breakfast and snacks for your employees" }, /*26.06.30 edit 정다희 : 텍스트 수정*/
+                                    { text: "When you want to regularly provide breakfast and snacks for your employees" }, 
                                     { text: "When you want to increase employee satisfaction at a reasonable cost" },
                                     { text: "When there is no in-house cafeteria infrastructure and ready-made meal supply is required" },
                                 ],
                             },
                         },
                         {
-                             // 26.06.10 add 정다희 :  이미지 적용
                             img: imgMilbox02,
                             name: "Snack bar"/* 260604 번역 */,
                             desc: "A curated snack service that regularly delivers on-trend GS25 products to corporations and groups. Bring GS25 to your office and elevate your employee welfare benefits.",
-                            // 26.06.08 add 정다희 : 스낵바 info_card 추천 문구 분기
                             advantages: {
-                                // 26.06.29 add 정다희 : title, items 추가 
                                 title: "Recommended for:",
                                 items: [
                                     { text: "When snack services are needed to enhance employee welfare" },
@@ -4616,29 +4244,27 @@ const sinsen = computed(() => t.value.sinsen);
 const store = computed(() => t.value.store);
 const winwin = computed(() => t.value.winwin);
 const milbox = computed(() => t.value.milbox);
-// 26.06.23 del 정다희 : 차별화상품 탭 삭제
-// const tab0 = computed(() => t.value.tabs[0]);
 const tab1 = computed(() => t.value.tabs[0]);
 const tab2 = computed(() => t.value.tabs[1]);
 const tab3 = computed(() => t.value.tabs[2]);
 
-const depth1ActiveIdx = ref(2); // 26.05.18 : 1depth 활성화탭 선언
+const depth1ActiveIdx = ref(2); 
 const depth1Tabs = computed(() => t.value.nav.depth1);
 const depth2Tabs = computed(() => t.value.nav.depth2);
 const storeTabs = computed(() => t.value.nav.depth2Store);
 const winwinTabs = computed(() => t.value.nav.depth2Winwin);
 
-const storeActiveTab = ref(0); //매장/서비스 2Depth 활성화탭 (26.06.23 del 정다희 : 우리동네GS 탭 삭제 후 생활 서비스 기본)
-const winwinActiveTab = ref(0); //상생협력 2Depth 활성화탭
-const winwinServiceActiveTab = ref(0); //상생협력 3Depth 활성화탭
+const storeActiveTab = ref(0); 
+const winwinActiveTab = ref(0); 
+const winwinServiceActiveTab = ref(0); 
 const giftSwiperInst = ref(null);
 const onGiftSwiper = (swiper) => {
     giftSwiperInst.value = swiper;
 };
 const serviceActiveTab  = ref(0);
-const deliveryActiveTab = ref(0);  // 26.05.18 : 매장/서비스 > 택배&픽업 3depth 활성화탭 선언
+const deliveryActiveTab = ref(0);  
 
-/* ── service_tab_wrap 슬라이드 (Tabs tabSlide 동일 방식) ── */
+
 function useTabSlide() {
     const wrapEl   = ref(null);
     const listEl   = ref(null);
@@ -4781,14 +4407,13 @@ const _onResize = () => {
     }, 150);
 };
 
-/* 26.06.26 add 정다희 : URL query(depth1)로 1depth 탭 초기화 — 신선강화점 등 외부 링크 진입 */
+
 watch(() => [route.query.depth1, route.query.tab], syncDepth1FromRoute);
-/* //26.06.26 add 정다희 : URL query(depth1)로 1depth 탭 초기화 */
 
 let popSecObserver = null;
 let _syncVisualClip = null;
 onMounted(() => {
-    syncDepth1FromRoute(); /* 26.06.26 add 정다희 : 마운트 시 query(depth1) 탭 동기화 */
+    syncDepth1FromRoute();
     isMobileView.value = _getIsMobile();
     window.addEventListener("resize", _onResize);
 
@@ -4807,7 +4432,6 @@ onMounted(() => {
         targets.forEach((el) => popSecObserver.observe(el));
     }
 
-    // 26.06.02 Edit 정다희
     if (!sectionRef.value || !bgWrapRef.value || !textParaRef.value || !logoWrapRef.value || !aboutSectionRef.value) return;
 
     gsapCtx = gsap.context(() => {
@@ -4855,7 +4479,6 @@ onMounted(() => {
             applyBgClip(visualSt.progress);
         };
         applyBgClip(visualSt.progress);
-        // 26.06.02 Edit 정다희
         gsap.set([...spans, logoWrapRef.value], { opacity: 0, y: 40 });
 
         const textTl = gsap.timeline({ paused: true });
@@ -4909,7 +4532,6 @@ onBeforeUnmount(() => {
     window.removeEventListener("resize", _onResize);
     if (popSecObserver) popSecObserver.disconnect();
     if (gsapCtx) gsapCtx.revert();
-    // 26.06.02 Edit 정다희
     _syncVisualClip = null;
 });
 
@@ -5008,7 +4630,7 @@ let gsapCtx = null;
 
 const depth1Routes = ["/gsrbr010101", null, null, null, null];
 
-/* 26.06.26 add 정다희 : URL query(depth1)로 1depth 탭 초기화 — 신선강화점 등 외부 링크 진입 */
+
 function syncDepth1FromRoute() {
     const tabKey = route.query.tab;
     if (tabKey === "sinsen") {
@@ -5022,7 +4644,7 @@ function syncDepth1FromRoute() {
         depth1ActiveIdx.value = idx;
     }
 }
-/* //26.06.26 add 정다희 : URL query(depth1)로 1depth 탭 초기화 */
+
 
 function onDepth1Change(idx) {
     depth1ActiveIdx.value = idx;
@@ -5041,7 +4663,6 @@ function goBack() {
 
 <style scoped>
 .brand_panel_bg { margin: 0 0 40px; padding: 0; background-color: #e8e8ec; border-radius: 12px; overflow: hidden; }
-/* .sinsen_panel > .brand_panel_bg { min-height: 340px; background-color: #b3b3b3; } */
 .brand_panel_bg > img { width: 100%; height:340px; object-fit: cover; display: block;}
 .brand_panel_title { padding: 0 0 100px;}
 .brand_panel_title > h2 { margin: 0 0 16px; color: #161618; font-size: 4rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; display:flex; align-items:center;}
@@ -5050,7 +4671,6 @@ function goBack() {
 .brand_panel_title > h2 :deep(a:before) {width:24px; height:24px; margin-right:8px; background:url('@/assets/images/common/icon_set_24.png') -1168px -56px no-repeat; content:''; display:block;}
 
 .brand_panel_title > p { margin: 0; color: #161618; font-size: 2.4rem; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; }
-/* 26.06.11 edit 정다희 : sec_header·feature_card·step_bullets 텍스트 font-weight 700 */
 .sec_header { padding-bottom: 40px; font-weight: 700;}
 .sec_header > h3 { margin: 0; color: #161618; font-size: 2.8rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }
 .sec_header > h3 + p,
@@ -5072,7 +4692,7 @@ function goBack() {
 
 .bg_wrap { width: 100%; height: 100%; position: relative; z-index: 1; overflow: hidden; clip-path: inset(0% round 0px); -webkit-clip-path: inset(0% round 0px) }
 .brand_panel_title > p{font-weight: 700;font-size: 2.4rem;line-height: 1.5;letter-spacing: -0.01em;}
-:deep(.feature_card_desc), :deep(.step_bullets > li){font-size:1.8rem}  /* 2026.07.06 edit 이소라 */
+:deep(.feature_card_desc), :deep(.step_bullets > li){font-size:1.8rem}  
 
 .bg_wrap > .bg { width: 100%;  height: 100%; background-image: url(@/assets/images/dummy/brand_main_bg.png); background-size: cover; background-position: center bottom; position: absolute; top: 0; left: 0; z-index: -1; transform: scale(1.0); transition: transform 0.7s ease-out } 
 .bg_wrap.active > .bg { transform: scale(0.8) }
@@ -5098,7 +4718,7 @@ function goBack() {
 .sec_brand_about { padding: clamp(140px, 10.42vw, 200px) 20px; background-color: #f8f8f8; }
 .sec_brand_about > .about_inner { width:100%; max-width: 940px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; text-align: center;}
 .sec_brand_about > .about_inner > .about_txt > p  { overflow: hidden }
-.sec_brand_about > .about_inner > .about_txt > p > span { color: #161616; font-size: 3.6rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; will-change: transform, opacity; display: block } /* 2026.07.06 edit 이소라 */
+.sec_brand_about > .about_inner > .about_txt > p > span { color: #161616; font-size: 3.6rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; will-change: transform, opacity; display: block } 
 .sec_brand_str > .str_inner { max-width: 1460px; margin: 0 auto; padding: 200px 20px; }
 .str_header { padding-bottom: 80px; display: flex; justify-content: space-between; align-items: flex-end }
 .str_header > h2 { color: #161616; font-size: 4.8rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em }
@@ -5136,14 +4756,6 @@ button { background-color: #fff }
 .brand_panel section { padding-bottom: 120px }
 
 .brand_panel section:last-of-type { padding-bottom: 0 }
-/* 26.06.23 del 정다희 : 차별화상품 탭 삭제 */
-/* .diff_card_grid { padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 460px)); gap: 20px } */
-/* .diff_card { margin: 0; padding: 0; background-color: #fff; border-radius: 12px; overflow: hidden } */
-/* .diff_card > figure { margin: 0; padding: 0; background-color: #e8e8ec; overflow: hidden } */
-/* .diff_card > figure > img { height: 100%; object-fit: cover } */
-/* .diff_card > div { min-height: 200px; padding: 32px; background-color: #f8f8f8 } */
-/* .diff_card > div > h3 { margin: 0 0 16px; color: #161618; font-size: 2.8rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em } */
-/* .diff_card > div > p { margin: 0; color: #67676f; font-size: 1.8rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.01em } */
 .cafe25_card_list { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, calc((100% - 40px) / 3)); gap: 20px }
 .cafe25_card_list > li { min-width: 0; overflow: hidden }
 .cafe25_card_list > li > div { width: 100% }
@@ -5158,7 +4770,7 @@ button { background-color: #fff }
 .cafe25_split_table .cafe25_table th:nth-child(1), .cafe25_split_table .cafe25_table td:nth-child(1) { width: 37.14%; }
 .cafe25_split_table .cafe25_table th:nth-child(2), .cafe25_split_table .cafe25_table td:nth-child(2) { width: 31.43%; }
 .cafe25_split_table .cafe25_table th:nth-child(3), .cafe25_split_table .cafe25_table td:nth-child(3) { width: 31.43%; }
-.cafe25_split_table .cafe25_table th, .cafe25_split_table .cafe25_table td { height: auto; min-height: 56px; padding: clamp(8px, 1.25vw, 15px); white-space: normal; word-break: keep-all; } /* 26.07.07 edit 이소라 */
+.cafe25_split_table .cafe25_table th, .cafe25_split_table .cafe25_table td { height: auto; min-height: 56px; padding: clamp(8px, 1.25vw, 15px); white-space: normal; word-break: keep-all; } 
 .cafe25_split_table .cafe25_table th > span, .cafe25_split_table .cafe25_table td > span { font-size: clamp(1.2rem, 0.94vw, 1.8rem); line-height: 1.4; letter-spacing: -0.01em; }
 .cafe25_table_wrap { overflow-x: auto }
 .cafe25_table { border-collapse: collapse; table-layout: fixed }
@@ -5167,7 +4779,7 @@ button { background-color: #fff }
 .tbl_mo th { padding: 18px 24px; background-color: #F8F8F8 }
 .tbl_mo th > span { color: #161618; font-size: 1.6rem; font-weight: 700; line-height: 1.24; letter-spacing: 0 }
 .tbl_mo td { padding: 16px 20px }
-.tbl_mo td > span { color: #161616; font-size: 1.6rem; font-weight: 700; line-height: 1.24; letter-spacing: 0 } /* 26.06.11 edit 정다희 : tbl_mo td 텍스트 font-weight 700 */
+.tbl_mo td > span { color: #161616; font-size: 1.6rem; font-weight: 700; line-height: 1.24; letter-spacing: 0 }
 .tbl_mo td .flag_icon { display: inline-block; vertical-align: middle; margin-right: 8px }
 .tbl_mo tr:first-child th, .tbl_mo tr:first-child td { border-top: 1px solid #E5E5E9 }
 .cafe25_table_pagination { margin-top: 20px; display: flex; justify-content: center; gap: 10px }
@@ -5177,11 +4789,11 @@ button { background-color: #fff }
 .gopizza_table_pagination :deep(.swiper-pagination-bullet) { width: 6px; height: 6px; background-color: #D7D7DF; border-radius: 50%; opacity: 1; cursor: pointer; display: block } 
 .gopizza_table_pagination :deep(.swiper-pagination-bullet-active) { background-color: #161616 } 
 .cafe25_table th, .cafe25_table td { height: 56px; padding: 0 24px; border-bottom: 1px solid #e5e5e9; vertical-align: middle; white-space: nowrap }
-.cafe25_table th > span, .cafe25_table td > span { color: #161618; font-size: 1.8rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.01em } /* 26.06.11 edit 정다희 : cafe25_table th/td 텍스트 font-weight 700 */
+.cafe25_table th > span, .cafe25_table td > span { color: #161618; font-size: 1.8rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.01em }
 .cafe25_table th:first-child, .cafe25_table td:first-child { border-left: 0 }
 .cafe25_table th:last-child, .cafe25_table td:last-child { border-right: 0 }
 .cafe25_table th { background-color: #f8f8f8; border-top: 0 }
-.cafe25_table th > span { font-weight: 700 } /* 26.06.11 edit 정다희 : cafe25_table th font-weight 700 */
+.cafe25_table th > span { font-weight: 700 } 
 
 .cafe25_table > tbody > tr > td > .flag_icon { width: 24px; height: 24px; margin-right: 8px; border-radius: 50%; vertical-align: middle; display: inline-block; object-fit: cover }
 .img_grid { margin-top: 120px; padding: 0; display: grid; grid-template-columns: repeat(2, calc((100% - 20px) / 2)); gap: 20px }
@@ -5202,7 +4814,6 @@ button { background-color: #fff }
  .gopizza_menu_tag + .gopizza_menu_tag::before { content: ""; width: 1px; height: 8px; margin-right: 8px; background-color: #d7d7df; display: inline-block } 
 .com_table_wrap { overflow-x: auto }
 .com_table { width: 100%; border-collapse: collapse; border-top: 1px solid #e5e5e9 }
-/* 26.06.11 edit 정다희 : com_table th/td/thead th 텍스트 font-weight 700 통일 */
 .com_table th, .com_table td { padding: 18px 24px; color: #161618; font-size: 1.8rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.01em; border-bottom: 1px solid #e5e5e9; vertical-align: middle }
 .com_table td { text-align: left }
 .com_table thead th { padding: 11px 13px; font-weight: 700; background-color: #f8f8f8 }
@@ -5215,7 +4826,7 @@ button { background-color: #fff }
 .gopizza_badge_best { padding: 2px 6px; color: #fb4516; font-size: 1.1rem; font-weight: 700; font-style: normal; letter-spacing: -0.02em; background-color: #ffe9e3; border-radius: 4px } 
 .diff_bottom_row { margin-top:40px;display: flex; gap: 32px }
 .diff_bottom_row > .diff_qr_row { flex: 1 }
-:deep(.diff_qr_row > div > strong + p ){font-weight:700;} /* 26.06.11 edit 정다희 : diff_qr_row 설명 font-weight 700 */
+:deep(.diff_qr_row > div > strong + p ){font-weight:700;} 
 .gopizza_link { min-width: 0; display: flex; align-items: center; flex: 1; gap: 20px; text-decoration: none }
 .gopizza_link > figure { width: 90px; height: 90px; margin: 0; padding: 8px; background-color: #fff; border: 1px solid #e5e5e9; border-radius: 10px; flex-shrink: 0; display: none }
 .gopizza_link > figure > img { width: 100%; display: block }
@@ -5225,9 +4836,7 @@ button { background-color: #fff }
 .gopizza_link > div > p { margin: 0; color: #67676f; font-size: 1.4rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.02em }
 .sinsen_feature :deep(.feature_card_item) { min-height: 240px }
 
-/* 26.05.15 Add 이종환 : 신선강화점 특징 아이콘 */
 .sinsen_feature :deep(.feature_card_item .feature_card_icon) {width:40px; height:40px; background-color:transparent; background-position:50%; background-repeat:no-repeat; background-size:cover;}
-/* 26.06.24 edit 정다희 : PC — feature_card_item nth-child (sinsen_feature·feature_card_list 동일 루트) */
 .sinsen_feature :deep(.feature_card_item:nth-child(1) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_01.png');}
 .sinsen_feature :deep(.feature_card_item:nth-child(2) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_02.png');}
 .sinsen_feature :deep(.feature_card_item:nth-child(3) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_03.png');}
@@ -5248,21 +4857,17 @@ button { background-color: #fff }
 .info_card > p + .num_list li > p {font-size: 1.6rem;line-height: 1.5;letter-spacing: -0.01em;}
 .info_card > p + .num_list li::before{width:16px; height:16px;top:2px;}
 .sinsen_flow_img { width: 100%; max-height:372px; margin-top: 24px; display: block; border-radius: 10px }
-/* 26.06.08 add 정다희 :sinsen_advantge영역 css 추가  */
 .sinsen_advantage_grid { width: 100%; display: flex; flex-wrap: wrap; align-items: stretch; gap: 16px; }
 .sinsen_advantage_card { flex: 1 1 calc(50% - 8px); min-width: 0; padding: 32px; background-color: #f8f8f8; border-radius: 12px; }
 .sinsen_advantage_card:nth-child(1) header > p{margin-bottom:42px;}
-/* .sinsen_advantage_card:nth-child(2) .sinsen_advantage_items{margin-top:40px;} */
 .sinsen_advantage_card > header > strong { margin: 0 0 16px; color: #161616; font-size: 2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; display: block; }
 .sinsen_advantage_card > header > strong > em { margin-right: 8px; color: #107af2; font-size: 1.8rem; font-style: normal; font-weight: 700; line-height: 1.5; }
 .sinsen_advantage_card > header > p { margin: 0 0 40px; color: #67676f; font-size: 1.8rem; font-weight: 700; line-height: 1.5;  }
 .sinsen_compare_table { width: 100%; margin: 0; border-top: 1px solid #e5e5e9; border-collapse: collapse; table-layout: fixed; }
-/* 26.06.11 edit 정다희 : sinsen_compare_table th/td/tbody th font-weight 700 통일 */
 .sinsen_compare_table th, .sinsen_compare_table td { padding: 18px 24px; color: #161616; font-size: 1.8rem; line-height: 1.4; text-align: center; border-bottom: 1px solid #e5e5e9; vertical-align: middle; }
 .sinsen_compare_table td {padding:30px 24px;}
 .sinsen_compare_table thead th { font-weight: 700; background-color: #fff; }
 .sinsen_compare_table tbody th { font-weight: 700; background-color: #fff; }
-/* .sinsen_compare_table th:first-child, .sinsen_compare_table td:first-child { width: 200px; } */
 .sinsen_advantage_items { width: 100%; margin: 0; padding: 0; list-style: none; display: flex; gap: 16px; }
 .sinsen_advantage_items > li { min-width: 0; flex: 1; }
 .sinsen_advantage_items > li > p { margin: 0 0 42px; color: #67676f; font-size: 1.8rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.01em; }
@@ -5280,7 +4885,6 @@ button { background-color: #fff }
 .service_tab_list { width: 100%; display: flex; transition: transform 0.4s cubic-bezier(0.1, 0.57, 0.1, 1) }
 .service_tab_item { background-color: transparent; border: none; cursor: pointer; border-radius: 12px; flex: 0 0 calc(100% / 8); aspect-ratio: 89 / 83; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px }
 
-/* 26.05.15 Edit 이종환 : 아아콘 적용으로 수정 (on / off 포지션은 동일) */
 .brand_panel .service_tab_icon { width: 48px; height: 48px; background-image:url('@/assets/images/sub/gsrbr010101/icon_pc_set_storetab_off.png'); background-repeat:no-repeat; border-radius: 8px; display: block; flex-shrink: 0 ;}
 .brand_panel .service_tab_item.is_active .service_tab_icon { background-image:url('@/assets/images/sub/gsrbr010101/icon_pc_set_storetab_on.png'); }
 
@@ -5289,7 +4893,7 @@ button { background-color: #fff }
 .service_panel { min-height: 200px }
 .service_panel .sec_header_only > .sec_header { margin-bottom: 0; padding: 0; }
 .pop_exclude { margin-top: 8px; color: #f95823; font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em }
-.pop_card_item { display: flex; flex-direction: column; min-width: 0; } /* 26.06.26 edit 정다희 : overflow hidden 제거·min-width 0 — 태블릿 이미지 잘림 방지 */
+.pop_card_item { display: flex; flex-direction: column; min-width: 0; } 
 /* 매장/서비스 > 생활 서비스 탭 아이콘 */
 .pop_panel .service_tab_list .service_tab_item:nth-child(1) .service_tab_icon {background-position:-65px -24px;}
 .pop_panel .service_tab_list .service_tab_item:nth-child(2) .service_tab_icon {background-position:-243px -24px;}
@@ -5299,7 +4903,7 @@ button { background-color: #fff }
 .pop_panel .service_tab_list .service_tab_item:nth-child(6) .service_tab_icon {background-position:-955px -24px;}
 .pop_panel .service_tab_list .service_tab_item:nth-child(7) .service_tab_icon {background-position:-1133px -24px;}
 .pop_panel .service_tab_list .service_tab_item:nth-child(8) .service_tab_icon {background-position:-1311px -24px;}
-/* //26.05.15 Edit 이종환 : 아아콘 적용으로 수정 */
+
 
 /* 매장/서비스 > 택배&픽업 탭 아이콘 */
 .delivery_panel .service_tab_list .service_tab_item:nth-child(1) .service_tab_icon {background-position:-1489px -24px;}
@@ -5490,13 +5094,10 @@ button { background-color: #fff }
   .usage_select_box { width: 100%; font-size: 1.4rem; line-height: 1.4 }
   
   .brand_panel section { padding: 0 0 80px }
-  /* 26.06.23 GOPIZZA 메뉴 소개(3번째 section) 하단 여백 — nth-child(3)은 figure/header 때문에 1번째 section만 매칭됨 */
+
   .gopizza_panel.brand_panel > section:nth-of-type(3) { padding-bottom: 100px; }
-  /* .diff_card > figure { height:220px } */
-  /* .diff_card > figure > img{width:100%;} */
 
   .cafe25_table th, .cafe25_table td { padding: 16px 24px }
-  /* 26.06.11 edit 정다희 : cafe25_table MO 텍스트 font-weight 700 */
   .cafe25_table th > span, .cafe25_table td > span { font-size: 1.6rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.01em }
   .cafe25_table th > span { font-weight: 700 }
   .gopizza_menu_panel + .gopizza_menu_panel {margin-top:100px;}
@@ -5506,7 +5107,7 @@ button { background-color: #fff }
 .gopizza_menu_title { gap:4px; flex-direction: column; align-items: flex-start } 
 .gopizza_menu_title > strong { font-size: 1.8rem; line-height: 1.5; letter-spacing: 0% } 
 
-  .com_table th, .com_table td { font-size: 1.6rem; font-weight: 700; line-height: 1.24 } /* 26.06.11 edit 정다희 : com_table MO font-weight 700 */
+  .com_table th, .com_table td { font-size: 1.6rem; font-weight: 700; line-height: 1.24 } 
   .com_table td { padding: 14px 20px; font-size: 1.4rem; letter-spacing: 0.01em }
   .com_table thead th { padding: 14px 0 }
   .com_table tbody th { padding: 14px 24px }
@@ -5521,15 +5122,12 @@ button { background-color: #fff }
   .info_card:nth-child(2) .sinsen_flow_img{ aspect-ratio:287/169;}
 
   :deep(.tab_wrap ul.type_01 li .item) {white-space:nowrap;}
-
   .info_card_flow {flex-direction:column;}
-  /* 26.06.08 add 정다희 : sinsen_advantage MO (Figma 857:8893) */
   .sinsen_advantage_grid { flex-direction: column; gap: 16px; }
   .sinsen_advantage_card { flex: 1 1 100%; width: 100%; padding: 32px 24px; }
   .sinsen_advantage_card > header > strong { margin: 0 0 6px; font-size: 1.8rem; line-height: 1.5; letter-spacing: 0; }
   .sinsen_advantage_card > header > strong > em { font-size: 1.8rem; line-height: 1.5; }
   .sinsen_advantage_card > header > p { margin: 0 0 20px; font-size: 1.4rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; }
-  /* 26.06.11 edit 정다희 : sinsen_compare_table MO font-weight 700 */
   .sinsen_compare_table th, .sinsen_compare_table td { padding: 22px 5px; font-size: 1.4rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; }
   .sinsen_compare_table td { padding: 25px 9px; }
   .sinsen_compare_table thead th { font-weight: 700; }
@@ -5541,12 +5139,12 @@ button { background-color: #fff }
   .sinsen_advantage_items > li > figure > figcaption { margin-top: 16px; font-size: 1.4rem;  line-height: 1.4; letter-spacing: -0.01em; }
 }
 
-.pop_sec_acc :deep(dd.acc_panel > .acc_panel_inner > .acc_panel_cont) { color: #161616; } /**26.07.09 add 정다희 */
+.pop_sec_acc :deep(dd.acc_panel > .acc_panel_inner > .acc_panel_cont) { color: #161616; } 
 .pop_card_name { margin-bottom: 12px; color: #161616; font-size: 2.4rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; display: block }
 .pop_card_thumb { width: 100%; display: block }
 .pop_card_thumb img { width: auto; height: auto }
 .pop_card_body { padding-top: 24px; display: flex; flex-direction: column; flex: 1 }
-.pop_card_desc { color: #67676f; font-size: 1.6rem; line-height: 1.5; letter-spacing: -0.01em; font-weight:700; white-space: pre-line } /* 26.06.11 edit 정다희 : pop_card_desc font-weight 700 */
+.pop_card_desc { color: #67676f; font-size: 1.6rem; line-height: 1.5; letter-spacing: -0.01em; font-weight:700; white-space: pre-line } 
 
 .pop_card_note { margin-top: 8px; color: #67676f; font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.02em }
 .pop_card_note.is_warn { color: #f95823 }
@@ -5575,7 +5173,6 @@ button { background-color: #fff }
 @media (max-width: 768px) {
     .pop_card_body { min-height: 196px; padding-right: 8px }
 
-    /* 26.06.24 add 정다희 : 신선강화점 특징 아이콘 — MO Swiper(sinsen_feature 루트 = feature_card_swiper) 슬라이드별 적용 */
     .sinsen_feature :deep(.swiper-slide:nth-of-type(1) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_01.png');}
     .sinsen_feature :deep(.swiper-slide:nth-of-type(2) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_02.png');}
     .sinsen_feature :deep(.swiper-slide:nth-of-type(3) .feature_card_icon) {background-image:url('@/assets/images/sub/gsrbr010101/icon_sinsen_feature_40_03.png');}
@@ -5622,7 +5219,7 @@ button { background-color: #fff }
   .charging_service_item { max-width: none; width: 100%; height: 100%; aspect-ratio: unset }
 }
 .charging_service_item > img { max-width: 80%; max-height: 80%; width: auto; height: auto; display: block }
-.charging_service_note { margin-top: 16px; color: #67676f; font-size: 1.6rem; line-height: 1.5; font-weight:700; letter-spacing: -0.01em } /* 26.06.11 edit 정다희 : charging_service_note font-weight 700 */
+.charging_service_note { margin-top: 16px; color: #67676f; font-size: 1.6rem; line-height: 1.5; font-weight:700; letter-spacing: -0.01em } 
 @media (max-width: 768px) {
   .charging_service_note {  margin: 24px 0; font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em }
 }
@@ -5652,10 +5249,10 @@ button { background-color: #fff }
 @media (max-width: 768px) {
   .usage_def_list > dd { font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em }
 }
-/* 26.06.11 edit 정다희 : usage·list_dotted·caution 등 font-weight 700 */
+
 .usage_group .list_dotted > li { color: #67676f; font-weight:700;}
 .usage_group .list_dotted > li::before { background-color: #67676f }
-.explain{font-size:2rem; line-height:1.35; letter-spacing: -0.01em;} /**26.07.09 add 정다희 */
+.explain{font-size:2rem; line-height:1.35; letter-spacing: -0.01em;} 
 .explain + .retail_note {margin-top:8px;}
 
 .retail_note { margin: 0 0 24px; color: #f95823; font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em }
@@ -5727,14 +5324,12 @@ button { background-color: #fff }
 .imgcard_img > img { width: 100%; height: 100%; object-fit: cover }
 .imgcard_body { padding: 32px 0; flex: 1 }
 .imgcard_body > h4 { margin-bottom: 16px; color: #161616; font-size: 2.4rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em }
-.imgcard_body > p { color: #67676f; font-size: 1.6rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.01em; white-space: pre-line } /* 26.06.11 edit 정다희 : imgcard_body 설명 font-weight 700 */
+.imgcard_body > p { color: #67676f; font-size: 1.6rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.01em; white-space: pre-line } 
 .imgcard_sublist { display: flex; flex-direction: column; gap: 8px }
 
-/* 26.05.15 Edit 이종환 : 아이콘 공통화 */
+
 .imgcard_sublist > li { display: flex; gap: 8px; align-items: center }
 .imgcard_sublist > li:before { content: ""; width: 16px; height: 16px; background:url('@/assets/images/common/icon_bullet_checkmark.png') 0 0 no-repeat; border-radius: 50%; position: relative; top: 2px; flex-shrink: 0 }
-/* .imgcard_icon { width: 16px; height: 16px; background-color: #0059fe; border-radius: 50%; flex-shrink: 0 } */
-/* 26.05.15 Edit 이종환 : 아이콘 공통화 */
 .imgcard_sublist > li > span{font-weight:700;}
 .imgcard_sublist > li > span:last-child { color: #161616; font-size: 1.8rem; line-height: 1.4 }
 .hipass_terminal_img > img { width: auto; max-width: 100%; height: auto; display: block }
@@ -5748,14 +5343,13 @@ button { background-color: #fff }
 }
 .usim_phone_list { margin: 0; padding: 0 }
 .usim_phone_list dt { margin-bottom:6px; color: #161616; font-size: 1.8rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em }
-.usim_phone_list dd { margin-bottom: 32px; color: #67676f; font-size: 1.8rem; font-weight: 700; line-height: 1.4; letter-spacing: 0 } /* 26.06.11 edit 정다희 : usim_phone_list dd font-weight 700 */
+.usim_phone_list dd { margin-bottom: 32px; color: #67676f; font-size: 1.8rem; font-weight: 700; line-height: 1.4; letter-spacing: 0 } 
 @media (max-width: 768px) {
   .usim_phone_list dt { margin-bottom:8px; font-size: 1.8rem; line-height: 1.5; letter-spacing: 0 }
   .usim_phone_list dd { margin-bottom:12px; font-size: 1.6rem; line-height: 1.5; letter-spacing: 0 }
 }
 .usim_plan_table_wrap { overflow-x: auto }
 .usim_plan_table { width: 100%; min-width: 860px; border-collapse: collapse }
-/* 26.06.11 edit 정다희 : usim_plan_table th/td/할인 텍스트 font-weight 700 통일 */
 .usim_plan_table th { padding: 14.5px 24px; background-color: #f8f8f8; border-right: none; border-bottom: 1px solid #e5e5e9; color: #161616; font-size: 1.8rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.01em; word-break: keep-all; overflow-wrap: break-word; text-align: center; vertical-align: middle }
 .usim_plan_table thead tr:nth-child(2) th { padding: 10.5px 24px }
 .usim_plan_table thead tr:nth-child(1) th:first-child, .usim_plan_table thead tr:nth-child(1) th[colspan="3"] { border-right: 1px solid #e5e5e9 }
@@ -5765,11 +5359,10 @@ button { background-color: #fff }
 .usim_plan_data_sub { font-size: 1.4rem; font-weight: 700 }
 .usim_plan_dc { color: #107af2; font-size: 1.4rem; font-style: normal; font-weight: 700 }
 @media (max-width: 768px) {
-  /* 26.06.11 edit 정다희 : usim_plan_table MO font-weight 700 */
   .usim_plan_table th, .usim_plan_table td { padding: 10px 8px; font-size: 1.3rem; font-weight: 700 }
   .usim_plan_dc { font-size: 1.3rem }
 }
-.usage_group {font-weight:700;} /* 26.06.11 edit 정다희 : usage_group font-weight 700 */
+.usage_group {font-weight:700;} 
 .usim_advantage_cards :deep(.feature_card_item) { min-height: 212px }
 .gift_advantage_cards :deep(.feature_card_item) { min-height: 271px }
 .gift_usage_wrap { display: flex; flex-direction: column; gap: 40px }
@@ -5794,7 +5387,7 @@ button { background-color: #fff }
 .gift_step_header { margin-bottom: 8px; display: flex; align-items: center; gap: 8px }
 .gift_step_num { color: #107af2; font-size: 2.4rem; font-weight: 600; font-style: normal; letter-spacing: -0.01em }
 .gift_step_title { color: #161616; font-size: 2.4rem; font-weight: 600; letter-spacing: -0.01em }
-.gift_step_desc{font-weight:700;} /* 26.06.11 edit 정다희 : gift_step_desc font-weight 700 */
+.gift_step_desc{font-weight:700;} 
 @media (max-width: 768px) {
   .gift_step_header { gap:6px; margin-bottom: 4px }
   .gift_step_title { font-weight: 700; font-size: 1.8rem; line-height: 1.5; letter-spacing: 0% }
@@ -5809,7 +5402,6 @@ button { background-color: #fff }
 .gift_brand_slider { position: relative; width: 100%; display: flex; align-items: center; gap: 16px }
 @media (max-width: 768px) {
   .brand_panel section.sec_gift_brand { padding-left: 0; padding-right:0 }
-  /* .brand_panel section.sec_gift_brand :deep(header) { padding: 0 20px } */
 }
 .gift_brand_swiper { width: 100%;  overflow: hidden }
 @media (min-width: 769px) {
@@ -5839,15 +5431,12 @@ button { background-color: #fff }
   .logo_list { grid-template-columns: repeat(3, 1fr) }
   .gift_brand_card > figcaption { font-size: 1.4rem }
   .brand_panel { padding-top: 48px; }
-  /* 26.05.15 Del 이종환 .brand_panel section { padding-bottom: 0 } */
   .service_tab_item { flex: 0 0 clamp(140px, 18.23vw, 175px); gap: 12px }
   .service_tab_item.is_active { background-color: #F8F8F8 }
   .service_tab_label { font-size: 1.6rem }
   .service_tab_wrap::after { content:''; width:clamp(64px, 8vw, 88px); height:100%; background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)); position:absolute; top:0; right:0; pointer-events:none; z-index:1 }
   .pop_lnb { width: 160px }
   .pop_lnb > ul > li > button { font-size: 1.6rem; min-height: 52px }
-  /* 26.06.23 del 정다희 : 차별화상품 탭 삭제 */
-  /* .diff_card_grid { grid-template-columns: repeat(2, minmax(0, 1fr)) } */
   .usage_header { gap: 12px; margin-bottom: 24px }
   .usage_select_box { width: 160px }
 }
@@ -5855,9 +5444,6 @@ button { background-color: #fff }
 @media (max-width: 768px) {
     .service_tab_wrap { width: calc(100% + 20px); margin-bottom: 40px }
     .service_tab_wrap::after { content:''; width:clamp(24px, 8.53vw, 32px); height:100%; background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)); position:absolute; top:0; right:0; pointer-events:none; z-index:1 }
-    /* .service_tab_list { padding: 0 20px } */
-    /* .service_tab_list::after { content:''; min-width:20px; flex-shrink:0 } */
-
     .service_tab_item { gap: 10px }
     .service_tab_item.is_active { background-color: #F8F8F8 }
     .service_tab_item { flex: 0 0 clamp(100px, 26.67vw, 120px); aspect-ratio: 1 / 1.18 }
@@ -5874,7 +5460,7 @@ button { background-color: #fff }
     .pop_panel .service_tab_list .service_tab_item:nth-child(6) .service_tab_icon {background-position:-534px -24px;}
     .pop_panel .service_tab_list .service_tab_item:nth-child(7) .service_tab_icon {background-position:-634px -24px;}
     .pop_panel .service_tab_list .service_tab_item:nth-child(8) .service_tab_icon {background-position:-734px -24px;}
-    /* //26.05.15 Edit 이종환 : 아아콘 적용으로 수정 */
+
 
     /* 매장/서비스 > 택배&픽업 탭 아이콘 */
     .delivery_panel .service_tab_list .service_tab_item:nth-child(1) .service_tab_icon {background-position:-834px -24px;}
@@ -5894,18 +5480,12 @@ button { background-color: #fff }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .pop_wrap { gap: 24px }
-  /* .pop_card_swiper :deep(.swiper-wrapper) { gap: 16px } */
   .gift_brand_nav { width: 40px; height: 40px }
   .gift_brand_slider { gap: 12px }
 }
 
 @media (max-width: 768px) {
   .cont_inner {overflow-x: clip;}
-  /* 26.06.23 del 정다희 : 차별화상품 탭 삭제 */
-  /* .diff_card_swiper { overflow: visible } */
-  /* .diff_card > div { min-height: 163px; padding: 20px } */
-  /* .diff_card > div > p { font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em } */
-  /* .diff_card > div > h3 { font-weight: 700; font-size: 1.8rem; line-height: 1.5; letter-spacing: 0%; margin-bottom: 8px } */
   .cafe25_img_wrap { max-width: none; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch }
   .cafe25_img_wrap > img { max-width: none; display: block }
   .cafe25_card_swiper { overflow: visible; margin-bottom: 20px }
@@ -5916,7 +5496,7 @@ button { background-color: #fff }
   .cafe25_split > div { flex: none; }
   .cafe25_split_table .cafe25_table th > span, .cafe25_split_table .cafe25_table td > span { font-size: 1.6rem; line-height: 1.5; }
   .brand_panel:first-of-type section:not(:first-of-type) :deep(header) { padding-bottom: 40px }
-  .img_grid { grid-template-columns: 1fr; gap: 40px; margin-top: 60px } /* 26.07.08 add 정다희 : phone_grid 모바일 1열 stack */
+  .img_grid { grid-template-columns: 1fr; gap: 40px; margin-top: 60px } 
   .img_grid_swiper {overflow: visible }
   .img_grid_swiper :deep(.swiper-slide) { width: 84vw }
   .img_grid_slide { width: 84vw; overflow: hidden; }
@@ -5952,34 +5532,15 @@ button { background-color: #fff }
 }
 .tax_group_list .list_dotted > li + li { margin-top: 6px }
 .tax_group_list .list_dotted > li::before { background-color: #67676f }
-/* 26.06.11 edit 정다희 : tax_group 텍스트 font-weight 700 */
 .tax_group_list .list_dotted > li p { color:#67676F; font-weight:700; }
 .tax_group_subtitle { margin-bottom: 16px; font-size: 2.4rem; font-weight: 700; color: #161616; line-height: 1.35; letter-spacing: -0.01em }
 .tax_group_desc, .tax_group_list .list_dotted > li p { font-size: 1.8rem; font-weight:700; color: #67676f; line-height: 1.4 }
 @media (max-width: 768px) {
   .tax_group_desc, .tax_group_list .list_dotted > li p { font-size: 1.6rem; line-height: 1.5; letter-spacing: -0.01em }
 }
-/* 26.06.29 del 정다희 : 상품권 판매 탭 삭제 */
-/* .voucher_list { display: flex; gap: 20px } */
-/* .voucher_item {  flex: 1 } */
-/* .voucher_img { height: 200px; background-color: #f8f8f8; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center } */
-/* .voucher_img > img { width: auto } */
-/* .voucher_info { padding-top: 24px } */
-/* .voucher_name { margin-bottom: 8px; font-size: 2rem; line-height: 1.35; letter-spacing: -0.01em; font-weight: 700; color: #000; display: block } */
-/* @media (max-width: 768px) { */
-/*   .voucher_name { font-size: 1.8rem; line-height: 1.5; letter-spacing: 0% } */
-/* } */
-/* .voucher_tags { margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.4; display: flex; gap: 4px } */
-/* .voucher_tag { padding: 2px 8px; font-size: 1.4rem; font-weight:700; line-height: 1.4; letter-spacing: -0.01em; border-radius: 4px } */
-/* .tag_blue { background-color: #e7f2fe; color: #0d62c2 } */
-/* .tag_green { background-color: #dff5ec; color: #0d6e46 } */
-/* .tag_orange { background-color: #f9f2ea; color: #ca5028 } */
-/* .voucher_desc { font-size: 1.6rem; font-weight:700; color: #67676f; line-height: 1.5; letter-spacing: -0.01em } */
+
 @media (max-width: 768px) {
   .tax_group_subtitle { margin-bottom:12px; font-size: 1.8rem; line-height: 1.5; letter-spacing: 0% }
-  /* .brand_panel section.sec_voucher { padding: 0 !important } */
-  /* .voucher_swiper{width:calc(100% + 40px); margin:24px -20px 0; padding:0 20px;} */
-  /* .voucher_swiper .swiper-slide { width: 69.33vw } */
 }
 .link_wrap { margin-top: 64px; display: flex; justify-content: center }
 .link_wrap > .btn_pickup { height: 64px; padding: 20px 32px; color: #fff; text-align: center; font-size: 1.8rem; line-height: 1.4; background-color: #107AF2; border-radius: 10px; border:0; gap:8px }
