@@ -1,6 +1,6 @@
 <template>
     <header id="header" :class="{ sub_header: isSubPage }"><div class="inner">
-        <h1><a :href="baseUrl">GS리테일</a></h1>
+        <h1><router-link to="/">GS리테일</router-link></h1>
             
         <div class="btn_prev_wrap">
             <button>이전</button>
