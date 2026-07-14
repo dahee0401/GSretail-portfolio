@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import { guideRoutes } from "./guide";
 import workListData from "@/assets/language/menu/workList.json";
 
+const uiPageModules = require.context("@/uiPub", true, /\.vue$/, "lazy");
+
+const loadUiPage = (path) => () =>
+    uiPageModules(`./${path}.vue`).then(module => module.default || module);
+
 // workList.json에서 path 있는 항목만 라우트로 생성
 const workListRoutes = workListData
     .filter(item => item.path) // path가 있는 항목만
@@ -11,11 +16,11 @@ const workListRoutes = workListData
         let parentComponent = item.path.includes('gsr') ? 'main_wrap' : 'sub_wrap';
         return {
             path: item.link || `/${item.path}`,
-            component: () => import(`@/uiPub/${parentComponent}.vue`),
+            component: loadUiPage(parentComponent),
             children: [
                 {
                     path: '', // 기본 child
-                    component: () => import(`@/uiPub/${item.path}.vue`)
+                    component: loadUiPage(item.path)
                 }
             ]
         }

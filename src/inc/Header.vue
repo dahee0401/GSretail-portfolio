@@ -1,6 +1,6 @@
 <template>
     <header id="header" :class="{ sub_header: isSubPage }"><div class="inner">
-        <h1><a href="/">GS리테일</a></h1>
+        <h1><a :href="baseUrl">GS리테일</a></h1>
             
         <div class="btn_prev_wrap">
             <button>이전</button>
@@ -51,7 +51,7 @@
                 <li v-for="item1 in quickMenu" :key="item1.title">
                     <strong v-if="item1.children && item1.children.length" @click="toggleMenu($event)">{{
                         item1.title }}</strong>
-                    <a v-else :href="item1.path" :target="item1.blank ? '_blank' : null">{{ item1.title }}</a>
+                    <a v-else :href="getLink(item1)" :target="item1.blank ? '_blank' : null">{{ item1.title }}</a>
                     <ul v-if="item1.children && item1.children.length">
                         <li v-for="item2 in item1.children" :key="item2.title">
                             <strong v-if="item2.children && item2.children.length">{{ item2.title }}</strong>
@@ -95,6 +95,7 @@ export default {
     },
     emits: ["change-lang"], // language change for publish
     setup(props, { emit }) {
+        const baseUrl = process.env.BASE_URL;
         // 메뉴 목록 computed
         const menuList = computed(() => {
             return props.lang === "en" ? menuEn : menuKo;
@@ -102,7 +103,9 @@ export default {
 
         // 26.06.15 Add 정다희 : 퍼블 테스트용 — URL pathname 앞 5글자로 1depth current 매칭 (개발 시 라우트 기준으로 교체)
         const currentDepth1Key = computed(() => {
-            const path = window.location.pathname.replace(/^\//, ""); // 앞 슬래시 제거
+            const path = window.location.pathname
+                .replace(baseUrl, "")
+                .replace(/^\//, "");
             return path.length >= 5 ? path.substring(0, 5) : null; // 예: /gsrbr/01/... → "gsrbr"
         });
 
@@ -110,7 +113,9 @@ export default {
         const getLink = (item) => {
 
             if (!item.path || item.path === "#none" || item.path === "#") return "#";
-            return item.blank ? item.path : `/${item.path}`;
+            return item.blank
+                ? item.path
+                : `${baseUrl}${item.path.replace(/^\/+/, "")}`;
         };
 
         // ✅ PC 여부 체크 함수 (768px 초과 시 true)
@@ -517,7 +522,7 @@ export default {
 
         /* 퍼블 테스트용 : 파라미터를 이용한 sub page h1, 이전버튼 노출 숨김 처리 */
         const isSubPage = computed(() => {
-            return window.location.pathname !== "/";
+            return window.location.pathname !== baseUrl;
         });
         /* //퍼블 테스트용 : 파라미터를 이용한 sub page h1, 이전버튼 노출 숨김 처리 */
 
@@ -590,6 +595,7 @@ export default {
         });
 
         return {
+            baseUrl,
             menuList,
             currentDepth1Key, // 26.06.15 Edit 정다희 : 누락되었던 리턴 스코프 추가 보완
             quickMenu,
