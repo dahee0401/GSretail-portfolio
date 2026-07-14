@@ -2,10 +2,6 @@
 node_modules
 /dist
 
-# gsrmain ignore test
-src/uiPub/gsrmain/gsrmain.vue
-
-
 # local env files
 .env.local
 .env.*.local
