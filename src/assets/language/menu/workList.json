@@ -1,0 +1,1840 @@
+[
+    {
+        "depth1": "메인", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "gsrmain/gsrmain",
+        "link": "/",
+        "startDate": "2026-04-06",
+        "endDate": "",
+        "status": "ing",
+        "note": ""
+    },
+
+    {
+        "depth1": "공통", "depth2": "footer", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "inc/Footer",
+        "link": "/Footer",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "개인정보처리방침", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm01",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "알기쉬운개인정보처리방침", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm0101",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "영상정보기기운영방침", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm0102",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+	{
+        "depth1": "", "depth2": "이용약관", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm02",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "법적고지", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm03",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "채용안내", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm03",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "입점상담", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm03",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "제휴/협력문의", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm03",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "입지제안", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm04",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "임대상가안내", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm04",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "정도경영제보", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm04",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "고객센터", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm04",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "GSSHOP시청자관련", "depth3": "시청자위원회", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm0501",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "시청자위원회회의자료", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm0502",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "시청자의견반영결과보고서", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "gsrcm0503",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "기타", "depth3": "우편번호 검색", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": ""
+    },
+
+
+    {
+        "depth1": "About GSR", "depth2": "CEO 인사말", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/01/gsrab01",
+        "link": "/gsrab01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "회사소개", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/02/gsrab02",
+        "link": "/gsrab02" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "연혁", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/03/gsrab03",
+        "link": "/gsrab03" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "CI/BI", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/04/gsrab04",
+        "link": "/gsrab04" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "위치", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/05/gsrab05",
+        "link": "/gsrab05" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "수상이력", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrab/06/gsrab06",
+        "link": "/gsrab06" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "ing",
+        "note": ""
+    },
+
+
+    {
+        "depth1": "BRAND", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "gsrbr/gsrbr_smain",
+        "link": "/gsrbr_smain",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "26.05.15 이종환"
+    },
+
+    {
+        "depth1": "", "depth2": "GS25", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "gsrbr/01/gsrbr010101",
+        "link": "/gsrbr010101",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr_smain, gsrbr010101 ~ gsrbr0106 모두 포함됨"
+    },
+    {
+        "depth1": "", "depth2": "GS25(영문번역)", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "gsrbr/01/gsrbr010101_en",
+        "link": "/gsrbr010101_en",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr_smain, gsrbr010101 ~ gsrbr0106 모두 포함됨"
+    },
+   
+    {
+        "depth1": "", "depth2": "GS THE FRESH", "depth3": "신선 산지 안내", "depth4": "전국 우수 산지", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrbr/02/gsrbr020101",
+        "link": "/gsrbr020101",
+        "startDate": "26-04-13",
+        "endDate": "26-04-13",
+        "status": "com",
+        "note": "gsrbr020101~gsrbr020401 포함"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "함께하는 지자체", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrbr/02/gsrbr020102",
+        "link": "/gsrbr020102",
+        "startDate": "26-04-13",
+        "endDate": "26-04-13",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "맛/선도 관리", "depth4": "맛/선도 지킴이 안내", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrbr/02/gsrbr020201",
+        "link": "/gsrbr020201",
+        "startDate": "26-04-13",
+        "endDate": "26-04-13",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "맛/선도 관리방침 및 TIP", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrbr/02/gsrbr020202",
+        "link": "/gsrbr020202",
+        "startDate": "26-04-13",
+        "endDate": "26-04-13",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "매장찾기", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr/02/gsrbr0203",
+        "link": "/gsrbr0203",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "입지제안", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr/02/gsrbr0204",
+        "link": "/gsrbr0204",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "상담신청", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr/02/gsrbr020401",
+        "link": "/gsrbr020401",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "GS SHOP", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrbr/03/gsrbr0301",
+        "link": "/gsrbr0301",
+        "startDate": "26-04-2",
+        "endDate": "26-04-2",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "우리동네 GS", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/04/gsrbr04",
+        "link": "/gsrbr04",
+        "startDate": "26-04-2",
+        "endDate": "26-04-2",
+        "status": "ing",
+        "note": "gsrbr0401~gsrbr0404 해당 페이지에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "배달·픽업", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0401",
+        "link": "/gsrbr04",
+        "startDate": "26-04-27",
+        "endDate": "26-04-27",
+        "status": "com",
+        "note": "gsrbr04 내 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "와인25플러스", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0402",
+        "link": "/gsrbr04",
+        "startDate": "26-04-42",
+        "endDate": "26-04-2",
+        "status": "com",
+        "note": "gsrbr04 내 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "재고찾기", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0403",
+        "link": "/gsrbr04",
+        "startDate": "26-04-24",
+        "endDate": "26-04-24",
+        "status": "com",
+        "note": "gsrbr04 내 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "행사/이벤트", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0404",
+        "link": "/gsrbr04",
+        "startDate": "26-04-24",
+        "endDate": "26-04-24",
+        "status": "com",
+        "note": "gsrbr04 내 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "GS PAY", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/05/gsrbr05",
+        "link": "/gsrbr05",
+        "startDate": "26-04-22",
+        "endDate": "26-04-22",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "GS ALL 포인트", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/06/gsrbr06",
+        "link": "/gsrbr06",
+        "startDate": "26-04-21",
+        "endDate": "26-04-21",
+        "status": "com",
+        "note": "gsrbr0601~gsrbr0603 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "멤버십 FAQ", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0601",
+        "link": "/gsrbr0601",
+        "startDate": "26-04-21",
+        "endDate": "26-04-21",
+        "status": "com",
+        "note": "gsrbr06 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "GS ALL 멤버십 회원약관", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0602",
+        "link": "/gsrbr0602",
+        "startDate": "26-04-21",
+        "endDate": "26-04-22",
+        "status": "com",
+        "note": "gsrbr06 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "GS25 비회원 적립 서비스 이용 안내서", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrbr0603",
+        "link": "/gsrbr0603",
+        "startDate": "26-04-2",
+        "endDate": "26-04-2",
+        "status": "",
+        "note": "04-22:화면설계서 및 디자인 확인 불가"
+    },
+    {
+        "depth1": "", "depth2": "POP", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/07/gsrbr07",
+        "link": "/gsrbr07",
+        "startDate": "26-04-20",
+        "endDate": "26-04-20",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "유어스", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/08/gsrbr08",
+        "link": "/gsrbr08",
+        "startDate": "26-04-20",
+        "endDate": "26-04-20",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "리얼 프라이스", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/09/gsrbr09",
+        "link": "/gsrbr09",
+        "startDate": "26-04-20",
+        "endDate": "26-04-20",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "우딜", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrbr/01/gsrbr10",
+        "link": "/gsrbr10",
+        "startDate": "26-04-17",
+        "endDate": "26-04-17",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "개발/임대사업", "depth3": "지하철", "depth4": "", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrbr/01/gsrbr1101",
+        "link": "/gsrbr1101",
+        "startDate": "26-04-08",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr110201~gsrbr110204 포함됨, 아이콘 이미지만 넣으면 완료됨됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "쇼핑몰", "depth4": "안녕인사동", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrbr/01/gsrbr110201",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr1101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "구로 지밸리몰", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrbr/01/gsrbr110202",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr1101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "판교 파미어스몰", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrbr/01/gsrbr110203",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr1101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "동부산 미식일상", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrbr/01/gsrbr110204",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrbr1101 포함됨 "
+    },
+    {
+        "depth1": "INVESTORS", "depth2": "기업지배구조", "depth3": "이사회 의장 인사말", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Page",
+        "path": "gsrin/01/gsrin0100",
+        "link": "/gsrin0100",
+        "startDate": "26-06-24",
+        "endDate": "26-06-24",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "INVESTORS", "depth2": "기업지배구조", "depth3": "지배구조헌장", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin0101",
+        "link": "/gsrin0101",
+        "startDate": "26-04-07",
+        "endDate": "26-04-14",
+        "status": "com",
+        "note": "gsrin0101 ~ gsrin0104 포함됨 "
+    }
+    ,
+    {
+        "depth1": "", "depth2": "", "depth3": "이사회 및 위원회 구성", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin0102",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrin0101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "이사회 평가", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin0103",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrin0101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "지배구조 모범규준과의 차이", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin0104",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrin0101 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "경영성과", "depth3": "재무현황", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/02/gsrin0201",
+        "link": "/gsrin0201",
+        "startDate": "26-04-14",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0201 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "배당 정보", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/02/gsrin0202",
+        "link": "",
+        "startDate": "26-04-14",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0201 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "실적자료 등", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/02/gsrin0203",
+        "link": "",
+        "startDate": "26-04-14",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0201 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "공시정보", "depth3": "공고", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/03/gsrin0301",
+        "link": "/gsrin0301",
+        "startDate": "26-04-15",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0301 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "사업/감사보고서", "depth4": "분기보고서", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin030201",
+        "link": "",
+        "startDate": "26-04-15",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0301 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "사업보고서", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin030202",
+        "link": "",
+        "startDate": "26-04-15",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0301 포함됨 "
+    },
+    
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "감사보고서", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/01/gsrin030203",
+        "link": "",
+        "startDate": "26-04-15",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": "gsrin0301 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "주주총회 공시", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrin/03/gsrin0303",
+        "link": "/gsrin0303",
+        "startDate": "26-04-15",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": " gsrin0301 포함됨"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "주주보호 정책 및 관련 제도 정보", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": "gsrin0301 포함됨 "
+    },
+    {
+        "depth1": "", "depth2": "IR자료실", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrin/04/gsrin04",
+        "link": "/gsrin04",
+        "startDate": "26-04-14",
+        "endDate": "26-04-15",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "SUSTAINABILITY", "depth2": "환경", "depth3": "환경경영", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/02/gsrsu0201",
+        "link": "/gsrsu0201",
+        "startDate": "26-04-27",
+        "endDate": "26-04-27",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "친환경 활동", "depth4": "그린 벨류체인", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/02/gsrsu020101",
+        "link": "/gsrsu0201",
+        "startDate": "26-04-27",
+        "endDate": "26-04-27",
+        "status": "com",
+        "note": "gsrsu0201 페이지에서 확인 가능 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "그린스토어", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/02/gsrsu020102",
+        "link": "/gsrsu0201",
+        "startDate": "26-04-27",
+        "endDate": "26-04-27",
+        "status": "com",
+        "note": "gsrsu0201 페이지에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "그린 프로덕트", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/02/gsrsu020103",
+        "link": "/gsrsu0201",
+        "startDate": "26-04-27",
+        "endDate": "26-04-28",
+        "status": "com",
+        "note": "gsrsu0201 페이지에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "지속가능한 구매 방침", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu02010301",
+        "link": "/gsrsu0201",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "04-27: 디자인 확인 불가"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "함께하는 기후변화 대응", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/02/gsrsu020104",
+        "link": "/gsrsu0201",
+        "startDate": "26-04-27",
+        "endDate": "26-04-27",
+        "status": "com",
+        "note": "gsrsu0201 페이지에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "사회적 책임", "depth3": "상생경영", "depth4": "개요", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03010101",
+        "startDate": "26-04-28",
+        "endDate": "26-04-2",
+        "status": "com",
+        "note": "gsrsu0301010201~gsrsu030305까지 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "파트너사 지원제도", "depth5": "금융지원", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010201",
+        "startDate": "26-04-28",
+        "endDate": "26-04-28",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "판로지원", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010202",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "경쟁력강화지원", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010203",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "복리후생 제도", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010204",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "방송 편성", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010205",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "소통제도", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu0301010206",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "경영주 지원제도", "depth5": "GS25 경영주 지원제도", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010103",
+        "link": "/gsrsu03010103",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "GS THE FRESH 경영주 지원제도", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010103",
+        "link": "/gsrsu03010103_1",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "지역사회 참여정책", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010103",
+        "link": "/gsrsu03010104",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "지역사회 참여정책의 목적", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "/gsrsu0301010401",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "26-04-29: 5/4 디자인팀과 협의 후 작업 진행 예정 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "공급망 지속가능성 관리정책", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010103",
+        "link": "/gsrsu03010105",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "공급망 지속가능성 관리정책 개요", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "/gsrsu0301010501",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "26-04-29: 5/4 디자인팀과 협의 후 작업 진행 예정"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "나눔경영", "depth4": "개요", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030201",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "아동/사회 취약계층지원", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030202",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능 / 26-04-29 브랜드 이미지 교체 필요 (디자인팀 관련 작업 요청)"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "지역사회 지원", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030203",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "방송발전", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030204",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "숨은나눔천사", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030205",
+        "startDate": "26-04-29",
+        "endDate": "26-04-29",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "권익보호", "depth4": "인권경영", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030301",
+        "startDate": "26-04-30",
+        "endDate": "26-04-30",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "인권경영 정책", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030101",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "인재경영", "depth5": "인재상", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030201",
+        "startDate": "26-05-04",
+        "endDate": "26-05-04",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "인재육성체계", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030202",
+        "startDate": "26-04-30",
+        "endDate": "26-04-30",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "인재경영 지표", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030203",
+        "startDate": "26-05-04",
+        "endDate": "26-05-04",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "인재경영 실적자료", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030204",
+        "startDate": "26-04-30",
+        "endDate": "26-04-30",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "고객만족경영", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030303",
+        "startDate": "26-05-04",
+        "endDate": "26-05-06",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "소비자권익보호 정책", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030301",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "맛, 신선도 지킴이 안내", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030302",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "안전, 위생관리 제도 안내", "depth6": "협력업체위생관리",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "FF공장위생관리",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-06",
+        "endDate": "26-05-07",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "경기도청 식품안전관리 협약",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "농/수산물 안전성 검사",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "미생물검사",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "위해물질검사",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030303",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "위해상품 차단 시스템", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030304",
+        "startDate": "26-05-11",
+        "endDate": "26-05-12",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "안전경영", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030304",
+        "startDate": "26-05-06",
+        "endDate": "26-05-07",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "안전·보건 경영방침", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu03030401",
+        "startDate": "26-05-13",
+        "endDate": "26-05-13",
+        "status": "com",
+        "note": "gsrsu03010101 내 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "정보보호", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/03/gsrsu03010101",
+        "link": "/gsrsu030305",
+        "startDate": "26-05-06",
+        "endDate": "26-05-07",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "GS NEWS", "depth2": "보도자료", "depth3": "목록", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/01/gsrne01",
+        "link": "/gsrne01",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "상세", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/01/gsrne0101",
+        "link": "/gsrne0101",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": " "
+
+    },
+    {
+        "depth1": "", "depth2": "GS리테일 Newsroom", "depth3": "목록", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/02/gsrne02",
+        "link": "/gsrne02",
+        "startDate": "26-04-17",
+        "endDate": "26-04-17",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "GS리테일 Factbook", "depth3": "목록", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/03/gsrne03",
+        "link": "/gsrne03",
+        "startDate": "26-04-17",
+        "endDate": "26-04-20",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "상세", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/03/gsrne0301",
+        "link": "/gsrne0301",
+        "startDate": "26-04-20",
+        "endDate": "26-04-20",
+        "status": "com",
+        "note": " "
+    },
+
+    {
+        "depth1": "공지사항", "depth2": "", "depth3": "목록", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrne/01/gsrnotice",
+        "link": "/gsrnotice",
+        "startDate": "26-05-21",
+        "endDate": "26-05-21",
+        "status": "com",
+        "note": " "
+    },
+
+    {
+        "depth1": "점포창업안내", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrst/gsrst_smain",
+        "link": "/gsrst_smain",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": " "
+    },
+    {
+        "depth1": "", "depth2": "GS THE FRESH ", "depth3": "가맹/창업가이드", "depth4": "가맹조건 안내", "depth5": "각 타입별 종합안내", "depth6": "",
+        "type": "page",
+        "path": "gsrst/01/gsrst01010101",
+        "link": "/gsrst01010101",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101 ~ gsrst010201 포함"
+    },
+        {
+        "depth1": "", "depth2": "GS25 ", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrst/02/gsrst02010101",
+        "link": "/gsrst02010101",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "GSF1타입", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst01010102",
+        "link": "/gsrst01010102",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "GSF2타입", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst01010103",
+        "link": "/gsrst01010103",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "GSF3타입", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst01010104",
+        "link": "/gsrst01010104",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "가맹/창업 절차", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst010102",
+        "link": "/gsrst010102",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "가맹점 수익계산", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst010103",
+        "link": "/gsrst010103",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "창업 전 필수 확인사항", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst010104",
+        "link": "/gsrst010104",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "사업설명회", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst0102",
+        "link": "/gsrst0102",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "사업설명회 신청", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrst/01/gsrst010201",
+        "link": "/gsrst010201",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "추첨점포소개", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst0104",
+        "link": "/gsrst0104",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "경영주 지원제도", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst0105",
+        "link": "/gsrst0105",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "상담 및 신청", "depth4": "가맹 및 창업상담", "depth5": "점포있음", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/02/gsrst0103",
+        "link": "/gsrst0103",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "점포없음", "depth6": "",
+        "type": "tab",
+        "path": "gsrst/01/gsrst0103",
+        "link": "/gsrst0103",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "GSF1타입",
+        "type": "Pop-up",
+        "path": "popUp/gsrst0105010201",
+        "link": "/gsrst0105010201",
+        "startDate": "26-05-15",
+        "endDate": "26-05-15",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "GSF2타입",
+        "type": "Pop-up",
+        "path": "popUp/gsrst0105010202",
+        "link": "/gsrst0105010202",
+        "startDate": "26-05-15",
+        "endDate": "26-05-15",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "GSF3타입",
+        "type": "Pop-up",
+        "path": "popUp/gsrst0105010203",
+        "link": "/gsrst0105010203",
+        "startDate": "26-05-15",
+        "endDate": "26-05-15",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "연락처",
+        "type": "Pop-up",
+        "path": "popUp/gsrst0105010204",
+        "link": "/gsrst0105010204",
+        "startDate": "26-05-15",
+        "endDate": "26-05-15",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "입지제안 상담신청", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrst/01/gsrst010502",
+        "link": "/gsrst010502",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01010101에서 확인가능"
+    },
+    {
+        "depth1": "입점상담", "depth2": "GS25/GS THE FRESH/지원부문", "depth3": "공지사항", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrse/01/gsrse01",
+        "link": "/gsrse01",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": "gsrse01에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "상세보기", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "04-16:관련디자인 미작업 "
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "입점 안내", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrse/01/gsrse02",
+        "link": "",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": "gsrse01에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "자주하는 질문 FAQ", "depth4": "", "depth5": "", "depth6": "",
+        "type": "tab",
+        "path": "gsrse/01/gsrse03",
+        "link": "",
+        "startDate": "26-04-16",
+        "endDate": "26-04-16",
+        "status": "com",
+        "note": "gsrse01에서 확인 가능"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "상담신청", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "04-16:관련디자인 미작업"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "신청완료", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "04-16:관련디자인 미작업"
+    },
+    {
+        "depth1": "", "depth2": "GS SHOP", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "",
+        "link": "",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrst01에서 확인 가능, 현재 외부링크 ( https://withgs.gsshop.com/sug/suggest )로 페이지 없음."
+    },
+    {
+        "depth1": "SUSTAINABILITY", "depth2": "지속가능경영", "depth3": "비전&전략", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu0101",
+        "link": "/gsrsu0101",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu010201, gsrsu010202, gsrsu010203, gsrsu010204, gsrsu0102 포함"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "ESG 자료실", "depth4": "환경경영 자료", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu010201",
+        "link": "/gsrsu010201",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu0101에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "상생경영 자료", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu010202",
+        "link": "/gsrsu010202",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu0101에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "ESG성과", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu010203",
+        "link": "/gsrsu010203",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu0101에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "사회공헌 수상내역", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu010204",
+        "link": "/gsrsu010204",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu0101에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "지속가능경영보고서", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/01/gsrsu0102",
+        "link": "/gsrsu0102",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu0101에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "컴플라이언스", "depth3": "정도경영", "depth4": "소개", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrsu/04/gsrsu040101",
+        "link": "/gsrsu040101",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040102, gsrsu04010201, gsrsu040103, gsrsu040104, gsrsu04010401, gsrsu0401040101, gsrsu04010501, gsrsu0401050101 포함"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "지침", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu040102",
+        "link": "/gsrsu040102" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "제도", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu040103",
+        "link": "/gsrsu040103" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "제보", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu040104", 
+        "link": "/gsrsu040104" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "준법경영", "depth4": "자율준수 프로그램", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu040201",
+        "link": "/gsrsu040201",
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040102, gsrsu04010201, gsrsu040103, gsrsu040104, gsrsu04010401, gsrsu0401040101, gsrsu04010501, gsrsu0401050101 포함"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "자율준수 관리자 안내", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu040202",
+        "link": "/gsrsu040202" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "공정거래 4대 가이드 라인", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu04010201",
+        "link": "/gsrsu04010201" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "개인정보처리방침", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrcm/01/gsrcm01",
+        "link": "/gsrcm01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "개인정보처리방침", "depth2": "알기 쉬운 개인정보 처리방침", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "popUp",
+        "path": "popUp/gsrcm0101",
+        "link": "/gsrcm0101" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    }, 
+    {
+        "depth1": "개인정보처리방침", "depth2": "위치기반서비스 이용약관", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "popUp",
+        "path": "popUp/gsrcm0102",
+        "link": "/gsrcm0102" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    }, 
+    {
+        "depth1": "개인정보처리방침", "depth2": "고정형 영상정보처리기기 운영·관리 방침", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "popUp",
+        "path": "popUp/gsrcm0103",
+        "link": "/gsrcm0103" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    }, 
+    {
+        "depth1": "GS SHOP 시청자 관련", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "TAB",
+        "path": "gsrcm/04/gsrcm0401",
+        "link": "/gsrcm0401" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "파트너사 선정, 운영 가이드 라인", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/04/gsrsu040101",
+        "link": "/gsrsu04020301" ,
+        "startDate": "26-05-13",
+        "endDate": "26-05-13",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "서면 발급, 보존 가이드 라인", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/04/gsrsu040101",
+        "link": "/gsrsu04010201" ,
+        "startDate": "26-05-13",
+        "endDate": "26-05-13",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "하도급 거래 심의위원회 운영 규정", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/04/gsrsu040101",
+        "link": "/gsrsu04020302" ,
+        "startDate": "26-05-13",
+        "endDate": "26-05-13",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "", "depth5": "계약 체결 가이드 라인", "depth6": "",
+        "type": "Pop-up",
+        "path": "gsrsu/04/gsrsu040101",
+        "link": "/gsrsu04020303" ,
+        "startDate": "26-05-13",
+        "endDate": "26-05-13",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "공정거래 업무기준", "depth5": "수퍼, 편의점, 전문점", "depth6": "",
+        "type": "TAB",
+        "path": "gsrsu/04/gsrsu04020401",
+        "link": "/gsrsu04020401" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrsu040101에서서 확인"
+    },
+
+  
+    {
+        "depth1": "고객센터", "depth2": "", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "page",
+        "path": "gsrcu/01/gsrcu01",
+        "link": "/gsrcu01" ,
+        "startDate": "26-05-07",
+        "endDate": "26-05-07",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "GS25", "depth3": "1:1 상담", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/gsrcu0101",
+        "link": "/gsrcu01" ,
+        "startDate": "26-05-08",
+        "endDate": "26-05-08",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "신청완료", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/gsrcu010101",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "창업안내", "depth4": "", "depth5": "", "depth6": "",
+        "type": "링크",
+        "path": "popUp/gsrcu010102",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "GS SHOP", "depth3": "1:1 상담", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/gsrcu010102",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrcu01에서 확인, gsrcu0101 동일화면으로 해당 화면으로 사용"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "신청완료", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "26-05-11",
+        "endDate": "26-05-11",
+        "status": "com",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "GS THE FRESH", "depth3": "1:1 상담", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrcu01에서 확인, gsrcu0101 동일화면으로 해당 화면으로 사용"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "신청완료", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "26-05-11",
+        "endDate": "26-05-11",
+        "status": "com",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "창업안내", "depth4": "", "depth5": "", "depth6": "",
+        "type": "링크",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": ""
+    },
+    {
+        "depth1": "", "depth2": "정도경영 목소리", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "입점상담", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "채용문의", "depth3": "", "depth4": "", "depth5": "", "depth6": "",
+        "type": "",
+        "path": "popUp/",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "",
+        "note": "gsrcu01에서 확인"
+    },
+    {
+        "depth1": "", "depth2": "제휴/협력문의", "depth3": "1:1 상담", "depth4": "", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/gsrcu0201",
+        "link": "/gsrcu01" ,
+        "startDate": "",
+        "endDate": "",
+        "status": "com",
+        "note": "gsrcu01에서 확인, gsrcu0101 동일화면으로 해당 화면으로 사용"
+    },
+    {
+        "depth1": "", "depth2": "", "depth3": "", "depth4": "신청완료", "depth5": "", "depth6": "",
+        "type": "Pop-up",
+        "path": "popUp/gsrcu020101",
+        "link": "/gsrcu01" ,
+        "startDate": "26-05-11",
+        "endDate": "26-05-11",
+        "status": "com",
+        "note": "gsrcu01에서 확인"
+    }    
+    
+    
+    
+]

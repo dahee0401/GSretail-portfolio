@@ -1,0 +1,159 @@
+[
+    {
+        "title": "ABOUT",
+        "path": "gsrab01",
+        "children": [
+            {
+                "title": "CEO Message",
+                "path": "gsrab01",
+                "children": []
+            },
+            {
+                "title": "Company Overview",
+                "path": "gsrab02",
+                "children": []
+            },
+            {
+                "title": "History",
+                "path": "gsrab03",
+                "children": []
+            },
+            {
+                "title": "CI/BI",
+                "path": "gsrab04",
+                "children": []
+            },
+            {
+                "title": "Location",
+                "path": "gsrab05",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "BRAND",
+        "path": "gsrbr010101",
+        "children": [
+            {
+                "title": "GS25",
+                "path": "gsrbr010101",
+                "children": [
+                    { "title": "차별화 상품/서비스", "path": "gsrbr010101" },
+                    { "title": "신선강화점", "path": "#none", "blank": false },
+                    { "title": "매장/서비스", "path": "#none" },
+                    { "title": "상생협력", "path": "#none" },
+                    { "title": "밀박스/스낵바", "path": "#none" },
+                    { "title": "매장찾기", "path": "#none" }
+                ]
+            },
+            {
+                "title": "GS THE FRESH",
+                "path": "gsrbr020101",
+                "children": [
+                    { "title": "신선 산지 안내", "path": "#none" },
+                    { "title": "맛/선도 관리", "path": "#none", "blank": false },
+                    { "title": "매장찾기", "path": "#none", "blank": false },
+                    { "title": "입지제안", "path": "#none" }
+                ]
+            },
+            {
+                "title": "GS SHOP",
+                "path": "gsrbr0301",
+                "children": []
+            },
+            {
+                "title": "Our Neighborhood GS",
+                "path": "gsrbr04",
+                "children": [
+                    { "title": "배달·픽업", "path": "#none" },
+                    { "title": "와인25플러스", "path": "#none" },
+                    { "title": "재고찾기", "path": "#none" },
+                    { "title": "행사/이벤트", "path": "#none" }
+                ]
+            },
+            {
+                "title": "Development/Leasing Business",
+                "path": "gsrbr1101",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "SUSTAINABILITY",
+        "path": "gsrsu0101",
+        "children": [
+            {
+                "title": "Sustainability Management",
+                "path": "gsrsu0101",
+                "children": []
+            },
+            {
+                "title": "Environment",
+                "path": "gsrsu0201",
+                "children": []
+            },
+            {
+                "title": "Social Responsibility",
+                "path": "gsrsu03010101",
+                "children": []
+            },
+            {
+                "title": "Compliance",
+                "path": "gsrsu040101",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "INVESTORS",
+        "path": "gsrin0100",
+        "children": [
+            {
+                "title": "Message from the Chairman of the Board of Directors",
+                "path": "gsrin0100",
+                "children": []
+            },
+            {
+                "title": "Corporate Governance",
+                "path": "gsrin0101",
+                "children": []
+            },
+            {
+                "title": "Financial Performance",
+                "path": "gsrin0201",
+                "children": []
+            },
+            {
+                "title": "Disclosure",
+                "path": "gsrin0301",
+                "children": []
+            },
+            {
+                "title": "IR Library",
+                "path": "gsrin04",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "GS NEWS",
+        "path": "gsrne01",
+        "children": [
+            {
+                "title": "Press Releases",
+                "path": "gsrne01",
+                "children": []
+            },
+            {
+                "title": "Newsroom",
+                "path": "gsrne02",
+                "children": []
+            },
+            {
+                "title": "Story",
+                "path": "gsrne03",
+                "children": []
+            }
+        ]
+    }
+]

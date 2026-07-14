@@ -1,0 +1,165 @@
+[
+    {
+        "title": "회사소개",
+        "path": "gsrab01",
+        "children": [
+            {
+                "title": "경영이념 및 가치체계",
+                "path": "gsrab02",
+                "children": []
+            },
+            {
+                "title": "CEO 인사말",
+                "path": "gsrab01",
+                "children": []
+            },
+            {
+                "title": "기업 연혁",
+                "path": "gsrab03",
+                "children": []
+            },
+            {
+                "title": "수상 이력",
+                "path": "gsrab06",
+                "children": []
+            },
+            {
+                "title": "기업 CI/BI",
+                "path": "gsrab04",
+                "children": []
+            },
+            {
+                "title": "오시는 길",
+                "path": "gsrab05",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "사업영역",
+        "path": "gsrbr010101",
+        "children": [
+            {
+                "title": "GS25",
+                "path": "gsrbr010101",
+                "children": [
+                    { "title": "차별화 상품/서비스", "path": "gsrbr010101" },
+                    { "title": "신선강화점", "path": "#none", "blank": false },
+                    { "title": "매장/서비스", "path": "#none" },
+                    { "title": "상생협력", "path": "#none" },
+                    { "title": "밀박스/스낵바", "path": "#none" },
+                    { "title": "매장찾기", "path": "#none" }
+                ]
+            },
+            {
+                "title": "GS THE FRESH",
+                "path": "gsrbr020101",
+                "children": [
+                    { "title": "신선 산지 안내", "path": "#none" },
+                    { "title": "맛/선도 관리", "path": "#none", "blank": false },
+                    { "title": "매장찾기", "path": "#none", "blank": false },
+                    { "title": "입지제안", "path": "#none" }
+                ]
+            },
+            {
+                "title": "GS SHOP",
+                "path": "gsrbr0301",
+                "children": []
+            },
+            {
+                "title": "우리동네GS",
+                "path": "gsrbr04",
+                "children": [
+                    { "title": "배달·픽업", "path": "#none" },
+                    { "title": "와인25플러스", "path": "#none" },
+                    { "title": "재고찾기", "path": "#none" },
+                    { "title": "행사/이벤트", "path": "#none" }
+                ]
+            },
+
+            {
+                "title": "개발/임대 사업",
+                "path": "gsrbr1101",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "지속가능경영",
+        "path": "gsrsu0101",
+        "children": [
+            {
+                "title": "지속가능경영",
+                "path": "gsrsu0101",
+                "children": []
+            },
+            {
+                "title": "환경",
+                "path": "gsrsu0201",
+                "children": []
+            },
+            {
+                "title": "사회적 책임",
+                "path": "gsrsu03010101",
+                "children": []
+            },
+            {
+                "title": "정도경영",
+                "path": "gsrsu040101",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "투자정보",
+        "path": "gsrin0100",
+        "children": [
+            {
+                "title": "이사회 의장 인사말",
+                "path": "gsrin0100",
+                "children": []
+            },
+            {
+                "title": "기업지배구조",
+                "path": "gsrin0101",
+                "children": []
+            },
+            {
+                "title": "경영성과",
+                "path": "gsrin0201",
+                "children": []
+            },
+            {
+                "title": "공시정보",
+                "path": "gsrin0301",
+                "children": []
+            },
+            {
+                "title": "IR자료실",
+                "path": "gsrin04",
+                "children": []
+            }
+        ]
+    },
+    {
+        "title": "미디어",
+        "path": "gsrne01",
+        "children": [
+            {
+                "title": "보도자료",
+                "path": "gsrne01",
+                "children": []
+            },
+            {
+                "title": "뉴스룸",
+                "path": "gsrne02",
+                "children": []
+            },
+            {
+                "title": "스토리", 
+                "path": "gsrne03",
+                "children": []
+            }
+        ]
+    }
+]
