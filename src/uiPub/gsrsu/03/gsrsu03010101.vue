@@ -2,17 +2,16 @@
     <div class="main-container" v-if="t">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.10 Del 이종환 <p class="visual-sub">{{ t.MainsubTitle }}</p> -->
         </div>
 
         <section class="section-investor">
             <div class="cont_inner">
                 <Tabs  mb120
-                    v-model="CTabIdx" 
-                    :tab-items="t.Tabs1" 
-                    tab-class="type_01" 
-                    :tab-slide="true" 
-                    @change="onTabChange1" 
+                       v-model="CTabIdx" 
+                       :tab-items="t.Tabs1" 
+                       tab-class="type_01" 
+                       :tab-slide="true" 
+                       @change="onTabChange1" 
                 />
 
                 <div class="tab_content_wrap">
@@ -464,10 +463,10 @@
 
                                     <div class="btn-wrap ac mt40">
                                         <Buttons btn-class="btn_icon_arrow btn_xl border after"
-                                            @click="openModal" 
-                                            data-popid="gsrsu0301010401" 
-                                            data-type="lg" 
-                                            data-cont="gsrsu0301010401">
+                                                 @click="openModal" 
+                                                 data-popid="gsrsu0301010401" 
+                                                 data-type="lg" 
+                                                 data-cont="gsrsu0301010401">
                                             {{ t.community.Purpose.BtnText }}
                                         </Buttons>
                                     </div>
@@ -515,10 +514,10 @@
 
                                         <div class="btn-wrap ac mt60">
                                             <Buttons btn-class="btn_icon_arrow btn_xl border after"
-                                                @click="openModal" 
-                                                data-popid="gsrsu0301010501" 
-                                                data-type="lg" 
-                                                data-cont="gsrsu0301010501">
+                                                     @click="openModal" 
+                                                     data-popid="gsrsu0301010501" 
+                                                     data-type="lg" 
+                                                     data-cont="gsrsu0301010501">
                                                 {{ t.supplychain.Policy.BtnText }}
                                             </Buttons>
                                         </div>
@@ -766,10 +765,10 @@
                                         </div>
                                         <div class="btn-wrap ac mt60">
                                             <Buttons btn-class="btn_icon_arrow btn_xl border after"
-                                                @click="openModal" 
-                                                data-popid="gsrsu03030101" 
-                                                data-type="lg" 
-                                                data-cont="gsrsu03030101">
+                                                     @click="openModal" 
+                                                     data-popid="gsrsu03030101" 
+                                                     data-type="lg" 
+                                                     data-cont="gsrsu03030101">
                                                 {{ t.protect.humanrights.Policy.BtnText }}
                                             </Buttons>
                                         </div>
@@ -1064,10 +1063,10 @@
                                         </div>
                                         <div class="btn-wrap ac mt60">
                                             <Buttons btn-class="btn_icon_arrow btn_xl border after" 
-                                                @click="openModal" 
-                                                data-popid="gsrsu03030301" 
-                                                data-type="lg" 
-                                                data-cont="gsrsu03030301">
+                                                     @click="openModal" 
+                                                     data-popid="gsrsu03030301" 
+                                                     data-type="lg" 
+                                                     data-cont="gsrsu03030301">
                                                 {{ t.protect.customer.Policy.BtnText }}
                                             </Buttons>
                                         </div>
@@ -1128,10 +1127,10 @@
                                                 <strong class="tit">
                                                     {{ item.tit }}
                                                     <button class="icon_link_before" 
-                                                        @click="openModal" 
-                                                        :data-popid="item.popContId" 
-                                                        data-type="lg" 
-                                                        :data-cont="item.popContId">
+                                                            @click="openModal" 
+                                                            :data-popid="item.popContId" 
+                                                            data-type="lg" 
+                                                            :data-cont="item.popContId">
                                                     </button>
                                                 </strong>
                                                 <!-- 링크 아이콘 영역 ::before 사용 -->
@@ -1227,10 +1226,10 @@
                                                 </ul>
                                                 <div class="btn-wrap ac mt40">
                                                     <button type="button" class="btn_icon_arrow btn_xl border after" 
-                                                        @click="openModal" 
-                                                        data-popid="gsrsu03030401" 
-                                                        data-type="lg" 
-                                                        data-cont="gsrsu03030401">
+                                                            @click="openModal" 
+                                                            data-popid="gsrsu03030401" 
+                                                            data-type="lg" 
+                                                            data-cont="gsrsu03030401">
                                                         {{ t.protect.safetymanagement.Policy.BtnText }}
                                                     </button>
                                                 </div>

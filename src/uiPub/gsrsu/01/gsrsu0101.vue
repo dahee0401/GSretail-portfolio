@@ -2,7 +2,6 @@
     <div class="main-container">
         <div class="title_wrap tac top_visual">
             <h2 class="page_title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.08 add 정다희 : MainsubTitle 삭제  -->
         </div>
 
         <!-- gsrbr010101 맥락: brand_content ≈ content, Tabs 나열 후 v-show 패널 -->
@@ -42,7 +41,7 @@
                                         <strong class="esg_flow_card_title" v-html="item.title"></strong>
                                         <p v-if="item.meta" class="esg_flow_card_meta" v-html="item.meta"></p>
                                     </header>
-                                    <p class="esg_flow_card_desc" v-html="item.desc"></p><!-- 260624 edit 이소라 -->
+                                    <p class="esg_flow_card_desc" v-html="item.desc"></p>
                                 </div>
                                 <div v-if="idx < t.esgFlowItems.length - 1" class="esg_flow_connector" aria-hidden="true">
                                     <p><span class="esg_flow_connector_text">{{ item.connectorLeft }}</span></p>
@@ -81,21 +80,12 @@
                                 </p>
                             </div>
                         </div>
-                        <!--<div class="bnbp_sub">
-                            <h4>{{ t.esgChangwonTitle }}</h4>
-                            <div class="txt_box">
-                                <p v-for="(item, idx) in t.esgChangwonContents" :key="idx">
-                                    {{ item }}
-                                </p>
-                            </div>
-                        </div> 260624 delete 이소라 -->
                     </div>
                 </section>
             </div>
 
             <!-- ESG 자료실 -->
             <div v-show="CTabIdx === 1" class="panel" :aria-label="t.Tabs1?.[1]?.item || ''">
-                <!-- Figma 431:12931 — 환경경영 자료 (IR/공시 리스트 패턴) -->
                 <div v-show="CTabIdxEsgArchive === 0" class="panel_inner" :aria-label="t.TabsEsgArchive?.[0]?.item || ''">
                     <header class="sub_header sub_header_center">
                         <h3>{{ t.tab2.stab1.title }}</h3>
@@ -412,8 +402,7 @@ export default {
             langData: {
                 ko: {
                     MainTitle: "지속가능경영",
-                    // 26.06.08 add 정다희 : MainsubTitle 삭제 
-                    MainDesc: "GS리테일은 통합 GS리테일 출범 이후 지속가능한 기업의 가치 창출을 위해\n‘Green Life Together’라는 ESG 비전을 수립하였습니다.\n이 중장기 비전이 실행될 수 있도록 환경과 사회의 세부 전략 및 과제를 추진하고 있으며,\n이행 현황과 지속가능한 경영의 성과를 이해관계자와 지속 소통해가겠습니다.", /* 2026.07.06 edit 이소라 */
+                    MainDesc: "GS리테일은 통합 GS리테일 출범 이후 지속가능한 기업의 가치 창출을 위해\n‘Green Life Together’라는 ESG 비전을 수립하였습니다.\n이 중장기 비전이 실행될 수 있도록 환경과 사회의 세부 전략 및 과제를 추진하고 있으며,\n이행 현황과 지속가능한 경영의 성과를 이해관계자와 지속 소통해가겠습니다.",
                     Tabs1: [{ item: "비전&전략" }, { item: "ESG 자료실" }, { item: "지속가능경영보고서" }],
                     TabsEsgArchive: [
                         { item: "환경경영 자료" },
@@ -492,14 +481,14 @@ export default {
                         },
                         {
                             title: "ESG 추진협의회",
-                            meta: "CEO 및 C레벨 10인", /* 260624 edit 이소라 */
-                            desc: "CEO 주재 추진협의회를 통해 ESG관련 사항 의사결정", /* 260624 edit 이소라 */
+                            meta: "CEO 및 C레벨 10인", 
+                            desc: "CEO 주재 추진협의회를 통해 ESG관련 사항 의사결정", 
                             connectorLeft: "의사결정",
                             connectorRight: "의안상정",
                         },
                         {
                             title: "ESG 총괄사무국",
-                            meta: "지속가능경영부문/<br class='m_br'>ESG파트", /* 260624 edit 이소라 */
+                            meta: "지속가능경영부문/<br class='m_br'>ESG파트", 
                             desc: "ESG 전담 실행 부서",
                             connectorLeft: "결과 공유",
                             connectorRight: "과제취합",
@@ -528,8 +517,8 @@ export default {
                     ],
                     esgTableRightItems: [
                         "[파트너사] 파트너사 간담회",
-                        "[개인정보] 정보보안위원회", /* 260624 edit 이소라 */
-                        "[사회공헌] 사회공헌 심의위원회", /* 260624 edit 이소라 */
+                        "[개인정보] 정보보안위원회", 
+                        "[사회공헌] 사회공헌 심의위원회",
                     ],
                     bnbpTitle: "BNBP(Biz N Biodiversity Platform) 이니셔티브",
                     esgCommitteeDetailImageAlt: "BNBP 로고 이미지",
@@ -547,11 +536,11 @@ export default {
                     tab2: { 
                         stab1: {
                             title: "GS리테일의 환경 경영과 관련된 실적 자료를 열람하실 수 있습니다.",
-                            desc: "본 자료는 이해관계자 및 기관, 주주들을 위해 공개된 GS리테일의 정보자산, 구성원들의 정보가 포함되어 있으므로\n용도 외 활용, 불법 유출 시에는 법에 의해 처벌을 받으실 수 있습니다.", /* 2026.07.06 edit 이소라 */
+                            desc: "본 자료는 이해관계자 및 기관, 주주들을 위해 공개된 GS리테일의 정보자산, 구성원들의 정보가 포함되어 있으므로\n용도 외 활용, 불법 유출 시에는 법에 의해 처벌을 받으실 수 있습니다.", 
                         },
                         stab2: {
                             title: "GS리테일의 상생 경영과 관련된 실적 자료를 열람하실 수 있습니다.",
-                            desc: "본 자료는 이해관계자 및 기관, 주주들을 위해 공개된 GS리테일의 정보자산, 구성원들의 정보가 포함되어 있으므로\n용도 외 활용, 불법 유출 시에는 법에 의해 처벌을 받으실 수 있습니다.", /* 2026.07.06 edit 이소라 */
+                            desc: "본 자료는 이해관계자 및 기관, 주주들을 위해 공개된 GS리테일의 정보자산, 구성원들의 정보가 포함되어 있으므로\n용도 외 활용, 불법 유출 시에는 법에 의해 처벌을 받으실 수 있습니다.", 
                         },
                         stab3: {
                             tableTitle: [
@@ -571,8 +560,8 @@ export default {
                             ],
                         },
                         stab4: {
-                            title: "구성원, 경영주, 고객과 함께 GS나누미 봉사활동, 기부 등을 통해\n꾸준히 지역 사회와 함께한 나눔 활동을 소개합니다.", /* 2026.07.06 edit 이소라 */
-                            desc: "2006년부터 구성원, 경영주, 고객과 함께 GS나누미 봉사활동, 기부 등을 통해 꾸준히 지역 사회와 함께하며\n나눔 활동을 지속적으로 함께하고 있습니다.\n앞으로도 일상에서 함께하는 따뜻한 나눔을 실천, 마음을 나누겠습니다.", /* 2026.07.06 edit 이소라 */
+                            title: "구성원, 경영주, 고객과 함께 GS나누미 봉사활동, 기부 등을 통해\n꾸준히 지역 사회와 함께한 나눔 활동을 소개합니다.",
+                            desc: "2006년부터 구성원, 경영주, 고객과 함께 GS나누미 봉사활동, 기부 등을 통해 꾸준히 지역 사회와 함께하며\n나눔 활동을 지속적으로 함께하고 있습니다.\n앞으로도 일상에서 함께하는 따뜻한 나눔을 실천, 마음을 나누겠습니다.", 
                             tableTitle: [
                                 { title1: "연도", title2: "구분", title3: "표창명", title4: "대회", title5: "소속" },
                             ],
@@ -787,8 +776,8 @@ export default {
                         },
                         {
                             title: "ESG Promotion Council",
-                            meta: "CEO and 10 C-Level Executives", /* 260624 edit 이소라 */
-                            desc: "Decision-making on ESG-related matters through a CEO-led Promotion Council", /* 260624 edit 이소라 */
+                            meta: "CEO and 10 C-Level Executives", 
+                            desc: "Decision-making on ESG-related matters through a CEO-led Promotion Council", 
                             connectorLeft: "Decision-Making",
                             connectorRight: "Agenda Submission",
                         },
@@ -823,7 +812,7 @@ export default {
                     ],
                     esgTableRightItems: [
                         "[Partners] Partner Briefing Session [Personal Data] Information Security Council [Social Contribution] Social Contribution Review Committee",
-                        "[Personal Information] Information Security Committee"/* 260604 번역 */, /* 260624 edit 이소라 */
+                        "[Personal Information] Information Security Committee"/* 260604 번역 */,
                         "[Social Contribution] Social Contribution Review Committee"/* 260604 번역 */, 
                     ],
                     bnbpTitle: "BNBP (Biz N Biodiversity Platform) Initiative",
@@ -1087,7 +1076,7 @@ background-color: #F8F8F8; border-bottom: 1px solid #E5E5E9;}
 
 .list_dotted {margin-top: 24px;}
 
-/* 환경경영 자료 — gsrin0301 테이블·필터 패턴 (Figma 431:12931 대응) */
+/* 환경경영 자료 */
 .visual_sub {color: #FFFFFF; font-size: 3.2rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em;  text-align: center; position: relative; z-index: 2; }
 .panel.panel_vision_strategy > section { margin-top: 100px; }
 .sub_header h3 { font-weight: 700; font-size: 4rem; line-height: 1.35; letter-spacing: -0.01em; white-space: pre-line; }
@@ -1128,7 +1117,7 @@ background-color: #F8F8F8; border-bottom: 1px solid #E5E5E9;}
 .bnbp_sub { margin-top: 60px; }
 .bnbp_sub h4 { margin-bottom: 24px; font-weight: 700; font-size: 2.8rem; line-height: 1.35; letter-spacing: -0.01em; }
 .bnbp_sub > .txt_box p { margin-top: 24px; }
-/* 지속가능경영보고서 — Figma 431:13093 */
+/* 지속가능경영보고서 */
 .panel_sustainability_report .sec_sustain_report_hero {width: 100%;max-width: 1025px;margin: 0 auto;padding: 0;display: flex;flex-wrap: nowrap;align-items: stretch;justify-content: center;gap: 60px;}
 .panel_sustainability_report .sec_sustain_report_hero > figure {width: 465px;max-width: 100%;margin: 0;flex-shrink: 0;}
 .panel_sustainability_report .sec_sustain_report_hero > figure > img {width: 100%;height: auto;border-radius: 1.6rem;}
@@ -1185,8 +1174,7 @@ background-color: #F8F8F8; border-bottom: 1px solid #E5E5E9;}
     .table_wrap.type1 { overflow-x: visible; }
     .table_wrap.type1 table { min-width: 0; table-layout: fixed; }
     .content .tab_wrap {margin-top:24px}
-    .content .tab_wrap:nth-of-type(1) {margin-top:84px} /* 26.06.26 add 이소라 */
-    /* 지속가능 보고서 목록 — 모바일 카드형(가로 스크롤 없음) */
+    .content .tab_wrap:nth-of-type(1) {margin-top:84px}
     .panel_sustainability_report .sec_sustain_report_hero > figure {width: 100%;}
     .panel_sustainability_report .sec_sustain_report_hero > article > .sustain_report_hero_actions { flex-wrap: nowrap; }
     .panel_sustainability_report .sec_sustain_report_hero > article > .sustain_report_hero_actions [class*="btn_"][class*="border"] { width:100% }

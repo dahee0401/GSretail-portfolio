@@ -24,9 +24,7 @@
                                     <tr v-for="item in t.ListData" :key="item">
                                         <td class="ac">{{ item.id }}</td>
                                         <td class="al title_cell">
-                                            <!-- 26.05.19 Edit 이종환 : 공지사항 상세 팝업 -->
                                             <a href="gsrne0101" class="link_title">{{ item.title }}</a><!-- 상세 공통 -->
-                                            <!-- //26.05.19 Edit 이종환 : 공지사항 상세 팝업 -->
                                         </td>
                                         <td class="ac color_gray date_cell">{{ item.date }}</td>
                                         <td class="ac color_gray view_cell">{{ t.ViewCountText }} {{ item.views }}</td>
@@ -136,7 +134,7 @@ export default {
 .board_wrap.type_gallery .item .cont strong {font-size:2rem; line-height:135%; letter-spacing:-0.01em; display:block;}
 
 @media screen and (max-width: 767px) {
-    .title_wrap {margin-top:100px; padding:0 20px; text-align:initial;} /* 26.06.26 edit 이소라 */
+    .title_wrap {margin-top:100px; padding:0 20px; text-align:initial;} 
     .title_wrap h2 {display:none;}
     .title_wrap .visual-sub {font-size:2.8rem; font-weight:700; line-height:135%; letter-spacing:-0.01em;}
 

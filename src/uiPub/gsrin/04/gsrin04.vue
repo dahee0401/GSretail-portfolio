@@ -2,7 +2,6 @@
     <div class="main-container">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.10 Del 이종환 <p class="visual-sub">{{ t.MainsubTitle }}</p> -->
         </div>
 
         <section class="section-investor">
@@ -227,12 +226,12 @@ export default {
 .policy_wrap th:first-child, .policy_wrap td:first-child {width:150px}
 
 @media screen and (max-width: 767px) {
-    .cont_inner {padding-top: 52px;} /* 26.06.26 add 이소라 */
+    .cont_inner {padding-top: 52px;} 
     .title_wrap {display:none;}
     .policy_wrap th:first-child, .policy_wrap td:first-child { display: none; }
     .policy_wrap th, .policy_wrap td { padding: 12px; font-size: 15px; }
     .policy_wrap td a, .file_type_text {font-size:16px;}
     .file_type_text {margin-left:8px;}
-    .pagination {margin-top: 24px;} /* 26.06.26 add 이소라 */
+    .pagination {margin-top: 24px;} 
 }
 </style>

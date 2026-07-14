@@ -40,11 +40,9 @@
             </div>
             <!-- //board body -->
 
-            <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             <div class="bottom_btns">
                 <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
             </div>
-            <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
         </div>
 
     </div>

@@ -14,19 +14,19 @@ const props = defineProps({
 const langData = {
     ko: {
         pageTitle: "창업안내",
-        pageDesc: "더 나은 미래를 향한 동행, GS리테일이 당신의 성공적인 창업을 응원합니다.", /*26.06.25 add 정다희 : 텍스트 수정*/ 
+        pageDesc: "더 나은 미래를 향한 동행, GS리테일이 당신의 성공적인 창업을 응원합니다.", 
         cards: [
             {
                 img: mainImg01,
                 cls: "gs25",
-                title: "<span class=\"franchise_card_title_point\">GS25</span>와 함께", /*26.06.25 add 정다희 : 텍스트 수정*/ 
+                title: "<span class=\"franchise_card_title_point\">GS25</span>와 함께",
                 link: "/gsrst02010101",
                 linkText: "바로가기",
             },
             {
                 img: mainImg02,
                 cls: "fresh",
-                title: "<span class=\"franchise_card_title_point\">GS THE FRESH</span>와 함께", /*26.06.25 add 정다희 : 텍스트 수정*/ 
+                title: "<span class=\"franchise_card_title_point\">GS THE FRESH</span>와 함께",
                 link: "/gsrst01010101",
                 linkText: "바로가기",
             },
@@ -39,14 +39,14 @@ const langData = {
             {
                 img: mainImg01,
                 cls: "gs25",
-                title: `together with<br /><span class=\"franchise_card_title_point\">GS25</span>`/* 260604 번역 */, /*26.06.25 add 정다희 : 텍스트 수정*/
+                title: `together with<br /><span class="franchise_card_title_point">GS25</span>`/* 260604 번역 */, 
                 link: "/gsrst02010101",
                 linkText: "Go >",
             },
             {
                 img: mainImg02,
                 cls: "fresh",
-                title: `together with<br /><span class=\"franchise_card_title_point\">GS THE FRESH</span>`/* 260604 번역 */, /*26.06.25 add 정다희 : 텍스트 수정*/
+                title: `together with<br /><span class="franchise_card_title_point">GS THE FRESH</span>`/* 260604 번역 */, 
                 link: "/gsrst01010101",
                 linkText: "Go >",
             },

@@ -1,8 +1,7 @@
 <template>
     <div class="main-container">
-        <div class="title_wrap top_visual"> <!-- 클래스 top_visual 추가 26.06.08 add 정다희 -->
+        <div class="title_wrap top_visual"> 
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- <p class="visual-sub" v-html="t.MainsubTitle"></p> -->  <!-- 26.06.23 del 정다희 : MainsubTitle 삭제 -->
         </div>
 
         <section>
@@ -27,7 +26,7 @@
                                 <li v-for="item in t.ListData" :key="item">
                                     <div class="item">
                                         <a href="/gsrne0101">
-                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span> <!-- 26. 06. 17 add 정다희 : 대체텍스트 추가   -->
+                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span> 
                                         </a>
                                         <a href="#none" class="cont">
                                             <strong>{{ item.title }}</strong>
@@ -43,7 +42,7 @@
                                 <li v-for="item in t.ListData2" :key="item">
                                     <div class="item">
                                         <a href="/gsrne0101">
-                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span> <!-- 26. 06. 17 add 정다희 : 대체텍스트 추가   -->  
+                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span>
                                         </a>
                                         <a href="#none" class="cont">
                                             <strong>{{ item.title }}</strong>
@@ -53,14 +52,11 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- 26.05.13 Edit 이종환 : 공통화 -->
                         <Pagination 
                             v-model="currentPage" 
                             :total-pages="10" 
                             @change="onPageChange" 
                         />
-                        <!-- //26.05.13 Edit 이종환 : 공통화 -->
                     </div>
                 </section>
 
@@ -99,8 +95,7 @@ export default {
 
         const langData = {
             ko: {
-                MainTitle: "뉴스룸", /* 26.06.23 add 정다희 : 뉴스룸 타이틀 국문 변경 */ 
-                // MainsubTitle: "GS리테일 공식 유튜브 채널", <!-- 26.06.23 del 정다희 : MainsubTitle 삭제 -->
+                MainTitle: "뉴스룸", 
                 tabs: [
                     { item: "롱폼" },
                     { item: "숏폼" },
@@ -124,8 +119,7 @@ export default {
                 ],
             },
             en: {
-                MainTitle: "Newsroom", /* 26.06.23 add 정다희 : 뉴스룸 타이틀 영문 변경 */ 
-                // MainsubTitle: "GS리테일 공식 유튜브 채널", <!-- 26.06.23 del 정다희 : MainsubTitle 삭제 -->
+                MainTitle: "Newsroom", 
                 tabs: [
                     { item: "롱폼" },
                     { item: "숏폼" },
@@ -184,7 +178,6 @@ export default {
 <style scoped>
 /* 제공해주신 CSS 그대로 유지 (수정 없음) */
 .main-container { width: 100%; position: relative; }
-/* title_wrap css수정 26.06.08 edit 정다희 */
 .title_wrap {width: 100%; height:460px; padding:10.91% 0 11.25%; background: url('/src/assets/images/dummy/gsrne02_bg.png') no-repeat center 47% / cover; text-align: center; position: relative; display: block;}
 .title_wrap::before{content:''; display:block; width:100%; height:100%; background:rgba(0,0,0,0.4); position:absolute; top:0; left:0; z-index:1;}
 .title_wrap > h2{color:#fff; position: relative; z-index:2;}
@@ -209,10 +202,7 @@ export default {
 
 @media screen and (max-width: 767px) {
 
-    /* 26.06.08 Add 이종환 */
-    .cont_inner {margin-top:84px;} /* 26.06.26 edit 이소라 */
-
-    /* 26.06.08 edit 정다희 : title_wrap css 수정  */
+    .cont_inner {margin-top:84px;} 
     .title_wrap {display: none;}
     .board_wrap.type_gallery .body {margin-top:-48px;}
     .board_wrap.type_gallery .body > li {width:100%; padding-top:48px;}

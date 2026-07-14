@@ -3,7 +3,7 @@
         <!-- HEADER -->
         <header class="page_header top_visual" :style="{ backgroundImage: `url(${imgBg})` }">
             <div class="header_inner">
-                <h2 class="header_title">{{ headerTitle }}</h2> <!-- 26.07.01 edit 정다희 : t.headerTitle -> headerTitle -->
+                <h2 class="header_title">{{ headerTitle }}</h2> 
             </div>
         </header>
 
@@ -13,12 +13,10 @@
             <Tabs :tab-items="depth1Tabs" tab-class="type_01" v-model="activeD1" :tab-slide="true" />
 
             <!-- Depth 2: 섹션 탭 (type_02: pill 스타일) -->
-            <!-- 26.07.01 move 정다희 : GS THE FRESH 창업 알아보기(activeD1 === 0) 2depth 탭 → 창업 준비하기(activeD1 === 1) 이동 -->
             <Tabs v-show="activeD1 === 1" :tab-items="depth2Tabs" tab-class="type_02" v-model="activeD2" :tab-slide="true"/>
-            <Tabs v-show="activeD1 === 3" :tab-items="consultDepth2Tabs" tab-class="type_02" v-model="activeConsultD2" :tab-slide="true" /> <!-- 26.07.01 edit 정다희 : activeD1 4===>3 수정 -->
+            <Tabs v-show="activeD1 === 3" :tab-items="consultDepth2Tabs" tab-class="type_02" v-model="activeConsultD2" :tab-slide="true" />
 
             <!-- GS THE FRESH 창업 알아보기 (activeD1 === 0) -->
-            <!-- 26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 탭 이동 및 새로운 내용 추가 -->
             <div class="panel" v-show="activeD1 === 0">
                 <section class="sec_hero" :style="{ backgroundImage: `url(${imgBg2})` }">
                     <header>
@@ -46,15 +44,6 @@
                     </header>
                     <NumberedInfoList :items="t.successPointCards" :show-icon="true" desc-class="num_info_desc_light" />
                 </section>
-                <!-- <section class="sec_img_banner">
-                    <div>
-                        <picture class="image_wrap">
-                            <source media="(max-width: 768px)" srcset="@/assets/images/dummy/mo/gsrst02010101_04_mo.png" />
-                            <img src="@/assets/images/dummy/gsrst02010101_04.png" :alt="t.brandBannerImageAlt">
-                        </picture>
-                        <Buttons type="button" btn-class="btn_icon_arrow btn_big after primary" @click="setTab(1)">{{ t.brandMoreButton }}</Buttons>
-                    </div>
-                </section> -->
                 <section class="sec_band">
                     <div class="inner">
                         <header class="section_header ac">
@@ -74,13 +63,11 @@
                     </div>
                 </section>
             </div>
-            <!-- //26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 탭 이동 및 새로운 내용 추가 -->
+
 
             <!-- 창업 절차 (activeD1 === 1, activeD2 === 0) -->
-            <!-- 26.07.01 move 정다희 : GS THE FRESH 창업 알아보기(activeD1 === 0) → 창업 준비하기(activeD1 === 1) 이동 -->
             <div class="panel sec_procedure" v-show="activeD1 === 1 && activeD2 === 0">
                 <Steps type="2" :items="procedureSteps" :cols="5" row-gap="100px" />
-                <!-- 26.07.01 add 정다희 : 창업 절차 추가 : 창업 절차(activeD1 === 1 && activeD2 === 0) -->
                 <section class="sec_precaution">
                     <header class="sub_header">
                         <h3>{{ t.precaution.subHeaderTitle }}</h3>
@@ -106,18 +93,13 @@
                         <li v-for="(caution, cautionIndex) in t.precaution.cautions" :key="cautionIndex"><p>{{ caution }}</p></li>
                     </ul>
                 </section>
-                <!-- 26.07.01 add 정다희 : 버튼 이동 -->
                 <div class="link_wrap">
-                    <!-- 26.06.18 edit 정다희 : 버튼 클래스 수정 */ -->
                     <Buttons tag="a" :href="t.procedure.buttonHref" btn-class="btn_xl primary">{{ t.procedure.buttonLabel }}</Buttons>
                 </div>
             </div>
-            <!-- //26.07.01 move 정다희 : GS THE FRESH 창업 알아보기(activeD1 === 0) → 창업 준비하기(activeD1 === 1) 이동 -->
 
             <!-- 가맹 조건 안내 (activeD1 === 1, activeD2 === 1) -->
-            <!-- 26.07.01 move 정다희 : GS THE FRESH 창업 알아보기(activeD1 === 0) → 창업 준비하기(activeD1 === 1) 이동 -->
             <div class="panel" v-show="activeD1 === 1 && activeD2 === 1">
-                <!-- 260624 add 이소라 -->
                 <header class="sub_header">
                     <h3>{{ t.franchise.title }}</h3>
                 </header>
@@ -140,7 +122,6 @@
                 </div>
                 <div class="tab_content_wrap">
                     <div v-for="(guide, guideIndex) in franchiseGuideTypes" :key="guide.tab" v-show="activeD3 === guideIndex" class="tab_content" role="tabpanel">
-                        <!-- 26.07.01 add 정다희 : 각 타입별 종합안내 탭 추가 -->
                         <template v-if="guide.isCompare">
                             <div class="compare_scroll_area">
                                 <div class="type_table_wrap is_compare">
@@ -241,9 +222,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- 26.07.01 add 정다희 : 가맹타입 비교 테이블 가로 스크롤 안내 -->
                                 <p class="franchise_compare_scroll_hint">{{ t.franchise.compare.scrollHint }}</p>
-                                <!-- //26.07.01 add 정다희 : 가맹타입 비교 테이블 가로 스크롤 안내 -->
                             </div>
                             <ul class="list_caution">
                                 <li v-for="(note, noteIndex) in t.franchise.compare.notes" :key="noteIndex">
@@ -251,8 +230,7 @@
                                 </li>
                             </ul>
                         </template>
-                        <!-- //26.07.01 add 정다희 : 각 타입별 종합안내 -->
-                        <template v-else> <!-- 26.07.01 add 정다희 : v-else 추가 -->
+                        <template v-else> 
                             <p class="type_info_bar">{{ guide.infoBar }}</p>
                             <div class="type_table_wrap">
                                 <table class="type_table">
@@ -305,7 +283,6 @@
             </div><!-- /panel activeD2 === 1 -->
 
             <!-- 창업 혜택 (activeD1 === 1, activeD2 === 2) -->
-            <!-- 26.07.01 move 정다희 : 경영주 지원제도(activeD1 === 3) → 창업 준비하기 > 창업 혜택(activeD1 === 1, activeD2 === 2) 이동 -->
             <section class="sec_owner_support panel" v-show="activeD1 === 1 && activeD2 === 2">
                 <header class="sub_header">
                     <h3 v-html="t.support.intro"></h3>
@@ -319,7 +296,6 @@
                 </header>
                 <FeatureCards type="num" :items="supportCards" :swiper-space-between="0" />
             </section>
-            <!-- //26.07.01 move 정다희 : 경영주 지원제도(activeD1 === 3) → 창업 준비하기 > 창업 혜택(activeD1 === 1, activeD2 === 2) 이동 -->
 
             <!-- 추천 점포 찾기 (activeD1 === 2) -->
             <section class="sec_store panel" v-show="activeD1 === 2">
@@ -410,7 +386,6 @@
                         </div>
                         <!-- 검색 -->
                         <div class="search_group search_group_input">
-                            <!-- 26.06.17 edit 정다희 : 웹접근성 대응 label for 적용 -->
                             <label class="search_group_label" for="storeSearchInput">{{ t.store.searchLabel }}</label>
                             <div class="store_search_input_wrap">
                                 <input
@@ -575,7 +550,6 @@
                 </div>
             </section>
 
-            <!-- 26.07.01 add 정다희 : 탭 추가 : 창업설명회(activeD1 === 3, activeConsultD2 === 0) -->
             <section class="sec_seminar panel" v-show="activeD1 === 3 && activeConsultD2 === 0">
                 <div class="seminar_head">
                     <p v-html="t.seminar.headDesc"></p>
@@ -642,7 +616,6 @@
                     </li>
                 </ul>
 
-                <!-- 26.06.09 Add 이종환 : 설명회 신청 -->
                 <div class="seminar_region_pick" :aria-label="t.consultFormTexts.regionSelectAria">
                     <div ref="seminarWrapRef" class="seminar_wrap">
                         <article class="manager_card type_02" :aria-label="t.consultFormTexts.managerInfoAria">
@@ -678,16 +651,9 @@
                                     </div>
                                     <div class="col_item">
                                         <div class="form_label">{{ t.consultFormTexts.contactLabel }} <span class="form_required">{{ t.consultFormTexts.requiredInput }}</span></div>
-                                        <!-- 26.06.09 Edit 이종환 : 전화번호 입력 폼 변경에 따른 클래스 제거 및 입력폼 수정 -->
                                         <div class="form_field">
                                             <Inputs type="text" v-model="startupConsultForm.phone2" />
-                                            <!-- <SelectBox :options="phoneOptions" v-model="startupConsultForm.phone1" />
-                                            <span class="form_sep">-</span>
-                                            <Inputs type="text" v-model="startupConsultForm.phone2" />
-                                            <span class="form_sep">-</span>
-                                            <Inputs type="text" v-model="startupConsultForm.phone3" /> -->
                                         </div>
-                                        <!-- //26.06.09 Edit 이종환 : 전화번호 입력 폼 변경에 따른 클래스 제거 및 입력폼 수정 -->
                                     </div>
                                 
                                 </div> 
@@ -779,13 +745,8 @@
                         </div>
                     </div> 
                 </div>
-                <!-- //26.06.09 Add 이종환 : 설명회 신청 -->
             </section>
-
-            <!-- 26.07. -->
-
             <!-- 상담 및 신청 > 창업 상담 신청 -->
-            <!-- 26.07.01 add 정다희 :activeConsultD2 수정 : 창업 상담 신청(activeD1 === 3, activeConsultD2 === 1) -->
             <section class="sec_consult panel" v-show="activeD1 === 3 && activeConsultD2 === 1 && !showConsultApplyPage">
                 <header class="brand_panel_title flex">
                     <div>
@@ -797,7 +758,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- 26.06.18 edit 정다희 : 버튼 클래스 수정 */ -->
                     <Buttons btn-class="btn_icon_arrow fill btn_xl primary after" :href="t.consult.locationConsultHref" target="_blank">{{ t.consult.proposalButtonLabel }}</Buttons>
                 </header>
                 <ul class="caution_list consult_caution_mo">
@@ -861,7 +821,6 @@
             </section>
 
             <!-- 상담 및 신청 > 입지제안 상담 -->
-            <!-- 26.07.01 add 정다희 :activeConsultD2 수정 : 입지제안 상담(activeD1 === 3, activeConsultD2 === 2) -->
             <section class="sec_consult panel" v-show="activeD1 === 3 && activeConsultD2 === 2 && !showConsultApplyPage">
                 <div class="consult_box">
                     <div class="consult_intro">
@@ -886,7 +845,6 @@
                 </div>
                 <ConsentInfoBox :title="t.consent2.title" :items="t.consent2.items" :notice-html="t.consent2.noticeHtml" />
                 <!-- 고객정보 폼 -->
-                <!-- 26.06.18 edit 정다희 : col_layout 클래스 추가 */ -->
                 <div class="apply_form col_layout">
                     <div class="form_head">
                         <h3 class="form_head_title">{{ t.proposalCustomerForm.title }}</h3>
@@ -929,7 +887,6 @@
                             </div>
                         </div>
                         <div class="form_row form_row_area">
-                            <!-- 26.06.18 edit 정다희 : area_label 클래스 추가 */ -->
                             <div class="form_label area_label">{{ t.proposalCustomerForm.storeAreaLabel }}<span class="form_required">*</span></div>
                             <div class="form_field form_field_area">
                                 <div class="form_sub_group">
@@ -979,7 +936,6 @@
                 </div>
             </section>
 
-            <!-- 26.07.01 add 정다희 :activeConsultD2 수정 : 창업 상담 신청(activeD1 === 3, activeConsultD2 === 1) -->
             <section class="sec_consult_apply panel" v-show="activeD1 === 3 && activeConsultD2 === 1 && showConsultApplyPage">
                 <!-- 컨설턴트와 1:1 상담 -->
                 <div class="consult_box consult_box_apply">
@@ -989,7 +945,6 @@
                     <div class="consult_intro">
                         <div class="consult_head">
                             <div class="consult_img_wrap"></div>
-                            <!-- 26.06.18 add 정다희 : div.consult_intro_txt pc_only / mo_only 구조 추가 */ -->
                             <div class="consult_intro_txt pc_only">
                                 <h3 v-html="t.consultBox.title"></h3>
                                 <p v-html="t.consultBox.desc"></p>
@@ -997,7 +952,6 @@
                             <h3 class="mo_only" v-html="t.consultBox.title"></h3>
                         </div>
                         <p class="mo_only" v-html="t.consultBox.desc"></p>
-                        <!-- //26.06.18 add 정다희 : div.consult_intro_txt pc_only / mo_only 구조 추가 */ -->
                     </div>
                 </div>
                 <!-- 점포 소유 여부 선택 -->
@@ -1008,7 +962,6 @@
                 <!-- 개인정보 동의 -->
                 <ConsentInfoBox :title="t.consent.title" :items="t.consent.items" :notice-html="t.consent.noticeHtml" />
                 <!-- 고객정보 폼 -->
-                <!-- 26.06.18 edit 정다희 : col_layout 클래스 추가 */ -->
                 <div class="apply_form col_layout">
                     <div class="form_head">
                         <h3 class="form_head_title">{{ t.customerForm.title }}</h3>
@@ -1051,7 +1004,6 @@
                     </div>
                 </div>
                 <!-- 상담내용 폼 (점포 소유 시에만 표시) -->
-                <!-- 26.06.18 edit 정다희 : col_layout 클래스 추가 */ -->
                 <div class="apply_form col_layout" v-show="hasStore === true">
                     <div class="form_head">
                         <h3 class="form_head_title">{{ t.consultForm.title }}</h3>
@@ -1059,7 +1011,6 @@
                     </div>
                     <div class="form_body">
                         <div class="form_row form_row_area">
-                            <!-- 26.06.18 edit 정다희 : area_label클래스 추가 */ -->
                             <div class="form_label area_label">{{ t.consultForm.areaLabel }}</div>
                             <div class="form_field form_field_area">
                                 <div class="form_sub_group">
@@ -1080,7 +1031,6 @@
                             </div>
                         </div>
                         <div class="form_row check_row">
-                            <!-- 26.06.18 edit 정다희 : area_label 클래스 추가 */ -->
                             <div class="form_label area_label">{{ t.consultForm.superOperatorLabel }}</div>
                             <div class="form_field form_field_check">
                                 <div class="form_sub_group">
@@ -1096,7 +1046,6 @@
                             </div>
                         </div>
                         <div class="form_row contract_row">
-                            <!-- 26.06.18 edit 정다희 : area_label 클래스 추가 */ -->
                             <div class="form_label area_label">{{ t.consultForm.contractLabel }}</div>
                             <div class="form_field form_field_contract">
                                 <div class="form_sub_group">
@@ -1124,7 +1073,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 26.06.18 edit 정다희 : col_layout 클래스 추가 */ -->
                 <div class="apply_form col_layout" v-show="hasStore === false">
                     <div class="form_head">
                         <h3 class="form_head_title">{{ t.consultFormNoStore.title }}</h3>
@@ -1150,7 +1098,6 @@
                                 <SelectBox :options="openSigunguOptions" v-model="consultForm.openRegionSigungu" :initMsg="t.customerForm.sigunguInitMsg" :disabled="!consultForm.openRegionSido" />
                             </div>
                         </div>
-                        <!-- 26.06.02 edit 정다희 : 추가 -->
                         <div class="form_row">
                             <div class="form_label">{{ t.consultFormNoStore.superExperienceLabel }}<span class="form_required">*</span></div>
                             <div class="form_field form_field_radio form_field_checkbox_card">
@@ -1199,16 +1146,6 @@
             
         </div>
         
-        <!-- 26.06.01 Del 이종환 : 공통처리로 footer로 이동 <ul
-            ref="quickMenuRef"
-            class="quick_menu"
-            :class="{ is_visible: showQuickMenu }"
-            :aria-hidden="!showQuickMenu"
-        >
-            <li><button type="button">창업안내</button></li>
-            <li><button type="button">입점상담</button></li>
-            <li><button type="button">고객센터</button></li>
-        </ul> -->
     </div>
 
     <!-- modal_wrap · 사업설명회 신청 -->
@@ -1236,10 +1173,10 @@ import StoreCard from "@/components/StoreCard.vue";
 import StoreCardDetail from "@/components/StoreCardDetail.vue";
 import Accordion from "@/components/Accordion.vue";
 import AccordionItem from "@/components/AccordionItem.vue";
-import NumberedInfoList from "@/components/NumberedInfoList.vue"; /** 26.07.01 add 정다희 : 번호 리스트 컴포넌트 추가 */
+import NumberedInfoList from "@/components/NumberedInfoList.vue"; 
 import modal from "@/assets/js/modal";
 import imgBg from "@/assets/images/dummy/gsrst01010101_bg.png";
-import imgBg2 from "@/assets/images/dummy/gsrst02010101_02.jpg"; /** 26.07.01 add 정다희 : 이미지 추가 */
+import imgBg2 from "@/assets/images/dummy/gsrst02010101_02.jpg";
 import imgBg02 from "@/assets/images/dummy/gsrst01010101_bg_02.png";
 import imgGph01 from "@/assets/images/dummy/gsrst01010101_gph_01.png";
 import imgGph01Mo from "@/assets/images/dummy/mo/gsrst01010101_gph_01_mo.png";
@@ -1257,7 +1194,6 @@ const props = defineProps({
     },
 });
 
-/* 26.06.09 Add 이종환 사업설명회 신청 관련 */
 const seminarConsentItems =[
     "- 입력하신 정보는 창업상담을 위해서만 사용합니다.",
     "- 수집하는 개인정보 항목: 이름, 이메일, 휴대폰번호, 자택주소(시, 구/군)",
@@ -1278,18 +1214,6 @@ const startupCvsExperienceOptions = [
 const seminarWrapRef = ref(null);
 const startupConsentAgreed = ref(false);
 
-const startupRegionSidoOptions = [
-    { value: "서울", label: "서울" },
-    { value: "경기", label: "경기" },
-    { value: "인천", label: "인천" },
-    { value: "충청", label: "충청" },
-    { value: "강원", label: "강원" },
-    { value: "제주", label: "제주" },
-    { value: "전라", label: "전라" },
-    { value: "경상", label: "경상" },
-];
-
-// const consultEntryRegionOptions = startupRegionSidoOptions;
 
 const startupConsultForm = reactive({
     name: "",
@@ -1327,7 +1251,7 @@ const startupConsultForm = reactive({
     entryRegion: "",
     entryConsultant: "",
 });
-/* //26.06.09 Add 이종환 사업설명회 신청 관련 */
+
 
 const langData = { 
     ko: {
@@ -1336,18 +1260,18 @@ const langData = {
             { item: "GS THE FRESH 창업 알아보기" },
             { item: "창업 준비하기" },
             { item: "추천 점포 찾기" },
-            { item: "창업 상담 및 신청" }, /**26.07.01 edit 정다희 : 텍스트 수정*/ 
+            { item: "창업 상담 및 신청" },
             { item: "가맹계약시스템" },
-        ], /*26.07.01 delete 정다희 : 경영주 지원제도 탭 삭제  */
+        ], 
         depth2Tabs: [
-            { item: "창업 절차" }, /*26.07.01 eidt 정다희 : 텍스트 수정*/ 
-            { item: "가맹 조건 안내" }, /*26.07.01 eidt 정다희 : 텍스트 수정*/
-            { item: "창업 혜택" }, /*26.07.01 eidt 정다희 : 텍스트 수정*/
+            { item: "창업 절차" },
+            { item: "가맹 조건 안내" }, 
+            { item: "창업 혜택" },
         ],
-        /* 26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 내용 추가 */
+        
         brandIntro: {
             title: "대한민국 수퍼의 기준,",
-            desc: `합리적인 투자와 체계적인 지원으로<br class='m_br'>안정적인 창업을 함께하겠습니다.`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+            desc: `합리적인 투자와 체계적인 지원으로<br class='m_br'>안정적인 창업을 함께하겠습니다.`, 
         },
         brandApplyLinks: [
             {
@@ -1367,45 +1291,45 @@ const langData = {
             },
         ],
         successPointPanel: {
-            title: `<span class='txt_point'>고객이 먼저 찾는<br class='m_br'>GS THE FRESH</span><br />창업 성공 포인트`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+            title: `<span class='txt_point'>고객이 먼저 찾는<br class='m_br'>GS THE FRESH</span><br />창업 성공 포인트`, 
             desc: "GS25와 함께라면, 첫 창업은 확신으로 운영은 편리함으로 바뀝니다.",
         },
         successPointCards: [
             {
                 em: "검증된 입지",
                 title: "입지분석을 통한 신규 점포 오픈",
-                desc: `점포 개발 전문가의 현장분석과 데이터를 기반으로<br class='p_br'/>수익성이 보이는 점포만 오픈합니다.`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `점포 개발 전문가의 현장분석과 데이터를 기반으로<br class='p_br'/>수익성이 보이는 점포만 오픈합니다.`, 
             },
             {
                 em: "편리한 시스템",
                 title: "체계적이고 스마트한 지원시스템",
-                desc: `정확한 데이터를 기반으로 한 시스템과, 영업전문가의<br class='p_br'/>1:1 맞춤관리까지!  첫 창업이어도 걱정마세요.`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `정확한 데이터를 기반으로 한 시스템과, 영업전문가의<br class='p_br'/>1:1 맞춤관리까지!  첫 창업이어도 걱정마세요.`,
             },
             {
                 em: "물류 인프라",
                 title: "안정된 상품운영",
-                desc: `오랜 수퍼 경험을 바탕으로 한 체계적인 물류시스템이<br class='p_br'/>경영주님의 안정된 점포운영을 가능하게 합니다.`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `오랜 수퍼 경험을 바탕으로 한 체계적인 물류시스템이<br class='p_br'/>경영주님의 안정된 점포운영을 가능하게 합니다.`, 
             },
         ],
         brandSolutionPanel: {
-            title: `<span class='txt_point'>GS THE FRESH가 궁금하신가요?</span> <br />경영주님 상황에 맞는 상담 도와드리겠습니다.`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+            title: `<span class='txt_point'>GS THE FRESH가 궁금하신가요?</span> <br />경영주님 상황에 맞는 상담 도와드리겠습니다.`, 
         },
         brandSolutionCards: [
             {
                 title: "가맹 타입 소개",
-                desc: `나의 투자 여력에 딱 맞는<br />가맹 타입 확인하기`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `나의 투자 여력에 딱 맞는<br />가맹 타입 확인하기`,
                 d1: 1,
                 d2: 1,
             },
             {
                 title: "창업 절차 안내",
-                desc: `상담부터 내 점포 오픈까지,<br />체계적인 밀착 지원 내용 확인하기`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `상담부터 내 점포 오픈까지,<br />체계적인 밀착 지원 내용 확인하기`, 
                 d1: 1,
                 d2: 0,
             },
             {
                 title: "1:1 상담신청",
-                desc: `지역별 창업전문가의 무료 상담,<br />지금 바로 신청하기`, /** 26.07.01 edit 정다희 : 텍스트 큰따옴료 "" 대신 백틱`` 사용*/ 
+                desc: `지역별 창업전문가의 무료 상담,<br />지금 바로 신청하기`,
                 d1: 3,
                 d2: 1,
             },
@@ -1417,7 +1341,7 @@ const langData = {
                 item: "항목",
                 cost: "비용",
             },
-            compare: { /* 26.07.01 add 정다희 :   */
+            compare: {
                 typeHeader: "가맹유형",
                 types: [
                     { name: "GSF1", desc: "본부가 임차하여 경영주 운영", themeClass: "is_gsf1" },
@@ -1465,14 +1389,13 @@ const langData = {
                 minIncomeSubsidy: "<span class='txt_warning'>**</span> 최저 수입 보조금",
                 subsidyGsf12: "영업면적 200㎡ 초과 : 18백만/월<br />영업면적 165㎡ 이상~200㎡ 이하 : 16백만/월<br />영업면적 165㎡ 미만 : 13백만/월",
                 subsidyGsf3: "해당사항 없음",
-                scrollHint: "좌우로 스크롤하여 전체 내용을 확인하실 수 있습니다.", /* 26.07.01 add 정다희 : 가맹타입 비교 테이블 가로 스크롤 안내 */
+                scrollHint: "좌우로 스크롤하여 전체 내용을 확인하실 수 있습니다.", 
                 notes: [
                     "<span class='txt_warning'>*</span> 점포 총 투자비는 임차비용, 시설투자비용, 개점투자비의 총 합산액.",
                     "<span class='txt_warning'>**</span> 경영주 총수입(경영주 월매출총이익 + 본부지원금) 기준이며, 인건비 등 영업비용 차감 전 입니다. (개점일로부터 최소 1년만 적용)",
                 ],
             },
             guideTypes: [
-                // 26.07.01 add 정다희 : "각 타입별 종합안내" 탭 추가
                 {
                     tab: "각 타입별 종합안내",
                     isCompare: true,  
@@ -1492,12 +1415,12 @@ const langData = {
                         { sub: "예치보증금", subColspan: 2, scope: "row", cost: "10,000만원 (보증보험 또는 현금)" },
                         { sub: "경영주 투자 합계", subColspan: 2, scope: "row", cost: "9,300만원 + 예치보증금", isGray: true },
                         { sub: "가맹 수수료 <br class=\"m_br\">(부가세별도)", subColspan: 3, scope: "row", cost: "매출 총이익의52%(구간별 52% ~ 62%)" },
-                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "3년이상 / 3년 단위" }, /*26.07.01 edit 정다희 :  (최초/재계약) 텍스트 삭제*/
+                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "3년이상 / 3년 단위" }, 
                         { sub: "담보설정", subColspan: 3, scope: "row", cost: "없음" },
-                        { sub: "운영비 최소보조", subColspan: 3, scope: "row", cost: "영업면적 200㎡ (60평)초과 : 18백만/월<br />영업면적 165㎡(50~60평) 이상~200㎡ 이하 : 16백만/월<br />영업면적 165㎡(50평) 미만 : 13백만/월<br />*적용기간 : 최초 1년" },  /**26.07.01 edit 정다희 : 적용기간 전 <br /> 추가 */
+                        { sub: "운영비 최소보조", subColspan: 3, scope: "row", cost: "영업면적 200㎡ (60평)초과 : 18백만/월<br />영업면적 165㎡(50~60평) 이상~200㎡ 이하 : 16백만/월<br />영업면적 165㎡(50평) 미만 : 13백만/월<br />*적용기간 : 최초 1년" },  
                     ],
                     cautions: [
-                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" }, /**26.07.01 edit 정다희 : 텍스트 수정*/
+                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" }, 
                     ],
                     graph: {
                         title: "GSF1타입",
@@ -1506,7 +1429,6 @@ const langData = {
                             { label: "월매출<br class=\"p_br\" />총 이익 구간", img: imgGph02, imgMo: imgGph02Mo, alt: "GSF1타입 월매출 총 이익 구간" },
                         ],
                     },
-                    // 26.07.01 add 정다희 : warning 추가
                     warning: "*가맹계약 체결 간 가맹점사업자와 가맹본부가 협의에 따라 가맹수수료는 달리 정할 수 있습니다",
                 },
                 {
@@ -1521,16 +1443,16 @@ const langData = {
                         { sub: "임차비용 부담주체", subColspan: 2, scope: "row", cost: "본부" },
                         { sub: "시설투자 부담주체", subColspan: 2, scope: "row", cost: "본부" },
                         { sub: "예치보증금", subColspan: 2, scope: "row", cost: "* 점포 총 투자비 X 51% ~ 9,300만원 (현금)" },
-                        { sub: "경영주 투자 합계", subColspan: 2, scope: "row", cost: "9,300만원 + 예치보증금", isGray: true }, /**26.07.01 del 정다희 : isgray 추가 */
-                        { sub: "가맹 수수료 <br class=\"m_br\">(부가세별도)", subColspan: 3, scope: "row", cost: "매출 총이익의49%(구간별 49% ~ 55%)"}, /**26.07.01 del 정다희 : isgray 삭제 */
-                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "3년 / 3년 단위" }, /**26.07.01 edit 정다희 : 텍스트 수정*/ 
+                        { sub: "경영주 투자 합계", subColspan: 2, scope: "row", cost: "9,300만원 + 예치보증금", isGray: true },
+                        { sub: "가맹 수수료 <br class=\"m_br\">(부가세별도)", subColspan: 3, scope: "row", cost: "매출 총이익의49%(구간별 49% ~ 55%)"}, 
+                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "3년 / 3년 단위" },
                         { sub: "담보설정", subColspan: 3, scope: "row", cost: "5천만원 (보증보험 가능)" },
                         { sub: "** 최저 수입 보조금", subColspan: 3, scope: "row", cost: "영업면적 200㎡ (60평)초과 : 18백만/월<br />영업면적 165㎡(50~60평) 이상~200㎡ 이하 : 16백만/월<br />영업면적 165㎡(50평) 미만 : 13백만/월    *적용기간 : 최초 1년" },
                     ],
                     cautions: [
                         { text: "* 점포 총 투자비는 임차비용, 시설투자비용, 개점투자비의 총 합산액." },
                         { text: "** 경영주 총수입(경영주 월매출총이익 + 본부지원금) 기준이며, 인건비 등 영업비용 차감 전 입니다. (개점일로부터 최소 1년만 적용)" },
-                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" }, /**26.07.01 edit 정다희 : 내용 수정 */
+                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" },
                     ],
                     graph: {
                         title: "GSF2타입",
@@ -1555,13 +1477,12 @@ const langData = {
                         { sub: "예치보증금", subColspan: 2, scope: "row", cost: "없음" },
                         { sub: "경영주 투자 합계", subColspan: 2, scope: "row", cost: "9,300만원 + 임차비용", isGray:true},
                         { sub: "가맹 수수료 <br class=\"m_br\">(부가세별도)", subColspan: 3, scope: "row", cost: "24%" },
-                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "5년이상 / 3년 단위" }, /** 26.07.01 edit 정다희 : 최초/재계약 텍스트 삭제 */
+                        { sub: "계약기간", subColspan: 3, scope: "row", cost: "5년이상 / 3년 단위" },
                         { sub: "담보설정", subColspan: 3, scope: "row", cost: "2억원이상 (보증보험 가능)" },
                         { sub: "** 최저 수입 보조금", subColspan: 3, scope: "row", cost: "2억 6000만원 / 年 ( 약 2,167만원 / 月)" },
                     ],
                     cautions: [
-                        // { text: "* 경영주 총수입(경영주 월매출총이익 + 본부지원금) 기준이며, 인건비 등 영업비용 차감 전 입니다. <br class=\"m_br\"/>(개점일로부터 최소 1년만 적용)" }, /**26.07.01 del 정다희  */
-                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" }, /**26.07.01 edit 정다희 : 내용수정  */
+                        { text: "** 최저수입보조금은 경영주 총수입 ( 경영주 월매출총이익 + 본부지원금 ) 기준이며, 인건비 등 영업비용 차감 전 입니다.(개점일로부터 최초 2년간 적용)" }, 
                     ],
                 },
             ],
@@ -1572,7 +1493,7 @@ const langData = {
             steps: [
                 { step: "Step 1", title: "사업설명회 참석", text: "GS THE FRESH 가맹 계약<br />조건안내 및 절차소개", numColor: "#15b874" },
                 { step: "Step 2", title: "지원서 접수", text: "지원서 제출은 월~금요일 수시가능", numColor: "#15b874" },
-                { step: "Step 3", title: "경영주 면접", text: "지원서를 토대로 면접 진행하여<br />사업 타당성 검토함", numColor: "#15b874" }, /** 26.07.01 edit 정다희 : text 수정*/
+                { step: "Step 3", title: "경영주 면접", text: "지원서를 토대로 면접 진행하여<br />사업 타당성 검토함", numColor: "#15b874" }, 
                 { step: "Step 4", title: "점포소개", text: "예비경영주 희망사항과<br />조건에 부합하는 점포를 소개함", numColor: "#15b874" },
                 { step: "Step 5", title: "가맹약정(필요시)", text: "소개 점포의 운영의사 최종확인 및<br />약정금 지불", numColor: "#15b874" },
                 { step: "Step 6", title: "가맹 본 계약", text: "본계약금 최종 지불 및<br />본계약서 체결", numColor: "#15b874" },
@@ -1582,7 +1503,7 @@ const langData = {
             ],
         },
         precaution: {
-            subHeaderTitle: "창업전 필수 확인 사항", /* 26.07.01 add 정다희 */
+            subHeaderTitle: "창업전 필수 확인 사항",
             title: "가맹 해약<br class=\"p_br\">수수료",
             blockTitle1: "GSF1, GSF2 타입",
             blockTitle2: "GSF3 타입",
@@ -1592,8 +1513,8 @@ const langData = {
                 { num: "02", title: "즉시 계약 해지사유 발생시", desc: "· 과거 1년간의 월 평균 매출 총이익 20% X 6개월 (6배)" },
             ],
             cards2: [
-                { num: "01", title: "경영주 신청", desc: ["· 3년 미만 : 과거 1년간의 월 평균 매출 총이익 24% X 8개월 (8배) + 시설잔존", "· 3년 이상 : 과거 1년간의 월 평균 매출 총이익 24% X 4개월 (4배) + 시설잔존"] },  /**26.07.01 edit 정다희 : desc 내용 삭제, title 수정 */ 
-                { num: "02", title: "즉시 계약 해지사유 발생시", desc: ["· 운영기간 무관 과거 1년간의 월 평균 매출 총이익 24% X 12개월 (12배) + 시설잔존"] }, /**26.07.01 edit 정다희 : desc 오타 수정 */ 
+                { num: "01", title: "경영주 신청", desc: ["· 3년 미만 : 과거 1년간의 월 평균 매출 총이익 24% X 8개월 (8배) + 시설잔존", "· 3년 이상 : 과거 1년간의 월 평균 매출 총이익 24% X 4개월 (4배) + 시설잔존"] },  
+                { num: "02", title: "즉시 계약 해지사유 발생시", desc: ["· 운영기간 무관 과거 1년간의 월 평균 매출 총이익 24% X 12개월 (12배) + 시설잔존"] },
             ],
             cautions: [
                 "* 손해 배상금 별도이며 과거 영업기간이 1년 이하인 경우 해당 영업기간을 적용함.",
@@ -1602,10 +1523,10 @@ const langData = {
         },
         seminar: {
             headDesc: "GS THE FRESH(GS수퍼마켓) 가맹 사업에 대한<br class=\"p_br\">자세하고 다양한 정보를 얻을 수 있는 사업설명회에 참여해 보세요.",
-            applyButtonLabel: "창업 설명회 신청", /** 26.07.03 edit 정다희 : 텍스트 수정 */ 
+            applyButtonLabel: "창업 설명회 신청", 
             list: [
                 {
-                    title: "수도 사업 창업회", /** 26.07.03 edit 정다희 : 텍스트 수정 */ 
+                    title: "수도 사업 창업회",
                     rows: [
                         { label: "장소", value: "서울 강남구 논현로508 GS타워 지하 1층" },
                         { label: "대상", value: "서울, 경기, 인천 GS THE FRESH 창업을 희망하는 분" },
@@ -1617,7 +1538,7 @@ const langData = {
                     ],
                 },
                 {
-                    title: "중부 사업창업회", /** 26.07.03 edit 정다희 : 텍스트 수정 */
+                    title: "중부 사업창업회",
                     rows: [
                         { label: "장소", value: "대전 중구 대종로167 모임공간 국보 3층" },
                         { label: "대상", value: "충청도 GS THE FRESH 창업을 희망하는 분" },
@@ -1629,7 +1550,7 @@ const langData = {
                     ],
                 },
                 {
-                    title: "영남 사업창업회", /** 26.07.03 edit 정다희 : 텍스트 수정 */
+                    title: "영남 사업창업회", 
                     rows: [
                         { label: "장소", value: "부산 연제구 월드컵대로190 신현빌딩2층" },
                         { label: "대상", value: "부산, 경상도, 전라도 GS THE FRESH 창업을 희망하는 분" },
@@ -1713,11 +1634,11 @@ const langData = {
                 { num: "01", title: "최소 운영 보조", desc: "계약양식 조건에 따라, 개점일로부터 정해진 기간에 한해 경영주 총수입을 기준으로 하여 일정 금액이 보장될 수 있도록 본부지원금을 통해 최소 운영 보조를 지원하고 있습니다." },
                 { num: "02", title: "복리후생", desc: "경조사 발생시(가맹점 실경영주 기준 결혼 또는 조위) 경조금 및 화환 등을 지급하고 있습니다." },
                 { num: "03", title: "스토어매니저(근무자) 구인사이트 지원", desc: "GS THE FRESH 전용 배너 업체(알바천국) 운영" },
-                { num: "04", title: "기타 운영지원 제도", desc: "부진 점포에 한해, 본사 지원 활동으로 '부진점 케어활동'을 진행하며, 상권 특성 및 각종 이슈 사항으로 경제적지원금이 필요한 경우 특정점에 한해 '신규점 조기 정착 지원금'을 운영합니다. 또한, 필요시 양수도점 매출 향상을 위한 지원금을 지급하고 매년 가맹지원제도를 수립 및 운영하고 있습니다." }, /*26.06.30 edit 정다희 : 오타 수정*/ 
+                { num: "04", title: "기타 운영지원 제도", desc: "부진 점포에 한해, 본사 지원 활동으로 '부진점 케어활동'을 진행하며, 상권 특성 및 각종 이슈 사항으로 경제적지원금이 필요한 경우 특정점에 한해 '신규점 조기 정착 지원금'을 운영합니다. 또한, 필요시 양수도점 매출 향상을 위한 지원금을 지급하고 매년 가맹지원제도를 수립 및 운영하고 있습니다." },
             ],
         },
         consult: {
-            depth2Tabs: [{ item: "창업 설명회 신청" }, { item: "창업 상담 신청" }, { item: "입지제안 상담 신청" }], /**26.07.01 add 정다희 : 탭 추가, 탭 내용 수정*/ 
+            depth2Tabs: [{ item: "창업 설명회 신청" }, { item: "창업 상담 신청" }, { item: "입지제안 상담 신청" }],
             panelTitle: "컨설턴트와 1:1 상담",
             panelDesc: "가맹/창업 컨설턴트가 1:1로 상담해 드립니다. <br /> 가맹/창업 컨설턴트에게 문의하시면 자세한 상담을 받으실 수 있습니다.",
             caution: ["※ 주말 및 공휴일은 연락이 불가하며 평일 09:00~17:30 사이에 연락 부탁드립니다."],
@@ -2043,7 +1964,7 @@ const langData = {
             managerAlt: "담당자",
             regionSelectAria: "지역 선택",
             selectedSeminarLabel: "선택한 설명회",
-            selectedSeminarValue: "수도 창업 설명회", /** 26.07.03 edit 정다희 : 텍스트 수정 */ 
+            selectedSeminarValue: "수도 창업 설명회", 
             closeButton: "닫기",
             entryConsultTitle: "입점 제안/브랜드 전환 상담",
             recommendedStoreLocationLabel: "추천점포 소재지",
@@ -2072,13 +1993,12 @@ const langData = {
             { item: "Find recommended stores"/* 260604 번역 */ },
             { item: "Consultation and Application"/* 260604 번역 */ },
             { item: "Franchise Contract System"/* 260604 번역 */ },
-        ], /**26.07.01 delete 정다희 : Store Owner Support Programs 탭 삭제 → Preparing for Startup > Startup Benefits 탭으로 이동 */
+        ], 
         depth2Tabs: [
-            { item: "Startup Procedure"/* 260604 번역 */ },/*26.07.01 edit 정다희 : 텍스트 수정*/
-            { item: "Franchise Terms Guide"/* 260604 번역 */ }, /*26.07.01 edit 정다희 : 텍스트 수정*/
-            { item: "Startup Benefits"/* 260604 번역 */ }, /*26.07.01 edit 정다희 : 텍스트 수정*/
+            { item: "Startup Procedure"/* 260604 번역 */ },
+            { item: "Franchise Terms Guide"/* 260604 번역 */ },
+            { item: "Startup Benefits"/* 260604 번역 */ },
         ],
-        /* 26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 내용 추가 */
         brandIntro: {
             title: "The standard for a new beginning,"/* 260604 번역 */,
             desc: "We will partner with you for a stable startup through reasonable investment and systematic support."/* 260604 번역 */,
@@ -2150,12 +2070,10 @@ const langData = {
             {
                 title: "Apply for 1:1 consultation"/* 260604 번역 */,
                 desc: "Free consultation with regional startup experts,<br />apply now"/* 260604 번역 */,
-                d1: 3, /**26.07.01 edit 정다희 */
-                d2: 1, /**26.07.01 edit 정다희 */
+                d1: 3, 
+                d2: 1, 
             },
         ],
-
-        // 26.07.01 add 정다희 : title, compare 추가 
         franchise: {
             title: "Meet GS THE FRESH's 3 customized franchise types."/* 260604 번역 */,
             tabAria: "Franchise Type"/* 260604 번역 */,
@@ -2163,7 +2081,7 @@ const langData = {
                 item: "Item"/* 260604 번역 */,
                 cost: "Cost"/* 260604 번역 */,
             },
-            compare: { /* 26.07.01 add 정다희  */
+            compare: {
                 typeHeader: "Franchise Type"/* 260604 번역 */,
                 types: [
                     { name: "GSF1", desc: "Headquarters leases and store owner operates"/* 260604 번역 */, themeClass: "is_gsf1" },
@@ -2211,7 +2129,7 @@ const langData = {
                 minIncomeSubsidy: "** Minimum income subsidy"/* 260604 번역 */,
                 subsidyGsf12: "Sales area over 200㎡: 18 million/month<br />Sales area 165㎡ to 200㎡: 16 million/month<br />Sales area under 165㎡: 13 million/month"/* 260604 번역 */,
                 subsidyGsf3: "Not applicable"/* 260604 번역 */,
-                scrollHint: "You can scroll left and right to view the full content."/* 260604 번역 */, /* 26.07.01 add 정다희 : 가맹타입 비교 테이블 가로 스크롤 안내 */
+                scrollHint: "You can scroll left and right to view the full content."/* 260604 번역 */, 
                 notes: [
                     "* Total store investment is the sum of lease costs, facility investment costs, and opening investment costs."/* 260604 번역 */,
                     "** Based on the store owner's total income (monthly gross sales profit + headquarters support), before deducting operating expenses such as labor costs. (Applies for a minimum of 1 year from opening date only)"/* 260604 번역 */,
@@ -2219,8 +2137,8 @@ const langData = {
             },
             guideTypes: [
                 {
-                    tab: "Comprehensive Guide by Type"/* 26.07.01 add 정다희 */,
-                    isCompare: true, /* 26.07.01 add 정다희 */
+                    tab: "Comprehensive Guide by Type",
+                    isCompare: true,
                 },
                 {
                     tab: "GSF1 Type"/* 260604 번역 */,
@@ -2265,7 +2183,7 @@ const langData = {
                         { sub: "Party Bearing Facility Investment"/* 260604 번역 */, subColspan: 2, scope: "row", cost: "Headquarters"/* 260604 번역 */ },
                         { sub: "Security Deposit", subColspan: 2, scope: "row", cost: "* Total store investment cost X 51% ~ 93 million won (cash)"/* 260604 번역 */ },
                         { sub: "Total Store Owner Investment"/* 260604 번역 */, subColspan: 2, scope: "row", cost: "93 million won + deposit"/* 260604 번역 */, },
-                        { sub: `Franchise Fee <br class=\"m_br\">(VAT not included)`/* 260604 번역 */, subColspan: 3, scope: "row", cost: "49% of Gross Profit (49% to 55% by tier)"/* 260604 번역 */, isGray: true },
+                        { sub: `Franchise Fee <br class="m_br">(VAT not included)`/* 260604 번역 */, subColspan: 3, scope: "row", cost: "49% of Gross Profit (49% to 55% by tier)"/* 260604 번역 */, isGray: true },
                         { sub: "Contract Period", subColspan: 3, scope: "row", cost: "3 years / in 3-year units"/* 260604 번역 */ },
                         { sub: "Collateral Setup"/* 260604 번역 */, subColspan: 3, scope: "row", cost: "50 million won (guarantee insurance available)"/* 260604 번역 */ },
                         { sub: "** Minimum income subsidy"/* 260604 번역 */, subColspan: 3, scope: "row", cost: "Sales area over 200㎡ (60 pyeong): 18 million/month<br />Sales area 165㎡ (50–60 pyeong) or more to 200㎡ or less: 16 million/month<br />Sales area under 165㎡ (50 pyeong): 13 million/month    *Application period: First 1 year"/* 260604 번역 */ },
@@ -2278,8 +2196,8 @@ const langData = {
                     graph: {
                         title: "GSF2 Type"/* 260604 번역 */,
                         items: [
-                            { label: `Gross Profit<br class=\"p_br\" />Distribution Rate`/* 260604 번역 */, img: imgGph03, imgMo: imgGph03Mo, alt: "GSF2 Type sales profit distribution rate"/* 260604 번역 */ },
-                            { label: `Monthly sales<br class=\"p_br\" />Total profit range`/* 260604 번역 */, img: imgGph04, imgMo: imgGph04Mo, alt: "GSF2 Type monthly gross sales profit bracket"/* 260604 번역 */ },
+                            { label: `Gross Profit<br class="p_br" />Distribution Rate`/* 260604 번역 */, img: imgGph03, imgMo: imgGph03Mo, alt: "GSF2 Type sales profit distribution rate"/* 260604 번역 */ },
+                            { label: `Monthly sales<br class="p_br" />Total profit range`/* 260604 번역 */, img: imgGph04, imgMo: imgGph04Mo, alt: "GSF2 Type monthly gross sales profit bracket"/* 260604 번역 */ },
                         ],
                     },
                     warning: "*The franchise fee may be set differently by agreement between the franchisee and the franchise headquarters during conclusion of the franchise contract"/* 260604 번역 */,
@@ -2288,7 +2206,7 @@ const langData = {
                     tab: "GSF3 Type"/* 260604 번역 */,
                     infoBar: "GSF3 Type - store owner leases and store owner operates"/* 260604 번역 */,
                     tableRows: [
-                        { main: "Investment amount"/* 260604 번역 */, mainRowspan: 9, subMain: "Opening Investment"/* 260604 번역 */, subMainRowspan: 5, sub: "Franchise Fee"/* 260604 번역 */, cost: `11 million won <br class=\"m_br\">(VAT included)`/* 260604 번역 */ },
+                        { main: "Investment amount"/* 260604 번역 */, mainRowspan: 9, subMain: "Opening Investment"/* 260604 번역 */, subMainRowspan: 5, sub: "Franchise Fee"/* 260604 번역 */, cost: `11 million won <br class="m_br">(VAT included)`/* 260604 번역 */ },
                         { sub: "Initial merchandise cost"/* 260604 번역 */, cost: "70 million won"/* 260604 번역 */ },
                         { sub: "Consumables", cost: "7 million won"/* 260604 번역 */ },
                         { sub: "Facility Deposit"/* 260604 번역 */, cost: "5 million won"/* 260604 번역 */ },
@@ -2297,13 +2215,13 @@ const langData = {
                         { sub: "Party Bearing Facility Investment"/* 260604 번역 */, subColspan: 2, scope: "row", cost: "Headquarters"/* 260604 번역 */ },
                         { sub: "Security Deposit", subColspan: 2, scope: "row", cost: "None"/* 260604 번역 */ },
                         { sub: "Total Store Owner Investment"/* 260604 번역 */, subColspan: 2, scope: "row", cost: "93 million won + leasing cost"/* 260604 번역 */, isGray:true},
-                        { sub: `Franchise Fee <br class=\"m_br\">(VAT not included)`/* 260604 번역 */, subColspan: 3, scope: "row", cost: "24%" },
+                        { sub: `Franchise Fee <br class="m_br">(VAT not included)`/* 260604 번역 */, subColspan: 3, scope: "row", cost: "24%" },
                         { sub: "Contract Period", subColspan: 3, scope: "row", cost: "5 years or more / in 3-year units"/* 260604 번역 */ },
                         { sub: "Collateral Setup"/* 260604 번역 */, subColspan: 3, scope: "row", cost: "200 million won or more (guarantee insurance available)"/* 260604 번역 */ },
                         { sub: "** Minimum income subsidy"/* 260604 번역 */, subColspan: 3, scope: "row", cost: "260 million won/year (approx. 21.67 million won/month)"/* 260604 번역 */ },
                     ],
                     cautions: [
-                        { text: `* Based on the store owner's total income (store owner's monthly gross sales profit + headquarters support funds), before deducting operating expenses such as labor costs. <br class=\"m_br\"/>(Applies for a minimum of 1 year from the opening date only)`/* 260604 번역 */ },
+                        { text: `* Based on the store owner's total income (store owner's monthly gross sales profit + headquarters support funds), before deducting operating expenses such as labor costs. <br class="m_br"/>(Applies for a minimum of 1 year from the opening date only)`/* 260604 번역 */ },
                         { text: "* The minimum operating cost subsidy is based on the store owner's total income (store owner's monthly gross sales profit + headquarters support funds), before deducting operating expenses such as labor costs. (Applies for the first 1 year from the opening date)"/* 260604 번역 */ },
                     ],
                 },
@@ -2325,8 +2243,8 @@ const langData = {
             ],
         },
         precaution: {
-            subHeaderTitle: "Essential Items to Confirm Before Startup"/* 260604 번역 */, /* 26.07.01 add 정다희 */
-            title: `Franchise Termination<br class=\"p_br\">Fee`/* 260604 번역 */,
+            subHeaderTitle: "Essential Items to Confirm Before Startup"/* 260604 번역 */, 
+            title: `Franchise Termination<br class="p_br">Fee`/* 260604 번역 */,
             blockTitle1: "GSF1, GSF2 Type"/* 260604 번역 */,
             blockTitle2: "GSF3 Type"/* 260604 번역 */,
             blockTitle2Desc: "Based on the franchise headquarters' accounting standards, the depreciated residual value is compensated separately"/* 260604 번역 */,
@@ -2344,7 +2262,7 @@ const langData = {
             ],
         },
         seminar: {
-            headDesc: `For the GS THE FRESH (GS Supermarket) franchise business,<br class=\"p_br\">Join a business briefing where you can obtain detailed and diverse information.`/* 260604 번역 */,
+            headDesc: `For the GS THE FRESH (GS Supermarket) franchise business,<br class="p_br">Join a business briefing where you can obtain detailed and diverse information.`/* 260604 번역 */,
             applyButtonLabel: "Apply for Business Briefing Session"/* 260604 번역 */,
             list: [
                 {
@@ -2454,7 +2372,7 @@ const langData = {
             ],
         },
         consult: {
-            depth2Tabs: [{ item: "Startup Briefing Application"/* 260604 번역 */ }, { item: "Franchise/Startup Consultation"/* 260604 번역 */ }, { item: "Location proposal consultation"/* 260604 번역 */ }], /**26.07.01 add 정다희 : 탭 추가, 탭 내용 수정*/ 
+            depth2Tabs: [{ item: "Startup Briefing Application"/* 260604 번역 */ }, { item: "Franchise/Startup Consultation"/* 260604 번역 */ }, { item: "Location proposal consultation"/* 260604 번역 */ }], 
             panelTitle: "1:1 consultation with a consultant"/* 260604 번역 */,
             panelDesc: "A franchise/startup consultant will provide a 1:1 consultation. <br /> If you inquire with a franchise/startup consultant, you can receive a detailed consultation."/* 260604 번역 */,
             caution: ["※ Contact is not available on weekends and public holidays; please contact us on weekdays between 09:00 and 17:30."/* 260604 번역 */],
@@ -2489,12 +2407,12 @@ const langData = {
             ],
         },
         intro: {
-            title: `Hello!<br>GS THE FRESH 1:1 Consultation<br class=\"m_br\">This is consultant Yoon Gyeong-jin.`/* 260604 번역 */,
+            title: `Hello!<br>GS THE FRESH 1:1 Consultation<br class="m_br">This is consultant Yoon Gyeong-jin.`/* 260604 번역 */,
             desc: "If you fill out the consultation request form below, you can receive a personalized startup consultation. <br />If you are unable to reach our representative by phone, please submit a consultation request. Our representative will review it and contact you."/* 260604 번역 */,
             caution:["※ Size: exclusive area of 60 pyeong or more"/* 260604 번역 */, "※※ Please understand that immediate responses may be difficult on weekends/holidays."/* 260604 번역 */]
         },
         consultBox: {
-            title: `Hello!<br />GS THE FRESH 1:1 Consultation<br class=\"m_br\">This is consultant Yoon Gyeong-jin.`/* 260604 번역 */,
+            title: `Hello!<br />GS THE FRESH 1:1 Consultation<br class="m_br">This is consultant Yoon Gyeong-jin.`/* 260604 번역 */,
             desc: "If you fill out the consultation request form below, you can receive a personalized startup consultation.<br />If you are unable to reach our representative by phone, please submit a consultation request. Our representative will review it and contact you."/* 260604 번역 */,
             consultantName: "Consultant Yoon Gyeong-jin"/* 260604 번역 */,
         },
@@ -2516,7 +2434,7 @@ const langData = {
             phoneLabel: "Mobile phone"/* 260604 번역 */,
             storeAddressLabel: "Recommended store location"/* 260604 번역 */,
             zipButtonLabel: "Find postal code"/* 260604 번역 */,
-            addressNote: `<span class=\"form_required\">*</span> The recommended store location is a required field.`/* 260604 번역 */,
+            addressNote: `<span class="form_required">*</span> The recommended store location is a required field.`/* 260604 번역 */,
             storeAreaLabel: "Recommended store area"/* 260604 번역 */,
             contractAreaLabel: "Contract Area"/* 260604 번역 */,
             exclusiveAreaLabel: "Net floor area"/* 260604 번역 */,
@@ -2560,7 +2478,7 @@ const langData = {
             emailLabel: "Email",
             emailPlaceholder: "Enter directly",
             phoneLabel: "Contact",
-            addressLabel: `Owned Store Address <br class=\"p_br\"/>(Past or current store ownership <br class=\"p_br\">Applicants only)<span class=\"form_required\">*</span>`/* 260604 번역 */,
+            addressLabel: `Owned Store Address <br class="p_br"/>(Past or current store ownership <br class=\"p_br\">Applicants only)<span class=\"form_required\">*</span>`/* 260604 번역 */,
             sidoInitMsg: "Select Region",
             sigunguInitMsg: "Select District/County"/* 260604 번역 */,
         },
@@ -2667,7 +2585,6 @@ const langData = {
 // =====================
 const t = computed(() => {
     const selected = langData[props.lang];
-    // 26.07.01 add 정다희 : 선택된 언어 데이터가 없으면 한국어를 기본값으로 반환, 있으면 언어 설정에 따라 기본값과 병합 처리
     if (!selected || !Object.keys(selected).length) return langData.ko;
     return props.lang === "ko" ? selected : { ...langData.ko, ...selected };
 });
@@ -2678,7 +2595,6 @@ const activeD3 = ref(0);
 const activeConsultD2 = ref(0);
 const showConsultApplyPage = ref(false);
 
-/* 26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 탭 이동 */
 function setTab(d2Index) {
     activeD1.value = 1;
     nextTick(() => {
@@ -2699,21 +2615,18 @@ function goToConsultTab(d2Index) {
 function goToSolutionTab(d1Index, d2Index = 0) {
     activeD1.value = d1Index;
     nextTick(() => {
-        /* 26.07.01 edit 정다희 : 창업 상담 및 신청(activeD1 === 3)은 activeConsultD2 사용  */
         if (d1Index === 3) {
             activeConsultD2.value = d2Index;
             showConsultApplyPage.value = false;
         } else {
             activeD2.value = d2Index;
         }
-        /* //26.07.01 edit 정다희 : 창업 상담 및 신청(activeD1 === 3)은 activeConsultD2 사용  */
         window.scrollTo({ top: 0 });
     });
 }
-/* //26.07.01 add 정다희 : GS THE FRESH 창업 알아보기 탭 이동 */
 
 const depth1Tabs = computed(() => t.value.depth1Tabs);
-const headerTitle = computed(() => depth1Tabs.value[activeD1.value]?.item ?? ""); //26.07.01 add 정다희 : headerTitle 추가 
+const headerTitle = computed(() => depth1Tabs.value[activeD1.value]?.item ?? ""); 
 const depth2Tabs = computed(() => t.value.depth2Tabs);
 const franchiseGuideTypes = computed(() => t.value.franchise.guideTypes);
 const depth3Tabs = computed(() => franchiseGuideTypes.value.map((item) => ({ item: item.tab })));
@@ -3048,7 +2961,7 @@ function toggleCard(id) {
 .page_header { width: 100%; height: 480px; background-size: cover; background-position: center; position: relative; display: flex; align-items: center; justify-content: center; }
 .header_inner { position: relative; z-index: 1; text-align: center; }
 .header_title { color: #fff; font-size: 7.2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.24; }
-.sub_header h3 { margin: 0 0 64px; color: #161616; font-weight: 700; font-size: 4rem; line-height: 1.3; letter-spacing: -0.01em; text-align: center; white-space: pre-line; } /* 260624 add 이소라 */
+.sub_header h3 { margin: 0 0 64px; color: #161616; font-weight: 700; font-size: 4rem; line-height: 1.3; letter-spacing: -0.01em; text-align: center; white-space: pre-line; } 
 
 /* BODY — PC: 좌우 20px / 모바일: 가로 패딩은 tab_page·Tabs 등에서 (아래 모바일 미디어쿼리 참고) */
 .cont_inner { max-width: 1460px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
@@ -3065,7 +2978,6 @@ function toggleCard(id) {
 .panel { padding: 64px 0 0; }
 .tab_content_wrap { padding-top: 40px; }
 
-/* GS THE FRESH 창업 알아보기 (activeD1 === 0) — 26.07.01 add 정다희 : gsrst02010101 이동 */
 .section_header { margin-bottom: 64px; }
 .section_header.ac { text-align: center; }
 .section_header > .tit + h2 { margin-top: 16px; }
@@ -3135,7 +3047,6 @@ function toggleCard(id) {
 .type_table_wrap.type2 .type_table tbody td { height: 82px; padding: 0 13px; }
 .td_tag { font-size: 1.6rem; word-break: break-all; }
 .type_table + .list_caution { margin-top: 16px; }
-/* 26.07.01 add 정다희 : 각 타입별 종합안내 비교 테이블 (Figma 934-11511) */
 .compare_scroll_area { container-type: inline-size; container-name: compare-scroll; }
 .compare_scroll_area .type_table_wrap { border:0; }
 .type_table_wrap.is_compare { margin-top: 0; }
@@ -3143,7 +3054,6 @@ function toggleCard(id) {
 .type_table_wrap.is_compare .type_table col.col_group { width: 80px; }
 .type_table_wrap.is_compare .type_table col.col_group2 { width: 80px; }
 .type_table_wrap.is_compare .type_table col.col_label { width: 195px; }
-/* .type_table_wrap.is_compare .type_table col.col_gs { width: 23%; } */
 .type_table_wrap.is_compare .type_table thead td { padding: 16px 24px; border: 1px solid #e5e5e9; font-size: 1.8rem; font-weight: 400; line-height: 1.4; letter-spacing: 0; word-break: keep-all; text-align: center; vertical-align: middle; }
 .type_table_wrap.is_compare .type_table thead td.is_gsf1 > strong { color: #42c68f; }
 .type_table_wrap.is_compare .type_table thead td.is_gsf2 > strong { color: #11935d; }
@@ -3152,20 +3062,20 @@ function toggleCard(id) {
 .type_table_wrap.is_compare .type_table thead td > span { margin-top: 4px; color: #67676f; font-size: 1.4rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; display: block; }
 .type_table_wrap.is_compare .type_table tbody th { text-align: center; }
 .type_table_wrap.is_compare .type_table tbody th.th_vertical{padding:0;}
-.type_table_wrap.is_compare .type_table tbody th.th_vertical .th_vertical_txt { display: inline-block; writing-mode: vertical-rl; text-orientation: upright; line-height: 1.4;  } /* 26.07.01 add 정다희 : 개점투자 세로 정렬 */
-/* .type_table_wrap.is_compare .type_table tbody th[scope="rowgroup"] { font-weight: 700; } */
+.type_table_wrap.is_compare .type_table tbody th.th_vertical .th_vertical_txt { display: inline-block; writing-mode: vertical-rl; text-orientation: upright; line-height: 1.4;  } 
+
 .type_table_wrap.is_compare .type_table tbody td { border: 1px solid #e5e5e9; word-break: keep-all; vertical-align: middle; }
 .type_table_wrap.is_compare .type_table .td_sub { color: #67676f; font-size: 1.4rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; }
 .type_table_wrap.is_compare .type_table .txt_point { color: #0d6e46; font-weight: 700; }
 .type_table_wrap.is_compare .type_table .txt_rate { color: #0d6e46; font-size: 2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }
 .type_table_wrap.is_compare .type_table .txt_sm { font-size: 1.6rem; font-weight: 700; }
-.franchise_compare_scroll_hint { display: none; margin: 0; padding: 0; color: #67676f; font-size: 1.4rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; text-align: center; } /* 26.07.01 add 정다희 : 가로 스크롤 안내 — 컨테이너 너비 기준 노출 */
+.franchise_compare_scroll_hint { display: none; margin: 0; padding: 0; color: #67676f; font-size: 1.4rem; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; text-align: center; } 
 @container compare-scroll (max-width: 851px) {
     .compare_scroll_area > .franchise_compare_scroll_hint { margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 3px; }
     .compare_scroll_area > .franchise_compare_scroll_hint::before { width: 20px; height: 20px; background: url('@/assets/images/common/icon_scroll_20.png') center no-repeat; content: ""; display: block; }
 }
 .compare_scroll_area + .list_caution { margin-top: 16px; }
-/* //26.07.01 add 정다희 : 각 타입별 종합안내 비교 테이블 */
+
 
 /* list_caution */
 .list_caution { margin-top: 32px; }
@@ -3401,7 +3311,6 @@ function toggleCard(id) {
 .form_sub_input_wrap .area_note,
 .form_sub_input_wrap .form_field_note{margin-left:16px;}
 
-/* .form_field_address :deep(.input_wrap){max-width:305px;} */
 .form_zip_row :deep(.input_wrap){max-width:305px; flex: 0 0 auto;}
 .form_zip_row { width: 100%; display: flex; align-items: center; gap: 8px; }
 .form_zip_row :deep(button){width:134px; flex:0 0 134px;}
@@ -3441,7 +3350,7 @@ function toggleCard(id) {
 .sec_owner_support :deep(.feature_card_swiper .swiper-slide:nth-child(3) .feature_card_item) { background-image: url("@/assets/images/dummy/gsrst_info_03.png"); }
 .sec_owner_support :deep(.feature_card_list > .feature_card_item:nth-child(4)),
 .sec_owner_support :deep(.feature_card_swiper .swiper-slide:nth-child(4) .feature_card_item) { background-image: url("@/assets/images/dummy/gsrst_info_04.png"); }
-/* .label_wrap{display:flex; flex-direction:column; gap:2px; } */
+
 .consult_tel_btn{margin-top:20px;}
 /* 상담 및신청 */
 .sec_consult :deep(.brand_panel_title) {padding-bottom:64px;}
@@ -3457,8 +3366,6 @@ function toggleCard(id) {
 .quick_menu li:nth-of-type(1) button::before {background-position: -1155px -70px;}
 .quick_menu li:nth-of-type(2) button::before {background-position: -15px -114px;}
 .quick_menu li:nth-of-type(3) button::before {background: url(@/assets/images/sub/icon_quick3.png) no-repeat 0 0;}
-
-/* 26.06.09 Add 이종환 : 사업설명회 신청 */
 .seminar_wrap{max-width:1000px; margin:60px auto 0; scroll-margin-top: 24px; box-sizing:border-box;}
 
 .manager_card { width: 100%; max-width: 740px; margin:0 0 40px; padding: 40px; background-color: #E8F8F1; border: 1px solid #15B874; border-radius: 12px; display: flex; align-items: center; gap: 32px;  }
@@ -3491,7 +3398,6 @@ function toggleCard(id) {
 .apply_form .button_area :deep(.primary){width:100%; max-width:250px; background-color:#15B874;}
 .apply_form .form_body .form_row .form_label { margin-bottom: 12px; font-weight:400}
 .apply_form .form_body .form_row .form_label .explain {margin-left:12px; font-size:1.2rem;}
-/* .apply_form .form_body .form_row .form_field { width: 100%; } */
 .apply_form .form_body .form_row_radio, .apply_form .form_body .form_row_textarea,
 .apply_form .form_body .form_row_textarea .form_field,
 .apply_form .form_body .form_row_calendar :deep(.consult_calendar),
@@ -3505,7 +3411,6 @@ function toggleCard(id) {
 .apply_form .form_field { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
 .apply_form .form_field .flex1 {flex:1;}
 .apply_form .form_field_phone :deep(label.select),
-/* .apply_form .form_field_phone :deep(.input_wrap) { max-width: 134px; flex: 1; min-width: 0; } */
 .apply_form .form_field_birth { flex-wrap: nowrap; }
 .apply_form .form_field_birth :deep(.select) { max-width:150px;flex: 1; min-width: 0; }
 .apply_form .form_field_open :deep(.input_wrap){max-width: 150px;}
@@ -3513,7 +3418,6 @@ function toggleCard(id) {
 .apply_form .form_field_calendar :deep(.input_wrap){max-width:700px;}
 .form_label_note { margin-top: 4px; color: #67676f; font-size: 1.2rem; line-height: 1.2; }
 
-/* //26.06.09 Add 이종환 : 사업설명회 신청 */
 
 @media (max-width: 1200px) {
     .consult_card_list { grid-template-columns: repeat(2, 1fr); }
@@ -3524,7 +3428,7 @@ function toggleCard(id) {
 @media (max-width: 1024px) {
     .page_header { height: 360px; }
     .header_title { font-size: 5.2rem; }
-    .sub_header h3 { margin: 0 0 24px; font-size: 2.4rem;} /* 260624 add 이소라 */
+    .sub_header h3 { margin: 0 0 24px; font-size: 2.4rem;} 
     .tab_type > button { font-size: 1.6rem; }
     .type_info_bar { font-size: 1.6rem; }
     .type_table thead th, .type_table tbody th, .type_table tbody td { font-size: 1.6rem;}
@@ -3554,17 +3458,12 @@ function toggleCard(id) {
     .sec_hero > header h3 { font-size: 4.2rem; line-height: 1.3; letter-spacing: -0.01em; }
     .sec_hero > header .hero_title > h3 { min-width: 0; flex: 1 1 auto; }
     .sec_hero > header .hero_title > div { width: 130px; margin-left: 0; flex-shrink: 0; }
-    /* :deep(.consent_box + .apply_form){margin-top:40px;} */
-    /* .apply_form .form_field_area .form_sub_input_wrap { flex-wrap: wrap; }
-    .apply_form .form_field_area .form_sub_input_wrap :deep(.input_wrap) { min-width: 0; max-width: 100%; }
-    .apply_form .form_field_area .form_sub_input_wrap .area_note,
-    .apply_form .form_field_area .form_sub_input_wrap .form_field_note { white-space: normal; }
-    .apply_form .form_zip_row { flex-wrap: wrap; max-width: 100%; min-width: 0; } */
+
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .wrap_gsrst {margin-top:84px;} /* 26.06.26 edit 이소라 */
+    .wrap_gsrst {margin-top:84px;} 
 
     :deep(.m_br) { display: block; }
     :deep(.p_br) { display: none; }
@@ -3635,7 +3534,7 @@ function toggleCard(id) {
     .type_table_wrap.is_compare .type_table tbody th[scope="rowgroup"] { font-size: 1.4rem; line-height: 1.4; letter-spacing: -0.01em; }
     .type_table_wrap.is_compare .type_table .txt_rate { font-size: 1.6rem; line-height: 1.24; letter-spacing: 0; }
     .type_table_wrap.is_compare .type_table .td_sub { font-size: 1.2rem; }
-    .franchise_compare_scroll_hint { font-size: 1.2rem; gap: 4px; } /* 26.07.01 add 정다희 */
+    .franchise_compare_scroll_hint { font-size: 1.2rem; gap: 4px; } 
     .type_table .col_item_main { width: 35px; }
     .type_table .col_item_sub { width: 102px; }
     .type_table thead th { padding: 18px 0; font-size: 1.4rem; line-height: 1.24;  }
@@ -3712,8 +3611,7 @@ function toggleCard(id) {
     .search_group_input { width: 100%; }
     .store_search_input { height: 52px; }
     .layer_tooltip { left: -20px; right: auto; transform: none; width: calc(100vw - 40px); max-width: 335px; }
-    /* .youth_popover { top: calc(100% + 8px); } */
-    /* .consult_tel { left: -155px; } */
+
     .chip_list { position: relative; }
     .chip_youth_wrap { position: static; }
     .store_list_bar { margin-bottom: 16px; align-items: flex-end; gap: 12px; height: auto; }
@@ -3734,7 +3632,6 @@ function toggleCard(id) {
 
     .store_card_row > li :deep(.card_cost) {color:#15B874;}
 
-    /* Swiper: cont_inner 좌우 20px 패딩 상쇄 — sec_owner_support에 overflow-x:hidden 주면 margin -20px 확장이 잘림 */
     .sec_owner_support :deep(.brand_panel_bg) { margin: 0 0 80px; }
     .sec_owner_support :deep(.brand_panel_title) { padding: 0 0 32px; }
     .sec_owner_support :deep(.feature_card_swiper) { width: calc(100% + 40px); margin: 0 -20px; padding: 0 20px; overflow: hidden; box-sizing: border-box; }

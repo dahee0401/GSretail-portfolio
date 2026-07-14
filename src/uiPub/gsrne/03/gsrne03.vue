@@ -1,14 +1,11 @@
 <template>
     <div class="main-container">
-        <div class="title_wrap top_visual"> <!-- 26.06.24 add 정다희 : top_visual 클래스 추가 -->
+        <div class="title_wrap top_visual"> 
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- <p class="visual-sub" v-html="t.MainsubTitle"></p> -->  <!-- 26.06.24 del 정다희 : MainsubTitle 삭제 / 위치이동 -->
         </div>
 
         <section>
             <div class="cont_inner">
-                <!-- <Tabs @change="onTabChange1" v-model="t.TabIdx" :tab-items="t.tabs" tab-class="type_02 ac" :tab-slide="false" /> -->
-                <!-- 26.06.24 add 정다희 : visual-sub_pc, visual-sub_mo 클래스 추가 / 모바일 화면에서는 visual-sub_mo 클래스 사용 -->
                 <p class="visual-sub visual-sub_pc" v-html="t.MainsubTitle"></p>
                 <p class="visual-sub visual-sub_mo">{{ t.MainsubTitleMo }}</p>
                 <section>
@@ -29,7 +26,7 @@
                                 <li v-for="item in t.ListData" :key="item">
                                     <div class="item">
                                         <a href="/gsrne0301">
-                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span> <!-- 26. 06. 17 add 정다희 : 대체텍스트 추가   -->
+                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span> 
                                         </a>
                                         <a href="#none" class="cont">
                                             <strong>{{ item.title }}</strong>
@@ -44,15 +41,11 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- 26.05.13 Edit 이종환 : 공통화 -->
                 <Pagination 
                     v-model="currentPage" 
                     :total-pages="10" 
                     @change="onPageChange" 
                 />
-                <!-- //26.05.13 Edit 이종환 : 공통화 -->
-
             </div>
         </section>
     </div>
@@ -81,12 +74,11 @@ export default {
             /* 4. 언어별 텍스트 데이터 */
             langData: {
                 ko: {
-                    MainTitle: "스토리", /* 26.06.23 add 정다희 : 스토리 타이틀 국문 변경 */ 
+                    MainTitle: "스토리", 
                     MainsubTitle: "궁금했던 GS리테일의 모든 것, 이제 여기저기 찾지 마세요.<br/> 여러분이 가장 많이 묻는 질문에 대한 정답을 한눈에 보기 쉽게 정리했습니다.",
-                    MainsubTitleMo: "궁금했던 GS리테일의 모든것, 한눈에 보기 쉽게 정리해드립니다.", /*26.06.24 add 정다희 :MainsubTitleMo 추가 **/
+                    MainsubTitleMo: "궁금했던 GS리테일의 모든것, 한눈에 보기 쉽게 정리해드립니다.",
 
                     sTabIdx: 0, //최초 선택된 탭 index
-                    // 26.06.24 edit 정다희 : subTabs 아이템 텍스트 수정 
                     subTabs: [ //탭 아이템 배열
                         { item: "전체" },
                         { item: "GS리테일" },
@@ -118,12 +110,11 @@ export default {
                     ]
                 },
                 en: {
-                    MainTitle: "Story", /* 26.06.23 add 정다희 : 스토리 타이틀 영문 변경    */ 
+                    MainTitle: "Story", 
                     MainsubTitle: "Everything you were curious about GS Retail — no need to search here and there anymore.<br/> We have organized clear answers to the questions you ask most often in an easy-to-read format."/* 260604 번역 */,
-                    MainsubTitleMo: "Everything you were curious about GS Retail, organized at a glance for easy reading."/* 26.06.24 add 정다희 : MainsubTitleMo 추가 */,
+                    MainsubTitleMo: "Everything you were curious about GS Retail, organized at a glance for easy reading.",
 
                     sTabIdx: 0, //최초 선택된 탭 index
-                    // 26.06.24 edit 정다희 : subTabs 아이템 텍스트 수정 
                     subTabs: [ //탭 아이템 배열
                         { item: "All" },
                         { item: "GS Retail"/* 260604 번역 */ },

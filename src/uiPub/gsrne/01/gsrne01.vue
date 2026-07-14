@@ -1,6 +1,6 @@
 <template>
     <div class="main-container">
-        <div class="title_wrap top_visual"> <!-- 클래스 top_visual 추가 26.06.08 add 정다희 -->
+        <div class="title_wrap top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
         </div>
 
@@ -22,7 +22,7 @@
                                 <li v-for="item in t.ListData" :key="item">
                                     <div class="item">
                                         <a href="/gsrne0101">
-                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span><!-- 26. 06. 17 add 정다희 : 대체텍스트 추가   -->
+                                            <span class="thumb"><em><img :src="item.thumb" alt="" /></em></span>
                                         </a>
                                         <a href="#none" class="cont">
                                             <strong>{{ item.title }}</strong>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import Search from "@/components/Search.vue";
 import Pagination from "@/components/Pagination.vue";
@@ -128,7 +128,6 @@ export default {
             currentPage.value = page;
         };
 
-        // 26.06.08 delete head_block 클래스 추가하는는 스크립트 삭제 
 
         return { isGuide, lang, setLang, searchData, currentPage, t, handleSearch, onPageChange };
     },
@@ -138,7 +137,6 @@ export default {
 <style scoped>
 
 .main-container { width: 100%; position: relative; }
-/* title_wrap css수정 26.06.08 edit 정다희 */
 .title_wrap {width: 100%; height:480px;  padding:10.91% 0 11.25%; background: url('/src/assets/images/dummy/gsrne01_bg.png') no-repeat center 57% / cover; text-align: center; position: relative; display: block;}
 .title_wrap::before{content:''; display:block; width:100%; height:100%; background:rgba(0,0,0,0.4); position:absolute; top:0; left:0; z-index:1;}
 .title_wrap > h2{color:#fff; position: relative; z-index:2;}
@@ -156,7 +154,7 @@ export default {
 .board_wrap.type_gallery .item .cont strong {font-size:2rem; line-height:135%; letter-spacing:-0.01em; display:block;}
 
 @media screen and (max-width: 767px) {
-    .section-investor {padding-top: 40px} /* 26.06.26 edit 이소라 */
+    .section-investor {padding-top: 40px}
     .title_wrap {display: none;}
     .title_wrap .visual-sub {font-size:2.8rem; font-weight:700; line-height:135%; letter-spacing:-0.01em;}
     .search_filter_area{margin-top:70px;}

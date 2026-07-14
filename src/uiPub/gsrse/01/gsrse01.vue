@@ -53,9 +53,7 @@
                                     <tr v-for="(item, idx) in t.NoticeList" :key="'notice-'+idx">
                                         <td class="ac color_gray">{{ item.id }}</td>
                                         <td class="al title_cell">
-                                            <!-- 26.05.19 Edit 이종환 : 공지사항 상세 팝업 -->
                                             <a href="javascript:void(0);" @click="openModal" data-popid="modal01" data-type="lg" data-cont="board_detail" class="link_title">{{ item.title }}</a>
-                                            <!-- //26.05.19 Edit 이종환 : 공지사항 상세 팝업 -->
                                         </td>
                                         <td class="ac color_gray date_cell">{{ item.date }}</td>
                                         <td class="ac color_gray view_cell">{{ t.ViewCountText }} {{ item.views }}</td>
@@ -516,13 +514,9 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- 26.05.19 Add 이종환 : 게시물 상세 팝업 -->
         <div id="modal01" class="modal_wrap">
             <div class="modal_container"></div>
         </div>
-        <!-- //26.05.19 Add 이종환 : 게시물 상세 팝업 -->
 
     </div>
 </template>
@@ -1045,7 +1039,7 @@ export default {
     .pc {display:none;}
     .mt100 {margin-top:60px !important}
     .mb100 {margin-bottom:60px !important}
-    .cont_inner {padding-top:84px;} /* 26.06.26 add 이소라 */
+    .cont_inner {padding-top:84px;} 
     :deep(.tab_wrap) ul.type_02 {padding-left:0px !important;}
     .text-wrapper { font-size: 2.4rem;}
     .title_wrap  {display:none;}

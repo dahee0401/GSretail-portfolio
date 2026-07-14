@@ -2,7 +2,6 @@
     <div class="main-container" v-if="t">
         <div class="title_wrap ac top_visual">
             <h2 class="page-title">{{ t.MainTitle }}</h2>
-            <!-- 26.06.10 Del 이종환 <p class="visual-sub">{{ t.MainsubTitle }}</p> -->
         </div>
 
         <section class="section-investor">
@@ -164,10 +163,10 @@
                                     </ul>
                                     <div class="ac">
                                         <Buttons btn-class="btn_icon_arrow btn_xl border after" 
-                                            @click="openModal" 
-                                            data-popid="gsrsu02010301" 
-                                            data-type="lg" 
-                                            data-cont="gsrsu02010301"
+                                                 @click="openModal" 
+                                                 data-popid="gsrsu02010301" 
+                                                 data-type="lg" 
+                                                 data-cont="gsrsu02010301"
                                         >{{ t.GreenProduct.guideline.btn_txt }}</Buttons>
                                     </div>
                                 </div>
@@ -247,7 +246,7 @@ export default {
                     IntroDesc: "전 세계적으로 기후 변화, 환경오염 등 환경 관련 이슈가 확산되고 있습니다.<br/>이제 환경경영은 현재의 우리와 미래 후손들을 위해 기업이 사회적 책임을 가져야 할 필수 경영 활동이 되었습니다.<br/>GS리테일은 종합 유통 플랫폼으로써 고객이 경험하는 모든 밸류체인 및 경영 활동 전반에 걸친 환경 영향도를 파악하고<br/>최소화하고자 최선의 노력을 다하겠습니다.", /* 2026.07.06 edit 이소라 */
                     PolicyTitle: "환경경영방침",
                     PolicySub: "GS리테일은 지속가능한 환경경영을 위해, 환경경영 방침을 수립하였습니다.",
-                    PolicyItems: [ /* 2026.07.06 edit 이소라 */
+                    PolicyItems: [ 
                         { tit: "하나. 환경 관련 법령 준수 :", desc: "환경 관련 법령을 준수할 수 있도록 주기적인 모니터링 및 임직원 교육을 진행하여 발생 가능한 리스크를 최소화 하고 있습니다." },
                         { tit: "하나. 환경 성과의 체계적 관리 :", desc: "의사결정 과정에서 환경을 최우선으로 생각하며 환경경영시스템이 체계적으로 관리되도록 최선을 다합니다." },
                         { tit: "하나. 에너지 저감 및 폐기물 관리 :", desc: "본사를 비롯한 매장에서도 에너지의 효율적 사용 방안을 모색하고 확대하며, 폐기물 재사용 및 축소를 통해 환경영향을 축소하겠습니다." },
@@ -260,20 +259,10 @@ export default {
                     SystemDesc: "환경경영 전략과제를 통해 각 사업별 실행전략을 수립하고, 환경경영 평가위원회를 통해 진행 현황 관리 및 영향평가를 진행합니다.<br/>또한, ESG추진협의회 및 ESG위원회에 진행사항을 보고할 수 있도록 하는 환경경영 체계를 구축하였습니다.",
                     ClimateIntro: "GS리테일은 기후변화의 심각성을 인지하고, 모든 이해관계자들과 함께 <br/>기후변화 문제에 대한 적극적인 대응을 위해 최선의 노력을 다하겠습니다.",
                     SeaBreathTitle: "바다숨 프로젝트",
-                    SeaBreathDesc: "바다숨 프로젝트는 GS25, GS THE FRESH에서 수거한 폐가전을 E-순환거버넌스를 통해 재활용하고, 이를 기부금으로 전환해 해양생태계를 보전하는 활동입니다. 2023년 기획을 시작으로 2025년부터 본격 운영되며, 해양 전문 NGO 동아시아바다공동체 오션, 팀부스터와 함께하고 있습니다.<br/><br/>2025년에는 바다거북의 이동 경로를 따라 해양 폐기물을 수거했으며, 2026년에는 잘피 서식지 보전 활동을 진행할 예정입니다. GS리테일은 바다와 공존하는 지속가능한 미래를 만들어가고자 합니다.", /* 260624 edit 이소라 */
+                    SeaBreathDesc: "바다숨 프로젝트는 GS25, GS THE FRESH에서 수거한 폐가전을 E-순환거버넌스를 통해 재활용하고, 이를 기부금으로 전환해 해양생태계를 보전하는 활동입니다. 2023년 기획을 시작으로 2025년부터 본격 운영되며, 해양 전문 NGO 동아시아바다공동체 오션, 팀부스터와 함께하고 있습니다.<br/><br/>2025년에는 바다거북의 이동 경로를 따라 해양 폐기물을 수거했으며, 2026년에는 잘피 서식지 보전 활동을 진행할 예정입니다. GS리테일은 바다와 공존하는 지속가능한 미래를 만들어가고자 합니다.", 
                     EcoProjects: [
-                        // {
-                        //     tit: "에코 크리에이터: 환경영상제작지원",
-                        //     img: require("@/assets/images/dummy/gsrsu020104_2.png"),
-                        //     desc: "환경재단과 협업하여 영상미디어 컨텐츠 분야의 ESG활동을 실천하고 청소년 및 일반 시민들의 환경 영상 제작 지원을 위해 멘토링, 전문가 강연 등 다양한 기회를 제공하고 있습니다.<br/>2020년 부터 현재까지 18억을 지원하여 460명의 에코크리에이터를 양성하였으며, 10만 명 이상의 지역사회 시민과 친환경 캠페인을 진행해 환경부 우수환경 프로그램으로도 지정되었습니다.<br/><br/>또한 서울시교육청과 연계한 전국 17개 시·도교육청에 환경교육을 진행하였고 서대문 자연사박물관 외 지역사회 환경활동에도 기여하였습니다."
-                        // },
-                        // {
-                        //     tit: "에코 소셜임팩트: 환경분야 제조 소셜벤처 창업지원",
-                        //     img: require("@/assets/images/dummy/gsrsu020104_3.png"),
-                        //     desc: "지속 가능한 에코제조 분야의 소셜벤처를 양성하기 위해 창업팀을 발굴하고 사업화를 위한 맞춤 성장을 지원하고 있습니다. 2018년부터 현재까지 20억 5천만원을 기부하고 65개의 5년 미만 창업기업에 맞춤형 창업교육, 시제품 제작 지원금, GS리테일 임직원 및 전문가 멘토링 코칭 등을 제공하여 소규모 에코 제조 기업의 브랜드 정체성 확립, 판로 확대 및 라인업 확장에 기여하였습니다.<br/><br/>또한 참여기업간 협업과 네트워킹, 멘토링 지원과 상품품평회 등을 통해 차별화된 GS리테일의 연계형 인큐베이팅 및 유통 판로의 개척을 지원하고 있습니다."
-                        // },
                         {
-                            tit: "Upcycling 친구 캠페인 : 고객 및 임직원 참여 물품기부", /* 260623 edit 이소라 */
+                            tit: "Upcycling 친구 캠페인 : 고객 및 임직원 참여 물품기부", 
                             img: require("@/assets/images/dummy/gsrsu020104_4.png"),
                             desc: "GS리테일 임직원 및 고객이 직접 물품을 기부하면 업사이클링 환경교육키트로 제작하여 취약계층 아동에게 전달하는 ‘친환경으로 지구 구하기’ 캠페인을 진행하고 있습니다.<br/><br/>2024년 GS리테일은 총 1,704명으로부터 46,789개의 물품을 기부 받아 331명의 아동에게 환경교육 자료를 전달하였습니다. 이를 통해 소나무 967그루를 심은 효과를 창출했습니다."
                         },
@@ -414,16 +403,6 @@ export default {
                     SeaBreathTitle: "Bada-sum Project",
                     SeaBreathDesc: "The Badasoom Project collects discarded home appliances from GS25 and GS THE FRESH, recycles them through E-Cycle Governance, and converts the proceeds into donations to preserve marine ecosystems. Launched in planning in 2023 and in full operation from 2025, the project partners with marine NGO Ocean, the East Asian Seas Community, and Team Booster. <br><br>In 2025, marine waste was collected along sea turtle migration routes, and in 2026, seagrass habitat conservation activities are planned. <br>GS Retail is committed to building a sustainable future in harmony with the ocean.", /* 260624 edit 이소라 */
                     EcoProjects: [
-                        // {
-                        //     tit: "에코 크리에이터: 환경영상제작지원",
-                        //     img: require("@/assets/images/dummy/gsrsu020104_2.png"),
-                        //     desc: "환경재단과 협업하여 영상미디어 컨텐츠 분야의 ESG활동을 실천하고 청소년 및 일반 시민들의 환경 영상 제작 지원을 위해 멘토링, 전문가 강연 등 다양한 기회를 제공하고 있습니다.<br/>2020년 부터 현재까지 18억을 지원하여 460명의 에코크리에이터를 양성하였으며, 10만 명 이상의 지역사회 시민과 친환경 캠페인을 진행해 환경부 우수환경 프로그램으로도 지정되었습니다.<br/><br/>또한 서울시교육청과 연계한 전국 17개 시·도교육청에 환경교육을 진행하였고 서대문 자연사박물관 외 지역사회 환경활동에도 기여하였습니다."
-                        // },
-                        // {
-                        //     tit: "에코 소셜임팩트: 환경분야 제조 소셜벤처 창업지원",
-                        //     img: require("@/assets/images/dummy/gsrsu020104_3.png"),
-                        //     desc: "지속 가능한 에코제조 분야의 소셜벤처를 양성하기 위해 창업팀을 발굴하고 사업화를 위한 맞춤 성장을 지원하고 있습니다. 2018년부터 현재까지 20억 5천만원을 기부하고 65개의 5년 미만 창업기업에 맞춤형 창업교육, 시제품 제작 지원금, GS리테일 임직원 및 전문가 멘토링 코칭 등을 제공하여 소규모 에코 제조 기업의 브랜드 정체성 확립, 판로 확대 및 라인업 확장에 기여하였습니다.<br/><br/>또한 참여기업간 협업과 네트워킹, 멘토링 지원과 상품품평회 등을 통해 차별화된 GS리테일의 연계형 인큐베이팅 및 유통 판로의 개척을 지원하고 있습니다."
-                        // },
                         {
                             tit: "Upcycling Friend Campaign: Customer and Employee Goods Donation", /* 260623 edit 이소라 */
                             img: require("@/assets/images/dummy/gsrsu020104_4.png"),
@@ -657,7 +636,9 @@ p { color: #161616; font-size: 20px; line-height: 1.45; word-break: keep-all; }
 .green_product li.two_divide + li{margin-top:120px;}
 .green_product li.two_divide .image_wrap { width: 100%; height: 360px; border-radius: 20px; overflow: hidden; }
 
-.green_product > ul > li:last-of-type h4 {margin-top:40px;}
+.green_product > ul > li:last-of-type h4 {margin-top:40p
+
+x;}
 .green_product > ul li div h4 + p {margin-bottom:20px;}
 .green_product .image_wrap img { width: 100%; height: 100%; object-fit: cover;}
 

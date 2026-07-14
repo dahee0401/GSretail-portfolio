@@ -14,7 +14,6 @@
 
             <!-- board body -->
             <div class="board_detail_cont">
-                <!-- 26.05.26 Edit 정다희 : 소제목 및 요약정보 추가 -->
                 <h2>{{ t.subTitle }}</h2>
                 <dl>
                     <dt>{{ t.summaryTitle }}</dt>
@@ -24,12 +23,10 @@
                         </ul>
                     </dd>
                 </dl>
-                <!-- //26.05.26 Edit 정다희 : 소제목 및 요약정보 추가 -->
                 <!-- editor 내용 노출 -->
                 <div class="img_wrap"><img src="@/assets/images/dummy/sample_news_detail_01.png" :alt="t.detailImageAlt" /></div>
                 <p>{{ t.detail }}</p>
                 <!-- editor 내용 노출 -->
-                <!-- 26.05.26 Edit 정다희 : FAQ 영역 추가 -->
                 <div class="faq_box">
                     <h3>{{ t.faqTitle }}</h3>
                     <ul class="ft_sec_list">
@@ -45,15 +42,12 @@
                         </li>
                     </ul>
                 </div>
-                <!-- //26.05.26 Edit 정다희 : FAQ 영역 추가 -->
             </div>
             <!-- //board body -->
 
-            <!-- 26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
             <div class="bottom_btns">
                 <button class="btn_back" @click="handleBack">{{ t.ListBack }}</button>
             </div>
-            <!-- //26.05.11 Edit 이종환 : 하단 목록 버튼 통일 -->
         </div>
 
     </div>

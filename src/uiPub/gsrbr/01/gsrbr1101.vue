@@ -586,7 +586,7 @@ export default {
                             홈페이지:'Homepage',
                             name: `East Busan Misik Ilsang`, contentTitle: `East Busan Misik Ilsang`,
                             intro: [
-                                `<b>Misik Ilsang is a cultural complex of approximately 3,000 pyeong located at the center of the Osiria Tourism Complex,<br />and since opening in June 2021, it has been preparing to take a new leap forward as an unrivaled 'cultural complex' that combines F&B with diverse experiential content.</b>`/* 260604 번역 */
+                                `<b>Misik Ilsang is a cultural complex of approximately 3,000 pyeong located at the center of the Osiria Tourism Complex,<br />and since opening in June 2021, it has been preparing to take a new leap forward as an unrivaled 'cultural complex' that combines F&B with diverse experiential content.</b>`/* 260604 번역 */,
                                 `Osiria Tourism Complex is an area visited by approximately 40 million people annually — not a one-time destination, but a stable commercial district with a captive demand base, characterized by high return visit rates and sustained spending power.<br />In particular, Misik Ilsang is located at the heart of Lotte Outlet / Lotte World / Skyline Luge / Bounce Universe, making it a facility with strong customer-drawing power and scalability that connects the surrounding attractions.`/* 260604 번역 */
                             ],
                             mainImg: mallVisualList[3].mainImg, mainImgMo: mallVisualList[3].mainImgMo, 
